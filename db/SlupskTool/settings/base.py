@@ -64,8 +64,12 @@ from wq.db.default_settings import (
 TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
 
 # Add messages to context_processors
+TEMPLATES[0]['OPTIONS']['context_processors']=list(TEMPLATES[0]['OPTIONS']['context_processors'])
 TEMPLATES[0]['OPTIONS']['context_processors'].append('django.contrib.messages.context_processors.messages')
+TEMPLATES[0]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['context_processors'])
+TEMPLATES[1]['OPTIONS']['context_processors']=list(TEMPLATES[0]['OPTIONS']['context_processors'])
 TEMPLATES[1]['OPTIONS']['context_processors'].append('django.contrib.messages.context_processors.messages')
+TEMPLATES[1]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['context_processors'])
 
 # wq: Recommended settings unique to wq.db
 from wq.db.default_settings import (

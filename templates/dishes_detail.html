@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{label}}</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{label}}</h1>
+        {{#page_config.can_change}}
+        <a href="{{rt}}/dishes/{{id}}/edit" data-icon="edit" data-transition="flip">
+          Edit
+        </a>
+        {{/page_config.can_change}}
+      </div>
+      <div role="main" class="ui-content">
+          <h1>{{label}}</h1>
+          <table>
+            <tr>
+              <th>Name of dish</th>
+              <td>{{dish_name}}</td>
+            </tr>
+            <tr>
+              <th>Ingredients</th>
+              <td>
+                {{#ingredients}}
+                <table>
+                  <tr>
+                    <th>Ingredient</th>
+                    <td>{{ingredient_label}}</td>
+                  </tr>
+                  <tr>
+                    <th>Quantity (in gramms)</th>
+                    <td>{{quantitty}}</td>
+                  </tr>
+                  <tr>
+                    <th>Place of origin</th>
+                    <td>{{origin_label}}</td>
+                  </tr>
+                </table>
+                <hr>
+                {{/ingredients}}
+              </td>
+            </tr>
+            <tr>
+              <th>Photos</th>
+              <td>
+                {{#photos}}
+                <table>
+                </table>
+                <hr>
+                {{/photos}}
+              </td>
+            </tr>
+          </table>
+        {{#photos}}
+        <h3>Photo</h3>
+        <img src="{{photo}}" alt="Photo - {{label}}" style="max-width:100%">
+        {{/photos}}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} dishes</title>
+    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} dish</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} dishes</h1>
+        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} dish</h1>
         {{#id}}
         {{#page_config.can_delete}}
         <form action="{{svc}}/dishes/{{id}}" method="post" data-ajax="false"
@@ -74,7 +74,7 @@
             {{/ingredients}}
             <li>
               <button type="button" data-wq-action="addattachment" data-wq-section="ingredients">
-                 Add Ingredients
+                 Add ingredient
               </button>
             </li>
             <li data-role="list-divider">Photos</li>
@@ -129,7 +129,7 @@
             {{/photos}}
             <li>
               <button type="button" data-wq-action="addattachment" data-wq-section="photos">
-                 Add Photos
+                 Add photo
               </button>
             </li>
             <li>

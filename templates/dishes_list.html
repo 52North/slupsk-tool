@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>dishes List{{#parent_id}} for {{parent_label}}{{/parent_id}}</title>
+    <title>List of dishes{{#parent_id}} for {{parent_label}}{{/parent_id}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page" data-wq-sync-refresh="true">
       <div data-role="header">
         {{>home}}
-        <h1>dishes List{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
+        <h1>List of dishes{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
         {{#page_config.can_add}}
         <a href="{{rt}}/dishes/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
           Add New
@@ -69,7 +69,7 @@
             {{/list}}
             {{#page_config.can_add}}
             <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/dishes/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add dishes</a>
+              <a href="{{rt}}/dishes/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add dish</a>
             </li>
             {{/page_config.can_add}}
           </ul>

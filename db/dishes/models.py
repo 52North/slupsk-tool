@@ -26,7 +26,7 @@ class Ingredient(models.Model):
         max_length=8,
         verbose_name="Ingredient",
     )
-    quantitty = models.FloatField(
+    quantity = models.FloatField(
         verbose_name="Quantity (in gramms)",
     )
     origin = models.CharField(

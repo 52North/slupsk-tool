@@ -24,16 +24,12 @@ See https://github.com/wq/wq.app/issues/63
       </div>
       <div role="main" class="ui-content">
         <p>Where does my food come from? Here you can find information about menus in kindergardens and propose new dishes yourself!</p>
-        <ul data-role="listview">
-          <!-- Note: in many cases, you will want to replace this with a
-          hardcoded list of links (rather than the default pages list) -->
-          <!--{{#pages}}
-          <li><a href="{{rt}}/{{url}}{{#list}}/{{/list}}">{{name}} {{#list}}list{{/list}}</a></li>
-          {{/pages}}-->
+        <ul data-role="listview" data-inset="true">
           <li data-icon="plus">
             <a href="{{rt}}/dishes/new">Add dish</a>
           </li>
         </ul>
+        <div class="map detail-map" id="index-map"></div>
       </div>
       <p class="footer">
         SlupskTool v{{version}}

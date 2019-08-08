@@ -40,6 +40,37 @@
               <textarea id='dishes-dish_name' name='dish_name' data-xform-type="text" required>{{dish_name}}</textarea>
               <p class='error dishes-dish_name-errors'></p>
             </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                <legend>Location Mode</legend>
+                {{#toggle_choices}}
+                <input type='radio' id='dishes-toggle-{{name}}' name='toggle' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='dishes-toggle-{{name}}'>{{label}}</label>
+                {{/toggle_choices}}
+              </fieldset>
+              <p class='error dishes-toggle-errors'></p>
+            </li>
+            <li>
+              <label for='dishes-geometry'>Location</label>
+              <input type='hidden' data-xform-type='geopoint' name='geometry' required>
+              <div class="map edit-map" id='dishes-{{id}}{{^id}}new{{/id}}-edit-map'></div>
+              <p class='error dishes-geometry-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='dishes-latitude'>Latitude</label>
+              <input id='dishes-latitude' type='number' data-xform-type='decimal' name='latitude' required step='0.001' value="{{latitude}}">
+              <p class='error dishes-latitude-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='dishes-longitude'>Longitude</label>
+              <input id='dishes-longitude' type='number' data-xform-type='decimal' name='longitude' required step='0.001' value="{{longitude}}">
+              <p class='error dishes-longitude-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='dishes-accuracy'>GPS Accuracy</label>
+              <input id='dishes-accuracy' type='number' data-xform-type='decimal' name='accuracy' required step='0.001' value="{{accuracy}}">
+              <p class='error dishes-accuracy-errors'></p>
+            </li>
             <li data-role="list-divider">Ingredients</li>
             {{#ingredients}}
             {{^new_attachment}}{{#id}}

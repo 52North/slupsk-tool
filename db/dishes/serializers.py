@@ -7,6 +7,9 @@ class IngredientSerializer(patterns.AttachmentSerializer):
         model = Ingredient
         exclude = ('dishes',)
         object_field = 'dishes'
+        wq_config = {
+            'initial': 1,
+        }
 
 
 class PhotoSerializer(patterns.AttachmentSerializer):

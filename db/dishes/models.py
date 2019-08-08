@@ -1,9 +1,31 @@
-from django.db import models
+from django.contrib.gis.db import models
 
 
 class Dishes(models.Model):
     dish_name = models.TextField(
         verbose_name="Name of dish",
+    )
+    toggle = models.CharField(
+        choices=(
+            ("gps", "Use GPS"),
+            ("interactive", "Point on Map"),
+            ("manual", "Enter Manually"),
+        ),
+        max_length=11,
+        verbose_name="Location Mode",
+    )
+    geometry = models.PointField(
+        srid=4326,
+        verbose_name="Location",
+    )
+    latitude = models.FloatField(
+        verbose_name="Latitude",
+    )
+    longitude = models.FloatField(
+        verbose_name="Longitude",
+    )
+    accuracy = models.FloatField(
+        verbose_name="GPS Accuracy",
     )
 
     class Meta:
@@ -21,9 +43,9 @@ class Ingredient(models.Model):
         choices=(
             ("potatoes", "Potatoes"),
             ("cucumber", "Cucumber"),
-            ("meat", "Meat"),
+            ("chicken_meat", "Chicken meat"),
         ),
-        max_length=8,
+        max_length=12,
         verbose_name="Ingredient",
     )
     quantity = models.FloatField(

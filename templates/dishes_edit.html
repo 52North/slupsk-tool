@@ -46,11 +46,11 @@
             <input type="hidden" name="ingredients[{{@index}}][id]" value="{{id}}">
             {{/id}}{{/new_attachment}}
             <li class="ui-field-contain">
-              <label>Ingredient</label>
-              <select data-xform-type='string'>
+              <label for='dishes-ingredients-{{@index}}-ingredient-{{name}}'>Ingredient</label>
+              <select id='dishes-ingredients-{{@index}}-ingredient-{{name}}' data-xform-type='string' name='ingredients[{{@index}}][ingredient]' required>
                 <option value="">Select ingredient...</option>
                 {{#ingredient_choices}}
-                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                <option value='{{name}}'{{#selected}} checked{{/selected}}>
                   {{#outbox}}*{{/outbox}} {{label}}
                 </option>
                 {{/ingredient_choices}}

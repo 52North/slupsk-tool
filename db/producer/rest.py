@@ -1,13 +1,10 @@
 from wq.db import rest
-from .models import Dishes
-from .serializers import DishesSerializer
+from .models import Producer
 
 
 rest.router.register_model(
-    Dishes,
-    serializer=DishesSerializer,
+    Producer,
     fields="__all__",
-    locate=True,
     map=[{
         'mode': 'list',
         'autoLayers': True,
@@ -21,7 +18,7 @@ rest.router.register_model(
         'layers': [{
             'type': 'geojson',
             'name': 'geometry',
-            'url': 'dishes/{{id}}/edit.geojson',
+            'url': 'producers/{{id}}/edit.geojson',
             'geometryField': 'geometry',
             'flatten': True,
         }],

@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     'wq.db.rest.auth',
 
     # Project apps
-    'dishes',
     'index',
+    'dish',
+    'institution',
+    'ingredient',
+    'producer',
 ]
 
 MIDDLEWARE = [

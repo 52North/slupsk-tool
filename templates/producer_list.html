@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>List of dishes{{#parent_id}} for {{parent_label}}{{/parent_id}}</title>
+    <title>producer List{{#parent_id}} for {{parent_label}}{{/parent_id}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page" data-wq-sync-refresh="true">
       <div data-role="header">
         {{>home}}
-        <h1>List of dishes{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
+        <h1>producer List{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
         {{#page_config.can_add}}
-        <a href="{{rt}}/dishes/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
+        <a href="{{rt}}/producers/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
           Add New
         </a>
         {{/page_config.can_add}}
@@ -66,18 +66,18 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/dishes/{{id}}">{{label}}</a>
+              <a href="{{rt}}/producers/{{id}}">{{label}}</a>
             </li>
             {{/list}}
             {{#page_config.can_add}}
             <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/dishes/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add dish</a>
+              <a href="{{rt}}/producers/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add producer</a>
             </li>
             {{/page_config.can_add}}
           </ul>
         </div>
         <div class="ui-block-b">
-          <div class='map list-map' id="{{#parent_id}}{{parent_page}}-{{parent_id}}-{{/parent_id}}dishes-map"></div>
+          <div class='map list-map' id="{{#parent_id}}{{parent_page}}-{{parent_id}}-{{/parent_id}}producer-map"></div>
         </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 from django.db import models
-
+import pystache
 
 class Dish(models.Model):
     name = models.TextField(
@@ -12,6 +12,11 @@ class Dish(models.Model):
         blank=True,
         verbose_name="Institution",
     )
+
+    wq_label_template = "{{institution.name}}"
+
+    def __str__(self):
+        return pystache.render(self.wq_label_template, self)
 
     class Meta:
         verbose_name = "dish"

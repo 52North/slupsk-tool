@@ -12,9 +12,9 @@ basemaps = [
 
 index_map = [{
     'layers': [{
-        'name': 'Locations',
+        'name': 'Institutions',
         'type': 'geojson',
-        'url': 'locations.geojson',
-        'popup': 'location'
+        'url': 'institutions.geojson',
+        'popup': 'institution'
     }]
 }]

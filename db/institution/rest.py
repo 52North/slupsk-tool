@@ -5,6 +5,7 @@ from .models import Institution
 rest.router.register_model(
     Institution,
     fields="__all__",
+    locate=True,
     map=[{
         'mode': 'list',
         'autoLayers': True,

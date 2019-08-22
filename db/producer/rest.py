@@ -5,6 +5,7 @@ from .models import Producer
 rest.router.register_model(
     Producer,
     fields="__all__",
+    locate=True,
     map=[{
         'mode': 'list',
         'autoLayers': True,

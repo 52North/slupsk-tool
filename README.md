@@ -1,22 +1,37 @@
- Django project template for wq framework
+ Creating Interfaces - Slupsk Tool
 =========================================
 
-This is the recommended Django project template for projects utilizing the [wq framework], with [wq.app] for the front end and [wq.db] as the backend component.   This template is meant to be used together with [wq.start].  See the [Getting Started] docs for more information.
+This data collection tool is running with [wq framework]. See [Getting Started] for general information on how to build/run the application.
 
-### Rationale
+### How to locally test the tool
 
-This project template is also useful as an example of how to build a web app with [RequireJS] and a [Django REST Framework] backend.  It differs from the default Django project template in a few key ways:
+* Clone the git repository.
+* Change to the develop branch, e.g. `git checkout develop`.
+* Create the file `db/SlupskTool/settings/dev.py`. 
+  You can do this for example by running  
+  `wq start SlupskTool . -d slupsk-tool.demo.52north.org --with-gis`  
+  which creates a completely new project based on the [wq standard template]. Then you can copy the mentioned file.
+* Add `.so` suffix to spatialite library in `db/SlupskTool/settings/dev.py`, i.e.  
+  `SPATIALITE_LIBRARY_PATH = 'mod_spatialite.so'`
+* Run migrations (create data base tables and prepopulate some of them -> Institution/Producer) and create superuser via   
+  `cd db/`   
+  `./manage.py migrate`  
+  `./manage.py createsuperuser`  
+  `cd ..`
+* Generate htdocs folder via  
+  `./deploy.sh 0.0.1`  
+  Attention: Do not update the templates as it would overwrite some changes! You do not need to build PhoneGap either.
+* Run tool on localhost:8000 via  
+  `./db/manage.py runserver`
 
- * A default Apache2 WSGI configuration is included in `conf/`
- * All static files are kept in the `app/` folder, with the idea that they will be built with a RequireJS-powered [build process].  This clean separation between the front end and backend components makes it easier to wrap the front end in [PhoneGap] for release on app stores.
- * Because of this separation, the root of the Django project is in `db/` rather than at the top level of the project.  `db/` is included on the Python path in the Apache config (and implicitly when running `./manage.py`).
- * Mustache templates are kept at the top level, because they are [shared between the client and the server](http://wq.io/docs/templates).
+### Links
 
 [wq framework]: http://wq.io/
 [wq.app]: https://wq.io/wq.app
 [wq.db]: https://wq.io/wq.db
 [wq.start]: https://wq.io/wq.start
 [Getting Started]: https://wq.io/docs/setup
+[wq standard template]: https://github.com/wq/wq-django-template
 [RequireJS]: http://requirejs.org
 [Django REST Framework]: http://www.django-rest-framework.org
 [build process]: http://wq.io/docs/build

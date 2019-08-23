@@ -1,16 +1,25 @@
- Django project template for wq framework
+ Creating Interfaces - Slupsk Tool
 =========================================
 
-This is the recommended Django project template for projects utilizing the [wq framework], with [wq.app] for the front end and [wq.db] as the backend component.   This template is meant to be used together with [wq.start].  See the [Getting Started] docs for more information.
+This data collection tool is running with [wq framework]. See [Getting Started] for general information on how to build/run the application.
 
-### Rationale
 
-This project template is also useful as an example of how to build a web app with [RequireJS] and a [Django REST Framework] backend.  It differs from the default Django project template in a few key ways:
+### How to locally test the tool
 
- * A default Apache2 WSGI configuration is included in `conf/`
- * All static files are kept in the `app/` folder, with the idea that they will be built with a RequireJS-powered [build process].  This clean separation between the front end and backend components makes it easier to wrap the front end in [PhoneGap] for release on app stores.
- * Because of this separation, the root of the Django project is in `db/` rather than at the top level of the project.  `db/` is included on the Python path in the Apache config (and implicitly when running `./manage.py`).
- * Mustache templates are kept at the top level, because they are [shared between the client and the server](http://wq.io/docs/templates).
+* Clone the git repository
+* Add `.so` suffix to spatialite library in `db/SlupskTool/settings/dev.py`  
+  `SPATIALITE_LIBRARY_PATH = 'mod_spatialite.so'`
+* Run migrations (create data base tables and prepopulate some of them -> Institution/Producer) and create superuser   
+  `cd db/`   
+  `./manage.py migrate`  
+  `./manage.py createsuperuser`  
+  `cd ..`
+* Generate htdocs folder  
+  `./deploy 0.0.1`
+* Run tool on localhost:8000  
+  `./db/manage.py runserver`
+
+### Links
 
 [wq framework]: http://wq.io/
 [wq.app]: https://wq.io/wq.app

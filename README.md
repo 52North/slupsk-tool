@@ -24,15 +24,7 @@ This data collection tool is running with [wq framework]. See [Getting Started] 
 * Run tool on localhost:8000 via  
   `./db/manage.py runserver`
 
-### Links
 
 [wq framework]: http://wq.io/
-[wq.app]: https://wq.io/wq.app
-[wq.db]: https://wq.io/wq.db
-[wq.start]: https://wq.io/wq.start
 [Getting Started]: https://wq.io/docs/setup
 [wq standard template]: https://github.com/wq/wq-django-template
-[RequireJS]: http://requirejs.org
-[Django REST Framework]: http://www.django-rest-framework.org
-[build process]: http://wq.io/docs/build
-[PhoneGap]: http://phonegap.com

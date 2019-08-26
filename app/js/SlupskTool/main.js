@@ -1,8 +1,9 @@
-define(['wq/app', 'wq/map', 'wq/patterns', 'wq/photos', 'wq/locate',
+define(['wq/app', './removeattachment', 'wq/map', 'wq/patterns', 'wq/photos', 'wq/locate',
         './config',
         'leaflet.draw', 'leaflet.markercluster'],
-function(app, map, patterns, locate, photos, config) {
+function(app, removeattachment, map, patterns, locate, photos, config) {
 
+app.use(removeattachment);
 app.use(map);
 app.use(patterns);
 app.use(locate);

@@ -58,49 +58,60 @@
             <input type="hidden" name="compositions[{{@index}}][id]" value="{{id}}">
             {{/id}}{{/new_attachment}}
             <li class="ui-field-contain">
-              <label for='dish-compositions-{{@index}}-ingredient_id'>Ingredient</label>
-              <select id='dish-compositions-{{@index}}-ingredient_id' data-xform-type='string' name='compositions[{{@index}}][ingredient_id]' required>
-                <option value="">Select one...</option>
-                {{#ingredient_list}}
-                <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                 {{#outbox}}*{{/outbox}} {{label}}
-                </option>
-                {{/ingredient_list}}
-              </select>
-              <p class='error dish-compositions-{{@index}}-ingredient_id-errors'></p>
+            <div data-role="collapsible" class="section-compositions" data-collapsed="false">
+              <h4>Ingredient {{@index}}</h4>
+              <ul data-role="listview" data-inset="true">
+                <li class="ui-field-contain">
+                  <label for='dish-compositions-{{@index}}-ingredient_id'>Ingredient</label>
+                  <select id='dish-compositions-{{@index}}-ingredient_id' data-xform-type='string' name='compositions[{{@index}}][ingredient_id]' required>
+                    <option value="">Select one...</option>
+                    {{#ingredient_list}}
+                    <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                     {{#outbox}}*{{/outbox}} {{label}}
+                    </option>
+                    {{/ingredient_list}}
+                  </select>
+                  <p class='error dish-compositions-{{@index}}-ingredient_id-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <label for='dish-compositions-{{@index}}-quantity_gram'>Quantity (in grams)</label>
+                  <input id='dish-compositions-{{@index}}-quantity_gram' type='number' data-xform-type='decimal' name='compositions[{{@index}}][quantity_gram]' step='0.001' value="{{quantity_gram}}">
+                  <p class='error dish-compositions-{{@index}}-quantity_gram-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <legend>Place of origin</legend>
+                    {{#origin_choices}}
+                    <input type='radio' id='dish-compositions-{{@index}}-origin-{{name}}' name='compositions[{{@index}}][origin]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                    <label for='dish-compositions-{{@index}}-origin-{{name}}'>{{label}}</label>
+                    {{/origin_choices}}
+                  </fieldset>
+                  <p class='error dish-compositions-{{@index}}-origin-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                    <label for='dish-compositions-{{@index}}-producer_id'>Producer</label>
+                    <select id='dish-compositions-{{@index}}-producer_id' data-xform-type='string' name='compositions[{{@index}}][producer_id]'>
+                      <option value="">Select one...</option>
+                      {{#producer_list}}
+                      <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                       {{#outbox}}*{{/outbox}} {{label}}
+                      </option>
+                      {{/producer_list}}
+                    </select>
+                    <p class='error dish-compositions-{{@index}}-producer_id-errors'></p>
+                </li>
+                <li>
+                    <button type="button" data-wq-action="removeattachment" data-wq-section="compositions">
+                      Delete ingredient
+                    </button>
+                </li>
+              </ul>
+            </div>
             </li>
-            <li class="ui-field-contain">
-              <label for='dish-compositions-{{@index}}-quantity_gram'>Quantity (in grams)</label>
-              <input id='dish-compositions-{{@index}}-quantity_gram' type='number' data-xform-type='decimal' name='compositions[{{@index}}][quantity_gram]' step='0.001' value="{{quantity_gram}}">
-              <p class='error dish-compositions-{{@index}}-quantity_gram-errors'></p>
-            </li>
-            <li class="ui-field-contain">
-              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
-                <legend>Place of origin</legend>
-                {{#origin_choices}}
-                <input type='radio' id='dish-compositions-{{@index}}-origin-{{name}}' name='compositions[{{@index}}][origin]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='dish-compositions-{{@index}}-origin-{{name}}'>{{label}}</label>
-                {{/origin_choices}}
-              </fieldset>
-              <p class='error dish-compositions-{{@index}}-origin-errors'></p>
-            </li>
-            <li class="ui-field-contain">
-              <label for='dish-compositions-{{@index}}-producer_id'>Producer</label>
-              <select id='dish-compositions-{{@index}}-producer_id' data-xform-type='string' name='compositions[{{@index}}][producer_id]'>
-                <option value="">Select one...</option>
-                {{#producer_list}}
-                <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                 {{#outbox}}*{{/outbox}} {{label}}
-                </option>
-                {{/producer_list}}
-              </select>
-              <p class='error dish-compositions-{{@index}}-producer_id-errors'></p>
-            </li>
-            <li class="section-compositions"></li>
             {{/compositions}}
             <li>
               <button type="button" data-wq-action="addattachment" data-wq-section="compositions">
-                 Add Composition
+                 Add ingredient
               </button>
             </li>
             <li data-role="list-divider">Photos</li>

@@ -1,0 +1,26 @@
+.site-logo img {
+    vertical-align: middle;
+    height: 90px;
+    margin: 5px;
+}
+
+.partner-logo img {
+    vertical-align: middle;
+    height: 90px;
+    margin: 5px;
+    float: right;
+}
+
+.subtitle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* .ui-title {
+    margin-left: 20%;
+    margin-right: 20%;
+} */
+
+.ui-header .ui-title {
+	margin: 0 20%;
+}

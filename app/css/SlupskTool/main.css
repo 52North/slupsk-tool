@@ -24,3 +24,10 @@
 .ui-header .ui-title {
 	margin: 0 20%;
 }
+
+.ui-block-a h1 {
+  color: #333333;
+  font-weight: 300;
+  font-size: 35;
+  font-style: normal;
+}

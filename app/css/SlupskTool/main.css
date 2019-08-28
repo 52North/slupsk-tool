@@ -9,17 +9,8 @@
     height: 90px;
     margin: 5px;
     float: right;
+    display: none;
 }
-
-.subtitle {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/* .ui-title {
-    margin-left: 20%;
-    margin-right: 20%;
-} */
 
 .ui-header .ui-title {
 	margin: 0 20%;

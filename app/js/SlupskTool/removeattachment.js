@@ -4,7 +4,7 @@ define({
             var $button = $(evt.target),
                 section = $button.data('wq-section'),
                 $row = $button.parents('.section-' + section);
-            $row.remove();
+            $row.parent().remove();
         })
       }
 });

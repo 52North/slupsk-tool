@@ -57,7 +57,8 @@
             {{^new_attachment}}{{#id}}
             <input type="hidden" name="compositions[{{@index}}][id]" value="{{id}}">
             {{/id}}{{/new_attachment}}
-            <li data-role="collapsible" class="ui-field-contain section-compositions" data-collapsed="false">
+            <li class="ui-field-contain">
+            <div data-role="collapsible" class="section-compositions" data-collapsed="false">
               <h4>Ingredient {{@index}}</h4>
               <ul data-role="listview" data-inset="true">
                 <li class="ui-field-contain">
@@ -105,6 +106,7 @@
                     </button>
                 </li>
               </ul>
+            </div>
             </li>
             {{/compositions}}
             <li>

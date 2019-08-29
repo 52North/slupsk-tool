@@ -13,7 +13,7 @@ class Dish(models.Model):
         verbose_name="Institution",
     )
 
-    wq_label_template = "{{institution.name}}"
+    wq_label_template = "{{name}}"
 
     def __str__(self):
         return pystache.render(self.wq_label_template, self)

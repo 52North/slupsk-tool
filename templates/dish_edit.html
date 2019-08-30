@@ -36,7 +36,7 @@
           {{/id}}
           <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
-              <label for='dish-name'>Name of dish</label>
+              <label for='dish-name'>Name of dish <span style="color: red">*</span></label>
               <textarea id='dish-name' name='name' data-xform-type="text" required>{{name}}</textarea>
               <p class='error dish-name-errors'></p>
             </li>
@@ -51,6 +51,7 @@
                 {{/institution_list}}
               </select>
               <p class='error dish-institution_id-errors'></p>
+              <p style="color:red;">Ignore this field if you want to add a private dish.</p>
             </li>
             <li data-role="list-divider">Composition</li>
             {{#compositions}}
@@ -62,7 +63,7 @@
               <h4>Ingredient {{@index}}</h4>
               <ul data-role="listview" data-inset="true">
                 <li class="ui-field-contain">
-                  <label for='dish-compositions-{{@index}}-ingredient_id'>Ingredient</label>
+                  <label for='dish-compositions-{{@index}}-ingredient_id'>Ingredient <span style="color: red">*</span></label>
                   <select id='dish-compositions-{{@index}}-ingredient_id' data-xform-type='string' name='compositions[{{@index}}][ingredient_id]' required>
                     <option value="">Select one...</option>
                     {{#ingredient_list}}
@@ -185,6 +186,7 @@
               <p class="error dish-errors"></p>
             </li>
           </ul>
+          <p style="color:red;">* required</p>
         </form>
       </div>
     </div>

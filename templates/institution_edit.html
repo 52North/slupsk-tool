@@ -36,7 +36,7 @@
           {{/id}}
           <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
-              <label for='institution-name'>Name</label>
+              <label for='institution-name'>Name <span style="color: red">*</span></label>
               <textarea id='institution-name' name='name' data-xform-type="text" required>{{name}}</textarea>
               <p class='error institution-name-errors'></p>
             </li>
@@ -92,6 +92,7 @@
               <p class="error institution-errors"></p>
             </li>
           </ul>
+          <p style="color:red;">* required</p>
         </form>
       </div>
     </div>

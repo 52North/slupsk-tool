@@ -82,6 +82,11 @@ from wq.db.default_settings import (
     SRID,
 )
 
+ANONYMOUS_PERMISSIONS = [
+    'dish.add_dish',
+    'producer.add_producer',
+]
+
 WSGI_APPLICATION = 'SlupskTool.wsgi.application'
 
 

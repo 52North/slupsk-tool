@@ -12,7 +12,7 @@ See https://github.com/wq/wq.app/issues/63
 -->
 <html><!-- manifest="SlupskTool.appcache" -->
   <head>
-    <title>SlupskTool</title>
+    <title>Slupsk Tool</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     {{>head}}
@@ -34,31 +34,51 @@ See https://github.com/wq/wq.app/issues/63
         <h1>Citizens Reporting on Food, Water and Energy in Slupsk</h1>
       </div>
       <div role="main" class="ui-content">
-        <p>Where does my food come from? Here you can find information about menus in kindergardens and propose new dishes yourself!</p>
+        <p>Where does my food come from? Here you can find information about menus in kindergartens and propose new dishes yourself!</p>
+        <div class="map detail-map" id="index-map"></div>
         <ul data-role="listview" data-inset="true">
           <li data-icon="plus">
             <a href="{{rt}}/dishes/new">Add dish</a>
           </li>
+          {{#is_authenticated}}
           <li data-icon="plus">
             <a href="{{rt}}/ingredients/new">Add ingredient</a>
           </li>
           <li data-icon="plus">
             <a href="{{rt}}/institutions/new">Add institution</a>
           </li>
+          {{/is_authenticated}}
           <li data-icon="plus">
             <a href="{{rt}}/producers/new">Add producer</a>
           </li>
-          <li data-icon="plus">
-            <a href="{{rt}}/login">Login</a>
+        </ul>
+        <ul data-role="listview" data-inset="true">
+          <li data-icon="bullets">
+            <a href="{{rt}}/dishes/">View dishes</a>
           </li>
-          <li data-icon="plus">
-            <a href="{{rt}}/logout">Logout</a>
+          <li data-icon="bullets">
+            <a href="{{rt}}/ingredients/">View ingredients</a>
           </li>
-          <li data-icon="plus">
-            <a href="{{rt}}/admin/">Admin</a>
+          <li data-icon="bullets">
+            <a href="{{rt}}/institutions/">View institutions</a>
+          </li>
+          <li data-icon="bullets">
+            <a href="{{rt}}/producers/">View producers</a>
           </li>
         </ul>
-        <div class="map detail-map" id="index-map"></div>
+        <ul data-role="listview" data-inset="true">
+          <li data-icon="user">
+            <a href="{{rt}}/login">Login</a>
+          </li>
+          <li data-icon="user">
+            <a href="{{rt}}/logout">Logout</a>
+          </li>
+          {{#is_authenticated}}
+          <li data-icon="user">
+            <a href="{{rt}}/admin/">Admin</a>
+          </li>
+          {{/is_authenticated}}
+        </ul>
       </div>
       <p class="footer">
         SlupskTool v{{version}}

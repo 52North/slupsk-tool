@@ -16,5 +16,11 @@ index_map = [{
         'type': 'geojson',
         'url': 'institutions.geojson',
         'popup': 'institution'
+    },
+    {
+        'name': 'Producers',
+        'type': 'geojson',
+        'url': 'producers.geojson',
+        'popup': 'producer'
     }]
 }]

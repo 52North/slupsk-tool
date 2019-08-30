@@ -20,7 +20,7 @@ class PhotoSerializer(patterns.AttachmentSerializer):
 
 
 class DishSerializer(patterns.AttachedModelSerializer):
-    composition = CompositionSerializer(many=True, required=False)
+    compositions = CompositionSerializer(many=True, required=False)
     photos = PhotoSerializer(many=True, required=False)
 
     class Meta:

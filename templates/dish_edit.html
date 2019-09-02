@@ -131,34 +131,46 @@
             {{/id}}{{/new_attachment}}
             {{^photo.name}}
             <li class="ui-field-contain">
-              {{#photo}}
-              <img src="{{photo}}"
-                   id="dish-photos-{{@index}}-photo-preview">
-              {{/photo}}
-              {{^photo}}
-              <img src="{{rt}}/images/empty.png"
-                   id="dish-photos-{{@index}}-photo-preview">
-              {{/photo}}
-              <label for="dish-photos-{{@index}}-photo">Photo</label>
-              {{#native}}
-              <input type="hidden" name="photos[{{@index}}][photo]" id="dish-photos-{{@index}}-photo"
-                     data-wq-type="file" data-wq-preview="dish-photos-{{@index}}-photo-preview">
-              <div>
-                <button type="button" data-inline="true" data-icon="camera" data-mini="true"
-                   data-wq-action="take" data-wq-input="dish-photos-{{@index}}-photo">
-                   Camera
-                </button>
-                <button type="button" data-inline="true" data-icon="grid" data-mini="true"
-                   data-wq-action="pick" data-wq-input="dish-photos-{{@index}}-photo">
-                   Gallery
-                </button>
+              <div data-role="collapsible" class="section-photos" data-collapsed="false">
+              <h4>Photo {{@index}}</h4>
+              <ul data-role="listview" data-inset="true">
+                <li>
+                {{#photo}}
+                <img src="{{photo}}"
+                     id="dish-photos-{{@index}}-photo-preview">
+                {{/photo}}
+                {{^photo}}
+                <img src="{{rt}}/images/empty.png"
+                     id="dish-photos-{{@index}}-photo-preview">
+                {{/photo}}
+                <label for="dish-photos-{{@index}}-photo">Photo</label>
+                {{#native}}
+                <input type="hidden" name="photos[{{@index}}][photo]" id="dish-photos-{{@index}}-photo"
+                       data-wq-type="file" data-wq-preview="dish-photos-{{@index}}-photo-preview">
+                <div>
+                  <button type="button" data-inline="true" data-icon="camera" data-mini="true"
+                     data-wq-action="take" data-wq-input="dish-photos-{{@index}}-photo">
+                     Camera
+                  </button>
+                  <button type="button" data-inline="true" data-icon="grid" data-mini="true"
+                     data-wq-action="pick" data-wq-input="dish-photos-{{@index}}-photo">
+                     Gallery
+                  </button>
+                </div>
+                {{/native}}
+                {{^native}}
+                <input type="file" name="photos[{{@index}}][photo]" id="dish-photos-{{@index}}-photo" accept='image/*'
+                       data-wq-preview="dish-photos-{{@index}}-photo-preview">
+                {{/native}}
+                <p class="error dish-photos-{{@index}}-photo-errors"></p>
+                </li>
+                <li>
+                  <button type="button" data-wq-action="removeattachment" data-wq-section="photos">
+                    Delete photo
+                  </button>
+                </li>
+              </ul>
               </div>
-              {{/native}}
-              {{^native}}
-              <input type="file" name="photos[{{@index}}][photo]" id="dish-photos-{{@index}}-photo" accept='image/*'
-                     data-wq-preview="dish-photos-{{@index}}-photo-preview">
-              {{/native}}
-              <p class="error dish-photos-{{@index}}-photo-errors"></p>
             </li>
             {{/photo.name}}
             {{#photo.name}}
@@ -172,11 +184,10 @@
             </li>
             {{/photo}}
             {{/photo.name}}
-            <li class="section-photos"></li>
             {{/photos}}
             <li>
               <button type="button" data-wq-action="addattachment" data-wq-section="photos">
-                 Add Photos
+                 Add Photo
               </button>
             </li>
             <li>

@@ -41,6 +41,16 @@
               <p class='error dish-name-errors'></p>
             </li>
             <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                <legend>Type of dish</legend>
+                {{#type_choices}}
+                <input type='radio' id='dish-type-{{name}}' data-wq-action="enabledisable" name='type' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='dish-type-{{name}}'>{{label}}</label>
+                {{/type_choices}}
+              </fieldset>
+              <p class='error dish-type-errors'></p>
+            </li>
+            <li class="ui-field-contain">
               <label for='dish-institution_id'>Institution</label>
               <select id='dish-institution_id' data-xform-type='string' name='institution_id'>
                 <option value="">Select one...</option>
@@ -51,7 +61,6 @@
                 {{/institution_list}}
               </select>
               <p class='error dish-institution_id-errors'></p>
-              <p style="color:red;">Ignore this field if you want to add a private dish.</p>
             </li>
             <li data-role="list-divider">Composition</li>
             {{#compositions}}

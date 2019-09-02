@@ -5,6 +5,16 @@ class Dish(models.Model):
     name = models.TextField(
         verbose_name="Name of dish",
     )
+    type = models.CharField(
+        choices=(
+            ("institutional", "Institutional"),
+            ("private", "Private"),
+        ),
+        max_length=13,
+        null=True,
+        blank=True,
+        verbose_name="Type of dish",
+    )
     institution = models.ForeignKey(
         "institution.Institution",
         on_delete=models.CASCADE,

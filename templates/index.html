@@ -70,10 +70,10 @@ See https://github.com/wq/wq.app/issues/63
           <li data-icon="user">
             <a href="{{rt}}/login">Login</a>
           </li>
+          {{#is_authenticated}}
           <li data-icon="user">
             <a href="{{rt}}/logout">Logout</a>
           </li>
-          {{#is_authenticated}}
           <li data-icon="user">
             <a href="{{rt}}/admin/">Admin</a>
           </li>

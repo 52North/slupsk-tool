@@ -10,6 +10,8 @@ app.use(patterns);
 app.use(locate);
 app.use(photos);
 
+map.createIcon("green", {'iconUrl': "/images/green.png"});
+
 config.presync = presync;
 config.postsync = postsync;
 var ready = app.init(config).then(function() {

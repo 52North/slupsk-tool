@@ -11,16 +11,20 @@ basemaps = [
 ];
 
 index_map = [{
+    'autoZoom' : False,
     'layers': [{
         'name': 'Institutions',
         'type': 'geojson',
         'url': 'institutions.geojson',
-        'popup': 'institution'
+        'popup': 'institution',
+        'cluster' : True
     },
     {
         'name': 'Producers',
         'type': 'geojson',
         'url': 'producers.geojson',
-        'popup': 'producer'
+        'popup': 'producer',
+        'cluster' : True,
+        'icon' : 'green'
     }]
 }]

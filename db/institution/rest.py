@@ -8,18 +8,32 @@ rest.router.register_model(
     locate=True,
     map=[{
         'mode': 'list',
-        'autoLayers': True,
-        'layers': [],
-    }, {
-        'mode': 'detail',
-        'autoLayers': True,
-        'layers': [],
-    }, {
-        'mode': 'edit',
+        'autoZoom' : False,
         'layers': [{
             'type': 'geojson',
-            'name': 'geometry',
+            'name': 'Institutions',
+            'url': 'institutions.geojson',
+            'popup': 'institution',
+            'cluster' : True
+        }],
+    }, {
+        'mode': 'detail',
+        'autoZoom' : True,
+        'layers': [{
+            'type': 'geojson',
+            'name': 'Institution',
+            'url': 'institutions/{{id}}.geojson',
+            'popup': 'institution',
+            'flatten': True,
+        }],
+    }, {
+        'mode': 'edit',
+        'autoZoom' : True,
+        'layers': [{
+            'type': 'geojson',
+            'name': 'Institution',
             'url': 'institutions/{{id}}/edit.geojson',
+            'popup': 'institution',
             'geometryField': 'geometry',
             'flatten': True,
         }],

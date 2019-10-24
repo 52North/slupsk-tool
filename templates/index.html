@@ -31,12 +31,46 @@ See https://github.com/wq/wq.app/issues/63
         </a>
       </div>
       <div data-role="header">
-        <h1>Citizens Reporting on Food, Water and Energy in Slupsk</h1>
+        <h1>Creating Interfaces - Slupsk</h1>
       </div>
       <div role="main" class="ui-content">
-        <p>Where does my food come from? Here you can find information about menus in kindergartens and propose new dishes yourself!</p>
-        <div class="map detail-map" id="index-map"></div>
-        <ul data-role="listview" data-inset="true">
+        <div class="map detail-map" id="index-map">
+          <div data-role="collapsible" class = "instruction" id="instruction1" data-collapsed="false" style="visibility: visible;">
+            <h4>Where does my food come from?</h4>
+            <div style="overflow: auto;">
+            <p>
+              What do my children eat? Where does the food come from and what distance did the ingredients cover? How much water and energy was used for production and transport? <br><br> By giving us insights into your favorite dishes you can help us in answering these questions!
+            </p>
+            <a href="#" class="ui-btn ui-icon-arrow-r ui-btn-inline ui-btn-icon-notext ui-corner-all"  data-wq-action="instruction-forward" style="float: right;">No text</a>
+            </div>
+          </div>
+          <div data-role="collapsible" class = "instruction" id="instruction2" data-collapsed="false" style="visibility: hidden;">
+            <h4>Where does my food come from?</h4>
+            <div style="overflow: auto;">
+            <p>
+              You are working at a kindergarten and want to share the kindergarten menu? You are a parent and want to share your favorite dishes at home?
+              Click the below link to tell us about a dish! <br> <br>
+              <a href="{{rt}}/dishes/new">Add dish</a> <br> <br>
+              You want to learn about dishes from kindergartens or your neighbors? Click the link below! <br> <br>
+              <a href="{{rt}}/dishes/">View dishes</a>
+            </p>
+            <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-inline ui-btn-icon-notext ui-corner-all" data-wq-action="instruction-backward" style="float: left;">No text</a>
+            <a href="#" class="ui-btn ui-icon-arrow-r ui-btn-inline ui-btn-icon-notext ui-corner-all" data-wq-action="instruction-forward" style="float: right;">No text</a>
+            </div>
+          </div>
+          <div data-role="collapsible" class = "instruction" id="instruction3" data-collapsed="false" style="visibility: hidden;">
+            <h4>Where does my food come from?</h4>
+            <div style="overflow: auto;">
+            <p>
+              You cannot find a prodcuer or an ingredient in the list? Click the link below to add a new producer or ingredient! <br> <br>
+              <a href="{{rt}}/producers/new">Add producer</a> <br> <br>
+              <a href="{{rt}}/ingredients/new">Add ingredient</a>
+            </p>
+            <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-inline ui-btn-icon-notext ui-corner-all" data-wq-action="instruction-backward" style="float: left;">No text</a>
+            </div>
+          </div>
+        </div>
+        <!-- <ul data-role="listview" data-inset="true">
           <li data-icon="plus">
             <a href="{{rt}}/dishes/new">Add dish</a>
           </li>
@@ -78,13 +112,13 @@ See https://github.com/wq/wq.app/issues/63
             <a href="{{rt}}/admin/">Admin</a>
           </li>
           {{/is_authenticated}}
-        </ul>
+        </ul> -->
       </div>
-      <p class="footer">
+      <!-- <p class="footer">
         SlupskTool v{{version}}
         &bull;
         Powered by <a href="https://wq.io/">wq</a>
-      </p>
+      </p> -->
     </div>
   </body>
 </html>

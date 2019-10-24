@@ -22,3 +22,15 @@
   font-size: 35;
   font-style: normal;
 }
+
+.map.detail-map {
+    height: 700px;
+}
+
+.instruction {
+  width: 94%;
+  position: absolute;
+  z-index: 500;
+  top: 80px;
+  left: 3%;
+}

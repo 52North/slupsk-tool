@@ -75,6 +75,9 @@ TEMPLATES[0]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['con
 TEMPLATES[1]['OPTIONS']['context_processors']=list(TEMPLATES[0]['OPTIONS']['context_processors'])
 TEMPLATES[1]['OPTIONS']['context_processors'].append('django.contrib.messages.context_processors.messages')
 TEMPLATES[1]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['context_processors'])
+TEMPLATES[0]['OPTIONS']['context_processors'] += (
+    'SlupskTool.context_processors.route_base_url',
+)
 
 # wq: Recommended settings unique to wq.db
 from wq.db.default_settings import (

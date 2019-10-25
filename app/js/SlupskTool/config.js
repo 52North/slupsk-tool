@@ -4,7 +4,7 @@ function(config, templates, version, module) {
 var overrides = module.config();
 
 config.router = {
-    'base_url': ''
+    'base_url': '/slupsk-tool'
 };
 
 config.template = {

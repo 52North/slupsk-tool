@@ -10,7 +10,10 @@ config.router = {
 config.template = {
     'templates': templates,
     'defaults': {
-        'version': version
+        'version': version,
+        'first_photo': function() {
+            return this['photos[0][photo]'];
+        }
     }
 };
 

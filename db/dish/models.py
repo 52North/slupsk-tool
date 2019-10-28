@@ -86,6 +86,9 @@ class Photo(models.Model):
         verbose_name="Photo",
     )
 
+    def __label__(self):
+        return self.photo and self.photo.name
+
     class Meta:
         verbose_name = "photo"
         verbose_name_plural = "photos"

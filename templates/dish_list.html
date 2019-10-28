@@ -57,7 +57,17 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/dishes/{{id}}">{{label}}</a>
+              <a href="{{rt}}/dishes/{{id}}">
+                {{#first_photo}}
+                  <img src="{{svc}}/media/{{first_photo}}" alt="{{label}}">
+                {{/first_photo}}
+                {{^first_photo}}
+                  <img src="{{rt}}/images/empty.png" alt="No Image">
+                {{/first_photo}}
+                <h3>
+                  {{label}}
+                </h3>
+              </a>
             </li>
             {{/list}}
             {{#page_config.can_add}}

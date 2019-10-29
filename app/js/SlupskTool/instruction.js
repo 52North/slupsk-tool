@@ -3,8 +3,6 @@ define({
 
         $page.on('click', 'a[data-wq-action=instruction-forward]', function(evt) {
 
-          console.log("Hello World!")
-
           // Hide widget
           var $button = $(evt.target);
           var $parent = $button.parent().parent().parent();
@@ -12,9 +10,10 @@ define({
           $parent.css("visibility","hidden");
 
           // Show next widget
-          var $element = document.getElementById("instruction".concat( parseInt($parent.prop('id').substring(11, 12),10) + 1 ));
+          var $id = parseInt($parent.prop('id').substring(11, 12),10) + 1;
+          var $element = document.getElementById( "instruction".concat($id) );
           $element.style.visibility = "visible";
-
+          localStorage.setItem("instructionIndex", $id);
 
         })
 
@@ -27,11 +26,27 @@ define({
           $parent.css("visibility","hidden");
 
           // Show previous widget
-          var $element = document.getElementById("instruction".concat( parseInt($parent.prop('id').substring(11, 12),10) - 1 ));
+          var $id = parseInt($parent.prop('id').substring(11, 12),10) - 1;
+          var $element = document.getElementById( "instruction".concat($id) );
           $element.style.visibility = "visible";
-
+          localStorage.setItem("instructionIndex", $id);
 
         })
+
+        $page.ready( function() {
+
+          var instructionIndex = localStorage.getItem("instructionIndex");
+
+          for (i = 1; i <= 3; i++) {
+            if ( i == instructionIndex) {
+              document.getElementById( "instruction".concat(i) ).style.visibility = "visible";
+            } else {
+              document.getElementById( "instruction".concat(i) ).style.visibility = "hidden";
+            }
+          }
+
+        })
+
 
       }
 });

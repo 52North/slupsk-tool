@@ -24,6 +24,22 @@ def insertData(apps, schema_editor):
      institution.save()
      institution = Institution(name = "Przedszkole Miejskie nr 10 Świat Fantazji", adress = "Zygmunta Augusta 10 , 76-200 Słupsk", latitude = 54.466684, longitude = 17.00794, accuracy=150)
      institution.save()
+     institution = Institution(name = "Przedszkole Miejskie nr 11 Calineczka", adress = "Kosynierów Gdyńskich 6, 76-200 Słupsk", latitude = 54.457017, longitude = 17.057623, accuracy=150)
+     institution.save()
+     institution = Institution(name = "Przedszkole Miejskie nr 12 Niezapominajka ", adress = "Koszalińska 9, 76-200 Słupsk", latitude = 54.456091, longitude = 16.996595, accuracy=150)
+     institution.save()
+     institution = Institution(name = "Przedszkole Miejskie nr 15", adress = "Wiatraczna 6, 76-200 Słupsk", latitude = 54.476456, longitude = 17.005227, accuracy=150)
+     institution.save()
+     institution = Institution(name = "Przedszkole Miejskie nr 19 Słupskiego Chłopczyka ", adress = "Norwida 4, 76-200 Słupsk", latitude = 54.464423, longitude = 16.994943, accuracy=150)
+     institution.save()
+     institution = Institution(name = "Przedszkole Miejskie nr 23 Promyczek", adress = "Wazów 1 , 76-200 Słupsk", latitude = 4.473277, longitude = 17.006214, accuracy=150)
+     institution.save()
+     institution = Institution(name = "Przedszkole Miejskie nr 24 Słupski Niedźwiadek Szczęścia ", adress = "3 Maja 15 , 76-200 Słupsk", latitude = 54.474262, longitude = 17.011342, accuracy=150)
+     institution.save()
+     institution = Institution(name = "Przedszkole Miejskie nr 31 Bajkowa Kraina", adress = "Witosa 1, 76-200 Słupsk", latitude = 54.461292, longitude = 16.983678, accuracy=150)
+     institution.save()
+     institution = Institution(name = "Przedszkole Miejskie Integracyjne nr 32 Tęczowa Kraina ", adress = "Kasztanowa 1 , 76-200 Słupsk", latitude = 54.457117, longitude = 17.052988, accuracy=150)
+     institution.save()
 
 class Migration(migrations.Migration):
 

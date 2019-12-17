@@ -37,11 +37,16 @@ define({
 
           var instructionIndex = localStorage.getItem("instructionIndex");
 
-          for (i = 1; i <= 3; i++) {
-            if ( i == instructionIndex) {
-              document.getElementById( "instruction".concat(i) ).style.visibility = "visible";
-            } else {
-              document.getElementById( "instruction".concat(i) ).style.visibility = "hidden";
+          var getUrl = window.location;
+          var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
+
+          if (document.URL === baseUrl) {
+            for (i = 1; i <= 3; i++) {
+              if ( i == instructionIndex) {
+                document.getElementById( "instruction".concat(i) ).style.visibility = "visible";
+              } else {
+                document.getElementById( "instruction".concat(i) ).style.visibility = "hidden";
+              }
             }
           }
 

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} private dish</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} private dish</h1>
+        {{#id}}
+        {{#page_config.can_delete}}
+        <form action="{{svc}}/privatedishs/{{id}}" method="post" data-ajax="false"
+          data-wq-json="true" data-wq-background-sync="false"
+          onsubmit="return require('wq/app').confirmSubmit(this, 'Are you sure you want to delete this record?');">
+          {{>csrf}}
+          <input type=hidden name="_method" value="DELETE">
+          <button type="submit" data-icon="delete" class="ui-btn-right">
+            Delete
+          </button>
+        </form>
+        {{/page_config.can_delete}}
+        {{/id}}
+      </div>
+      <div role="main" class="ui-content">
+        <form action="{{svc}}/privatedishs/{{id}}" method="post" data-ajax="false"
+            data-wq-json="true"
+            {{#outbox_id}}
+              data-wq-outbox-id="{{outbox_id}}"
+              data-wq-outbox-preserve=""
+            {{/outbox_id}}>
+          {{>csrf}}
+          {{#id}}
+          <input type=hidden name="_method" value="PUT">
+          {{/id}}
+          <ul data-role="listview" data-inset="true">
+            <li class="ui-field-contain">
+              <label for='privatedish-name'>Enter the name of the dish</label>
+              <input id='privatedish-name' type='text' data-xform-type='string' name='name' value="{{name}}">
+              <p class='error privatedish-name-errors'></p>
+            </li>
+            <li>
+              <label for='privatedish-distance_calculator'>Use the map to check the location of shops and to estimate the distance (see below questions).</label>
+              <input type='hidden' data-xform-type='geotrace' name='distance_calculator'>
+              <div class="map edit-map" id='privatedish-{{id}}{{^id}}new{{/id}}-edit-map'></div>
+              <p class='error privatedish-distance_calculator-errors'></p>
+            </li>
+            <li data-role="list-divider">Ingredients</li>
+            {{#compositions}}
+            {{^new_attachment}}{{#id}}
+            <input type="hidden" name="compositions[{{@index}}][id]" value="{{id}}">
+            {{/id}}{{/new_attachment}}
+            <li class="ui-field-contain">
+            <div data-role="collapsible" class="section-compositions" data-collapsed="false">
+              <h4>Ingredient {{@index}}</h4>
+              <ul data-role="listview" data-inset="true">
+                <li class="ui-field-contain">
+                  <label for='privatedish-compositions-{{@index}}-ingredient_id'>Ingredient</label>
+                  <select id='privatedish-compositions-{{@index}}-ingredient_id' data-xform-type='string' name='compositions[{{@index}}][ingredient_id]'>
+                    <option value="">Select one...</option>
+                    {{#ingredient_list}}
+                    <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                      {{#outbox}}*{{/outbox}} {{label}}
+                    </option>
+                    {{/ingredient_list}}
+                  </select>
+                  <p class='error privatedish-compositions-{{@index}}-ingredient_id-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <label for='privatedish-compositions-{{@index}}-producer_id'>Where was it bought?</label>
+                  <select id='privatedish-compositions-{{@index}}-producer_id' data-xform-type='string' name='compositions[{{@index}}][producer_id]'>
+                    <option value="">Select one...</option>
+                    {{#producer_list}}
+                    <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                      {{#outbox}}*{{/outbox}} {{label}}
+                    </option>
+                    {{/producer_list}}
+                  </select>
+                  <p class='error privatedish-compositions-{{@index}}-producer_id-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <legend>Enter the place of origin</legend>
+                    {{#origin_choices}}
+                    <input type='radio' id='privatedish-compositions-{{@index}}-origin-{{name}}' name='compositions[{{@index}}][origin]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                    <label for='privatedish-compositions-{{@index}}-origin-{{name}}'>{{label}}</label>
+                    {{/origin_choices}}
+                  </fieldset>
+                  <p class='error privatedish-compositions-{{@index}}-origin-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <legend>Enter the mode of production</legend>
+                    {{#production_mode_choices}}
+                    <input type='radio' id='privatedish-compositions-{{@index}}-production_mode-{{name}}' name='compositions[{{@index}}][production_mode]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                    <label for='privatedish-compositions-{{@index}}-production_mode-{{name}}'>{{label}}</label>
+                    {{/production_mode_choices}}
+                  </fieldset>
+                  <p class='error privatedish-compositions-{{@index}}-production_mode-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <label for='privatedish-compositions-{{@index}}-price'>Enter the price (PLN)</label>
+                  <input id='privatedish-compositions-{{@index}}-price' type='number' data-xform-type='decimal' name='compositions[{{@index}}][price]' step='0.001' value="{{price}}">
+                  <p class='error privatedish-compositions-{{@index}}-price-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <legend>Was the ingredient bought directly from the producer?</legend>
+                    {{#from_producer_choices}}
+                    <input type='radio' id='privatedish-compositions-{{@index}}-from_producer-{{name}}' name='compositions[{{@index}}][from_producer]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                    <label for='privatedish-compositions-{{@index}}-from_producer-{{name}}'>{{label}}</label>
+                    {{/from_producer_choices}}
+                  </fieldset>
+                  <p class='error privatedish-compositions-{{@index}}-from_producer-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <label for='privatedish-compositions-{{@index}}-distance'>Enter the distance (km) from the shop to your house.</label>
+                  <input id='privatedish-compositions-{{@index}}-distance' type='number' data-xform-type='decimal' name='compositions[{{@index}}][distance]' step='0.001' value="{{distance}}">
+                  <p class="hint">You can use the line tool in the map above to estimate the distance.</p>
+                  <p class='error privatedish-compositions-{{@index}}-distance-errors'></p>
+                </li>
+                <li>
+                    <button type="button" data-wq-action="removeattachment" data-wq-section="compositions">
+                      Delete ingredient
+                    </button>
+                </li>
+              </ul>
+            </div>
+            </li>
+            {{/compositions}}
+            <li>
+              <button type="button" data-wq-action="addattachment" data-wq-section="compositions">
+                 Add ingredient
+              </button>
+            </li>
+            <li data-role="list-divider">Ratings</li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                <legend>Did you like it?</legend>
+                {{#satisfaction_choices}}
+                <input type='radio' id='privatedish-satisfaction-{{name}}' name='satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='privatedish-satisfaction-{{name}}'>{{label}}</label>
+                {{/satisfaction_choices}}
+              </fieldset>
+              <p class='hint'>(1 = „it was awful&quot;, 5 = „it was delicious&quot;)</p>
+              <p class='error privatedish-satisfaction-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                <legend>Do you think it is healthy?</legend>
+                {{#health_choices}}
+                <input type='radio' id='privatedish-health-{{name}}' name='health' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='privatedish-health-{{name}}'>{{label}}</label>
+                {{/health_choices}}
+              </fieldset>
+              <p class='hint'>(1 = „it is very bad for my health&quot;, 5 = „it is very healthy&quot;)</p>
+              <p class='error privatedish-health-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                <legend>Do you think it is a high quality product?</legend>
+                {{#quality_choices}}
+                <input type='radio' id='privatedish-quality-{{name}}' name='quality' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='privatedish-quality-{{name}}'>{{label}}</label>
+                {{/quality_choices}}
+              </fieldset>
+              <p class='hint'>(1 = „bad quality&quot;, 5 = „high quality&quot;)</p>
+              <p class='error privatedish-quality-errors'></p>
+            </li>
+            <li>
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <a href="{{rt}}/privatedishs/{{id}}" data-role="button" data-icon="back" data-direction="reverse">
+                    Back
+                  </a>
+                </div>
+                <div class="ui-block-b">
+                  <button type="submit" data-icon="check" data-theme="b">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <p class="error privatedish-errors"></p>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -26,5 +26,13 @@ index_map = [{
         'popup': 'shop',
         'cluster' : True,
         'icon' : 'green'
+    },
+    {
+    'name': 'Producers',
+    'type': 'geojson',
+    'url': 'producers.geojson',
+    'popup': 'producer',
+    'cluster' : True,
+    'icon' : 'orange'
     }]
 }]

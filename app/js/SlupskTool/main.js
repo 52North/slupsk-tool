@@ -14,6 +14,7 @@ app.use(photos);
 
 //  Add new map icon
 map.createIcon("green", {'iconUrl': "/images/green.png"});
+map.createIcon("orange", {'iconUrl': "/images/orange.png"});
 
 config.presync = presync;
 config.postsync = postsync;

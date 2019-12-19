@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'shop',
     'kindergartendish',
     'dishrating',
+    'producer',
 ]
 
 MIDDLEWARE = [

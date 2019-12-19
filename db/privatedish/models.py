@@ -1,4 +1,5 @@
 from django.contrib.gis.db import models
+import pystache
 
 
 class Privatedish(models.Model):
@@ -55,6 +56,11 @@ class Privatedish(models.Model):
         verbose_name="Do you think it is a high quality product?",
         help_text="(1 = „bad quality&quot;, 5 = „high quality&quot;)",
     )
+
+    wq_label_template = "{{name}}"
+
+    def __str__(self):
+        return pystache.render(self.wq_label_template, self)
 
     class Meta:
         verbose_name = "privatedish"

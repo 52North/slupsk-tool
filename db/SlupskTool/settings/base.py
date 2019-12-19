@@ -93,7 +93,7 @@ ANONYMOUS_PERMISSIONS = [
     'ingredient.add_ingredient',
     'kindergartendish.add_kindergartendish',
     'dishrating.add_dishrating',
-    'prodcuer.add_prodcuer',
+    'producer.add_producer',
     'privatedish.add_privatedish',
 ]
 

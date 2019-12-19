@@ -1,4 +1,5 @@
 from django.contrib.gis.db import models
+import pystache
 
 
 class Producer(models.Model):
@@ -44,6 +45,11 @@ class Producer(models.Model):
         blank=True,
         verbose_name="GPS Accuracy",
     )
+
+    wq_label_template = "{{name}}"
+
+    def __str__(self):
+        return pystache.render(self.wq_label_template, self)
 
     class Meta:
         verbose_name = "producer"

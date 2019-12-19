@@ -47,7 +47,6 @@ rest.router.register_model(
                 'polygon': False,
                 'rectangle': False,
             },
-            'geometryField': 'distance_calculator',
             'flatten': True,
         },
         {

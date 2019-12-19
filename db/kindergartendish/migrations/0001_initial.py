@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('institution', '0002_auto_20190822_1210'),
+        ('kindergarten', '0002_auto_20190822_1210'),
         ('ingredient', '0002_auto_20191217_1637'),
     ]
 
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('date', models.DateField(blank=True, null=True, verbose_name='Choose the particular date')),
                 ('name', models.TextField(blank=True, null=True, verbose_name='Enter the name of the dish')),
                 ('ingredient_list', models.TextField(blank=True, help_text='Please enter the name of the ingredients separated by a comma.', null=True, verbose_name='Ingredients')),
-                ('kindergarten', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='institution.Institution', verbose_name='Kindergarten')),
+                ('kindergarten', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='kindergarten.Kindergarten', verbose_name='Kindergarten')),
             ],
             options={
                 'verbose_name': 'kindergartendish',

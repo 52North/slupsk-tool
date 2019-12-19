@@ -1,9 +1,9 @@
 from wq.db import rest
-from .models import Institution
+from .models import Shop
 
 
 rest.router.register_model(
-    Institution,
+    Shop,
     fields="__all__",
     locate=True,
     map=[{
@@ -11,31 +11,34 @@ rest.router.register_model(
         'autoZoom' : False,
         'layers': [{
             'type': 'geojson',
-            'name': 'Institutions',
-            'url': 'institutions.geojson',
-            'popup': 'institution',
-            'cluster' : True
+            'name': 'Shops',
+            'url': 'shops.geojson',
+            'popup': 'shop',
+            'cluster' : True,
+            'icon' : 'green',
         }],
     }, {
         'mode': 'detail',
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Institution',
-            'url': 'institutions/{{id}}.geojson',
-            'popup': 'institution',
+            'name': 'Shop',
+            'url': 'shops/{{id}}.geojson',
+            'popup': 'shop',
             'flatten': True,
+            'icon' : 'green',
         }],
     }, {
         'mode': 'edit',
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Institution',
-            'url': 'institutions/{{id}}/edit.geojson',
-            'popup': 'institution',
+            'name': 'Shop',
+            'url': 'shops/{{id}}/edit.geojson',
+            'popup': 'shop',
             'geometryField': 'geometry',
             'flatten': True,
+            'icon' : 'green',
         }],
     }],
 )

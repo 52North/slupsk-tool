@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     # Project apps
     'index',
     'dish',
-    'institution',
+    'kindergarten',
     'ingredient',
-    'producer',
+    'shop',
     'kindergartendish',
     'dishrating',
 ]
@@ -89,7 +89,7 @@ from wq.db.default_settings import (
 
 ANONYMOUS_PERMISSIONS = [
     'dish.add_dish',
-    'producer.add_producer',
+    'shop.add_shop',
     'ingredient.add_ingredient',
     'kindergartendish.add_kindergartendish',
     'dishrating.add_dishrating',

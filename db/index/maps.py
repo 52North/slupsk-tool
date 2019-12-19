@@ -13,17 +13,17 @@ basemaps = [
 index_map = [{
     'autoZoom' : False,
     'layers': [{
-        'name': 'Institutions',
+        'name': 'Kindergartens',
         'type': 'geojson',
-        'url': 'institutions.geojson',
-        'popup': 'institution',
+        'url': 'kindergartens.geojson',
+        'popup': 'kindergarten',
         'cluster' : True
     },
     {
-        'name': 'Producers',
+        'name': 'Shops',
         'type': 'geojson',
-        'url': 'producers.geojson',
-        'popup': 'producer',
+        'url': 'shops.geojson',
+        'popup': 'shop',
         'cluster' : True,
         'icon' : 'green'
     }]

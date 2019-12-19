@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>List of institutions{{#parent_id}} for {{parent_label}}{{/parent_id}}</title>
+    <title>List of shops{{#parent_id}} for {{parent_label}}{{/parent_id}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page" data-wq-sync-refresh="true">
       <div data-role="header">
         {{>home}}
-        <h1>List of institutions{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
+        <h1>List of shops{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
         {{#page_config.can_add}}
-        <a href="{{rt}}/institutions/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
+        <a href="{{rt}}/shops/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
           Add New
         </a>
         {{/page_config.can_add}}
@@ -35,18 +35,11 @@
           <li>
             <div class="ui-grid-a ui-responsive">
               <div class="ui-block-a">
-                {{#is_authenticated}}
                 <button class="sync" data-icon="refresh"
                     onclick="require('wq/app').sync(true);">
                   {{#syncing}}Syncing...{{/syncing}}
                   {{^syncing}}Sync Now{{/syncing}}
                 </button>
-                {{/is_authenticated}}
-                {{^is_authenticated}}
-                <a href="{{rt}}/login" data-role="button" data-icon="lock">
-                  Log in to Sync
-                </a>
-                {{/is_authenticated}}
               </div>
               <div class="ui-block-b">
                 <button type="button" data-icon="delete"
@@ -66,18 +59,18 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/institutions/{{id}}">{{label}}</a>
+              <a href="{{rt}}/shops/{{id}}">{{label}}</a>
             </li>
             {{/list}}
             {{#page_config.can_add}}
             <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/institutions/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add institution</a>
+              <a href="{{rt}}/shops/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add shop</a>
             </li>
             {{/page_config.can_add}}
           </ul>
         </div>
         <div class="ui-block-b">
-          <div class='map list-map' id="{{#parent_id}}{{parent_page}}-{{parent_id}}-{{/parent_id}}institution-map"></div>
+          <div class='map list-map' id="{{#parent_id}}{{parent_page}}-{{parent_id}}-{{/parent_id}}shop-map"></div>
         </div>
         </div>
       </div>

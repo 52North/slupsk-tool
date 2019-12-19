@@ -1,9 +1,9 @@
 from wq.db import rest
-from .models import Producer
+from .models import Kindergarten
 
 
 rest.router.register_model(
-    Producer,
+    Kindergarten,
     fields="__all__",
     locate=True,
     map=[{
@@ -11,34 +11,31 @@ rest.router.register_model(
         'autoZoom' : False,
         'layers': [{
             'type': 'geojson',
-            'name': 'Producers',
-            'url': 'producers.geojson',
-            'popup': 'producer',
-            'cluster' : True,
-            'icon' : 'green',
+            'name': 'Kindergartens',
+            'url': 'kindergartens.geojson',
+            'popup': 'kindergarten',
+            'cluster' : True
         }],
     }, {
         'mode': 'detail',
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Producer',
-            'url': 'producers/{{id}}.geojson',
-            'popup': 'producer',
+            'name': 'Kindergarten',
+            'url': 'kindergartens/{{id}}.geojson',
+            'popup': 'kindergarten',
             'flatten': True,
-            'icon' : 'green',
         }],
     }, {
         'mode': 'edit',
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Producer',
-            'url': 'producers/{{id}}/edit.geojson',
-            'popup': 'producer',
+            'name': 'Kindergarten',
+            'url': 'kindergartens/{{id}}/edit.geojson',
+            'popup': 'kindergarten',
             'geometryField': 'geometry',
             'flatten': True,
-            'icon' : 'green',
         }],
     }],
 )

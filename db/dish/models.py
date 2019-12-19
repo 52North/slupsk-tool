@@ -15,13 +15,13 @@ class Dish(models.Model):
         blank=True,
         verbose_name="Type of dish",
     )
-    institution = models.ForeignKey(
-        "institution.Institution",
+    kindergarten = models.ForeignKey(
+        "kindergarten.Kindergarten",
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        verbose_name="Institution",
-        related_name='dish_institution',
+        verbose_name="Kindergarten",
+        related_name='dish_kindergarten',
     )
 
     wq_label_template = "{{name}}"
@@ -62,12 +62,12 @@ class Composition(models.Model):
         blank=True,
         verbose_name="Place of origin",
     )
-    producer = models.ForeignKey(
-        "producer.Producer",
+    shop = models.ForeignKey(
+        "shop.Shop",
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        verbose_name="Producer",
+        verbose_name="Shop",
     )
 
     class Meta:

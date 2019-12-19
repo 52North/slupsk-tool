@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Producer',
+            name='Kindergarten',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.TextField(verbose_name='Name')),
@@ -25,8 +25,8 @@ class Migration(migrations.Migration):
                 ('accuracy', models.FloatField(blank=True, null=True, verbose_name='GPS Accuracy')),
             ],
             options={
-                'verbose_name': 'producer',
-                'verbose_name_plural': 'producers',
+                'verbose_name': 'kindergarten',
+                'verbose_name_plural': 'kindergartens',
             },
         ),
     ]

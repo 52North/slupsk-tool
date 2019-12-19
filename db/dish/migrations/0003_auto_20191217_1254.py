@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='dish',
-            name='institution',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='dish_institution', to='institution.Institution', verbose_name='Institution'),
+            name='kindergarten',
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='dish_kindergarten', to='kindergarten.Kindergarten', verbose_name='Kindergarten'),
         ),
     ]

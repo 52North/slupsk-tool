@@ -1,7 +1,7 @@
 from django.contrib.gis.db import models
 import pystache
 
-class Producer(models.Model):
+class Shop(models.Model):
     name = models.TextField(
         verbose_name="Name",
     )
@@ -49,5 +49,5 @@ class Producer(models.Model):
         return pystache.render(self.wq_label_template, self)
 
     class Meta:
-        verbose_name = "producer"
-        verbose_name_plural = "producers"
+        verbose_name = "shop"
+        verbose_name_plural = "shops"

@@ -51,16 +51,16 @@
               <p class='error dish-type-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='dish-institution_id'>Institution</label>
-              <select id='dish-institution_id' data-xform-type='string' name='institution_id'>
+              <label for='dish-kindergarten_id'>Kindergarten</label>
+              <select id='dish-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
                 <option value="">Select one...</option>
-                {{#institution_list}}
+                {{#kindergarten_list}}
                 <option value="{{id}}"{{#selected}} selected{{/selected}}>
                  {{#outbox}}*{{/outbox}} {{label}}
                 </option>
-                {{/institution_list}}
+                {{/kindergarten_list}}
               </select>
-              <p class='error dish-institution_id-errors'></p>
+              <p class='error dish-kindergarten_id-errors'></p>
             </li>
             <li data-role="list-divider">Composition</li>
             {{#compositions}}
@@ -99,16 +99,16 @@
                   <p class='error dish-compositions-{{@index}}-origin-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                    <label for='dish-compositions-{{@index}}-producer_id'>Producer</label>
-                    <select id='dish-compositions-{{@index}}-producer_id' data-xform-type='string' name='compositions[{{@index}}][producer_id]'>
+                    <label for='dish-compositions-{{@index}}-shop_id'>shop</label>
+                    <select id='dish-compositions-{{@index}}-shop_id' data-xform-type='string' name='compositions[{{@index}}][shop_id]'>
                       <option value="">Select one...</option>
-                      {{#producer_list}}
+                      {{#shop_list}}
                       <option value="{{id}}"{{#selected}} selected{{/selected}}>
                        {{#outbox}}*{{/outbox}} {{label}}
                       </option>
-                      {{/producer_list}}
+                      {{/shop_list}}
                     </select>
-                    <p class='error dish-compositions-{{@index}}-producer_id-errors'></p>
+                    <p class='error dish-compositions-{{@index}}-shop_id-errors'></p>
                 </li>
                 <li>
                     <button type="button" data-wq-action="removeattachment" data-wq-section="compositions">

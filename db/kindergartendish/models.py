@@ -4,7 +4,7 @@ import pystache
 
 class Kindergartendish(models.Model):
     kindergarten = models.ForeignKey(
-        "institution.Institution",
+        "kindergarten.Kindergarten",
         on_delete=models.CASCADE,
         null=True,
         blank=True,

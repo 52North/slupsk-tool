@@ -9,8 +9,8 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('institution', '0001_initial'),
-        ('producer', '0001_initial'),
+        ('kindergarten', '0001_initial'),
+        ('shop', '0001_initial'),
         ('ingredient', '0001_initial'),
     ]
 
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.TextField(verbose_name='Name of dish')),
-                ('institution', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='institution.Institution', verbose_name='Institution')),
+                ('kindergarten', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='kindergarten.Kindergarten', verbose_name='Kindergarten')),
             ],
             options={
                 'verbose_name': 'dish',
@@ -47,7 +47,7 @@ class Migration(migrations.Migration):
                 ('origin', models.CharField(blank=True, choices=[('local', 'Local'), ('regional', 'Regional'), ('global', 'Global')], max_length=8, null=True, verbose_name='Place of origin')),
                 ('dish', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='compositions', to='dish.Dish')),
                 ('ingredient', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ingredient.Ingredient', verbose_name='Ingredient')),
-                ('producer', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='producer.Producer', verbose_name='Producer')),
+                ('shop', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='shop.Shop', verbose_name='Shop')),
             ],
             options={
                 'verbose_name': 'composition',

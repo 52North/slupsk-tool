@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('kindergartendish', '0001_initial'),
-        ('institution', '0002_auto_20190822_1210'),
+        ('kindergarten', '0002_auto_20190822_1210'),
     ]
 
     operations = [
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('quality', models.CharField(blank=True, choices=[('one', '1'), ('two', '2'), ('three', '3'), ('four', '4'), ('five', '5')], help_text='(1 = „bad quality&quot;, 5 = „high quality&quot;)', max_length=5, null=True, verbose_name='Do you think it is a high quality dish?')),
                 ('comment', models.TextField(blank=True, null=True, verbose_name='Do you have any further comments?')),
                 ('dish', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='kindergartendish.Kindergartendish', verbose_name='Choose a dish')),
-                ('kindergarten', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='institution.Institution', verbose_name='Kindergarten')),
+                ('kindergarten', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='kindergarten.Kindergarten', verbose_name='Kindergarten')),
             ],
             options={
                 'verbose_name': 'dishrating',

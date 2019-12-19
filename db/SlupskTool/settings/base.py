@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'institution',
     'ingredient',
     'producer',
+    'kindergartendish',
+    'dishrating',
 ]
 
 MIDDLEWARE = [
@@ -89,6 +91,8 @@ ANONYMOUS_PERMISSIONS = [
     'dish.add_dish',
     'producer.add_producer',
     'ingredient.add_ingredient',
+    'kindergartendish.add_kindergartendish',
+    'dishrating.add_dishrating',
 ]
 
 WSGI_APPLICATION = 'SlupskTool.wsgi.application'

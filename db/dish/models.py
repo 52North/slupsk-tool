@@ -21,6 +21,7 @@ class Dish(models.Model):
         null=True,
         blank=True,
         verbose_name="Institution",
+        related_name='dish_institution',
     )
 
     wq_label_template = "{{name}}"
@@ -43,6 +44,7 @@ class Composition(models.Model):
         "ingredient.Ingredient",
         on_delete=models.CASCADE,
         verbose_name="Ingredient",
+        related_name='dish_ingredient',
     )
     quantity_gram = models.FloatField(
         null=True,

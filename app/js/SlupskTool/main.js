@@ -1,16 +1,18 @@
-define(['wq/app', './removeattachment', './enabledisable', './instruction', 'wq/map', 'wq/patterns', 'wq/photos', 'wq/locate',
+define(['wq/app', './removeattachment', './enabledisable', './instruction', './filter', 'wq/map', 'wq/patterns', 'wq/photos', 'wq/locate',
         './config',
         'leaflet.draw', 'leaflet.markercluster'],
-function(app, removeattachment, enabledisable, instruction, map, patterns, locate, photos, config) {
+function(app, removeattachment, enabledisable, instruction, filter, map, patterns, locate, photos, config) {
 
 app.use(removeattachment);
 app.use(enabledisable);
 app.use(instruction);
+app.use(filter);
 app.use(map);
 app.use(patterns);
 app.use(locate);
 app.use(photos);
 
+//  Add new map icon
 map.createIcon("green", {'iconUrl': "/images/green.png"});
 
 config.presync = presync;

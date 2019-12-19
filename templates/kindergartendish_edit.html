@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} kindergarten dish</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} kindergarten dish</h1>
+        {{#id}}
+        {{#page_config.can_delete}}
+        <form action="{{svc}}/kindergartendishs/{{id}}" method="post" data-ajax="false"
+          data-wq-json="true" data-wq-background-sync="false"
+          onsubmit="return require('wq/app').confirmSubmit(this, 'Are you sure you want to delete this record?');">
+          {{>csrf}}
+          <input type=hidden name="_method" value="DELETE">
+          <button type="submit" data-icon="delete" class="ui-btn-right">
+            Delete
+          </button>
+        </form>
+        {{/page_config.can_delete}}
+        {{/id}}
+      </div>
+      <div role="main" class="ui-content">
+        <form action="{{svc}}/kindergartendishs/{{id}}" method="post" data-ajax="false"
+            data-wq-json="true"
+            {{#outbox_id}}
+              data-wq-outbox-id="{{outbox_id}}"
+              data-wq-outbox-preserve=""
+            {{/outbox_id}}>
+          {{>csrf}}
+          {{#id}}
+          <input type=hidden name="_method" value="PUT">
+          {{/id}}
+          <ul data-role="listview" data-inset="true">
+            <li class="ui-field-contain">
+              <label for='kindergartendish-kindergarten_id'>Kindergarten</label>
+              <select id='kindergartendish-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
+                <option value="">Select one...</option>
+                {{#kindergarten_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{label}}
+                </option>
+                {{/kindergarten_list}}
+              </select>
+              <p class='error kindergartendish-kindergarten_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='kindergartendish-date'>Choose the particular date</label>
+              <input id='kindergartendish-date' type='date' data-xform-type='date' name='date' value="{{date}}">
+              <p class='error kindergartendish-date-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='kindergartendish-name'>Enter the name of the dish</label>
+              <input id='kindergartendish-name' type='text' data-xform-type='string' name='name' value="{{name}}">
+              <p class='error kindergartendish-name-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='kindergartendish-ingredient_list'>Ingredients</label>
+              <textarea id='kindergartendish-ingredient_list' name='ingredient_list' data-xform-type="text">{{ingredient_list}}</textarea>
+              <p class="hint">Please enter the name of the ingredients separated by a comma.</p>
+              <p class='error kindergartendish-ingredient_list-errors'></p>
+            </li>
+            <li data-role="list-divider">Composition</li>
+            <li data-xform-type='note'>
+              <p class="label">Please give detailed information about some of the ingredients if they are included in the choices below.</p>
+            </li>
+            {{#compositions}}
+            {{^new_attachment}}{{#id}}
+            <input type="hidden" name="compositions[{{@index}}][id]" value="{{id}}">
+            {{/id}}{{/new_attachment}}
+            <li class="ui-field-contain">
+            <div data-role="collapsible" class="section-compositions" data-collapsed="false">
+              <h4>Ingredient {{@index}}</h4>
+              <ul data-role="listview" data-inset="true">
+                <li class="ui-field-contain">
+                  <label for='kindergartendish-compositions-{{@index}}-ingredient_id'>Choose an ingredient from the list</label>
+                  <select id='kindergartendish-compositions-{{@index}}-ingredient_id' data-xform-type='string' name='compositions[{{@index}}][ingredient_id]'>
+                    <option value="">Select one...</option>
+                    {{#ingredient_list}}
+                    <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                     {{#outbox}}*{{/outbox}} {{label}}
+                    </option>
+                    {{/ingredient_list}}
+                  </select>
+                  <p class='error kindergartendish-compositions-{{@index}}-ingredient_id-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <label for='kindergartendish-compositions-{{@index}}-quantity_pieces'>Enter the quantity of the ingredient (pieces)</label>
+                  <input id='kindergartendish-compositions-{{@index}}-quantity_pieces' type='number' data-xform-type='integer' name='compositions[{{@index}}][quantity_pieces]' value="{{quantity_pieces}}">
+                  <p class='error kindergartendish-compositions-{{@index}}-quantity_pieces-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <label for='kindergartendish-compositions-{{@index}}-weight_grams'>Enter the weight of the ingredient (grams)</label>
+                  <input id='kindergartendish-compositions-{{@index}}-weight_grams' type='number' data-xform-type='decimal' name='compositions[{{@index}}][weight_grams]' step='0.001' value="{{weight_grams}}">
+                  <p class='error kindergartendish-compositions-{{@index}}-weight_grams-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <label for='kindergartendish-compositions-{{@index}}-calories'>Enter the number of calories per ingredient in the dish (calories)</label>
+                  <input id='kindergartendish-compositions-{{@index}}-calories' type='number' data-xform-type='decimal' name='compositions[{{@index}}][calories]' step='0.001' value="{{calories}}">
+                  <p class='error kindergartendish-compositions-{{@index}}-calories-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <legend>Was the ingredient bought directly from the producer?</legend>
+                    {{#from_producer_choices}}
+                    <input type='radio' id='kindergartendish-compositions-{{@index}}-from_producer-{{name}}' name='compositions[{{@index}}][from_producer]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                    <label for='kindergartendish-compositions-{{@index}}-from_producer-{{name}}'>{{label}}</label>
+                    {{/from_producer_choices}}
+                  </fieldset>
+                  <p class='error kindergartendish-compositions-{{@index}}-from_producer-errors'></p>
+                </li>
+                <li class="ui-field-contain">
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <legend>Food waste – how many of the dish you have to dump into the garbage?</legend>
+                    {{#waste_choices}}
+                    <input type='radio' id='kindergartendish-compositions-{{@index}}-waste-{{name}}' name='compositions[{{@index}}][waste]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                    <label for='kindergartendish-compositions-{{@index}}-waste-{{name}}'>{{label}}</label>
+                    {{/waste_choices}}
+                  </fieldset>
+                  <p class='error kindergartendish-compositions-{{@index}}-waste-errors'></p>
+                </li>
+                <li>
+                    <button type="button" data-wq-action="removeattachment" data-wq-section="compositions">
+                      Delete ingredient
+                    </button>
+                </li>
+              </ul>
+            </div>
+            </li>
+            {{/compositions}}
+            <li>
+              <button type="button" data-wq-action="addattachment" data-wq-section="compositions">
+                 Add ingredient
+              </button>
+            </li>
+            <li>
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <a href="{{rt}}/kindergartendishs/{{id}}" data-role="button" data-icon="back" data-direction="reverse">
+                    Back
+                  </a>
+                </div>
+                <div class="ui-block-b">
+                  <button type="submit" data-icon="check" data-theme="b">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <p class="error kindergartendish-errors"></p>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

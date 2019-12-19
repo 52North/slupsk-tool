@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{label}}</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{label}}</h1>
+        {{#page_config.can_change}}
+        <a href="{{rt}}/dishratings/{{id}}/edit" data-icon="edit" data-transition="flip">
+          Edit
+        </a>
+        {{/page_config.can_change}}
+      </div>
+      <div role="main" class="ui-content">
+          <h1>{{label}}</h1>
+          <table>
+            <tr>
+              <th>Kindergarten</th>
+              <td>{{kindergarten_label}}</td>
+            </tr>
+            <tr>
+              <th>Date</th>
+              <td>{{date}}</td>
+            </tr>
+            <tr>
+              <th>Choose a dish</th>
+              <td>{{dish_label}}</td>
+            </tr>
+            <tr>
+              <th>Did your child like the dish?</th>
+              <td>{{children_satisfaction_label}}</td>
+            </tr>
+            <tr>
+              <th>Do you think it is proper for a kid?</th>
+              <td>{{parent_satisfaction_label}}</td>
+            </tr>
+            <tr>
+              <th>Do you think it is healthy?</th>
+              <td>{{health_label}}</td>
+            </tr>
+            <tr>
+              <th>Do you think it is a high quality dish?</th>
+              <td>{{quality_label}}</td>
+            </tr>
+            <tr>
+              <th>Do you have any further comments?</th>
+              <td>{{comment}}</td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  </body>
+</html>

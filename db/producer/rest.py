@@ -10,7 +10,7 @@ rest.router.register_model(
     locate=True,
     map=[{
         'mode': 'list',
-        'autoLayers': True,
+        'autoZoom' : False,
         'layers': [{
             'type': 'geojson',
             'name': 'Producers',

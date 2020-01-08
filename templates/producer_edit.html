@@ -46,7 +46,7 @@
               <p class='error producer-adress-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Location Mode</legend>
                 {{#toggle_choices}}
                 <input type='radio' id='producer-toggle-{{name}}' name='toggle' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -129,7 +129,7 @@
                     <p class='error producer-deliverys-{{@index}}-price-errors'></p>
                   </li>
                   <li class="ui-field-contain">
-                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                       <legend>Mode of production</legend>
                       {{#production_mode_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-production_mode-{{name}}' name='deliverys[{{@index}}][production_mode]' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -145,7 +145,7 @@
                     <p class='error producer-deliverys-{{@index}}-distance_to_shop-errors'></p>
                   </li>
                   <li class="ui-field-contain">
-                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                       <legend>Was it biodegradable?</legend>
                       {{#biodegradable_product_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-biodegradable_product-{{name}}' name='deliverys[{{@index}}][biodegradable_product]' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -155,7 +155,7 @@
                     <p class='error producer-deliverys-{{@index}}-biodegradable_product-errors'></p>
                   </li>
                   <li class="ui-field-contain">
-                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                       <legend>Was it in recycling packages?</legend>
                       {{#recyclable_product_package_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}' name='deliverys[{{@index}}][recyclable_product_package]' value='{{name}}'{{#selected}} checked{{/selected}}>

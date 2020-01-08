@@ -80,7 +80,7 @@
                   <p class='error privatedish-compositions-{{@index}}-producer_id-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                     <legend>Enter the place of origin</legend>
                     {{#origin_choices}}
                     <input type='radio' id='privatedish-compositions-{{@index}}-origin-{{name}}' name='compositions[{{@index}}][origin]' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -90,7 +90,7 @@
                   <p class='error privatedish-compositions-{{@index}}-origin-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                     <legend>Enter the mode of production</legend>
                     {{#production_mode_choices}}
                     <input type='radio' id='privatedish-compositions-{{@index}}-production_mode-{{name}}' name='compositions[{{@index}}][production_mode]' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -105,7 +105,7 @@
                   <p class='error privatedish-compositions-{{@index}}-price-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                     <legend>Was the ingredient bought directly from the producer?</legend>
                     {{#from_producer_choices}}
                     <input type='radio' id='privatedish-compositions-{{@index}}-from_producer-{{name}}' name='compositions[{{@index}}][from_producer]' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -136,7 +136,7 @@
             </li>
             <li data-role="list-divider">Ratings</li>
             <li class="ui-field-contain">
-              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Did you like it?</legend>
                 {{#satisfaction_choices}}
                 <input type='radio' id='privatedish-satisfaction-{{name}}' name='satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -147,7 +147,7 @@
               <p class='error privatedish-satisfaction-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Do you think it is healthy?</legend>
                 {{#health_choices}}
                 <input type='radio' id='privatedish-health-{{name}}' name='health' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -158,7 +158,7 @@
               <p class='error privatedish-health-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Do you think it is a high quality product?</legend>
                 {{#quality_choices}}
                 <input type='radio' id='privatedish-quality-{{name}}' name='quality' value='{{name}}'{{#selected}} checked{{/selected}}>

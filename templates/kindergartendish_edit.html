@@ -103,7 +103,7 @@
                   <p class='error kindergartendish-compositions-{{@index}}-calories-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                     <legend>Was the ingredient bought directly from the producer?</legend>
                     {{#from_producer_choices}}
                     <input type='radio' id='kindergartendish-compositions-{{@index}}-from_producer-{{name}}' name='compositions[{{@index}}][from_producer]' value='{{name}}'{{#selected}} checked{{/selected}}>
@@ -113,7 +113,7 @@
                   <p class='error kindergartendish-compositions-{{@index}}-from_producer-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                     <legend>Food waste – how many of the dish you have to dump into the garbage?</legend>
                     {{#waste_choices}}
                     <input type='radio' id='kindergartendish-compositions-{{@index}}-waste-{{name}}' name='compositions[{{@index}}][waste]' value='{{name}}'{{#selected}} checked{{/selected}}>

@@ -1,12 +1,12 @@
-define(['wq/app', './removeattachment', './enabledisable', './instruction', './filter', 'wq/map', 'wq/patterns', 'wq/photos', 'wq/locate',
-        './config',
-        'leaflet.draw', 'leaflet.markercluster'],
-function(app, removeattachment, enabledisable, instruction, filter, map, patterns, locate, photos, config) {
+define(['wq/app', './removeattachment', './enabledisable', './instruction', './filter', './preselect', 'wq/map', 'wq/patterns', 'wq/photos', 'wq/locate',
+        './config', 'leaflet.draw', 'leaflet.markercluster'],
+function(app, removeattachment, enabledisable, instruction, filter, preselect, map, patterns, locate, photos, config) {
 
 app.use(removeattachment);
 app.use(enabledisable);
 app.use(instruction);
 app.use(filter);
+app.use(preselect);
 app.use(map);
 app.use(patterns);
 app.use(locate);

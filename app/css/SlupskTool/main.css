@@ -34,3 +34,8 @@
   top: 80px;
   left: 3%;
 }
+
+.ui-listview  > li > p, li > label, li > a, .ui-listview > li > a.ui-btn, .ui-btn, .ui-btn > span, .ui-select .ui-btn > span:not(.ui-li-count), .ui-controlgroup-label, p.hint {
+  white-space: normal
+
+}

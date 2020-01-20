@@ -50,7 +50,7 @@
                 <legend>Location Mode</legend>
                 {{#toggle_choices}}
                 <input type='radio' id='producer-toggle-{{name}}' name='toggle' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='producer-toggle-{{name}}'>{{label}}</label>
+                <label for='producer-toggle-{{name}}'>{{{label}}}</label>
                 {{/toggle_choices}}
               </fieldset>
               <p class='error producer-toggle-errors'></p>
@@ -94,7 +94,7 @@
                       <option value="">Select one...</option>
                       {{#product_list}}
                       <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                        {{#outbox}}*{{/outbox}} {{label}}
+                        {{#outbox}}*{{/outbox}} {{{label}}}
                       </option>
                       {{/product_list}}
                     </select>
@@ -106,7 +106,7 @@
                       <option value="">Select one...</option>
                       {{#shop_list}}
                       <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                        {{#outbox}}*{{/outbox}} {{label}}
+                        {{#outbox}}*{{/outbox}} {{{label}}}
                       </option>
                       {{/shop_list}}
                     </select>
@@ -133,7 +133,7 @@
                       <legend>Mode of production</legend>
                       {{#production_mode_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-production_mode-{{name}}' name='deliverys[{{@index}}][production_mode]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                      <label for='producer-deliverys-{{@index}}-production_mode-{{name}}'>{{label}}</label>
+                      <label for='producer-deliverys-{{@index}}-production_mode-{{name}}'>{{{label}}}</label>
                       {{/production_mode_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-production_mode-errors'></p>
@@ -149,7 +149,7 @@
                       <legend>Was it biodegradable?</legend>
                       {{#biodegradable_product_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-biodegradable_product-{{name}}' name='deliverys[{{@index}}][biodegradable_product]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                      <label for='producer-deliverys-{{@index}}-biodegradable_product-{{name}}'>{{label}}</label>
+                      <label for='producer-deliverys-{{@index}}-biodegradable_product-{{name}}'>{{{label}}}</label>
                       {{/biodegradable_product_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-biodegradable_product-errors'></p>
@@ -159,7 +159,7 @@
                       <legend>Was it in recycling packages?</legend>
                       {{#recyclable_product_package_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}' name='deliverys[{{@index}}][recyclable_product_package]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                      <label for='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}'>{{label}}</label>
+                      <label for='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}'>{{{label}}}</label>
                       {{/recyclable_product_package_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-recyclable_product_package-errors'></p>

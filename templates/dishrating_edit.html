@@ -41,7 +41,7 @@
                 <option value="">Select one...</option>
                 {{#kindergarten_list}}
                 <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                 {{#outbox}}*{{/outbox}} {{label}}
+                 {{#outbox}}*{{/outbox}} {{{label}}}
                 </option>
                 {{/kindergarten_list}}
               </select>
@@ -59,7 +59,7 @@
                 <option value="">Select one...</option>
                 {{#dish_list}}
                 <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                 {{#outbox}}*{{/outbox}} {{label}}
+                 {{#outbox}}*{{/outbox}} {{{label}}}
                 </option>
                 {{/dish_list}}
               </select>
@@ -70,7 +70,7 @@
                 <legend>Did your child like the dish?</legend>
                 {{#children_satisfaction_choices}}
                 <input type='radio' id='dishrating-children_satisfaction-{{name}}' name='children_satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='dishrating-children_satisfaction-{{name}}'>{{label}}</label>
+                <label for='dishrating-children_satisfaction-{{name}}'>{{{label}}}</label>
                 {{/children_satisfaction_choices}}
               </fieldset>
               <p class='hint'>(1 = „it was awful&quot;, 5 = „it was delicious&quot;)</p>
@@ -81,7 +81,7 @@
                 <legend>Do you think it is proper for a kid?</legend>
                 {{#parent_satisfaction_choices}}
                 <input type='radio' id='dishrating-parent_satisfaction-{{name}}' name='parent_satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='dishrating-parent_satisfaction-{{name}}'>{{label}}</label>
+                <label for='dishrating-parent_satisfaction-{{name}}'>{{{label}}}</label>
                 {{/parent_satisfaction_choices}}
               </fieldset>
               <p class='hint'>(1 = „it is not&quot;, 5 = „it is&quot;)</p>
@@ -92,7 +92,7 @@
                 <legend>Do you think it is healthy?</legend>
                 {{#health_choices}}
                 <input type='radio' id='dishrating-health-{{name}}' name='health' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='dishrating-health-{{name}}'>{{label}}</label>
+                <label for='dishrating-health-{{name}}'>{{{label}}}</label>
                 {{/health_choices}}
               </fieldset>
               <p class='hint'>(1 = „it is very bad for my health&quot;, 5 = „it is very healthy&quot;)</p>
@@ -103,7 +103,7 @@
                 <legend>Do you think it is a high quality dish?</legend>
                 {{#quality_choices}}
                 <input type='radio' id='dishrating-quality-{{name}}' name='quality' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='dishrating-quality-{{name}}'>{{label}}</label>
+                <label for='dishrating-quality-{{name}}'>{{{label}}}</label>
                 {{/quality_choices}}
               </fieldset>
               <p class='hint'>(1 = „bad quality&quot;, 5 = „high quality&quot;)</p>

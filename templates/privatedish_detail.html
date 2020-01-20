@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{label}}</title>
+    <title>{{{label}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{label}}</h1>
+        <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/privatedishs/{{id}}/edit" data-icon="edit" data-transition="flip">
           Edit
@@ -18,7 +18,7 @@
       <div role="main" class="ui-content">
         <div class="ui-grid-a ui-responsive">
         <div class="ui-block-a">
-          <h1>{{label}}</h1>
+          <h1>{{{label}}}</h1>
           <table>
             <tr>
               <th>Enter the name of the dish</th>
@@ -31,19 +31,19 @@
                 <table>
                   <tr>
                     <th>Ingredient</th>
-                    <td>{{ingredient_label}}</td>
+                    <td>{{{ingredient_label}}}</td>
                   </tr>
                   <tr>
                     <th>Where was it bought?</th>
-                    <td>{{producer_label}}</td>
+                    <td>{{{producer_label}}}</td>
                   </tr>
                   <tr>
                     <th>Enter the place of origin</th>
-                    <td>{{origin_label}}</td>
+                    <td>{{{origin_label}}}</td>
                   </tr>
                   <tr>
                     <th>Enter the mode of production</th>
-                    <td>{{production_mode_label}}</td>
+                    <td>{{{production_mode_label}}}</td>
                   </tr>
                   <tr>
                     <th>Enter the price</th>
@@ -51,11 +51,11 @@
                   </tr>
                   <tr>
                     <th>Was the ingredient bought directly from the producer?</th>
-                    <td>{{from_producer_label}}</td>
+                    <td>{{{from_producer_label}}}</td>
                   </tr>
                   <tr>
                     <th>Enter the distance (km) from the shop to your house.</th>
-                    <td>{{distance}}</td>
+                    <td>{{{distance}}}</td>
                   </tr>
                 </table>
                 <hr>
@@ -64,15 +64,15 @@
             </tr>
             <tr>
               <th>Did you like it?</th>
-              <td>{{satisfaction_label}}</td>
+              <td>{{{satisfaction_label}}}</td>
             </tr>
             <tr>
               <th>Do you think it is healthy?</th>
-              <td>{{health_label}}</td>
+              <td>{{{health_label}}}</td>
             </tr>
             <tr>
               <th>Do you think it is a high quality product?</th>
-              <td>{{quality_label}}</td>
+              <td>{{{quality_label}}}</td>
             </tr>
           </table>
         </div>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{label}}</title>
+    <title>{{{label}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{label}}</h1>
+        <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/kindergartendishs/{{id}}/edit" data-icon="edit" data-transition="flip">
           Edit
@@ -16,11 +16,11 @@
         {{/page_config.can_change}}
       </div>
       <div role="main" class="ui-content">
-          <h1>{{label}}</h1>
+          <h1>{{{label}}}</h1>
           <table>
             <tr>
               <th>Kindergarten</th>
-              <td>{{kindergarten_label}}</td>
+              <td>{{{kindergarten_label}}}</td>
             </tr>
             <tr>
               <th>Choose the particular date</th>
@@ -28,11 +28,11 @@
             </tr>
             <tr>
               <th>Enter the name of the dish</th>
-              <td>{{name}}</td>
+              <td>{{{name}}}</td>
             </tr>
             <tr>
               <th>Ingredients</th>
-              <td>{{ingredient_list}}</td>
+              <td>{{{ingredient_list}}}</td>
             </tr>
             <tr>
               <th>Composition</th>
@@ -41,7 +41,7 @@
                 <table>
                   <tr>
                     <th>Choose an ingredient from the list</th>
-                    <td>{{ingredient_label}}</td>
+                    <td>{{{ingredient_label}}}</td>
                   </tr>
                   <tr>
                     <th>Enter the quantity of the ingredient (pieces)</th>
@@ -57,11 +57,11 @@
                   </tr>
                   <tr>
                     <th>Was the ingredient bought directly from the producer?</th>
-                    <td>{{from_producer_label}}</td>
+                    <td>{{{from_producer_label}}}</td>
                   </tr>
                   <tr>
                     <th>Food waste – how many of the dish you have to dump into the garbage?</th>
-                    <td>{{waste_label}}</td>
+                    <td>{{{waste_label}}}</td>
                   </tr>
                 </table>
                 <hr>

@@ -41,7 +41,7 @@
                 <option value="">Select one...</option>
                 {{#kindergarten_list}}
                 <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                 {{#outbox}}*{{/outbox}} {{label}}
+                 {{#outbox}}*{{/outbox}} {{{label}}}
                 </option>
                 {{/kindergarten_list}}
               </select>
@@ -81,7 +81,7 @@
                     <option value="">Select one...</option>
                     {{#ingredient_list}}
                     <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                     {{#outbox}}*{{/outbox}} {{label}}
+                     {{#outbox}}*{{/outbox}} {{{label}}}
                     </option>
                     {{/ingredient_list}}
                   </select>
@@ -107,7 +107,7 @@
                     <legend>Was the ingredient bought directly from the producer?</legend>
                     {{#from_producer_choices}}
                     <input type='radio' id='kindergartendish-compositions-{{@index}}-from_producer-{{name}}' name='compositions[{{@index}}][from_producer]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                    <label for='kindergartendish-compositions-{{@index}}-from_producer-{{name}}'>{{label}}</label>
+                    <label for='kindergartendish-compositions-{{@index}}-from_producer-{{name}}'>{{{label}}}</label>
                     {{/from_producer_choices}}
                   </fieldset>
                   <p class='error kindergartendish-compositions-{{@index}}-from_producer-errors'></p>
@@ -117,7 +117,7 @@
                     <legend>Food waste – how many of the dish you have to dump into the garbage?</legend>
                     {{#waste_choices}}
                     <input type='radio' id='kindergartendish-compositions-{{@index}}-waste-{{name}}' name='compositions[{{@index}}][waste]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                    <label for='kindergartendish-compositions-{{@index}}-waste-{{name}}'>{{label}}</label>
+                    <label for='kindergartendish-compositions-{{@index}}-waste-{{name}}'>{{{label}}}</label>
                     {{/waste_choices}}
                   </fieldset>
                   <p class='error kindergartendish-compositions-{{@index}}-waste-errors'></p>

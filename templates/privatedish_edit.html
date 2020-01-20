@@ -61,7 +61,7 @@
                     <option value="">Select one...</option>
                     {{#ingredient_list}}
                     <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                      {{#outbox}}*{{/outbox}} {{label}}
+                      {{#outbox}}*{{/outbox}} {{{label}}}
                     </option>
                     {{/ingredient_list}}
                   </select>
@@ -73,7 +73,7 @@
                     <option value="">Select one...</option>
                     {{#producer_list}}
                     <option value="{{id}}"{{#selected}} selected{{/selected}}>
-                      {{#outbox}}*{{/outbox}} {{label}}
+                      {{#outbox}}*{{/outbox}} {{{label}}}
                     </option>
                     {{/producer_list}}
                   </select>
@@ -84,7 +84,7 @@
                     <legend>Enter the place of origin</legend>
                     {{#origin_choices}}
                     <input type='radio' id='privatedish-compositions-{{@index}}-origin-{{name}}' name='compositions[{{@index}}][origin]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                    <label for='privatedish-compositions-{{@index}}-origin-{{name}}'>{{label}}</label>
+                    <label for='privatedish-compositions-{{@index}}-origin-{{name}}'>{{{label}}}</label>
                     {{/origin_choices}}
                   </fieldset>
                   <p class='error privatedish-compositions-{{@index}}-origin-errors'></p>
@@ -94,7 +94,7 @@
                     <legend>Enter the mode of production</legend>
                     {{#production_mode_choices}}
                     <input type='radio' id='privatedish-compositions-{{@index}}-production_mode-{{name}}' name='compositions[{{@index}}][production_mode]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                    <label for='privatedish-compositions-{{@index}}-production_mode-{{name}}'>{{label}}</label>
+                    <label for='privatedish-compositions-{{@index}}-production_mode-{{name}}'>{{{label}}}</label>
                     {{/production_mode_choices}}
                   </fieldset>
                   <p class='error privatedish-compositions-{{@index}}-production_mode-errors'></p>
@@ -109,7 +109,7 @@
                     <legend>Was the ingredient bought directly from the producer?</legend>
                     {{#from_producer_choices}}
                     <input type='radio' id='privatedish-compositions-{{@index}}-from_producer-{{name}}' name='compositions[{{@index}}][from_producer]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                    <label for='privatedish-compositions-{{@index}}-from_producer-{{name}}'>{{label}}</label>
+                    <label for='privatedish-compositions-{{@index}}-from_producer-{{name}}'>{{{label}}}</label>
                     {{/from_producer_choices}}
                   </fieldset>
                   <p class='error privatedish-compositions-{{@index}}-from_producer-errors'></p>
@@ -140,7 +140,7 @@
                 <legend>Did you like it?</legend>
                 {{#satisfaction_choices}}
                 <input type='radio' id='privatedish-satisfaction-{{name}}' name='satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='privatedish-satisfaction-{{name}}'>{{label}}</label>
+                <label for='privatedish-satisfaction-{{name}}'>{{{label}}}</label>
                 {{/satisfaction_choices}}
               </fieldset>
               <p class='hint'>(1 = „it was awful&quot;, 5 = „it was delicious&quot;)</p>
@@ -151,7 +151,7 @@
                 <legend>Do you think it is healthy?</legend>
                 {{#health_choices}}
                 <input type='radio' id='privatedish-health-{{name}}' name='health' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='privatedish-health-{{name}}'>{{label}}</label>
+                <label for='privatedish-health-{{name}}'>{{{label}}}</label>
                 {{/health_choices}}
               </fieldset>
               <p class='hint'>(1 = „it is very bad for my health&quot;, 5 = „it is very healthy&quot;)</p>
@@ -162,7 +162,7 @@
                 <legend>Do you think it is a high quality product?</legend>
                 {{#quality_choices}}
                 <input type='radio' id='privatedish-quality-{{name}}' name='quality' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='privatedish-quality-{{name}}'>{{label}}</label>
+                <label for='privatedish-quality-{{name}}'>{{{label}}}</label>
                 {{/quality_choices}}
               </fieldset>
               <p class='hint'>(1 = „bad quality&quot;, 5 = „high quality&quot;)</p>

@@ -35,18 +35,19 @@
           <input type=hidden name="_method" value="PUT">
           {{/id}}
           <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">1) Dish</li>
             <li class="ui-field-contain">
               <label for='privatedish-name'>Enter the name of the dish</label>
               <input id='privatedish-name' type='text' data-xform-type='string' name='name' value="{{name}}">
               <p class='error privatedish-name-errors'></p>
             </li>
+            <li data-role="list-divider">2) Ingredients</li>
             <li>
               <label for='privatedish-distance_calculator'>Use the map to check the location of shops and to estimate the distance (see below questions).</label>
               <input type='hidden' data-xform-type='geotrace' name='distance_calculator'>
               <div class="map edit-map" id='privatedish-{{id}}{{^id}}new{{/id}}-edit-map'></div>
               <p class='error privatedish-distance_calculator-errors'></p>
             </li>
-            <li data-role="list-divider">Ingredients</li>
             {{#compositions}}
             {{^new_attachment}}{{#id}}
             <input type="hidden" name="compositions[{{@index}}][id]" value="{{id}}">
@@ -134,7 +135,7 @@
                  Add ingredient
               </button>
             </li>
-            <li data-role="list-divider">Ratings</li>
+            <li data-role="list-divider">3) Ratings</li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Did you like it?</legend>

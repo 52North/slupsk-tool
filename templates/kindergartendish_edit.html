@@ -35,6 +35,7 @@
           <input type=hidden name="_method" value="PUT">
           {{/id}}
           <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">1) Kindergarten</li>
             <li class="ui-field-contain">
               <label for='kindergartendish-kindergarten_id'>Kindergarten</label>
               <select id='kindergartendish-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
@@ -52,6 +53,7 @@
               <input id='kindergartendish-date' type='date' data-xform-type='date' name='date' value="{{date}}">
               <p class='error kindergartendish-date-errors'></p>
             </li>
+            <li data-role="list-divider">2) Dish</li>
             <li class="ui-field-contain">
               <label for='kindergartendish-name'>Enter the name of the dish</label>
               <input id='kindergartendish-name' type='text' data-xform-type='string' name='name' value="{{name}}">
@@ -63,7 +65,7 @@
               <p class="hint">Please enter the name of the ingredients separated by a comma.</p>
               <p class='error kindergartendish-ingredient_list-errors'></p>
             </li>
-            <li data-role="list-divider">Composition</li>
+            <li data-role="list-divider">3) Composition</li>
             <li data-xform-type='note'>
               <p class="label">Please give detailed information about some of the ingredients if they are included in the choices below.</p>
             </li>

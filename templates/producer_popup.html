@@ -1,7 +1,9 @@
-<h3>{{{label}}}</h3>
+<h3>{{label}}</h3>
 <p>
   <a href="{{rt}}/producers/{{id}}">Details</a>
 </p>
+{{#is_authenticated}}
 <p>
-  <a href="{{rt}}/producers/">All producers</a>
+  <a href="{{rt}}/producerinfos/new">Add producer info</a>
 </p>
+{{/is_authenticated}}

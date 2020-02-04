@@ -1,11 +1,12 @@
 from wq.db import rest
-from .models import Producer
+from .models import Producerinfo
+from .serializers import ProducerinfoSerializer
 
 
 rest.router.register_model(
-    Producer,
+    Producerinfo,
+    serializer=ProducerinfoSerializer,
     fields="__all__",
-    locate=True,
     map=[{
         'mode': 'list',
         'autoZoom' : False,
@@ -30,14 +31,28 @@ rest.router.register_model(
         }],
     }, {
         'mode': 'edit',
-        'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Producer',
-            'url': 'producers/{{id}}/edit.geojson',
-            'popup': 'producer',
-            'geometryField': 'geometry',
+            'name': 'distance_calculator',
+            'url': 'producerinfos/{{id}}/edit.geojson',
+            'draw': {
+                'circle': False,
+                'circlemarker': False,
+                'marker': False,
+                'polyline': {},
+                'polygon': False,
+                'rectangle': False,
+            },
             'flatten': True,
-        }],
+            },
+            {
+            'name': 'Shops',
+            'type': 'geojson',
+            'url': 'shops.geojson',
+            'popup': 'shop',
+            'cluster' : True,
+            'icon' : 'green'
+            },
+        ],
     }],
 )

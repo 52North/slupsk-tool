@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'dishrating',
     'producer',
     'privatedish',
+    'producerinfo',
 ]
 
 MIDDLEWARE = [
@@ -89,9 +90,6 @@ from wq.db.default_settings import (
 )
 
 ANONYMOUS_PERMISSIONS = [
-    'shop.add_shop',
-    'ingredient.add_ingredient',
-    'kindergartendish.add_kindergartendish',
     'dishrating.add_dishrating',
     'producer.add_producer',
     'privatedish.add_privatedish',

@@ -15,7 +15,7 @@ app.use(photos);
 //  Add new map icon
 map.createIcon("producer", {'iconUrl': "/images/producer.png", 'iconSize': [30, 30]});
 map.createIcon("kindergarten", {'iconUrl': "/images/kindergarten.png", 'iconSize': [40, 40]});
-map.createIcon("shop", {'iconUrl': "/images/shop.png", 'iconSize': [40, 40]});
+map.createIcon("shop", {'iconUrl': "/images/shop.png", 'iconSize': [30, 30]});
 
 config.presync = presync;
 config.postsync = postsync;

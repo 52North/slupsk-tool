@@ -11,7 +11,7 @@ rest.router.register_model(
         'autoZoom' : False,
         'layers': [{
             'type': 'geojson',
-            'name': 'Producers',
+            'name': '<span style="padding-right: 5px;">Producers</span><img style="height: 20px;" src=images/producer.png/>',
             'url': 'producers.geojson',
             'popup': 'producer',
             'cluster' : True,
@@ -22,7 +22,7 @@ rest.router.register_model(
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Producer',
+            'name': '<span style="padding-right: 5px;">Producer</span><img style="height: 20px;" src=images/producer.png/>',
             'url': 'producers/{{id}}.geojson',
             'popup': 'producer',
             'flatten': True,
@@ -33,7 +33,7 @@ rest.router.register_model(
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Producer',
+            'name': '<span style="padding-right: 5px;">Producer</span><img style="height: 20px;" src=images/producer.png/>',
             'url': 'producers/{{id}}/edit.geojson',
             'popup': 'producer',
             'geometryField': 'geometry',

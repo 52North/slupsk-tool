@@ -12,7 +12,7 @@ rest.router.register_model(
         'autoLayers': True,
         'layers': [
             {
-            'name': 'Shops',
+            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
@@ -25,7 +25,7 @@ rest.router.register_model(
         'autoLayers': True,
         'layers': [
             {
-            'name': 'Shops',
+            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
@@ -50,7 +50,7 @@ rest.router.register_model(
             'flatten': True,
         },
         {
-            'name': 'Shops',
+            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',

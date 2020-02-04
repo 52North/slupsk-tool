@@ -11,7 +11,7 @@ rest.router.register_model(
         'autoZoom' : False,
         'layers': [{
             'type': 'geojson',
-            'name': 'Kindergartens',
+            'name': '<span style="padding-right: 5px;">Kindergartens</span><img style="height: 20px;" src=images/kindergarten.png/>',
             'url': 'kindergartens.geojson',
             'popup': 'kindergarten',
             'cluster' : True,
@@ -22,7 +22,7 @@ rest.router.register_model(
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Kindergarten',
+            'name': '<span style="padding-right: 5px;">Kindergarten</span><img style="height: 20px;" src=images/kindergarten.png/>',
             'url': 'kindergartens/{{id}}.geojson',
             'popup': 'kindergarten',
             'flatten': True,
@@ -33,7 +33,7 @@ rest.router.register_model(
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': 'Kindergarten',
+            'name': '<span style="padding-right: 5px;">Kindergarten</span><img style="height: 20px;" src=images/kindergarten.png/>',
             'url': 'kindergartens/{{id}}/edit.geojson',
             'popup': 'kindergarten',
             'geometryField': 'geometry',

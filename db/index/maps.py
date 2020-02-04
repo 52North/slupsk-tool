@@ -13,7 +13,7 @@ basemaps = [
 index_map = [{
     'autoZoom' : False,
     'layers': [{
-        'name': 'Kindergartens',
+        'name': '<span style="padding-right: 5px;">Kindergartens</span><img style="height: 20px;" src=images/kindergarten.png/>',
         'type': 'geojson',
         'url': 'kindergartens.geojson',
         'popup': 'kindergarten',
@@ -21,7 +21,7 @@ index_map = [{
         'icon': 'kindergarten',
     },
     {
-        'name': 'Shops',
+        'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
         'type': 'geojson',
         'url': 'shops.geojson',
         'popup': 'shop',
@@ -29,7 +29,7 @@ index_map = [{
         'icon' : 'shop',
     },
     {
-    'name': 'Producers',
+    'name': '<span style="padding-right: 5px;">Producers</span><img style="height: 20px;" src=images/producer.png/>',
     'type': 'geojson',
     'url': 'producers.geojson',
     'popup': 'producer',

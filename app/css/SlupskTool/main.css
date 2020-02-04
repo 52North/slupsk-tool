@@ -39,3 +39,9 @@
   white-space: normal
 
 }
+
+
+.leaflet-touch .leaflet-control-layers-toggle {
+  width: 60px;
+  height: 60px;
+}

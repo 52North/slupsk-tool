@@ -14,7 +14,8 @@ rest.router.register_model(
             'name': 'Kindergartens',
             'url': 'kindergartens.geojson',
             'popup': 'kindergarten',
-            'cluster' : True
+            'cluster' : True,
+            'icon': 'kindergarten',
         }],
     }, {
         'mode': 'detail',
@@ -25,6 +26,7 @@ rest.router.register_model(
             'url': 'kindergartens/{{id}}.geojson',
             'popup': 'kindergarten',
             'flatten': True,
+            'icon': 'kindergarten',
         }],
     }, {
         'mode': 'edit',
@@ -36,6 +38,7 @@ rest.router.register_model(
             'popup': 'kindergarten',
             'geometryField': 'geometry',
             'flatten': True,
+            'icon': 'kindergarten',
         }],
     }],
 )

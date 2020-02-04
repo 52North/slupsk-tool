@@ -15,7 +15,7 @@ rest.router.register_model(
             'url': 'producers.geojson',
             'popup': 'producer',
             'cluster' : True,
-            'icon' : 'orange',
+            'icon' : 'producer',
         }],
     }, {
         'mode': 'detail',
@@ -26,7 +26,7 @@ rest.router.register_model(
             'url': 'producers/{{id}}.geojson',
             'popup': 'producer',
             'flatten': True,
-            'icon' : 'orange',
+            'icon' : 'producer',
         }],
     }, {
         'mode': 'edit',
@@ -38,6 +38,7 @@ rest.router.register_model(
             'popup': 'producer',
             'geometryField': 'geometry',
             'flatten': True,
+            'icon' : 'producer',
         }],
     }],
 )

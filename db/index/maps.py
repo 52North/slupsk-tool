@@ -17,7 +17,8 @@ index_map = [{
         'type': 'geojson',
         'url': 'kindergartens.geojson',
         'popup': 'kindergarten',
-        'cluster' : True
+        'cluster' : True,
+        'icon': 'kindergarten',
     },
     {
         'name': 'Shops',
@@ -25,7 +26,7 @@ index_map = [{
         'url': 'shops.geojson',
         'popup': 'shop',
         'cluster' : True,
-        'icon' : 'green'
+        'icon' : 'shop',
     },
     {
     'name': 'Producers',
@@ -33,6 +34,6 @@ index_map = [{
     'url': 'producers.geojson',
     'popup': 'producer',
     'cluster' : True,
-    'icon' : 'orange'
+    'icon' : 'producer',
     }]
 }]

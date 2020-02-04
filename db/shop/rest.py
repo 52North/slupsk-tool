@@ -15,7 +15,7 @@ rest.router.register_model(
             'url': 'shops.geojson',
             'popup': 'shop',
             'cluster' : True,
-            'icon' : 'green',
+            'icon' : 'shop',
         }],
     }, {
         'mode': 'detail',
@@ -26,7 +26,7 @@ rest.router.register_model(
             'url': 'shops/{{id}}.geojson',
             'popup': 'shop',
             'flatten': True,
-            'icon' : 'green',
+            'icon' : 'shop',
         }],
     }, {
         'mode': 'edit',
@@ -38,7 +38,7 @@ rest.router.register_model(
             'popup': 'shop',
             'geometryField': 'geometry',
             'flatten': True,
-            'icon' : 'green',
+            'icon' : 'shop',
         }],
     }],
 )

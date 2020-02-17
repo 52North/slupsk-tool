@@ -32,7 +32,7 @@ def insertData(apps, schema_editor):
      kindergarten.save()
      kindergarten = Kindergarten(name = "Przedszkole Miejskie nr 19 Słupskiego Chłopczyka", adress = "Norwida 4, 76-200 Słupsk", latitude = 54.464423, longitude = 16.994943, accuracy=150)
      kindergarten.save()
-     kindergarten = Kindergarten(name = "Przedszkole Miejskie nr 23 Promyczek", adress = "Wazów 1 , 76-200 Słupsk", latitude = 4.473277, longitude = 17.006214, accuracy=150)
+     kindergarten = Kindergarten(name = "Przedszkole Miejskie nr 23 Promyczek", adress = "Wazów 1 , 76-200 Słupsk", latitude = 54.473277, longitude = 17.006214, accuracy=150)
      kindergarten.save()
      kindergarten = Kindergarten(name = "Przedszkole Miejskie nr 24 Słupski Niedźwiadek Szczęścia", adress = "3 Maja 15 , 76-200 Słupsk", latitude = 54.474262, longitude = 17.011342, accuracy=150)
      kindergarten.save()

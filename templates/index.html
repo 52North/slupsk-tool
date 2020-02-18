@@ -12,7 +12,7 @@ See https://github.com/wq/wq.app/issues/63
 -->
 <html><!-- manifest="SlupskTool.appcache" -->
   <head>
-    <title>Slupsk Tool</title>
+    <title>Słupsk Tool</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     {{>head}}
@@ -31,26 +31,34 @@ See https://github.com/wq/wq.app/issues/63
         </a>
       </div>
       <div data-role="header">
-        <h1>Creating Interfaces - Slupsk</h1>
+        <h1>Creating Interfaces - Słupsk</h1>
       </div>
       <div role="main" class="ui-content">
         <div class="map detail-map" id="index-map">
           <div data-role="collapsible" class = "instruction" id="instruction1" data-collapsed="false" style="visibility: visible;">
-            <h4>Where does my food come from?</h4>
-            <div style="overflow: auto;">
+            <h4>Eat locally and healthily! Welcome to the food system in Słupsk!</h4>
             <p>
-              What do my children eat? Where does the food come from and what distance did the ingredients cover? How much water and energy was used for production and transport? <br><br> By giving us insights into your favorite dishes you can help us in answering these questions!
+              We all love food. We make sure our children eat healthily. We are paying more and more attention to what we eat and what we buy to eat. What we eat affects not only us,
+              but also our immediate and immediate surroundings. With this application, we will try to provide you with information about food in Słupsk. Using the map you can:  
+            </p>
+            <ul>
+              <li>check what children eat in kindergartens in Słupsk and how meals are rated, find out where the products from which meals are prepared come from,</li>
+              <li>get to know local producers and their products,</li>
+              <li>share what you eat and where you buy food with others,</li>
+              <li>check the environmental impact of what you eat and what children eat in kindergartens,</li>
+              <li>find out some interesting information about the products we use most often in our daily kitchen.</li>
+            </ul>
+            <p>
+              The application was developed in cooperation with the Słupsk City and on the basis of the collected data on the food needs of the inhabitants of Słupsk.
+              We are currently testing the first version of the application. Share with us your opinion about the application by clicking on the <a href="">link</a> with a few questions!
             </p>
             <a href="#" class="ui-btn ui-icon-arrow-r ui-btn-inline ui-btn-icon-notext ui-corner-all"  data-wq-action="instruction-forward" style="float: right;">No text</a>
-            </div>
           </div>
           <div data-role="collapsible" class = "instruction" id="instruction2" data-collapsed="false" style="visibility: hidden;">
-            <h4>Where does my food come from?</h4>
-            <div style="overflow: auto;">
+            <h4>What do the children eat in the kindergartens in Słupsk?</h4>
             <p>
-              You are working at a kindergarten and want to share the kindergarten menu? You are a parent and want to share your favorite dishes at home?
-              Click the below link to tell us about a dish! <br> <br>
-              You want to learn about dishes from kindergartens or your neighbors? Click the link below! <br> <br>
+              What can you find out? What can you do? <br>
+              Find the kindergarten your child goes to on the map. See what he'll eat this week. Get nutrition info and rate foods. Leave your comment and discuss the nutrition of your child with other parents. <br>
               <a href="{{rt}}/producers/">View producers</a> <br>  <br>
               <a href="{{rt}}/kindergartendishs/">View kindergarten dishes</a> <br>  <br>
               <a href="{{rt}}/dishratings/">View dish ratings</a> <br>  <br>
@@ -59,71 +67,36 @@ See https://github.com/wq/wq.app/issues/63
             </p>
             <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-inline ui-btn-icon-notext ui-corner-all" data-wq-action="instruction-backward" style="float: left;">No text</a>
             <a href="#" class="ui-btn ui-icon-arrow-r ui-btn-inline ui-btn-icon-notext ui-corner-all" data-wq-action="instruction-forward" style="float: right;">No text</a>
-            </div>
           </div>
           <div data-role="collapsible" class = "instruction" id="instruction3" data-collapsed="false" style="visibility: hidden;">
-            <h4>Where does my food come from?</h4>
-            <div style="overflow: auto;">
+            <h4>Discover food close to you!</h4>
             <p>
-              If you received an account by the Creating Interfaces team, you can login here to use additional features of the tool. <br> <br>
+              What can you find out? What can you do?
+              You want to buy locally, but don't know where to buy food from local farmers? You will find them on this map. You can also help build a map of local producers by adding them to the map yourself!
+              If you already buy from this producer you can evaluate the products he sells. Leave your comment and discuss with others about your favourite producers and food products!
+              If you produce food yourself and want to leave more detailed data about your products - contact us! <br>
               <a href="{{rt}}/login">Login</a>  <br> <br>
               <!-- You cannot find a prodcuer or an ingredient in the list? Click the link below to add a new shop or ingredient! <br> <br> -->
               <!-- <a href="{{rt}}/shops/new">Add shop</a> <br> <br> -->
               <!-- <a href="{{rt}}/ingredients/new">Add ingredient</a> -->
             </p>
             <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-inline ui-btn-icon-notext ui-corner-all" data-wq-action="instruction-backward" style="float: left;">No text</a>
-            </div>
+            <a href="#" class="ui-btn ui-icon-arrow-r ui-btn-inline ui-btn-icon-notext ui-corner-all" data-wq-action="instruction-forward" style="float: right;">No text</a>
+          </div>
+          <div data-role="collapsible" class = "instruction" id="instruction4" data-collapsed="false" style="visibility: hidden;">
+            <h4>Podziel się jedzeniem!</h4>
+            <p>
+              What can you find out? What can you do?
+              You want to share what you're cooking with others? Share your recipe idea and let others know where to buy the best products in the area. Encourage others to comment and discuss healthy eating together. <br>
+              <a href="{{rt}}/login">Login</a>  <br> <br>
+              <!-- You cannot find a prodcuer or an ingredient in the list? Click the link below to add a new shop or ingredient! <br> <br> -->
+              <!-- <a href="{{rt}}/shops/new">Add shop</a> <br> <br> -->
+              <!-- <a href="{{rt}}/ingredients/new">Add ingredient</a> -->
+            </p>
+            <a href="#" class="ui-btn ui-icon-arrow-l ui-btn-inline ui-btn-icon-notext ui-corner-all" data-wq-action="instruction-backward" style="float: left;">No text</a>
           </div>
         </div>
-        <!-- <ul data-role="listview" data-inset="true">
-          <li data-icon="plus">
-            <a href="{{rt}}/dishes/new">Add dish</a>
-          </li>
-          {{#is_authenticated}}
-          <li data-icon="plus">
-            <a href="{{rt}}/ingredients/new">Add ingredient</a>
-          </li>
-          <li data-icon="plus">
-            <a href="{{rt}}/kindergarten/new">Add kindergarten</a>
-          </li>
-          {{/is_authenticated}}
-          <li data-icon="plus">
-            <a href="{{rt}}/shops/new">Add shop</a>
-          </li>
-        </ul>
-        <ul data-role="listview" data-inset="true">
-          <li data-icon="bullets">
-            <a href="{{rt}}/dishes/">View dishes</a>
-          </li>
-          <li data-icon="bullets">
-            <a href="{{rt}}/ingredients/">View ingredients</a>
-          </li>
-          <li data-icon="bullets">
-            <a href="{{rt}}/kindergartens/">View kindergartens</a>
-          </li>
-          <li data-icon="bullets">
-            <a href="{{rt}}/shops/">View shops</a>
-          </li>
-        </ul>
-        <ul data-role="listview" data-inset="true">
-          <li data-icon="user">
-            <a href="{{rt}}/login">Login</a>
-          </li>
-          {{#is_authenticated}}
-          <li data-icon="user">
-            <a href="{{rt}}/logout">Logout</a>
-          </li>
-          <li data-icon="user">
-            <a href="{{rt}}/admin/">Admin</a>
-          </li>
-          {{/is_authenticated}}
-        </ul> -->
       </div>
-      <!-- <p class="footer">
-        SlupskTool v{{version}}
-        &bull;
-        Powered by <a href="https://wq.io/">wq</a>
-      </p> -->
     </div>
   </body>
 </html>

@@ -30,18 +30,29 @@
 .instruction {
   width: 94%;
   position: absolute;
-  z-index: 500;
+  z-index: 1200;
   top: 80px;
   left: 3%;
 }
 
-.ui-listview  > li > p, li > label, li > a, .ui-listview > li > a.ui-btn, .ui-btn, .ui-btn > span, .ui-select .ui-btn > span:not(.ui-li-count), .ui-controlgroup-label, p.hint {
-  white-space: normal
-
+ /* Make text scrollable */
+.instruction > .ui-collapsible-content {
+  max-height: 500px;   /* map's height is 700px */
+  overflow: auto;
 }
 
+/* Enable line breaks when text i too long */
+.ui-listview  > li > p, li > label, li > a, .ui-listview > li > a.ui-btn, .ui-btn, .ui-btn > span, .ui-select .ui-btn > span:not(.ui-li-count), .ui-controlgroup-label, p.hint {
+  white-space: normal;
+}
 
+/* Change size of map layer control */
 .leaflet-touch .leaflet-control-layers-toggle {
   width: 60px;
   height: 60px;
+}
+
+/* Make sure that map legend is above instruction window (on small screens) */
+.leaflet-top.leaflet-right {
+  z-index: 1500;
 }

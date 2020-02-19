@@ -56,3 +56,12 @@
 .leaflet-top.leaflet-right {
   z-index: 1500;
 }
+
+/* Formatting of tables */
+th {
+  text-align: left;
+}
+
+td {
+  text-align: center;
+}

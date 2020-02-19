@@ -14,6 +14,16 @@ class Privatedish(models.Model):
         verbose_name="Ingredients",
         help_text="Please enter the name of the ingredients separated by a comma.",
     )
+    water_quantity = models.IntegerField(
+        null=True,
+        blank=True,
+        verbose_name="Enter the quantity of water used (litres)",
+    )
+    cooking_time = models.IntegerField(
+        null=True,
+        blank=True,
+        verbose_name="Enter the cooking time (minutes)",
+    )
     distance_calculator = models.LineStringField(
         srid=4326,
         null=True,

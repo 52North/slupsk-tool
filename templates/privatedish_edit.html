@@ -47,6 +47,16 @@
               <p class="hint">Please enter the name of the ingredients separated by a comma.</p>
               <p class='error privatedish-ingredient_list-errors'></p>
             </li>
+            <li class="ui-field-contain">
+              <label for='kindergartendish-water_quantity'>Enter the quantity of water used (litres)</label>
+              <input id='kindergartendish-water_quantity' type='number' data-xform-type='int' name='water_quantity' value="{{water_quantity}}">
+              <p class='error kindergartendish-water_quantity-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='kindergartendish-cooking_time'>Enter the cooking time (minutes)</label>
+              <input id='kindergartendish-cooking_time' type='number' data-xform-type='int' name='cooking_time' value="{{cooking_time}}">
+              <p class='error kindergartendish-cooking_time-errors'></p>
+            </li>
             <li data-role="list-divider">2) Ingredients</li>
             <li data-xform-type='note'>
               <p class="label">Please give detailed information about some of the ingredients if they are included in the choices below.</p>

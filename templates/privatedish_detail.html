@@ -26,6 +26,10 @@
             </tr>
             <tr>
               <th>Ingredients</th>
+              <td>{{{ingredient_list}}}</td>
+            </tr>
+            <tr>
+              <th>Ingredients</th>
               <td>
                 {{#compositions}}
                 <table>
@@ -35,7 +39,7 @@
                   </tr>
                   <tr>
                     <th>Where was it bought?</th>
-                    <td>{{{producer_label}}}</td>
+                    <td>{{{shop_label}}}</td>
                   </tr>
                   <tr>
                     <th>Enter the place of origin</th>
@@ -46,33 +50,33 @@
                     <td>{{{production_mode_label}}}</td>
                   </tr>
                   <tr>
-                    <th>Enter the price</th>
-                    <td>{{price}}</td>
+                    <th>Enter the price (PLN)</th>
+                    <td>{{{price}}}</td>
                   </tr>
                   <tr>
                     <th>Was the ingredient bought directly from the producer?</th>
                     <td>{{{from_producer_label}}}</td>
                   </tr>
                   <tr>
-                    <th>Enter the distance (km) from the shop to your house.</th>
+                    <th>Enter the distance (km) from the shop to your house if bought in a shop. If bought directly from the producer, enter the distance (km) from the producer to your house.</th>
                     <td>{{{distance}}}</td>
+                  </tr>
+                  <tr>
+                    <th>Did you like it?</th>
+                    <td>{{{satisfaction_label}}}</td>
+                  </tr>
+                  <tr>
+                    <th>Do you think it is healthy?</th>
+                    <td>{{{health_label}}}</td>
+                  </tr>
+                  <tr>
+                    <th>Do you think it is a high quality product?</th>
+                    <td>{{{quality_label}}}</td>
                   </tr>
                 </table>
                 <hr>
                 {{/compositions}}
               </td>
-            </tr>
-            <tr>
-              <th>Did you like it?</th>
-              <td>{{{satisfaction_label}}}</td>
-            </tr>
-            <tr>
-              <th>Do you think it is healthy?</th>
-              <td>{{{health_label}}}</td>
-            </tr>
-            <tr>
-              <th>Do you think it is a high quality product?</th>
-              <td>{{{quality_label}}}</td>
             </tr>
           </table>
         </div>

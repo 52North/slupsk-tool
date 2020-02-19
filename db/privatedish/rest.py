@@ -9,7 +9,6 @@ rest.router.register_model(
     fields="__all__",
     map=[{
         'mode': 'list',
-        'autoLayers': True,
         'layers': [
             {
             'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
@@ -19,10 +18,17 @@ rest.router.register_model(
             'cluster' : True,
             'icon' : 'shop'
             },
+            {
+            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src=images/producer.png/>',
+            'type': 'geojson',
+            'url': 'producer.geojson',
+            'popup': 'producer',
+            'cluster' : True,
+            'icon' : 'producer'
+            },
         ],
     }, {
         'mode': 'detail',
-        'autoLayers': True,
         'layers': [
             {
             'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
@@ -31,6 +37,14 @@ rest.router.register_model(
             'popup': 'shop',
             'cluster' : True,
             'icon' : 'shop'
+            },
+            {
+            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src=images/producer.png/>',
+            'type': 'geojson',
+            'url': 'producer.geojson',
+            'popup': 'producer',
+            'cluster' : True,
+            'icon' : 'producer'
             },
         ],
     }, {
@@ -48,15 +62,23 @@ rest.router.register_model(
                 'rectangle': False,
             },
             'flatten': True,
-        },
-        {
+            },
+            {
             'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
             'cluster' : True,
             'icon' : 'shop'
-        },
+            },
+            {
+            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src=images/producer.png/>',
+            'type': 'geojson',
+            'url': 'producer.geojson',
+            'popup': 'producer',
+            'cluster' : True,
+            'icon' : 'producer'
+            },
         ],
     }],
 )

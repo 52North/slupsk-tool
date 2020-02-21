@@ -8,10 +8,35 @@ class Producer(models.Model):
         blank=True,
         verbose_name="Name",
     )
-    adress = models.TextField(
+    type = models.TextField(
         null=True,
         blank=True,
-        verbose_name="Adress",
+        verbose_name="Type",
+    )
+    product = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Main product(s)",
+    )
+    address = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Address",
+    )
+    phone = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Telephone",
+    )
+    email = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="E-mail",
+    )
+    website = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Website",
     )
     toggle = models.CharField(
         choices=(

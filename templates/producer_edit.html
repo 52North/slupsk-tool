@@ -37,13 +37,38 @@
           <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
               <label for='producer-name'>Name</label>
-              <input id='producer-name' type='text' data-xform-type='string' name='name' value="{{{name}}}">
+              <input id='producer-name' type='text' data-xform-type='string' name='name' value="{{name}}">
               <p class='error producer-name-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='producer-adress'>Adress</label>
-              <input id='producer-adress' type='text' data-xform-type='string' name='adress' value="{{{adress}}}">
-              <p class='error producer-adress-errors'></p>
+              <label for='producer-type'>Type</label>
+              <input id='producer-type' type='text' data-xform-type='string' name='type' value="{{type}}">
+              <p class='error producer-type-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='producer-product'>Main product(s)</label>
+              <input id='producer-product' type='text' data-xform-type='string' name='product' value="{{product}}">
+              <p class='error producer-product-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='producer-address'>Address</label>
+              <input id='producer-address' type='text' data-xform-type='string' name='address' value="{{address}}">
+              <p class='error producer-address-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='producer-phone'>Telephone</label>
+              <input id='producer-phone' type='text' data-xform-type='string' name='phone' value="{{phone}}">
+              <p class='error producer-phone-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='producer-email'>E-mail</label>
+              <input id='producer-email' type='text' data-xform-type='string' name='email' value="{{email}}">
+              <p class='error producer-email-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='producer-website'>Website</label>
+              <input id='producer-website' type='text' data-xform-type='string' name='website' value="{{website}}">
+              <p class='error producer-website-errors'></p>
             </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>

@@ -36,14 +36,39 @@
           {{/id}}
           <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
-              <label for='shop-name'>Name <span style="color: red">*</span></label>
-              <textarea id='shop-name' name='name' data-xform-type="text" required>{{name}}</textarea>
+              <label for='shop-name'>Name</label>
+              <input id='shop-name' type='text' data-xform-type='string' name='name' value="{{name}}">
               <p class='error shop-name-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-adress'>Adress</label>
-              <textarea id='shop-adress' name='adress' data-xform-type="text">{{adress}}</textarea>
-              <p class='error shop-adress-errors'></p>
+              <label for='shop-type'>Type</label>
+              <input id='shop-type' type='text' data-xform-type='string' name='type' value="{{type}}">
+              <p class='error shop-type-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='shop-product'>Main product(s)</label>
+              <input id='shop-product' type='text' data-xform-type='string' name='product' value="{{product}}">
+              <p class='error shop-product-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='shop-address'>Address</label>
+              <input id='shop-address' type='text' data-xform-type='string' name='address' value="{{address}}">
+              <p class='error shop-address-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='shop-phone'>Telephone</label>
+              <input id='shop-phone' type='text' data-xform-type='string' name='phone' value="{{phone}}">
+              <p class='error shop-phone-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='shop-email'>E-mail</label>
+              <input id='shop-email' type='text' data-xform-type='string' name='email' value="{{email}}">
+              <p class='error shop-email-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='shop-website'>Website</label>
+              <input id='shop-website' type='text' data-xform-type='string' name='website' value="{{website}}">
+              <p class='error shop-website-errors'></p>
             </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
@@ -92,7 +117,6 @@
               <p class="error shop-errors"></p>
             </li>
           </ul>
-          <p style="color:red;">* required</p>
         </form>
       </div>
     </div>

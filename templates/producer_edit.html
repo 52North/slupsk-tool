@@ -35,6 +35,7 @@
           <input type=hidden name="_method" value="PUT">
           {{/id}}
           <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">1) General</li>
             <li class="ui-field-contain">
               <label for='producer-name'>Name</label>
               <input id='producer-name' type='text' data-xform-type='string' name='name' value="{{name}}">
@@ -50,6 +51,7 @@
               <input id='producer-product' type='text' data-xform-type='string' name='product' value="{{product}}">
               <p class='error producer-product-errors'></p>
             </li>
+            <li data-role="list-divider">2) Contact</li>
             <li class="ui-field-contain">
               <label for='producer-address'>Address</label>
               <input id='producer-address' type='text' data-xform-type='string' name='address' value="{{address}}">
@@ -70,6 +72,7 @@
               <input id='producer-website' type='text' data-xform-type='string' name='website' value="{{website}}">
               <p class='error producer-website-errors'></p>
             </li>
+            <li data-role="list-divider">3) Location</li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Location Mode</legend>

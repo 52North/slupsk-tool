@@ -83,7 +83,7 @@
                   </li>
                   <li class="ui-field-contain">
                     <label for='privatedish-compositions-{{@index}}-shop_id'>Where was it bought?</label>
-                    <select id='privatedish-compositions-{{@index}}-shop_id' data-xform-type='string' name='compositions[{{@index}}][shop_id]'>
+                    <select id='privatedish-compositions-{{@index}}-shop_id' class="shop-select" data-xform-type='string' name='compositions[{{@index}}][shop_id]'>
                       <option value="">Select one...</option>
                       {{#shop_list}}
                       <option value="{{id}}"{{#selected}} selected{{/selected}}>

@@ -29,6 +29,14 @@ filter.run = function ($page, routeInfo) {
 
   });
 
+  /* Add the option "Other" to shop selection menus (used in private dish and productinfo).
+     This function does not fit thematically to filtering, but it is too small to make a separate app */
+  $page.ready( function() {
+
+    $('select[class=shop-select]').append('<option value="">Other</option>');
+
+  });
+
 
 };
 

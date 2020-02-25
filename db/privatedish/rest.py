@@ -21,7 +21,7 @@ rest.router.register_model(
             {
             'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src="images/producer.png">',
             'type': 'geojson',
-            'url': 'producer.geojson',
+            'url': 'producers.geojson',
             'popup': 'producer',
             'cluster' : True,
             'icon' : 'producer'
@@ -41,7 +41,7 @@ rest.router.register_model(
             {
             'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src="images/producer.png">',
             'type': 'geojson',
-            'url': 'producer.geojson',
+            'url': 'producers.geojson',
             'popup': 'producer',
             'cluster' : True,
             'icon' : 'producer'
@@ -74,7 +74,7 @@ rest.router.register_model(
             {
             'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src="images/producer.png">',
             'type': 'geojson',
-            'url': 'producer.geojson',
+            'url': 'producers.geojson',
             'popup': 'producer',
             'cluster' : True,
             'icon' : 'producer'

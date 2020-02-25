@@ -11,7 +11,7 @@ rest.router.register_model(
         'mode': 'list',
         'layers': [
             {
-            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
+            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src="images/shop.png">',
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
@@ -19,7 +19,7 @@ rest.router.register_model(
             'icon' : 'shop'
             },
             {
-            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src=images/producer.png/>',
+            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src="images/producer.png">',
             'type': 'geojson',
             'url': 'producer.geojson',
             'popup': 'producer',
@@ -31,7 +31,7 @@ rest.router.register_model(
         'mode': 'detail',
         'layers': [
             {
-            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
+            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src="images/shop.png">',
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
@@ -39,7 +39,7 @@ rest.router.register_model(
             'icon' : 'shop'
             },
             {
-            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src=images/producer.png/>',
+            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src="images/producer.png">',
             'type': 'geojson',
             'url': 'producer.geojson',
             'popup': 'producer',
@@ -64,7 +64,7 @@ rest.router.register_model(
             'flatten': True,
             },
             {
-            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
+            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src="images/shop.png">',
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
@@ -72,7 +72,7 @@ rest.router.register_model(
             'icon' : 'shop'
             },
             {
-            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src=images/producer.png/>',
+            'name': '<span style="padding-right: 5px";>Producers</span><img style="height: 20px;" src="images/producer.png">',
             'type': 'geojson',
             'url': 'producer.geojson',
             'popup': 'producer',

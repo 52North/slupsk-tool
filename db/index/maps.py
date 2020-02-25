@@ -13,7 +13,7 @@ basemaps = [
 index_map = [{
     'autoZoom' : False,
     'layers': [{
-        'name': '<span style="padding-right: 5px;">Kindergartens</span><img style="height: 20px;" src=images/kindergarten.png/>',
+        'name': '<span style="padding-right: 5px;">Kindergartens</span><img style="height: 20px;" src="images/kindergarten.png">',
         'type': 'geojson',
         'url': 'kindergartens.geojson',
         'popup': 'kindergarten',
@@ -21,7 +21,7 @@ index_map = [{
         'icon': 'kindergarten',
     },
     {
-        'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src=images/shop.png/>',
+        'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src="images/shop.png">',
         'type': 'geojson',
         'url': 'shops.geojson',
         'popup': 'shop',
@@ -29,11 +29,11 @@ index_map = [{
         'icon' : 'shop',
     },
     {
-    'name': '<span style="padding-right: 5px;">Producers</span><img style="height: 20px;" src=images/producer.png/>',
-    'type': 'geojson',
-    'url': 'producers.geojson',
-    'popup': 'producer',
-    'cluster' : True,
-    'icon' : 'producer',
+        'name': '<span style="padding-right: 5px;">Producers</span><img style="height: 20px;" src="images/producer.png">',
+        'type': 'geojson',
+        'url': 'producers.geojson',
+        'popup': 'producer',
+        'cluster' : True,
+        'icon' : 'producer',
     }]
 }]

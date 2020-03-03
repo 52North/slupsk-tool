@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.TextField(verbose_name='Name')),
-                ('adress', models.TextField(blank=True, null=True, verbose_name='Adress')),
+                ('address', models.TextField(blank=True, null=True, verbose_name='Address')),
                 ('toggle', models.CharField(blank=True, choices=[('gps', 'Use GPS'), ('interactive', 'Point on Map'), ('manual', 'Enter Manually')], max_length=11, null=True, verbose_name='Location Mode')),
                 ('geometry', django.contrib.gis.db.models.fields.PointField(blank=True, null=True, srid=4326, verbose_name='Location')),
                 ('latitude', models.FloatField(blank=True, null=True, verbose_name='Latitude')),

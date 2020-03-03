@@ -5,10 +5,10 @@ class Kindergarten(models.Model):
     name = models.TextField(
         verbose_name="Name",
     )
-    adress = models.TextField(
+    address = models.TextField(
         null=True,
         blank=True,
-        verbose_name="Adress",
+        verbose_name="Address",
     )
     toggle = models.CharField(
         choices=(

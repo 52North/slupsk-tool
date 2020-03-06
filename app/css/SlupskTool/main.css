@@ -69,3 +69,8 @@ th {
 td {
   text-align: center;
 }
+
+/* Make text justified */
+.justified {
+  text-align: justify;
+}

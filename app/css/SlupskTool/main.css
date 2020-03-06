@@ -12,6 +12,10 @@
     display: none;
 }
 
+body.ui-overlay-a {
+    background-color: #34767a;
+}
+
 .ui-header .ui-title {
 	margin: 0 20%;
 }

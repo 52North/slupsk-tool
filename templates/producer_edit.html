@@ -35,22 +35,50 @@
           <input type=hidden name="_method" value="PUT">
           {{/id}}
           <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">1) General</li>
             <li class="ui-field-contain">
-              <label for='producer-name'>Name <span style="color: red">*</span></label>
-              <textarea id='producer-name' name='name' data-xform-type="text" required>{{name}}</textarea>
+              <label for='producer-name'>Name</label>
+              <input id='producer-name' type='text' data-xform-type='string' name='name' value="{{name}}">
               <p class='error producer-name-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='producer-adress'>Adress</label>
-              <textarea id='producer-adress' name='adress' data-xform-type="text">{{adress}}</textarea>
-              <p class='error producer-adress-errors'></p>
+              <label for='producer-type'>Type</label>
+              <input id='producer-type' type='text' data-xform-type='string' name='type' value="{{type}}">
+              <p class='error producer-type-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='horizontal'>
+              <label for='producer-product'>Main product(s)</label>
+              <input id='producer-product' type='text' data-xform-type='string' name='product' value="{{product}}">
+              <p class='error producer-product-errors'></p>
+            </li>
+            <li data-role="list-divider">2) Contact</li>
+            <li class="ui-field-contain">
+              <label for='producer-address'>Address</label>
+              <input id='producer-address' type='text' data-xform-type='string' name='address' value="{{address}}">
+              <p class='error producer-address-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='producer-phone'>Telephone</label>
+              <input id='producer-phone' type='text' data-xform-type='string' name='phone' value="{{phone}}">
+              <p class='error producer-phone-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='producer-email'>E-mail</label>
+              <input id='producer-email' type='text' data-xform-type='string' name='email' value="{{email}}">
+              <p class='error producer-email-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='producer-website'>Website</label>
+              <input id='producer-website' type='text' data-xform-type='string' name='website' value="{{website}}">
+              <p class='error producer-website-errors'></p>
+            </li>
+            <li data-role="list-divider">3) Location</li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Location Mode</legend>
                 {{#toggle_choices}}
                 <input type='radio' id='producer-toggle-{{name}}' name='toggle' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='producer-toggle-{{name}}'>{{label}}</label>
+                <label for='producer-toggle-{{name}}'>{{{label}}}</label>
                 {{/toggle_choices}}
               </fieldset>
               <p class='error producer-toggle-errors'></p>
@@ -63,23 +91,23 @@
             </li>
             <li class="ui-field-contain">
               <label for='producer-latitude'>Latitude</label>
-              <input id='producer-latitude' type='number' data-xform-type='decimal' name='latitude' step='0.001' value="{{latitude}}">
+              <input id='producer-latitude' type='number' data-xform-type='decimal' name='latitude' step='0.000001' value="{{latitude}}">
               <p class='error producer-latitude-errors'></p>
             </li>
             <li class="ui-field-contain">
               <label for='producer-longitude'>Longitude</label>
-              <input id='producer-longitude' type='number' data-xform-type='decimal' name='longitude' step='0.001' value="{{longitude}}">
+              <input id='producer-longitude' type='number' data-xform-type='decimal' name='longitude' step='0.000001' value="{{longitude}}">
               <p class='error producer-longitude-errors'></p>
             </li>
             <li class="ui-field-contain">
               <label for='producer-accuracy'>GPS Accuracy</label>
-              <input id='producer-accuracy' type='number' data-xform-type='decimal' name='accuracy' step='0.001' value="{{accuracy}}">
+              <input id='producer-accuracy' type='number' data-xform-type='decimal' name='accuracy' step='0.000001' value="{{accuracy}}">
               <p class='error producer-accuracy-errors'></p>
             </li>
             <li>
               <div class="ui-grid-a">
                 <div class="ui-block-a">
-                  <a href="{{rt}}/producers/{{id}}" data-role="button" data-icon="back" data-direction="reverse">
+                  <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
                     Back
                   </a>
                 </div>
@@ -92,7 +120,6 @@
               <p class="error producer-errors"></p>
             </li>
           </ul>
-          <p style="color:red;">* required</p>
         </form>
       </div>
     </div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<!--
+To make your application work offline using the old "application cache" standard,
+uncomment the manifest attribute below.  This is disabled by default because it
+isn't always needed and it makes debugging more tricky.
+See https://github.com/wq/wq.app/issues/63
+-->
+<html><!-- manifest="SlupskTool.appcache" -->
+  <head>
+    <title>About</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page" class="ui-page">
+      <div id="title-header">
+        <a href="https://creatinginterfaces.eifer.kit.edu" class="site-logo ui-link">
+          <img src="/images/logo_project.png" alt="Creating Interfaces">
+        </a>
+        <a href="http://www.pzr.org.pl/" class="partner-logo ui-link" rel="external" target="_blank">
+          <img src="/images/logo_pzr.png" alt="PZR">
+        </a>
+        <a href="https://www.umk.pl/" class="partner-logo ui-link" rel="external" target="_blank">
+          <img src="/images/logo_torun.png" alt="Torun University">
+        </a>
+      </div>
+      <div data-role="header">
+        {{>home}}
+        <h1>About</h1>
+      </div>
+      <div role="main" class="ui-content">
+        <p>
+          The EU funded project "Creating Interfaces" has the goal to build capacity for integrated governance at the Food-Water-Energy-nexus in cities on the water. The city of Słupsk is participating as a case study site.
+          On this website, citizens in and around Słupsk can help understanding the Food-Water-Energy-nexus by submitting data about one of the following three complexes:
+        </p>
+        <ol>
+          <li>Dishes in kindergartens</li>
+          <li>Local producers</li>
+          <li>Private dishes</li>
+        </ol>
+        <p>
+          Moreover, citizens can find information about these complexes which might help in their daily decisions, e.g. where to buy healthy and local food.
+          If you need assistance in using the website, see the instruction window on the map of the home page for a step by step guide or navigate to the "Guide"-section for a general overview of the tool.
+          Of course, you can also contact the project team via ... <br>
+          More complex visualizations and analyses can be found here (add link). There is also a story map (add link).
+        </p>
+        <div>
+          <img src="/images/funding.png" alt="EU" style="width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto; min-width: 300px;">
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" class="ui-navbar" role="navigation">
+          <ul class="ui-grid-c">
+            <li class="ui-block-a"><a href="/about/" data-icon="info" class="ui-link ui-btn ui-icon-info ui-btn-icon-top">About</a></li>
+            <li class="ui-block-b"><a href="/legal-notice/" data-icon="info" class="ui-link ui-btn ui-icon-info ui-btn-icon-top">Legal Notice</a></li>
+            <li class="ui-block-c"><a href="/privacy-statement/" data-icon="eye" class="ui-link ui-btn ui-icon-eye ui-btn-icon-top">Privacy Statement</a></li>
+            <li class="ui-block-d"><a href="/guide/" data-icon="bullets" class="ui-link ui-btn ui-icon-bullets ui-btn-icon-top">Guide</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

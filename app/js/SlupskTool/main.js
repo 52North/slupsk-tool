@@ -1,16 +1,21 @@
-define(['wq/app', './removeattachment', './enabledisable', 'wq/map', 'wq/patterns', 'wq/photos', 'wq/locate',
-        './config',
-        'leaflet.draw', 'leaflet.markercluster'],
-function(app, removeattachment, enabledisable, map, patterns, locate, photos, config) {
+define(['wq/app', './removeattachment', './enabledisable', './instruction', './filter', './preselect', 'wq/map', 'wq/patterns', 'wq/photos', 'wq/locate',
+        './config', 'leaflet.draw', 'leaflet.markercluster'],
+function(app, removeattachment, enabledisable, instruction, filter, preselect, map, patterns, locate, photos, config) {
 
 app.use(removeattachment);
 app.use(enabledisable);
+app.use(instruction);
+app.use(filter);
+app.use(preselect);
 app.use(map);
 app.use(patterns);
 app.use(locate);
 app.use(photos);
 
-map.createIcon("green", {'iconUrl': "/images/green.png"});
+//  Add new map icon
+map.createIcon("producer", {'iconUrl': "/images/producer.png", 'iconSize': [30, 30]});
+map.createIcon("kindergarten", {'iconUrl': "/images/kindergarten.png", 'iconSize': [40, 40]});
+map.createIcon("shop", {'iconUrl': "/images/shop.png", 'iconSize': [30, 30]});
 
 config.presync = presync;
 config.postsync = postsync;

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} rating of a dish</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} rating of a dish</h1>
+        {{#id}}
+        {{#page_config.can_delete}}
+        <form action="{{svc}}/dishratings/{{id}}" method="post" data-ajax="false"
+          data-wq-json="true" data-wq-background-sync="false"
+          onsubmit="return require('wq/app').confirmSubmit(this, 'Are you sure you want to delete this record?');">
+          {{>csrf}}
+          <input type=hidden name="_method" value="DELETE">
+          <button type="submit" data-icon="delete" class="ui-btn-right">
+            Delete
+          </button>
+        </form>
+        {{/page_config.can_delete}}
+        {{/id}}
+      </div>
+      <div role="main" class="ui-content">
+        <form action="{{svc}}/dishratings/{{id}}" method="post" data-ajax="false"
+            data-wq-json="true"
+            {{#outbox_id}}
+              data-wq-outbox-id="{{outbox_id}}"
+              data-wq-outbox-preserve=""
+            {{/outbox_id}}>
+          {{>csrf}}
+          {{#id}}
+          <input type=hidden name="_method" value="PUT">
+          {{/id}}
+          <ul data-role="listview" data-inset="true">
+            <li class="ui-field-contain">
+              <label for='dishrating-kindergarten_id'>Kindergarten</label>
+              <select id='dishrating-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
+                <option value="">Select one...</option>
+                {{#kindergarten_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{{label}}}
+                </option>
+                {{/kindergarten_list}}
+              </select>
+              <p class='error dishrating-kindergarten_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='dishrating-date'>Date</label>
+              <input id='dishrating-date' type='date' data-xform-type='date' name='date' value="{{date}}">
+              <p class="hint">Please select the date of the dish that you wish to comment on.</p>
+              <p class='error dishrating-date-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='dishrating-dish_id'>Choose a dish</label>
+              <select id='dishrating-dish_id' data-xform-type='string' name='dish_id'>
+                <option value="">Select one...</option>
+                {{#dish_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{{label}}}
+                </option>
+                {{/dish_list}}
+              </select>
+              <p class='error dishrating-dish_id-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Did your child like the dish?</legend>
+                {{#children_satisfaction_choices}}
+                <input type='radio' id='dishrating-children_satisfaction-{{name}}' name='children_satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='dishrating-children_satisfaction-{{name}}'>{{{label}}}</label>
+                {{/children_satisfaction_choices}}
+              </fieldset>
+              <p class='hint'>(1 = „it was awful&quot;, 5 = „it was delicious&quot;)</p>
+              <p class='error dishrating-children_satisfaction-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Do you think it is proper for a kid?</legend>
+                {{#parent_satisfaction_choices}}
+                <input type='radio' id='dishrating-parent_satisfaction-{{name}}' name='parent_satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='dishrating-parent_satisfaction-{{name}}'>{{{label}}}</label>
+                {{/parent_satisfaction_choices}}
+              </fieldset>
+              <p class='hint'>(1 = „it is not&quot;, 5 = „it is&quot;)</p>
+              <p class='error dishrating-parent_satisfaction-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Do you think it is healthy?</legend>
+                {{#health_choices}}
+                <input type='radio' id='dishrating-health-{{name}}' name='health' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='dishrating-health-{{name}}'>{{{label}}}</label>
+                {{/health_choices}}
+              </fieldset>
+              <p class='hint'>(1 = „it is very bad for my health&quot;, 5 = „it is very healthy&quot;)</p>
+              <p class='error dishrating-health-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Do you think it is a high quality dish?</legend>
+                {{#quality_choices}}
+                <input type='radio' id='dishrating-quality-{{name}}' name='quality' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='dishrating-quality-{{name}}'>{{{label}}}</label>
+                {{/quality_choices}}
+              </fieldset>
+              <p class='hint'>(1 = „bad quality&quot;, 5 = „high quality&quot;)</p>
+              <p class='error dishrating-quality-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='dishrating-comment'>Do you have any further comments?</label>
+              <textarea id='dishrating-comment' name='comment' data-xform-type="text">{{comment}}</textarea>
+              <p class='error dishrating-comment-errors'></p>
+            </li>
+            <li>
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
+                    Back
+                  </a>
+                </div>
+                <div class="ui-block-b">
+                  <button type="submit" data-icon="check" data-theme="b">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <p class="error dishrating-errors"></p>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -42,10 +42,14 @@ INSTALLED_APPS = [
 
     # Project apps
     'index',
-    'dish',
-    'institution',
+    'kindergarten',
     'ingredient',
+    'shop',
+    'kindergartendish',
+    'dishrating',
     'producer',
+    'privatedish',
+    'producerinfo',
 ]
 
 MIDDLEWARE = [
@@ -86,8 +90,9 @@ from wq.db.default_settings import (
 )
 
 ANONYMOUS_PERMISSIONS = [
-    'dish.add_dish',
+    'dishrating.add_dishrating',
     'producer.add_producer',
+    'privatedish.add_privatedish',
 ]
 
 WSGI_APPLICATION = 'SlupskTool.wsgi.application'

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>List of producers{{#parent_id}} for {{parent_label}}{{/parent_id}}</title>
+    <title>List of producers{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page" data-wq-sync-refresh="true">
       <div data-role="header">
         {{>home}}
-        <h1>List of producers{{#parent_id}} for {{parent_label}}{{/parent_id}}</h1>
+        <h1>List of producers{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</h1>
         {{#page_config.can_add}}
         <a href="{{rt}}/producers/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
           Add New
@@ -18,7 +18,7 @@
       <div role="main" class="ui-content">
         {{#parent_id}}
         <p>
-          <a href="{{rt}}/{{parent_url}}">&lt; Back to {{parent_label}}</a>
+          <a href="{{rt}}/{{parent_url}}">&lt; Back to {{{parent_label}}}</a>
         </p>
         {{/parent_id}}
         {{#unsynced}}
@@ -27,7 +27,7 @@
           {{#unsyncedItems}}
           <li data-icon="{{#error}}alert{{/error}}{{^error}}minus{{/error}}">
             <a href="{{rt}}/outbox/{{id}}/edit">
-              {{#label}}{{label}}{{/label}}
+              {{#label}}{{{label}}}{{/label}}
               {{^label}}Unsynced Item #{{id}}{{/label}}
             </a>
           </li>
@@ -35,11 +35,18 @@
           <li>
             <div class="ui-grid-a ui-responsive">
               <div class="ui-block-a">
+                {{#is_authenticated}}
                 <button class="sync" data-icon="refresh"
                     onclick="require('wq/app').sync(true);">
                   {{#syncing}}Syncing...{{/syncing}}
                   {{^syncing}}Sync Now{{/syncing}}
                 </button>
+                {{/is_authenticated}}
+                {{^is_authenticated}}
+                <a href="{{rt}}/login" data-role="button" data-icon="lock">
+                  Log in to Sync
+                </a>
+                {{/is_authenticated}}
               </div>
               <div class="ui-block-b">
                 <button type="button" data-icon="delete"
@@ -59,7 +66,7 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/producers/{{id}}">{{label}}</a>
+              <a href="{{rt}}/producers/{{id}}">{{{label}}}</a>
             </li>
             {{/list}}
             {{#page_config.can_add}}

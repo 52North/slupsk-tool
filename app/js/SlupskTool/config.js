@@ -3,6 +3,8 @@ function(config, templates, version, module) {
 
 var overrides = module.config();
 
+localStorage.setItem("instructionIndex", 1);
+
 config.router = {
     'base_url': '/slupsk-tool'
 };
@@ -10,7 +12,10 @@ config.router = {
 config.template = {
     'templates': templates,
     'defaults': {
-        'version': version
+        'version': version,
+        'first_photo': function() {
+            return this['photos[0][photo]'];
+        }
     }
 };
 
@@ -26,14 +31,14 @@ config.map = {
         'type': 'tile',
         'url': '//a.tile.openstreetmap.org/{z}/{x}/{y}.png',
         'layer': 'terrain',
-        'attribution': '© <a href="https://www.openstreetmap.org">OpenStreetMap</a> contributors (<a href="https://www.openstreetmap.org/copyright">ODbL</a>)'
+        'attribution': '© <a href="https://www.openstreetmap.org">OpenStreetMap</a> contributors (<a href="https://www.openstreetmap.org/copyright">ODbL</a>) | <a href="https://icons8.com">icons8</a>'
     },
     {
         'name': 'OpenTopoMap',
         'type': 'tile',
         'url': '//a.tile.opentopomap.org/{z}/{x}/{y}.png',
         'layer': 'terrain',
-        'attribution': 'Map data: © <a href="https://www.openstreetmap.org">OpenStreetMap</a> contributors (<a href="https://www.openstreetmap.org/copyright">ODbL</a>), SRTM | Map design: © <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+        'attribution': 'Map data: © <a href="https://www.openstreetmap.org">OpenStreetMap</a> contributors (<a href="https://www.openstreetmap.org/copyright">ODbL</a>), SRTM | Map design: © <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>) | <a href="https://icons8.com">icons8</a>'
     }]
 };
 

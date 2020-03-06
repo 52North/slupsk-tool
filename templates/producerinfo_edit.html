@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} producer info</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} producer info</h1>
+        {{#id}}
+        {{#page_config.can_delete}}
+        <form action="{{svc}}/producerinfos/{{id}}" method="post" data-ajax="false"
+          data-wq-json="true" data-wq-background-sync="false"
+          onsubmit="return require('wq/app').confirmSubmit(this, 'Are you sure you want to delete this record?');">
+          {{>csrf}}
+          <input type=hidden name="_method" value="DELETE">
+          <button type="submit" data-icon="delete" class="ui-btn-right">
+            Delete
+          </button>
+        </form>
+        {{/page_config.can_delete}}
+        {{/id}}
+      </div>
+      <div role="main" class="ui-content">
+        <form action="{{svc}}/producerinfos/{{id}}" method="post" data-ajax="false"
+            data-wq-json="true"
+            {{#outbox_id}}
+              data-wq-outbox-id="{{outbox_id}}"
+              data-wq-outbox-preserve=""
+            {{/outbox_id}}>
+          {{>csrf}}
+          {{#id}}
+          <input type=hidden name="_method" value="PUT">
+          {{/id}}
+          <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">1) Producer</li>
+            <li class="ui-field-contain">
+              <label for='producerinfo-producer_id'>Producer</label>
+              <select id='producerinfo-producer_id' data-xform-type='string' name='producer_id'>
+                <option value="">Select one...</option>
+                {{#producer_list}}
+                <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                 {{#outbox}}*{{/outbox}} {{{label}}}
+                </option>
+                {{/producer_list}}
+              </select>
+              <p class='error producerinfo-producer_id-errors'></p>
+            </li>
+            <li>
+              <label for='producerinfo-distance_calculator'>Use the map to check the location of producers and to estimate the distance to a shop (see question below).</label>
+              <input type='hidden' data-xform-type='geotrace' name='distance_calculator'>
+              <div class="map edit-map" id='producerinfo-{{id}}{{^id}}new{{/id}}-edit-map'></div>
+              <p class='error producerinfo-distance_calculator-errors'></p>
+            </li>
+            <li data-role="list-divider">2) Products</li>
+            <li data-xform-type='note'>
+              <p class="label">Please give some information about your products if they are in the list below.</p>
+            </li>
+            {{#deliverys}}
+            {{^new_attachment}}{{#id}}
+            <input type="hidden" name="deliverys[{{@index}}][id]" value="{{id}}">
+            {{/id}}{{/new_attachment}}
+            <li class="ui-field-contain">
+            <div data-role="collapsible" class="section-deliverys" data-collapsed="false">
+              <h4>Product {{@index}}</h4>
+              <ul data-role="listview" data-inset="true">
+                  <li class="ui-field-contain">
+                    <label for='producer-deliverys-{{@index}}-product_id'>Product delivered</label>
+                    <select id='producer-deliverys-{{@index}}-product_id' data-xform-type='string' name='deliverys[{{@index}}][product_id]'>
+                      <option value="">Select one...</option>
+                      {{#product_list}}
+                      <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                        {{#outbox}}*{{/outbox}} {{{label}}}
+                      </option>
+                      {{/product_list}}
+                    </select>
+                    <p class='error producer-deliverys-{{@index}}-product_id-errors'></p>
+                  </li>
+                  <li class="ui-field-contain">
+                    <label for='producer-deliverys-{{@index}}-shop_id'>Shop supplied</label>
+                    <select id='producer-deliverys-{{@index}}-shop_id' class="shop-select" data-xform-type='string' name='deliverys[{{@index}}][shop_id]'>
+                      <option value="">Select one...</option>
+                      {{#shop_list}}
+                      <option value="{{id}}"{{#selected}} selected{{/selected}}>
+                        {{#outbox}}*{{/outbox}} {{{label}}}
+                      </option>
+                      {{/shop_list}}
+                    </select>
+                    <p class='error producer-deliverys-{{@index}}-shop_id-errors'></p>
+                  </li>
+                  <li class="ui-field-contain">
+                    <label for='producer-deliverys-{{@index}}-quantity'>Quantity (kg)</label>
+                    <input id='producer-deliverys-{{@index}}-quantity' type='number' data-xform-type='decimal' name='deliverys[{{@index}}][quantity]' step='0.001' value="{{quantity}}">
+                    <p class='error producer-deliverys-{{@index}}-quantity-errors'></p>
+                  </li>
+                  <li class="ui-field-contain">
+                    <label for='producer-deliverys-{{@index}}-frequency'>Frequency</label>
+                    <input id='producer-deliverys-{{@index}}-frequency' type='text' data-xform-type='string' name='deliverys[{{@index}}][frequency]' value="{{frequency}}">
+                    <p class="hint">If you deliver this product regularly, <br> please insert the delivery frequency, e.g. once per week.</p>
+                    <p class='error producer-deliverys-{{@index}}-frequency-errors'></p>
+                  </li>
+                  <li class="ui-field-contain">
+                    <label for='producer-deliverys-{{@index}}-price'>Price per item/kg (PLN)</label>
+                    <input id='producer-deliverys-{{@index}}-price' type='number' data-xform-type='decimal' name='deliverys[{{@index}}][price]' step='0.001' value="{{price}}">
+                    <p class='error producer-deliverys-{{@index}}-price-errors'></p>
+                  </li>
+                  <li class="ui-field-contain">
+                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                      <legend>Mode of production</legend>
+                      {{#production_mode_choices}}
+                      <input type='radio' id='producer-deliverys-{{@index}}-production_mode-{{name}}' name='deliverys[{{@index}}][production_mode]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                      <label for='producer-deliverys-{{@index}}-production_mode-{{name}}'>{{{label}}}</label>
+                      {{/production_mode_choices}}
+                    </fieldset>
+                    <p class='error producer-deliverys-{{@index}}-production_mode-errors'></p>
+                  </li>
+                  <li class="ui-field-contain">
+                    <label for='producer-deliverys-{{@index}}-distance_to_shop'>Distance to shop (km)</label>
+                    <input id='producer-deliverys-{{@index}}-distance_to_shop' type='number' data-xform-type='decimal' name='deliverys[{{@index}}][distance_to_shop]' step='0.001' value="{{distance_to_shop}}">
+                    <p class="hint">To calculate the distance you can <br> use the line tool in the map above.</p>
+                    <p class='error producer-deliverys-{{@index}}-distance_to_shop-errors'></p>
+                  </li>
+                  <li class="ui-field-contain">
+                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                      <legend>Was it biodegradable?</legend>
+                      {{#biodegradable_product_choices}}
+                      <input type='radio' id='producer-deliverys-{{@index}}-biodegradable_product-{{name}}' name='deliverys[{{@index}}][biodegradable_product]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                      <label for='producer-deliverys-{{@index}}-biodegradable_product-{{name}}'>{{{label}}}</label>
+                      {{/biodegradable_product_choices}}
+                    </fieldset>
+                    <p class='error producer-deliverys-{{@index}}-biodegradable_product-errors'></p>
+                  </li>
+                  <li class="ui-field-contain">
+                    <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                      <legend>Was it in recycling packages?</legend>
+                      {{#recyclable_product_package_choices}}
+                      <input type='radio' id='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}' name='deliverys[{{@index}}][recyclable_product_package]' value='{{name}}'{{#selected}} checked{{/selected}}>
+                      <label for='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}'>{{{label}}}</label>
+                      {{/recyclable_product_package_choices}}
+                    </fieldset>
+                    <p class='error producer-deliverys-{{@index}}-recyclable_product_package-errors'></p>
+                  </li>
+                  <li>
+                      <button type="button" data-wq-action="removeattachment" data-wq-section="deliverys">
+                        Delete product
+                      </button>
+                  </li>
+              </ul>
+            </div>
+            </li>
+            {{/deliverys}}
+            <li>
+              <button type="button" data-wq-action="addattachment" data-wq-section="deliverys">
+                 Add product
+              </button>
+            </li>
+            <li>
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
+                    Back
+                  </a>
+                </div>
+                <div class="ui-block-b">
+                  <button type="submit" data-icon="check" data-theme="b">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <p class="error producerinfo-errors"></p>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<h3>{{{label}}}</h3>
+<p>
+  <a href="{{rt}}/kindergartens/{{id}}">Details</a>
+</p>
+<p>
+  <a href="{{rt}}/kindergartens/">All kindergartens</a>
+</p>
+{{#is_authenticated}}
+<p>
+  <a href="{{rt}}/kindergartendishs/new" data-wq-action="preselect" class="kindergarten">Add kindergarten dish</a>
+</p>
+{{/is_authenticated}}
+<p>
+  <a href="{{rt}}/dishratings/new" data-wq-action="preselect" class="kindergarten">Rate kindergarten dish</a>
+</p>

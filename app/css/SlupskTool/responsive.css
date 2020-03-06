@@ -15,3 +15,21 @@
       display: inline-block;
   }
 }
+
+@media screen and (min-width: 500px) {
+  .instruction {
+    width: 400px;
+    left: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .ui-field-contain > label,
+  .ui-field-contain .ui-controlgroup-label {
+    width: 38%;
+  }
+  .ui-field-contain > label ~ [class*="ui-"],
+  .ui-field-contain .ui-controlgroup-controls {
+    width: 60%;
+  }
+}

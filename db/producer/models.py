@@ -1,14 +1,42 @@
 from django.contrib.gis.db import models
 import pystache
 
+
 class Producer(models.Model):
     name = models.TextField(
-        verbose_name="Name",
-    )
-    adress = models.TextField(
         null=True,
         blank=True,
-        verbose_name="Adress",
+        verbose_name="Name",
+    )
+    type = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Type",
+    )
+    product = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Main product(s)",
+    )
+    address = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Address",
+    )
+    phone = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Telephone",
+    )
+    email = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="E-mail",
+    )
+    website = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Website",
     )
     toggle = models.CharField(
         choices=(
@@ -47,6 +75,7 @@ class Producer(models.Model):
 
     def __str__(self):
         return pystache.render(self.wq_label_template, self)
+
 
     class Meta:
         verbose_name = "producer"

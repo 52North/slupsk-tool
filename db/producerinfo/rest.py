@@ -15,7 +15,6 @@ rest.router.register_model(
             'name': '<span style="padding-right: 5px;">Producers</span><img style="height: 20px;" src="images/producer.png">',
             'url': 'producers.geojson',
             'popup': 'producer',
-            'cluster' : True,
             'icon' : 'producer',
         }],
     }, {
@@ -51,7 +50,6 @@ rest.router.register_model(
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
-            'cluster' : True,
             'icon' : 'shop'
             },
         ],

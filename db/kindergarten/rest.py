@@ -14,7 +14,6 @@ rest.router.register_model(
             'name': '<span style="padding-right: 5px;">Kindergartens</span><img style="height: 20px;" src="images/kindergarten.png">',
             'url': 'kindergartens.geojson',
             'popup': 'kindergarten',
-            'cluster' : True,
             'icon': 'kindergarten',
         }],
     }, {

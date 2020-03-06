@@ -15,7 +15,6 @@ rest.router.register_model(
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
-            'cluster' : True,
             'icon' : 'shop'
             },
             {
@@ -23,7 +22,6 @@ rest.router.register_model(
             'type': 'geojson',
             'url': 'producers.geojson',
             'popup': 'producer',
-            'cluster' : True,
             'icon' : 'producer'
             },
         ],
@@ -35,7 +33,6 @@ rest.router.register_model(
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
-            'cluster' : True,
             'icon' : 'shop'
             },
             {
@@ -43,7 +40,6 @@ rest.router.register_model(
             'type': 'geojson',
             'url': 'producers.geojson',
             'popup': 'producer',
-            'cluster' : True,
             'icon' : 'producer'
             },
         ],
@@ -68,7 +64,6 @@ rest.router.register_model(
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',
-            'cluster' : True,
             'icon' : 'shop'
             },
             {
@@ -76,7 +71,6 @@ rest.router.register_model(
             'type': 'geojson',
             'url': 'producers.geojson',
             'popup': 'producer',
-            'cluster' : True,
             'icon' : 'producer'
             },
         ],

@@ -64,15 +64,13 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/kindergartendishs/{{id}}">{{{label}}}</a>
+              <a href="{{rt}}/kindergartendishs/{{id}}"><h4 style="white-space: normal;">{{{name}}}</h4><p style="white-space: normal;">{{{kindergarten_label}}}</p><span class="ui-li-aside">{{{date}}}</span></a>
             </li>
             {{/list}}
-            {{#page_config.can_add}}
-            <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/kindergartendishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add kindergarten dish</a>
-            </li>
-            {{/page_config.can_add}}
           </ul>
+          {{#page_config.can_add}}
+            <a href="{{rt}}/kindergartendishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">Add kindergarten dish</a>
+          {{/page_config.can_add}}
       </div>
       {{>paginator}}
     </div>

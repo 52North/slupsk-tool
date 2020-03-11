@@ -38,7 +38,7 @@ class Kindergartendish(models.Model):
         verbose_name="Enter the cooking time (minutes)",
     )
 
-    wq_label_template = "{{name}} {{date}}"
+    wq_label_template = "{{name}}"
 
     def __str__(self):
         return pystache.render(self.wq_label_template, self)

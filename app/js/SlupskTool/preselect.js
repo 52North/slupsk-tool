@@ -17,7 +17,7 @@ preselect.run = function ($page, routeInfo) {
 
     var $button = $(evt.target);
     var kindergarten = $button.parent().parent()[0].firstChild.innerText.trim();
-    localStorage.setItem("kindergarten", kindergarten); // it may be better to use wq's store.js app instead
+    ds.set('kindergarten', kindergarten);
 
   });
 
@@ -26,57 +26,52 @@ preselect.run = function ($page, routeInfo) {
 
     var $button = $(evt.target);
     var producer = $button.parent().parent()[0].firstChild.innerText.trim();
-    localStorage.setItem("producer", producer);         // it may be better to use wq's store.js app instead
+    ds.set('producer', producer);
 
   });
 
   $page.ready( function() {
 
     // Preselect kindergarten
-    if (localStorage.getItem("kindergarten") !== null) {
+    ds.get('kindergarten').then(function(kindergarten) {
 
-      var kindergarten = localStorage.getItem("kindergarten").trim();
-
-      ds.get('/kindergartens').then(function(kindergartens) {
-
-        for (let k of kindergartens.list) {
-          if (k.name.trim() === kindergarten.trim()) {
-            $('#kindergartendish-kindergarten_id').val(k.id).change();
-            $('#dishrating-kindergarten_id').val(k.id).change();
-            // alternative using direct js DOM manipulation--------------------
-            // var $element = document.getElementById("kindergartendish-kindergarten_id-button");
-            // $element.firstChild.innerText = kindergarten;
-            // ----------------------------------------------------------------
-            break;
+      if ( kindergarten !== null) {
+        ds.get('/kindergartens').then(function(kindergartens) {
+          for (let k of kindergartens.list) {
+            if (k.name.trim() === kindergarten.trim()) {
+              $('#kindergartendish-kindergarten_id').val(k.id).change();
+              $('#dishrating-kindergarten_id').val(k.id).change();
+              // alternative using direct js DOM manipulation--------------------
+              // var $element = document.getElementById("kindergartendish-kindergarten_id-button");
+              // $element.firstChild.innerText = kindergarten;
+              // ----------------------------------------------------------------
+              ds.set('kindergarten', "");
+              break;
+            }
           }
-        }
+        });
+      }
 
-      });
-
-    }
+    });
 
     // Preselect producer
-    if (localStorage.getItem("producer") !== null) {
+    ds.get('producer').then(function(producer) {
 
-      var producer = localStorage.getItem("producer").trim();
-
-      ds.get('/producers').then(function(producers) {
-
-        for (let p of producers.list) {
-          if (p.name.trim() === producer.trim()) {
-            $('#producerinfo-producer_id').val(p.id).change();
-            break;
+      if ( producer !== null ) {
+        ds.get('/producers').then(function(producers) {
+          for (let p of producers.list) {
+            if (p.name.trim() === producer.trim()) {
+              $('#producerinfo-producer_id').val(p.id).change();
+              ds.set('producer', "");
+              break;
+            }
           }
-        }
+        });
+      }
 
-      });
-
-    }
-
+    });
 
   });
-
-
 
 };
 

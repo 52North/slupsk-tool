@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Producer infos{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</title>
+    <title>Product infos{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page" data-wq-sync-refresh="true">
       <div data-role="header">
         {{>home}}
-        <h1>Producer infos{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</h1>
+        <h1>Product infos{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</h1>
         {{#page_config.can_add}}
         <a href="{{rt}}/producerinfos/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
           Add New
@@ -69,12 +69,10 @@
               <a href="{{rt}}/producerinfos/{{id}}">{{{label}}}</a>
             </li>
             {{/list}}
-            {{#page_config.can_add}}
-            <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/producerinfos/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">Add producer info</a>
-            </li>
-            {{/page_config.can_add}}
           </ul>
+          {{#page_config.can_add}}
+            <a href="{{rt}}/producerinfos/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">Add product info</a>
+          {{/page_config.can_add}}
         </div>
         <div class="ui-block-b">
           <div class='map list-map' id="{{#parent_id}}{{parent_page}}-{{parent_id}}-{{/parent_id}}producerinfo-map"></div>

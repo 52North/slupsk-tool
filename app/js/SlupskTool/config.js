@@ -3,8 +3,6 @@ function(config, templates, version, module) {
 
 var overrides = module.config();
 
-localStorage.setItem("instructionIndex", 1);
-
 config.router = {
     'base_url': '/slupsk-tool'
 };

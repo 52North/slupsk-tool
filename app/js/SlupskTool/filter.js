@@ -43,11 +43,11 @@ filter.run = function ($page, routeInfo) {
 
   });
 
-  /* In dishes list: filter list of kindergarten dishes by kindergarten */
+  /* In dishes and dish ratings list: filter list by kindergarten */
   $page.ready( function() {
 
     /* This does also trigger the detail and edit views (e.g. 'kindergartendishs/1' )... */
-    if (window.location.href.indexOf('kindergartendishs/') != -1) {
+    if (window.location.href.indexOf('kindergartendishs/') != -1 || window.location.href.indexOf('dishratings/') != -1) {
         /* Set text in search widget using the stored kindergarten name */
         ds.get('selected_kindergarten').then(function(selected_kindergarten) {
           $('input[data-type="search"]').val(selected_kindergarten).change();
@@ -55,10 +55,17 @@ filter.run = function ($page, routeInfo) {
     }
 
     /* Reset kindergarten name when leaving the url (so that the complete list is demanded in the guide) */
-    if (window.location.href.indexOf('kindergartendishs/') == -1) {
+    if (window.location.href.indexOf('kindergartendishs/') == -1 && window.location.href.indexOf('dishratings/') == -1) {
       ds.set('selected_kindergarten', "");
     }
 
+  });
+
+  /* Empty selected kindergarten in wq's store.js when clear button is clicked */
+  $page.on('click', '.ui-input-clear', function(evt) {
+    if (window.location.href.indexOf('kindergartendishs/') != -1 || window.location.href.indexOf('dishratings/') != -1) {
+      ds.set('selected_kindergarten', "");
+    }
   });
 
   /* In index map: get name of producer from which popup was clicked */

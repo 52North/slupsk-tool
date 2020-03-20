@@ -7,10 +7,10 @@ set -e
 db/manage.py dump_config --format amd > app/js/data/config.js
 
 # (Re-)generate templates for all registered models
-wq maketemplates \
-     --django-dir db \
-     --input-dir master_templates \
-     --template-dir templates
+#wq maketemplates \
+#     --django-dir db \
+#     --input-dir master_templates \
+#     --template-dir templates
 
 # Build javascript with wq.app
 cd app;
@@ -35,6 +35,6 @@ mv -i htdocs-build/ htdocs;
 touch db/SlupskTool/wsgi.py
 
 # Build PhoneGap application
-cd app;
-wq phonegap $1
-cd ../;
+#cd app;
+#wq phonegap $1
+#cd ../;

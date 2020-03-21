@@ -38,22 +38,22 @@ See https://github.com/wq/wq.app/issues/63
         </p>
         <h2>Data submission forms</h2>
         <ul data-role="listview" data-inset="true">
-          {{#is_authenticated}}
+          {{#page_config.can_add}}
           <li>
             <a href="{{rt}}/kindergartendishs/new" data-role="button" data-icon="plus">Add kindergarten dish</a>
           </li>
-          {{/is_authenticated}}
+          {{/page_config.can_add}}
           <li>
             <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus">Rate kindergarten dish</a>
           </li>
           <li>
             <a href="{{rt}}/producers/new" data-role="button" data-icon="plus">Add producer</a>
           </li>
-          {{#is_authenticated}}
+          {{#page_config.can_add}}
           <li>
             <a href="{{rt}}/producerinfos/new" data-role="button" data-icon="plus">Add product info</a>
           </li>
-          {{/is_authenticated}}
+          {{/page_config.can_add}}
           <li>
             <a href="{{rt}}/privatedishs/new" data-role="button" data-icon="plus">Add private dish</a>
           </li>

@@ -8,11 +8,11 @@
 <p>
   <a href="{{rt}}/kindergartendishs/" data-wq-action="preselect" class="kindergarten">Kindergarten dishes</a>
 </p>
-{{#is_authenticated}}
+{{#page_config.can_add}}
 <p>
   <a href="{{rt}}/kindergartendishs/new" data-wq-action="preselect" class="kindergarten">Add kindergarten dish</a>
 </p>
-{{/is_authenticated}}
+{{/page_config.can_add}}
 <p>
   <a href="{{rt}}/dishratings/" data-wq-action="preselect" class="kindergarten">Kindergarten dish ratings</a>
 </p>

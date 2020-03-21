@@ -8,8 +8,8 @@
 <p>
   <a href="{{rt}}/producerinfos/" data-wq-action="preselect" class="producer">Product infos</a>
 </p>
-{{#is_authenticated}}
+{{#page_config.can_add}}
 <p>
   <a href="{{rt}}/producerinfos/new" data-wq-action="preselect" class="producer">Add product info</a>
 </p>
-{{/is_authenticated}}
+{{/page_config.can_add}}

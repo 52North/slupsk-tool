@@ -82,6 +82,9 @@ TEMPLATES[1]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['con
 TEMPLATES[0]['OPTIONS']['context_processors'] += (
     'SlupskTool.context_processors.route_base_url',
 )
+TEMPLATES[0]['OPTIONS']['context_processors'] += (
+    'SlupskTool.context_processors.link_visibility',
+)
 
 # wq: Recommended settings unique to wq.db
 from wq.db.default_settings import (

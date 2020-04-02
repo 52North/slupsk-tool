@@ -1,5 +1,5 @@
-define(["data/config", "data/templates", "data/version", "module"],
-function(config, templates, version, module) {
+define(["data/config", "data/templates", "data/version", "module", "wq/app"],
+function(config, templates, version, module, app) {
 
 var overrides = module.config();
 
@@ -13,6 +13,33 @@ config.template = {
         'version': version,
         'first_photo': function() {
             return this['photos[0][photo]'];
+        },
+        'can_add_producer_info': function() {
+          if (typeof(app.user) === 'undefined') {
+            return false;
+          }
+          if (app.user.is_superuser == true) {
+            return true;
+          }
+          if (app.user.is_staff == true) {
+            return true;
+          }
+          if (RegExp('producer*').test(app.user.username)) {
+            return true;
+          }
+          return false;
+        },
+        'can_add_kindergarten_dish': function() {
+          if (typeof(app.user) === 'undefined') {
+            return false;
+          }
+          if (app.user.is_superuser == true) {
+            return true;
+          }
+          if (app.user.is_staff == true) {
+            return true;
+          }
+          return false;
         }
     }
 };

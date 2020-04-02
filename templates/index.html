@@ -19,17 +19,7 @@ See https://github.com/wq/wq.app/issues/63
   </head>
   <body>
     <div data-role="page" class="ui-page">
-      <div id="title-header">
-        <a href="https://creatinginterfaces.eifer.kit.edu" class="site-logo ui-link">
-          <img src="/images/logo_project.png" alt="Creating Interfaces">
-        </a>
-        <a href="http://www.pzr.org.pl/" class="partner-logo ui-link" rel="external" target="_blank">
-          <img src="/images/logo_pzr.png" alt="PZR">
-        </a>
-        <a href="https://www.umk.pl/" class="partner-logo ui-link" rel="external" target="_blank">
-          <img src="/images/logo_torun.png" alt="Torun University">
-        </a>
-      </div>
+      {{>logos}}
       <div data-role="header">
         <h1>Creating Interfaces - Słupsk</h1>
       </div>
@@ -87,16 +77,7 @@ See https://github.com/wq/wq.app/issues/63
           </div>
         </div>
       </div>
-      <div data-role="footer">
-        <div data-role="navbar" class="ui-navbar" role="navigation">
-          <ul class="ui-grid-c">
-            <li class="ui-block-a"><a href="{{rt}}/about" data-icon="info" class="ui-link ui-btn ui-icon-info ui-btn-icon-top">About</a></li>
-            <li class="ui-block-b"><a href="{{rt}}/legal-notice" data-icon="info" class="ui-link ui-btn ui-icon-info ui-btn-icon-top">Legal Notice</a></li>
-            <li class="ui-block-c"><a href="{{rt}}/privacy-statement" data-icon="eye" class="ui-link ui-btn ui-icon-eye ui-btn-icon-top">Privacy Statement</a></li>
-            <li class="ui-block-d"><a href="{{rt}}/guide" data-icon="bullets" class="ui-link ui-btn ui-icon-bullets ui-btn-icon-top">Guide</a></li>
-          </ul>
-        </div>
-      </div>
+      {{>navbar}}
     </div>
   </body>
 </html>

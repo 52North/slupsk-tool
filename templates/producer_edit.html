@@ -73,6 +73,10 @@
               <p class='error producer-website-errors'></p>
             </li>
             <li data-role="list-divider">3) Location</li>
+            <li data-xform-type='note'>
+              <p class="label">You can choose between three options for setting the location. In the first option, the location is taken from the gps of your device (if available).
+                As second option, you can click on the map below, and as third option you can insert the latitude and longitude directly in the fields below. The last option is only recommended for experienced users.</p>
+            </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Location Mode</legend>
@@ -113,7 +117,7 @@
                 </div>
                 <div class="ui-block-b">
                   <a href="{{rt}}/producers/" data-role="button" data-icon="back" data-direction="reverse">
-                    Show list
+                    Show submissions
                   </a>
                 </div>
                 <div class="ui-block-c">
@@ -127,6 +131,7 @@
           </ul>
         </form>
       </div>
+      {{>navbar}}
     </div>
   </body>
 </html>

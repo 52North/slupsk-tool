@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} feedback</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} feedback</h1>
+        {{#id}}
+        {{#page_config.can_delete}}
+        <form action="{{svc}}/feedbacks/{{id}}" method="post" data-ajax="false"
+          data-wq-json="true" data-wq-background-sync="false"
+          onsubmit="return require('wq/app').confirmSubmit(this, 'Are you sure you want to delete this record?');">
+          {{>csrf}}
+          <input type=hidden name="_method" value="DELETE">
+          <button type="submit" data-icon="delete" class="ui-btn-right">
+            Delete
+          </button>
+        </form>
+        {{/page_config.can_delete}}
+        {{/id}}
+      </div>
+      <div role="main" class="ui-content">
+        <form action="{{svc}}/feedbacks/{{id}}" method="post" data-ajax="false"
+            data-wq-json="true"
+            {{#outbox_id}}
+              data-wq-outbox-id="{{outbox_id}}"
+              data-wq-outbox-preserve=""
+            {{/outbox_id}}>
+          {{>csrf}}
+          {{#id}}
+          <input type=hidden name="_method" value="PUT">
+          {{/id}}
+          <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">1) Information</li>
+            <li>
+              <p style="font-size: 1em">Which information provided by the application is most useful to you? Rank the answers from the most useful information (6) to the least useful information (1), inserting numbers from 1 to 6.</p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_info_menu'>Menu in Slupsk kindergartens</label>
+              <input id='feedback-rank_info_menu' type='number' min='1' max='6' data-xform-type='integer' name='rank_info_menu' value="{{rank_info_menu}}">
+              <p class='error feedback-rank_info_menu-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_info_product'>Information on individual products used preparing of meals in kindergartens</label>
+              <input id='feedback-rank_info_product' type='number' min='1' max='6' data-xform-type='integer' name='rank_info_product' value="{{rank_info_product}}">
+              <p class='error feedback-rank_info_product-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_info_producer'>Information on local food producers/sellers</label>
+              <input id='feedback-rank_info_producer' type='number' min='1' max='6' data-xform-type='integer' name='rank_info_producer' value="{{rank_info_producer}}">
+              <p class='error feedback-rank_info_producer-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_info_place_of_origin'>Information on the place of origin of the products from which meals in kindergartens are prepared</label>
+              <input id='feedback-rank_info_place_of_origin' type='number' min='1' max='6' data-xform-type='integer' name='rank_info_place_of_origin' value="{{rank_info_place_of_origin}}">
+              <p class='error feedback-rank_info_place_of_origin-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_info_meal_rating'>Evaluations of meals in kindergartens made by other users</label>
+              <input id='feedback-rank_info_meal_rating' type='number' min='1' max='6' data-xform-type='integer' name='rank_info_meal_rating' value="{{rank_info_meal_rating}}">
+              <p class='error feedback-rank_info_meal_rating-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_info_private_dish'>Information about meals prepared by other users</label>
+              <input id='feedback-rank_info_private_dish' type='number' min='1' max='6' data-xform-type='integer' name='rank_info_private_dish' value="{{rank_info_private_dish}}">
+              <p class='error feedback-rank_info_private_dish-errors'></p>
+            </li>
+            <li data-role="list-divider">2) Features</li>
+            <li>
+              <p style="font-size: 1em">Which features of the application are most useful to you? Rank the answers below from the most useful functionality (8) to the least useful functionality (1), inserting the numbers from 1 to 8.</p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_feature_see_menu'>Access to menu information in kindergartens</label>
+              <input id='feedback-rank_feature_see_menu' type='number' min='1' max='8' data-xform-type='integer' name='rank_feature_see_menu' value="{{rank_feature_see_menu}}">
+              <p class='error feedback-rank_feature_see_menu-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_feature_see_producer'>Access to information on local food producers/sellers</label>
+              <input id='feedback-rank_feature_see_producer' type='number' min='1' max='8' data-xform-type='integer' name='rank_feature_see_producer' value="{{rank_feature_see_producer}}">
+              <p class='error feedback-rank_feature_see_producer-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_feature_see_product'>Access to information on products used for preparing meals in kindergartens</label>
+              <input id='feedback-rank_feature_see_product' type='number' min='1' max='8' data-xform-type='integer' name='rank_feature_see_product' value="{{rank_feature_see_product}}">
+              <p class='error feedback-rank_feature_see_product-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_feature_add_rating'>Possibility to evaluate meals prepared in kindergartens</label>
+              <input id='feedback-rank_feature_add_rating' type='number' min='1' max='8' data-xform-type='integer' name='rank_feature_add_rating' value="{{rank_feature_add_rating}}">
+              <p class='error feedback-rank_feature_add_rating-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_feature_add_private_dish'>Possibility to add your own dish</label>
+              <input id='feedback-rank_feature_add_private_dish' type='number' min='1' max='8' data-xform-type='integer' name='rank_feature_add_private_dish' value="{{rank_feature_add_private_dish}}">
+              <p class='error feedback-rank_feature_add_private_dish-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_feature_add_producer'>Possibility to add a local food producer/seller</label>
+              <input id='feedback-rank_feature_add_producer' type='number' min='1' max='8' data-xform-type='integer' name='rank_feature_add_producer' value="{{rank_feature_add_producer}}">
+              <p class='error feedback-rank_feature_add_producer-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_feature_see_rating'>Possibility to see the evaluations of meals prepared in kindergartens by other users</label>
+              <input id='feedback-rank_feature_see_rating' type='number' min='1' max='8' data-xform-type='integer' name='rank_feature_see_rating' value="{{rank_feature_see_rating}}">
+              <p class='error feedback-rank_feature_see_rating-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='feedback-rank_feature_add_comment'>Leave a comment (open question)</label>
+              <input id='feedback-rank_feature_add_comment' type='number' min='1' max='8' data-xform-type='integer' name='rank_feature_add_comment' value="{{rank_feature_add_comment}}">
+              <p class='error feedback-rank_feature_add_comment-errors'></p>
+            </li>
+            <li data-role="list-divider">3) Technical and functional aspects</li>
+            <li>
+              <p style="font-size: 1em">How do you assess the application in terms of technical and functional aspects? Please make your assessment by referring to the following categories.</p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>The application is easy to use</legend>
+                {{#usability_choices}}
+                <input type='radio' id='feedback-usability-{{name}}' name='usability' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='feedback-usability-{{name}}'>{{{label}}}</label>
+                {{/usability_choices}}
+              </fieldset>
+              <p class='error feedback-usability-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>The application is visually (graphically) attractive</legend>
+                {{#attractiveness_choices}}
+                <input type='radio' id='feedback-attractiveness-{{name}}' name='attractiveness' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='feedback-attractiveness-{{name}}'>{{{label}}}</label>
+                {{/attractiveness_choices}}
+              </fieldset>
+              <p class='error feedback-attractiveness-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Maps help to use the application</legend>
+                {{#maps_choices}}
+                <input type='radio' id='feedback-maps-{{name}}' name='maps' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='feedback-maps-{{name}}'>{{{label}}}</label>
+                {{/maps_choices}}
+              </fieldset>
+              <p class='error feedback-maps-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Instruction on how to use the application is easy to understand</legend>
+                {{#clarity_choices}}
+                <input type='radio' id='feedback-clarity-{{name}}' name='clarity' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='feedback-clarity-{{name}}'>{{{label}}}</label>
+                {{/clarity_choices}}
+              </fieldset>
+              <p class='error feedback-clarity-errors'></p>
+            </li>
+            <li data-role="list-divider">4) Usefulness of data</li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Do you think that the data collected through the application can be useful for arranging the menu in kindergartens?</legend>
+                {{#usefulness_choices}}
+                <input type='radio' id='feedback-usefulness-{{name}}' name='usefulness' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='feedback-usefulness-{{name}}'>{{{label}}}</label>
+                {{/usefulness_choices}}
+              </fieldset>
+              <p class='error feedback-usefulness-errors'></p>
+            </li>
+            <li data-role="list-divider">5) Comment</li>
+            <li class="ui-field-contain">
+              <label for='feedback-comment'>What other functions should the application have?</label>
+              <textarea id='feedback-comment' name='comment' data-xform-type="text">{{comment}}</textarea>
+              <p class='error feedback-comment-errors'></p>
+            </li>
+
+            <li>
+              <div class="ui-grid-b">
+                <div class="ui-block-a">
+                  <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
+                    Home
+                  </a>
+                </div>
+                <div class="ui-block-b">
+                  <a href="{{rt}}/feedbacks/" data-role="button" data-icon="back" data-direction="reverse">
+                    Show submissions
+                  </a>
+                </div>
+                <div class="ui-block-c">
+                  <button type="submit" data-icon="check" data-theme="b">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <p class="error feedback-errors"></p>
+            </li>
+          </ul>
+        </form>
+      </div>
+      {{>navbar}}
+    </div>
+  </body>
+</html>

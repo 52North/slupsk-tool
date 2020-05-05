@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{{label}}}</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{label}}}</h1>
+        {{#page_config.can_change}}
+        <a href="{{rt}}/feedbacks/{{id}}/edit" data-icon="edit" data-transition="flip">
+          Edit
+        </a>
+        {{/page_config.can_change}}
+      </div>
+      <div role="main" class="ui-content">
+          <h1>{{{label}}}</h1>
+          <table>
+            <tr>
+              <th>Menu in Slupsk kindergartens</th>
+              <td>{{rank_info_menu}}</td>
+            </tr>
+            <tr>
+              <th>Information on individual products used preparing of meals in kindergartens</th>
+              <td>{{rank_info_product}}</td>
+            </tr>
+            <tr>
+              <th>Information on local food producers/sellers</th>
+              <td>{{rank_info_producer}}</td>
+            </tr>
+            <tr>
+              <th>Information on the place of origin of the products from which meals in kindergartens are prepared</th>
+              <td>{{rank_info_place_of_origin}}</td>
+            </tr>
+            <tr>
+              <th>Evaluations of meals in kindergartens made by other users</th>
+              <td>{{rank_info_meal_rating}}</td>
+            </tr>
+            <tr>
+              <th>Information about meals prepared by other users</th>
+              <td>{{rank_info_private_dish}}</td>
+            </tr>
+            <tr>
+              <th>Access to menu information in kindergartens</th>
+              <td>{{rank_feature_see_menu}}</td>
+            </tr>
+            <tr>
+              <th>Access to information on local food producers/sellers</th>
+              <td>{{rank_feature_see_producer}}</td>
+            </tr>
+            <tr>
+              <th>Access to information on products used for preparing meals in kindergartens</th>
+              <td>{{rank_feature_see_product}}</td>
+            </tr>
+            <tr>
+              <th>Possibility to evaluate meals prepared in kindergartens</th>
+              <td>{{rank_feature_add_rating}}</td>
+            </tr>
+            <tr>
+              <th>Possibility to add your own dish</th>
+              <td>{{rank_feature_add_private_dish}}</td>
+            </tr>
+            <tr>
+              <th>Possibility to add a local food producer/seller</th>
+              <td>{{rank_feature_add_producer}}</td>
+            </tr>
+            <tr>
+              <th>Possibility to see the evaluations of meals prepared in kindergartens by other users</th>
+              <td>{{rank_feature_see_rating}}</td>
+            </tr>
+            <tr>
+              <th>Leave a comment (open question)</th>
+              <td>{{rank_feature_add_comment}}</td>
+            </tr>
+            <tr>
+              <th>The application is easy to use</th>
+              <td>{{{usability_label}}}</td>
+            </tr>
+            <tr>
+              <th>The application is visually (graphically) attractive</th>
+              <td>{{{attractiveness_label}}}</td>
+            </tr>
+            <tr>
+              <th>Maps help to use the application</th>
+              <td>{{{maps_label}}}</td>
+            </tr>
+            <tr>
+              <th>Instruction on how to use the application is easy to understand</th>
+              <td>{{{clarity_label}}}</td>
+            </tr>
+            <tr>
+              <th>Do you think that the data collected through the application can be useful for arranging the menu in kindergartens?</th>
+              <td>{{{usefulness_label}}}</td>
+            </tr>
+            <tr>
+              <th>What other functions should the application have?</th>
+              <td>{{{comment}}}</td>
+            </tr>
+          </table>
+      </div>
+      {{>navbar}}
+    </div>
+  </body>
+</html>

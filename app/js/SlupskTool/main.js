@@ -11,9 +11,9 @@ app.use(patterns);
 app.use(locate);
 
 //  Add new map icon
-map.createIcon("producer", {'iconUrl': "/images/producer.png", 'iconSize': [30, 30]});
-map.createIcon("kindergarten", {'iconUrl': "/images/kindergarten.png", 'iconSize': [40, 40]});
-map.createIcon("shop", {'iconUrl': "/images/shop.png", 'iconSize': [30, 30]});
+map.createIcon("producer", {'iconUrl': config.router.base_url.concat("/images/producer.png"), 'iconSize': [30, 30]});
+map.createIcon("kindergarten", {'iconUrl': config.router.base_url.concat("/images/kindergarten.png"), 'iconSize': [40, 40]});
+map.createIcon("shop", {'iconUrl': config.router.base_url.concat("/images/shop.png"), 'iconSize': [30, 30]});
 
 config.presync = presync;
 config.postsync = postsync;

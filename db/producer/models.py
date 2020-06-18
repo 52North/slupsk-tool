@@ -18,6 +18,16 @@ class Producer(models.Model):
         blank=True,
         verbose_name="Main product(s)",
     )
+    kindergarten_supplier = models.CharField(
+        choices=(
+            ("yes", "Yes"),
+            ("no", "No"),
+        ),
+        max_length=3,
+        null=True,
+        blank=True,
+        verbose_name="Do kindergartens use products from here?",
+    )
     address = models.TextField(
         null=True,
         blank=True,

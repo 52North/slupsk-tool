@@ -51,6 +51,16 @@
               <input id='producer-product' type='text' data-xform-type='string' name='product' value="{{product}}">
               <p class='error producer-product-errors'></p>
             </li>
+            <li class="ui-field-contain">
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Do kindergartens use products from here?</legend>
+                {{#kindergarten_supplier_choices}}
+                <input type='radio' id='producer-kindergarten_supplier-{{name}}' name='kindergarten_supplier' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='producer-kindergarten_supplier-{{name}}'>{{{label}}}</label>
+                {{/kindergarten_supplier_choices}}
+              </fieldset>
+              <p class='error producer-kindergarten_supplier-errors'></p>
+            </li>
             <li data-role="list-divider">2) Contact</li>
             <li class="ui-field-contain">
               <label for='producer-address'>Address</label>

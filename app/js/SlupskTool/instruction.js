@@ -1,4 +1,4 @@
-define(['wq/store'], function (ds) { 'use strict';
+define(['wq/store', './config'], function (ds, config) { 'use strict';
 
 var instruction = {
   name: 'instruction'
@@ -79,7 +79,7 @@ instruction.run = function ($page, routeInfo) {
     ds.get('instructionIndex').then(function(instructionIndex) {
 
       var getUrl = window.location;
-      var baseUrl = getUrl.protocol + "//" + getUrl.host + "/";
+      var baseUrl = getUrl.protocol + "//" + getUrl.host + config.router.base_url + "/";
 
       if (document.URL === baseUrl) {
         for (let i = 1; i <= 4; i++) {

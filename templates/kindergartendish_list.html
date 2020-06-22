@@ -64,7 +64,16 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/kindergartendishs/{{id}}"><h4 style="white-space: normal;">{{{name}}}</h4><p style="white-space: normal;">{{{kindergarten_label}}}</p><span class="ui-li-aside">{{{date}}}</span></a>
+              <a href="{{rt}}/kindergartendishs/{{id}}">
+                {{#picture}}
+                  <img src="{{picture}}" alt="{{label}}">
+                {{/picture}}
+                {{^picture}}
+                  <img src="{{rt}}/images/empty.png" alt="No Image">
+                {{/picture}}
+                <h4 style="white-space: normal;">{{{name}}}</h4>
+                <p style="white-space: normal;">{{{kindergarten_label}}}</p>
+                <span class="ui-li-aside">{{{date}}}</span></a>
             </li>
             {{/list}}
           </ul>

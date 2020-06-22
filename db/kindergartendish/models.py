@@ -37,6 +37,12 @@ class Kindergartendish(models.Model):
         blank=True,
         verbose_name="Enter the cooking time (minutes)",
     )
+    picture = models.ImageField(
+        upload_to="kindergartendishs",
+        null=True,
+        blank=True,
+        verbose_name="Picture of the dish",
+    )
 
     wq_label_template = "{{name}}"
 

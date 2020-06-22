@@ -28,7 +28,7 @@
             data-wq-json="true"
             {{#outbox_id}}
               data-wq-outbox-id="{{outbox_id}}"
-              data-wq-outbox-preserve=""
+              data-wq-outbox-preserve="picture"
             {{/outbox_id}}>
           {{>csrf}}
           {{#id}}
@@ -75,6 +75,49 @@
               <input id='kindergartendish-cooking_time' type='number' data-xform-type='int' name='cooking_time' value="{{cooking_time}}">
               <p class='error kindergartendish-cooking_time-errors'></p>
             </li>
+            {{^picture.name}}
+            <li class="ui-field-contain">
+              {{#picture}}
+              <img src="{{picture}}"
+                   id="kindergartendish-picture-preview">
+              {{/picture}}
+              {{^picture}}
+              <img src="{{rt}}/images/empty.png"
+                   id="kindergartendish-picture-preview">
+              {{/picture}}
+              <label for="kindergartendish-picture">Picture of the dish</label>
+              {{#native}}
+              <input type="hidden" name="picture" id="kindergartendish-picture"
+                     data-wq-type="file" data-wq-preview="kindergartendish-picture-preview">
+              <div>
+                <button type="button" data-inline="true" data-icon="camera" data-mini="true"
+                   data-wq-action="take" data-wq-input="kindergartendish-picture">
+                   Camera
+                </button>
+                <button type="button" data-inline="true" data-icon="grid" data-mini="true"
+                   data-wq-action="pick" data-wq-input="kindergartendish-picture">
+                   Gallery
+                </button>
+              </div>
+              {{/native}}
+              {{^native}}
+              <input type="file" name="picture" id="kindergartendish-picture" accept='image/*'
+                     data-wq-preview="kindergartendish-picture-preview">
+              {{/native}}
+              <p class="error kindergartendish-picture-errors"></p>
+            </li>
+            {{/picture.name}}
+            {{#picture.name}}
+            {{#picture}}
+            <li class="ui-field-contain">
+              <img src="{{image_url}}">
+              <label for="kindergartendish-picture">Picture of the dish</label>
+              <input type="text" id="kindergartendish-picture" disabled
+                  value="{{name}} ({{type}}, {{body.size}} bytes)">
+              <p class="error kindergartendish-picture-errors"></p>
+            </li>
+            {{/picture}}
+            {{/picture.name}}
             <li data-role="list-divider">3) Composition</li>
             <li data-xform-type='note'>
               <p class="label">Please give detailed information about some of the ingredients if they are included in the choices below.</p>

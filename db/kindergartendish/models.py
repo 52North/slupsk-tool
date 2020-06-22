@@ -21,21 +21,27 @@ class Kindergartendish(models.Model):
         blank=True,
         verbose_name="Enter the name of the dish",
     )
-    ingredient_list = models.TextField(
+    type = models.CharField(
+        choices=(
+            ("breakfast", "Breakfast"),
+            ("lunch", "Lunch"),
+            ("afternoon_tea", "Afternoon tea"),
+        ),
+        max_length=13,
         null=True,
         blank=True,
-        verbose_name="Ingredients",
-        help_text="Please enter the name of the ingredients separated by a comma.",
+        verbose_name="Type of meal",
     )
-    water_quantity = models.IntegerField(
+    waste = models.CharField(
+        choices=(
+            ("less25", "Less than 25 %"),
+            ("25to75", "From 25 % to 75 %"),
+            ("more75", "More than 75 %"),
+        ),
+        max_length=6,
         null=True,
         blank=True,
-        verbose_name="Enter the quantity of water used (litres)",
-    )
-    cooking_time = models.IntegerField(
-        null=True,
-        blank=True,
-        verbose_name="Enter the cooking time (minutes)",
+        verbose_name="Food waste – how much of the dish you have to dump into the garbage?",
     )
     picture = models.ImageField(
         upload_to="kindergartendishs",
@@ -68,11 +74,6 @@ class Composition(models.Model):
         verbose_name="Choose an ingredient from the list",
         related_name='kindergartendish_ingredient',
     )
-    quantity_pieces = models.IntegerField(
-        null=True,
-        blank=True,
-        verbose_name="Enter the quantity of the ingredient (pieces)",
-    )
     weight_grams = models.FloatField(
         null=True,
         blank=True,
@@ -81,7 +82,7 @@ class Composition(models.Model):
     calories = models.FloatField(
         null=True,
         blank=True,
-        verbose_name="Enter the number of calories per ingredient in the dish (calories)",
+        verbose_name="Enter the number of calories of the ingredient",
     )
     from_producer = models.CharField(
         choices=(
@@ -93,17 +94,6 @@ class Composition(models.Model):
         null=True,
         blank=True,
         verbose_name="Was the ingredient bought directly from the producer?",
-    )
-    waste = models.CharField(
-        choices=(
-            ("less25", "Less than 25 %"),
-            ("25to75", "From 25 % to 75 %"),
-            ("more75", "More than 75 %"),
-        ),
-        max_length=6,
-        null=True,
-        blank=True,
-        verbose_name="Food waste – how many of the dish you have to dump into the garbage?",
     )
 
     class Meta:

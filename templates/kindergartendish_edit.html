@@ -60,20 +60,24 @@
               <p class='error kindergartendish-name-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='kindergartendish-ingredient_list'>Ingredients</label>
-              <textarea id='kindergartendish-ingredient_list' name='ingredient_list' data-xform-type="text">{{ingredient_list}}</textarea>
-              <p class="hint">Please enter the name of the ingredients separated by a comma.</p>
-              <p class='error kindergartendish-ingredient_list-errors'></p>
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Type of meal</legend>
+                {{#type_choices}}
+                <input type='radio' id='kindergartendish-type-{{name}}' name='type' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='kindergartendish-type-{{name}}'>{{{label}}}</label>
+                {{/type_choices}}
+              </fieldset>
+              <p class='error kindergartendish-type-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='kindergartendish-water_quantity'>Enter the quantity of water used (litres)</label>
-              <input id='kindergartendish-water_quantity' type='number' data-xform-type='int' name='water_quantity' value="{{water_quantity}}">
-              <p class='error kindergartendish-water_quantity-errors'></p>
-            </li>
-            <li class="ui-field-contain">
-              <label for='kindergartendish-cooking_time'>Enter the cooking time (minutes)</label>
-              <input id='kindergartendish-cooking_time' type='number' data-xform-type='int' name='cooking_time' value="{{cooking_time}}">
-              <p class='error kindergartendish-cooking_time-errors'></p>
+              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
+                <legend>Food waste – how much of the dish you have to dump into the garbage?</legend>
+                {{#waste_choices}}
+                <input type='radio' id='kindergartendish-waste-{{name}}' name='waste' value='{{name}}'{{#selected}} checked{{/selected}}>
+                <label for='kindergartendish-waste-{{name}}'>{{{label}}}</label>
+                {{/waste_choices}}
+              </fieldset>
+              <p class='error kindergartendish-waste-errors'></p>
             </li>
             {{^picture.name}}
             <li class="ui-field-contain">
@@ -143,18 +147,15 @@
                   <p class='error kindergartendish-compositions-{{@index}}-ingredient_id-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <label for='kindergartendish-compositions-{{@index}}-quantity_pieces'>Enter the quantity of the ingredient (pieces)</label>
-                  <input id='kindergartendish-compositions-{{@index}}-quantity_pieces' type='number' data-xform-type='integer' name='compositions[{{@index}}][quantity_pieces]' value="{{quantity_pieces}}">
-                  <p class='error kindergartendish-compositions-{{@index}}-quantity_pieces-errors'></p>
-                </li>
-                <li class="ui-field-contain">
                   <label for='kindergartendish-compositions-{{@index}}-weight_grams'>Enter the weight of the ingredient (grams)</label>
                   <input id='kindergartendish-compositions-{{@index}}-weight_grams' type='number' data-xform-type='decimal' name='compositions[{{@index}}][weight_grams]' step='0.001' value="{{weight_grams}}">
+                  <p class="hint">Per portion.</p>
                   <p class='error kindergartendish-compositions-{{@index}}-weight_grams-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <label for='kindergartendish-compositions-{{@index}}-calories'>Enter the number of calories per ingredient in the dish (calories)</label>
+                  <label for='kindergartendish-compositions-{{@index}}-calories'>Enter the number of calories of the ingredient</label>
                   <input id='kindergartendish-compositions-{{@index}}-calories' type='number' data-xform-type='decimal' name='compositions[{{@index}}][calories]' step='0.001' value="{{calories}}">
+                  <p class="hint">Per portion.</p>
                   <p class='error kindergartendish-compositions-{{@index}}-calories-errors'></p>
                 </li>
                 <li class="ui-field-contain">
@@ -166,16 +167,6 @@
                     {{/from_producer_choices}}
                   </fieldset>
                   <p class='error kindergartendish-compositions-{{@index}}-from_producer-errors'></p>
-                </li>
-                <li class="ui-field-contain">
-                  <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                    <legend>Food waste – how many of the dish you have to dump into the garbage?</legend>
-                    {{#waste_choices}}
-                    <input type='radio' id='kindergartendish-compositions-{{@index}}-waste-{{name}}' name='compositions[{{@index}}][waste]' value='{{name}}'{{#selected}} checked{{/selected}}>
-                    <label for='kindergartendish-compositions-{{@index}}-waste-{{name}}'>{{{label}}}</label>
-                    {{/waste_choices}}
-                  </fieldset>
-                  <p class='error kindergartendish-compositions-{{@index}}-waste-errors'></p>
                 </li>
                 <li>
                     <button type="button" data-wq-action="removeattachment" data-wq-section="compositions">

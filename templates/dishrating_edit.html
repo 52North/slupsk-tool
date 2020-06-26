@@ -99,17 +99,6 @@
               <p class='error dishrating-health-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Do you think it is a high quality dish?</legend>
-                {{#quality_choices}}
-                <input type='radio' id='dishrating-quality-{{name}}' name='quality' value='{{name}}'{{#selected}} checked{{/selected}}>
-                <label for='dishrating-quality-{{name}}'>{{{label}}}</label>
-                {{/quality_choices}}
-              </fieldset>
-              <p class='hint'>(1 = „bad quality&quot;, 5 = „high quality&quot;)</p>
-              <p class='error dishrating-quality-errors'></p>
-            </li>
-            <li class="ui-field-contain">
               <label for='dishrating-comment'>Do you have any further comments?</label>
               <textarea id='dishrating-comment' name='comment' data-xform-type="text">{{comment}}</textarea>
               <p class='error dishrating-comment-errors'></p>

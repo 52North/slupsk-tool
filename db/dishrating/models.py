@@ -65,20 +65,6 @@ class Dishrating(models.Model):
         verbose_name="Do you think it is healthy?",
         help_text="(1 = „it is very bad for my health&quot;, 5 = „it is very healthy&quot;)",
     )
-    quality = models.CharField(
-        choices=(
-            ("one", "1"),
-            ("two", "2"),
-            ("three", "3"),
-            ("four", "4"),
-            ("five", "5"),
-        ),
-        max_length=5,
-        null=True,
-        blank=True,
-        verbose_name="Do you think it is a high quality dish?",
-        help_text="(1 = „bad quality&quot;, 5 = „high quality&quot;)",
-    )
     comment = models.TextField(
         null=True,
         blank=True,

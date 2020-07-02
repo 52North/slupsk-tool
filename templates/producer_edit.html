@@ -84,8 +84,8 @@
             </li>
             <li data-role="list-divider">3) Location</li>
             <li data-xform-type='note'>
-              <p class="label">You can choose between three options for setting the location. In the first option, the location is taken from the gps of your device (if available).
-                As second option, you can click on the map below, and as third option you can insert the latitude and longitude directly in the fields below. The last option is only recommended for experienced users.</p>
+              <p class="label">You can choose between two options for setting the location. In the first option, the location is taken from the gps of your device (if available).
+                As second option, you can click on the map below.</p>
             </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
@@ -103,17 +103,17 @@
               <div class="map edit-map" id='producer-{{id}}{{^id}}new{{/id}}-edit-map'></div>
               <p class='error producer-geometry-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain" style="display: none;">
               <label for='producer-latitude'>Latitude</label>
               <input id='producer-latitude' type='number' data-xform-type='decimal' name='latitude' step='0.000001' value="{{latitude}}">
               <p class='error producer-latitude-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain" style="display: none;">
               <label for='producer-longitude'>Longitude</label>
               <input id='producer-longitude' type='number' data-xform-type='decimal' name='longitude' step='0.000001' value="{{longitude}}">
               <p class='error producer-longitude-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain" style="display: none;">
               <label for='producer-accuracy'>GPS Accuracy</label>
               <input id='producer-accuracy' type='number' data-xform-type='decimal' name='accuracy' step='0.000001' value="{{accuracy}}">
               <p class='error producer-accuracy-errors'></p>

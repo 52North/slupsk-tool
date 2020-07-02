@@ -52,7 +52,6 @@ class Producer(models.Model):
         choices=(
             ("gps", "Use GPS"),
             ("interactive", "Point on Map"),
-            ("manual", "Enter Manually"),
         ),
         max_length=11,
         null=True,

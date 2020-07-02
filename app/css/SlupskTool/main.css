@@ -85,8 +85,3 @@ td {
     font-weight: normal;
     font-size: 0.7em;
 }
-
-/* Make manual option in locate app less emphasized */
-label[for=producer-toggle-manual] {
-  color: gray !important;
-}

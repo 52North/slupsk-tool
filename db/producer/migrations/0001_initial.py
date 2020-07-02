@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('phone', models.TextField(blank=True, null=True, verbose_name='Telephone')),
                 ('email', models.TextField(blank=True, null=True, verbose_name='E-mail')),
                 ('website', models.TextField(blank=True, null=True, verbose_name='Website')),
-                ('toggle', models.CharField(blank=True, choices=[('gps', 'Use GPS'), ('interactive', 'Point on Map'), ('manual', 'Enter Manually')], max_length=11, null=True, verbose_name='Location Mode')),
+                ('toggle', models.CharField(blank=True, choices=[('gps', 'Use GPS'), ('interactive', 'Point on Map')], max_length=11, null=True, verbose_name='Location Mode')),
                 ('geometry', django.contrib.gis.db.models.fields.PointField(blank=True, null=True, srid=4326, verbose_name='Location')),
                 ('latitude', models.FloatField(blank=True, null=True, verbose_name='Latitude')),
                 ('longitude', models.FloatField(blank=True, null=True, verbose_name='Longitude')),

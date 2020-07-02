@@ -8,10 +8,10 @@ class Producer(models.Model):
         blank=True,
         verbose_name="Name",
     )
-    type = models.TextField(
+    short_description = models.TextField(
         null=True,
         blank=True,
-        verbose_name="Type",
+        verbose_name="Short description",
     )
     product = models.TextField(
         null=True,

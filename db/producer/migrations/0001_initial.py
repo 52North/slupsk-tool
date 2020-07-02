@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.TextField(blank=True, null=True, verbose_name='Name')),
-                ('type', models.TextField(blank=True, null=True, verbose_name='Type')),
+                ('short_description', models.TextField(blank=True, null=True, verbose_name='Short description')),
                 ('product', models.TextField(blank=True, null=True, verbose_name='Main product(s)')),
                 ('kindergarten_supplier', models.CharField(blank=True, choices=[('yes', 'Yes'), ('no', 'No')], max_length=3, null=True, verbose_name='Do kindergartens use products from here?')),
                 ('address', models.TextField(blank=True, null=True, verbose_name='Address')),

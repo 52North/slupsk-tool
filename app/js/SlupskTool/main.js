@@ -1,6 +1,6 @@
-define(['wq/app', './removeattachment', './instruction', './filter', './preselect', 'wq/map', 'wq/patterns', 'wq/locate',
+define(['wq/app', './removeattachment', './instruction', './filter', './preselect', 'wq/map', 'wq/patterns', 'wq/locate', 'wq/photos',
         './config', 'leaflet.draw', 'leaflet.markercluster'],
-function(app, removeattachment, instruction, filter, preselect, map, patterns, locate, config) {
+function(app, removeattachment, instruction, filter, preselect, map, patterns, locate, photos, config) {
 
 app.use(removeattachment);
 app.use(instruction);
@@ -9,6 +9,7 @@ app.use(preselect);
 app.use(map);
 app.use(patterns);
 app.use(locate);
+app.use(photos);
 
 //  Add new map icon
 map.createIcon("producer", {'iconUrl': config.router.base_url.concat("/images/producer.png"), 'iconSize': [30, 30]});

@@ -37,7 +37,7 @@
           <ul data-role="listview" data-inset="true">
             <li data-role="list-divider">1) General</li>
             <li class="ui-field-contain">
-              <label for='producer-name'>Name</label>
+              <label for='producer-name'>Name <span style="color: red;">*</span></label>
               <input id='producer-name' type='text' data-xform-type='string' name='name' value="{{name}}">
               <p class='error producer-name-errors'></p>
             </li>
@@ -63,7 +63,7 @@
             </li>
             <li data-role="list-divider">2) Contact</li>
             <li class="ui-field-contain">
-              <label for='producer-address'>Address</label>
+              <label for='producer-address'>Address <span style="color: red;">*</span></label>
               <input id='producer-address' type='text' data-xform-type='string' name='address' value="{{address}}">
               <p class='error producer-address-errors'></p>
             </li>
@@ -117,6 +117,9 @@
               <label for='producer-accuracy'>GPS Accuracy</label>
               <input id='producer-accuracy' type='number' data-xform-type='decimal' name='accuracy' step='0.000001' value="{{accuracy}}">
               <p class='error producer-accuracy-errors'></p>
+            </li>
+            <li>
+              <p style="color: red;">*required field</p>
             </li>
             <li>
               <div class="ui-grid-b">

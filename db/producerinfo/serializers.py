@@ -8,7 +8,7 @@ class DeliverySerializer(patterns.AttachmentSerializer):
         exclude = ('producerinfo',)
         object_field = 'producerinfo'
         wq_config = {
-            'initial': 1,
+            'initial': 0,
         }
 
 

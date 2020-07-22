@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='Privatedish',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(blank=True, null=True, verbose_name='Enter the name of the dish')),
+                ('name', models.TextField(blank=False, null=False, verbose_name='Enter the name of the dish')),
                 ('picture', models.ImageField(blank=True, null=True, upload_to='privatedishs', verbose_name='Picture of the dish')),
                 ('from_producer', models.CharField(blank=True, choices=[('yes', 'Yes'), ('no', 'No')], max_length=3, null=True, verbose_name='Did you buy at least one ingredient from a local producer?')),
             ],

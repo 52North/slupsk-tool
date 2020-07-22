@@ -6,19 +6,20 @@ class Kindergartendish(models.Model):
     kindergarten = models.ForeignKey(
         "kindergarten.Kindergarten",
         on_delete=models.CASCADE,
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
+        default="",
         verbose_name="Kindergarten",
         related_name='kindergartendish_kindergarten',
     )
     date = models.DateField(
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
         verbose_name="Choose the particular date",
     )
     name = models.TextField(
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
         verbose_name="Enter the name of the dish",
     )
     type = models.CharField(

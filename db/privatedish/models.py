@@ -4,8 +4,8 @@ import pystache
 
 class Privatedish(models.Model):
     name = models.TextField(
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
         verbose_name="Enter the name of the dish",
     )
     picture = models.ImageField(

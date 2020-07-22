@@ -18,10 +18,10 @@ class Migration(migrations.Migration):
             name='Kindergartendish',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date', models.DateField(blank=True, null=True, verbose_name='Choose the particular date')),
-                ('name', models.TextField(blank=True, null=True, verbose_name='Enter the name of the dish')),
+                ('date', models.DateField(blank=False, null=False, verbose_name='Choose the particular date')),
+                ('name', models.TextField(blank=False, null=False, verbose_name='Enter the name of the dish')),
                 ('ingredient_list', models.TextField(blank=True, help_text='Please enter the name of the ingredients separated by a comma.', null=True, verbose_name='Ingredients')),
-                ('kindergarten', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='kindergarten.Kindergarten', verbose_name='Kindergarten')),
+                ('kindergarten', models.ForeignKey(blank=False, null=False, default="", on_delete=django.db.models.deletion.CASCADE, to='kindergarten.Kindergarten', verbose_name='Kindergarten')),
             ],
             options={
                 'verbose_name': 'kindergartendish',

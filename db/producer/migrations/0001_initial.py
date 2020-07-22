@@ -16,11 +16,11 @@ class Migration(migrations.Migration):
             name='Producer',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(blank=True, null=True, verbose_name='Name')),
+                ('name', models.TextField(blank=False, null=False, verbose_name='Name')),
                 ('short_description', models.TextField(blank=True, null=True, verbose_name='Short description')),
                 ('product', models.TextField(blank=True, null=True, verbose_name='Main product(s)')),
                 ('kindergarten_supplier', models.CharField(blank=True, choices=[('yes', 'Yes'), ('no', 'No')], max_length=3, null=True, verbose_name='Do kindergartens use products from here?')),
-                ('address', models.TextField(blank=True, null=True, verbose_name='Address')),
+                ('address', models.TextField(blank=False, null=False, verbose_name='Address')),
                 ('phone', models.TextField(blank=True, null=True, verbose_name='Telephone')),
                 ('email', models.TextField(blank=True, null=True, verbose_name='E-mail')),
                 ('website', models.TextField(blank=True, null=True, verbose_name='Website')),

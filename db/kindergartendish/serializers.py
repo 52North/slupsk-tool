@@ -8,7 +8,7 @@ class CompositionSerializer(patterns.AttachmentSerializer):
         exclude = ('kindergartendish',)
         object_field = 'kindergartendish'
         wq_config = {
-            'initial': 1,
+            'initial': 0,
         }
 
 

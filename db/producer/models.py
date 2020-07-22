@@ -4,8 +4,8 @@ import pystache
 
 class Producer(models.Model):
     name = models.TextField(
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
         verbose_name="Name",
     )
     short_description = models.TextField(
@@ -29,8 +29,8 @@ class Producer(models.Model):
         verbose_name="Do kindergartens use products from here?",
     )
     address = models.TextField(
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
         verbose_name="Address",
     )
     phone = models.TextField(

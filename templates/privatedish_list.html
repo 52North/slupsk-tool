@@ -65,7 +65,15 @@
             {{/unsynced}}
             {{#list}}
             <li>
-              <a href="{{rt}}/privatedishs/{{id}}">{{{label}}}</a>
+              <a href="{{rt}}/privatedishs/{{id}}">
+                {{#picture}}
+                  <img src="{{picture}}" alt="{{label}}">
+                {{/picture}}
+                {{^picture}}
+                  <img src="{{rt}}/images/empty.png" alt="No Image">
+                {{/picture}}
+                {{{label}}}
+              </a>
             </li>
             {{/list}}
             {{#page_config.can_add}}

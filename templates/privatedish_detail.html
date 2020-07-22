@@ -16,85 +16,36 @@
         {{/page_config.can_change}}
       </div>
       <div role="main" class="ui-content">
-        <div class="ui-grid-a ui-responsive">
-        <div class="ui-block-a">
           <h1>{{{label}}}</h1>
           <table>
             <tr>
               <th>Enter the name of the dish</th>
-              <td>{{name}}</td>
+              <td>{{{name}}}</td>
             </tr>
             <tr>
-              <th>Ingredients</th>
-              <td>{{{ingredient_list}}}</td>
+              <th>Did you buy at least one ingredient from a local producer?</th>
+              <td>{{{from_producer_label}}}</td>
             </tr>
             <tr>
-              <th>Enter the quantity of water used (litres)</th>
-              <td>{{{water_quantity}}}</td>
-            </tr>
-            <tr>
-              <th>Enter the cooking time (minutes)</th>
-              <td>{{{cooking_time}}}</td>
-            </tr>
-            <tr>
-              <th>Ingredients</th>
+              <th>Producers</th>
               <td>
-                {{#compositions}}
+                {{#localproducers}}
                 <table>
                   <tr>
-                    <th>Ingredient</th>
-                    <td>{{{ingredient_label}}}</td>
-                  </tr>
-                  <tr>
-                    <th>Where was it bought?</th>
+                    <th>Producer</th>
                     <td>
-                      {{#shop_label}}{{{shop_label}}}{{/shop_label}}
-                      {{^shop_label}}Other{{/shop_label}}
+                      {{#producer_label}}{{{producer_label}}}{{/producer_label}}
+                      {{^producer_label}}Other{{/producer_label}}
                     </td>
-                  </tr>
-                  <tr>
-                    <th>Enter the place of origin</th>
-                    <td>{{{origin_label}}}</td>
-                  </tr>
-                  <tr>
-                    <th>Enter the mode of production</th>
-                    <td>{{{production_mode_label}}}</td>
-                  </tr>
-                  <tr>
-                    <th>Enter the price (PLN)</th>
-                    <td>{{{price}}}</td>
-                  </tr>
-                  <tr>
-                    <th>Was the ingredient bought directly from the producer?</th>
-                    <td>{{{from_producer_label}}}</td>
-                  </tr>
-                  <tr>
-                    <th>Enter the distance (km) from the shop to your house if bought in a shop. If bought directly from the producer, enter the distance (km) from the producer to your house.</th>
-                    <td>{{{distance}}}</td>
-                  </tr>
-                  <tr>
-                    <th>Did you like it?</th>
-                    <td>{{{satisfaction_label}}}</td>
-                  </tr>
-                  <tr>
-                    <th>Do you think it is healthy?</th>
-                    <td>{{{health_label}}}</td>
-                  </tr>
-                  <tr>
-                    <th>Do you think it is a high quality product?</th>
-                    <td>{{{quality_label}}}</td>
                   </tr>
                 </table>
                 <hr>
-                {{/compositions}}
+                {{/localproducers}}
               </td>
             </tr>
           </table>
-        </div>
-        <div class="ui-block-b">
-          <div class="map detail-map" id="privatedish-{{id}}-map"></div>
-        </div>
-        </div>
+          <h3>Picture of the dish</h3>
+          <img src="{{picture}}" alt="Picture of the dish - {{label}}" style="max-width:100%">
       </div>
       {{>navbar}}
     </div>

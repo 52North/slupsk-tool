@@ -1,10 +1,10 @@
 from wq.db.patterns import serializers as patterns
-from .models import Privatedish, Composition
+from .models import Privatedish, Localproducer
 
 
-class CompositionSerializer(patterns.AttachmentSerializer):
+class LocalproducerSerializer(patterns.AttachmentSerializer):
     class Meta(patterns.AttachmentSerializer.Meta):
-        model = Composition
+        model = Localproducer
         exclude = ('privatedish',)
         object_field = 'privatedish'
         wq_config = {
@@ -13,7 +13,7 @@ class CompositionSerializer(patterns.AttachmentSerializer):
 
 
 class PrivatedishSerializer(patterns.AttachedModelSerializer):
-    compositions = CompositionSerializer(many=True, required=False)
+    localproducers = LocalproducerSerializer(many=True, required=False)
 
     class Meta:
         model = Privatedish

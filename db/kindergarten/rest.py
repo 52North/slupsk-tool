@@ -2,9 +2,18 @@ from wq.db import rest
 from .models import Kindergarten
 
 
+def filter(qs, request):
+
+    # Define participating kindergartens
+    kindergartens = ['Przedszkole Miejskie nr 12 Niezapominajka', 'Przedszkole Miejskie nr 24 Słupski Niedźwiadek Szczęścia']
+    # Filter queryset
+    qs_filtered = Kindergarten.objects.filter(name__in=kindergartens)
+    return qs_filtered
+
 rest.router.register_model(
     Kindergarten,
     fields="__all__",
+    filter=filter,
     locate=True,
     map=[{
         'mode': 'list',

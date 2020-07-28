@@ -12,11 +12,11 @@ interesting and unique designs, styles and layouts.  The sky is the limit!
   </head>
   <body>
     <div data-role="page" class="ui-page">
-      {{>logos}}
       <div data-role="header">
         {{>home}}
         <h1>Log In</h1>
       </div>
+      {{>navbar}}
       <div role="main" class="ui-content">
         {{#is_authenticated}}
         <p>Logged in as {{user.username}}</p>
@@ -59,7 +59,7 @@ interesting and unique designs, styles and layouts.  The sky is the limit!
         </form>
         {{/is_authenticated}}
       </div>
-      {{>navbar}}
+      {{>footer}}
     </div>
   </body>
 </html>

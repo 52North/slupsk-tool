@@ -12,18 +12,18 @@ interesting and unique designs, styles and layouts.  The sky is the limit!
   </head>
   <body>
     <div data-role="page" class="ui-page">
-      {{>logos}}
       <div data-role="header">
         {{>home}}
         <h1>Log Out</h1>
       </div>
+      {{>navbar}}
       <div role="main" class="ui-content">
         <p>Logged out.</p>
         <a href="{{rt}}/login" data-role="button">
           Log In Again
         </a>
       </div>
-      {{>navbar}}
+      {{>footer}}
     </div>
   </body>
 </html>

@@ -23,6 +23,7 @@
         {{/page_config.can_delete}}
         {{/id}}
       </div>
+      {{>navbar}}
       <div role="main" class="ui-content">
         <form action="{{svc}}/ingredients/{{id}}" method="post" data-ajax="false"
             data-wq-json="true"
@@ -64,7 +65,7 @@
           <p style="color:red;">* required</p>
         </form>
       </div>
-      {{>navbar}}
+      {{>footer}}
     </div>
   </body>
 </html>

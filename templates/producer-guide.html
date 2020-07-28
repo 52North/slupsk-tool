@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!--
+To make your application work offline using the old "application cache" standard,
+uncomment the manifest attribute below.  This is disabled by default because it
+isn't always needed and it makes debugging more tricky.
+See https://github.com/wq/wq.app/issues/63
+-->
+<html><!-- manifest="SlupskTool.appcache" -->
+  <head>
+    <title>Producer</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page" class="ui-page">
+      <div data-role="header">
+        {{>home}}
+        <h1>Producer</h1>
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content justified">
+        <h4>Discover food close to you!</h4>
+        <p>
+          What can you find out? What can you do? <br> <br>
+          
+          You want to buy locally, but don't know where to buy food from local farmers? You will find them on the map on the homepage or
+          open a list of local producers directly with the following button. <br>
+          <a href="{{rt}}/producers/" data-role="button" data-icon="bars">Show producers</a>  <br>
+
+          You can also help build a map of local producers by adding them to the map yourself!
+          <a href="{{rt}}/producers/new" data-role="button" data-icon="plus">Add producer</a> <br>
+
+          If you produce food yourself and want to leave more detailed data about your products - contact us! <br>
+        </p>
+      </div>
+      {{>footer}}
+    </div>
+  </body>
+</html>

@@ -8,7 +8,7 @@ See https://github.com/wq/wq.app/issues/63
 -->
 <html><!-- manifest="SlupskTool.appcache" -->
   <head>
-    <title>Privacy Statement</title>
+    <title>Citizen</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     {{>head}}
@@ -17,11 +17,20 @@ See https://github.com/wq/wq.app/issues/63
     <div data-role="page" class="ui-page">
       <div data-role="header">
         {{>home}}
-        <h1>Privacy Statement</h1>
+        <h1>Citizen</h1>
       </div>
       {{>navbar}}
       <div role="main" class="ui-content justified">
-        <p>To be added...</p>
+        <h4>Podziel się jedzeniem!</h4>
+        <p>
+          What can you find out? What can you do? <br> <br>
+
+          You want to share what you're cooking with others? By using the following button you can share your recipe idea and let others know where to buy the best products in the area.
+          <a href="{{rt}}/privatedishs/new" data-role="button" data-icon="plus">Add private dish</a> <br>
+
+          Use the button to check recipes from others.
+          <a href="{{rt}}/privatedishs/" data-role="button" data-icon="bars">Show private dishes</a>
+        </p>
       </div>
       {{>footer}}
     </div>

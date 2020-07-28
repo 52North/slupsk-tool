@@ -20,8 +20,20 @@ rest.router.add_page('privacy-statement', {
     'url': 'privacy-statement',
 })
 
-rest.router.add_page('guide', {
-    'url': 'guide',
+rest.router.add_page('terms-of-use', {
+    'url': 'terms-of-use',
+})
+
+rest.router.add_page('kindergarten-guide', {
+    'url': 'kindergarten-guide',
+})
+
+rest.router.add_page('producer-guide', {
+    'url': 'producer-guide',
+})
+
+rest.router.add_page('citizen-guide', {
+    'url': 'citizen-guide',
 })
 
 rest.router.set_extra_config(

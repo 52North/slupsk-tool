@@ -8,8 +8,7 @@
     vertical-align: middle;
     height: 90px;
     margin: 5px;
-    float: right;
-    display: none;
+    padding: 10px;
 }
 
 body.ui-overlay-a {
@@ -84,4 +83,41 @@ td {
     text-align: right;
     font-weight: normal;
     font-size: 0.7em;
+}
+
+/* Move footer to bottom of each page */
+#footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: #505152; /* Color from Creating Interafces website footer */
+  /* Alternative by extending footer to bottom of page: box-shadow: 0 50vh 0 50vh #505152; */
+}
+
+/* Make sure the footer does not intersect with main content */
+div[role="main"] {
+  padding-bottom: 460px; /* 360px if screen large enough for parallel partner logos (see responsive.css) */
+}
+
+.footer {
+  list-style-type: none; /* Remove bullets */
+}
+
+/* Set style for modal welcome box */
+#welcome {
+  display: none;
+  z-index: 9999999;
+  width: 80%;
+  position: absolute;
+  top: 140px;
+  left: 8%;
+  overflow: auto;
+}
+
+#welcome.active {
+  display: block;
+}
+
+.modal-content {
+  background-color: white;
 }

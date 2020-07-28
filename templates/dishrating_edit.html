@@ -48,13 +48,13 @@
               </select>
               <p class='error dishrating-kindergarten_id-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain wq-date-hide">
               <label for='dishrating-date'>Date</label>
               <input id='dishrating-date' type='date' data-xform-type='date' name='date' value="{{date}}">
               <p class="hint">Please select the date of the dish that you wish to comment on.</p>
               <p class='error dishrating-date-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain wq-rate-hide">
               <label for='dishrating-dish_id'>Choose a dish</label>
               <select id='dishrating-dish_id' data-xform-type='string' name='dish_id'>
                 <option value="">Select one...</option>
@@ -66,7 +66,11 @@
               </select>
               <p class='error dishrating-dish_id-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain wq-rate-hide">
+              <label for='dishrating-preview'></label>
+              <img src="{{rt}}/images/empty.png" id='dishrating-preview' alt="Picture of the dish">
+            </li>
+            <li class="ui-field-contain wq-rate-hide">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Did your child like the dish?</legend>
                 {{#children_satisfaction_choices}}
@@ -77,7 +81,7 @@
               <p class='hint'>(1 = „it was awful&quot;, 5 = „it was delicious&quot;)</p>
               <p class='error dishrating-children_satisfaction-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain wq-rate-hide">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Do you think it is proper for a kid?</legend>
                 {{#parent_satisfaction_choices}}
@@ -88,7 +92,7 @@
               <p class='hint'>(1 = „it is not&quot;, 5 = „it is&quot;)</p>
               <p class='error dishrating-parent_satisfaction-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain wq-rate-hide">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>Do you think it is healthy?</legend>
                 {{#health_choices}}
@@ -99,7 +103,7 @@
               <p class='hint'>(1 = „it is very bad for my health&quot;, 5 = „it is very healthy&quot;)</p>
               <p class='error dishrating-health-errors'></p>
             </li>
-            <li class="ui-field-contain">
+            <li class="ui-field-contain wq-rate-hide">
               <label for='dishrating-comment'>Do you have any further comments?</label>
               <textarea id='dishrating-comment' name='comment' data-xform-type="text">{{comment}}</textarea>
               <p class='error dishrating-comment-errors'></p>

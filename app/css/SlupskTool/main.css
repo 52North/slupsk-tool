@@ -121,3 +121,8 @@ div[role="main"] {
 .modal-content {
   background-color: white;
 }
+
+/* Set style for picture preview in "Add dish rating" */
+#dishrating-preview {
+  max-width: 100%;
+}

@@ -47,6 +47,18 @@
           </table>
           <h3>Picture of the dish</h3>
           <img src="{{picture}}" alt="Picture of the dish - {{label}}" style="max-width:100%">
+          <div class="ui-grid-a" style="padding-top: 50px">
+            <div class="ui-block-a">
+              <a href="{{rt}}/privatedishs/" data-role="button" data-icon="bars" data-direction="reverse">
+                Show all private dishes
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="{{rt}}/privatedishs/new" data-role="button" data-icon="plus">
+                Add private dish
+              </a>
+            </div>
+          </div>
       </div>
       {{>footer}}
     </div>

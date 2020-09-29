@@ -75,6 +75,27 @@
               </td>
             </tr>
           </table>
+          {{^can_add_producer_info}}
+          <div style="padding-top: 50px">
+            <a href="{{rt}}/producerinfos/" data-role="button" data-icon="bars" data-direction="reverse">
+              Show all producer infos
+            </a>
+          </div>
+          {{/can_add_producer_info}}
+          {{#can_add_producer_info}}
+          <div class="ui-grid-a" style="padding-top: 50px">
+            <div class="ui-block-a">
+              <a href="{{rt}}/producerinfos/" data-role="button" data-icon="bars" data-direction="reverse">
+                Show all producer infos
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="{{rt}}/producerinfos/new" data-role="button" data-icon="plus">
+                Add producer info
+              </a>
+            </div>
+          </div>
+          {{/can_add_producer_info}}
         </div>
         <div class="ui-block-b">
           <div class="map detail-map" id="producerinfo-{{id}}-map"></div>

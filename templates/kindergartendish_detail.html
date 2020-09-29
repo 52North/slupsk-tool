@@ -68,6 +68,27 @@
           </table>
           <h3>Picture of the dish</h3>
           <img src="{{picture}}" alt="Picture of the dish - {{label}}" style="max-width:100%">
+          {{^can_add_kindergarten_dish}}
+          <div style="padding-top: 50px">
+            <a href="{{rt}}/kindergartendishs/" data-role="button" data-icon="bars" data-direction="reverse">
+              Show all kindergarten dishes
+            </a>
+          </div>
+          {{/can_add_kindergarten_dish}}
+          {{#can_add_kindergarten_dish}}
+          <div class="ui-grid-a" style="padding-top: 50px">
+            <div class="ui-block-a">
+              <a href="{{rt}}/kindergartendishs/" data-role="button" data-icon="bars" data-direction="reverse">
+                Show all kindergarten dishes
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="{{rt}}/kindergartendishs/new" data-role="button" data-icon="plus">
+                Add kindergarten dish
+              </a>
+            </div>
+          </div>
+          {{/can_add_kindergarten_dish}}
       </div>
       {{>footer}}
     </div>

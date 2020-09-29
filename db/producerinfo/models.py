@@ -78,7 +78,7 @@ class Delivery(models.Model):
     distance_to_shop = models.FloatField(
         null=True,
         blank=True,
-        verbose_name="Distance to shop",
+        verbose_name="Distance to shop (km)",
         help_text="To calculate the distance you can use the line tool in the map above.",
     )
     biodegradable_product = models.CharField(

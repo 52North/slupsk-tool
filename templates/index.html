@@ -21,6 +21,7 @@ See https://github.com/wq/wq.app/issues/63
     <div data-role="page" class="ui-page">
       <div data-role="header">
         <h1>Creating Interfaces - Słupsk</h1>
+        {{>language}}
       </div>
       {{^is_authenticated}}
       <form action="{{svc}}/login" method="post" data-ajax="false"
@@ -28,14 +29,14 @@ See https://github.com/wq/wq.app/issues/63
         {{>csrf}}
         <ul data-role="listview">
           <li>
-            <p>Currently, this website is only open for authenticated users. Please insert your username and password to proceed.</p>
+            <p>{{{i18n_auth_message}}}</p>
           </li>
           <li class="ui-field-contain">
-            <label for="username">Username</label>
+            <label for="username">{{{i18n_username}}}</label>
             <input name="username" id="username">
           </li>
           <li class="ui-field-contain">
-            <label for="password">Password</label>
+            <label for="password">{{{i18n_password}}}</label>
             <input name="password" id="password" type="password">
           </li>
           <li>

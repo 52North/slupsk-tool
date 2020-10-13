@@ -24,7 +24,7 @@ interesting and unique designs, styles and layouts.  The sky is the limit!
           Log Out
         </a>
         <a href="{{rt}}/" data-role="button" data-icon="home">
-          Explore the tool!
+          {{{i18n_explore_tool}}}
         </a>
         {{/is_authenticated}}
         {{^is_authenticated}}
@@ -33,11 +33,11 @@ interesting and unique designs, styles and layouts.  The sky is the limit!
           {{>csrf}}
           <ul data-role="listview">
             <li class="ui-field-contain">
-              <label for="username">Username</label>
+              <label for="username">{{{i18n_username}}}</label>
               <input name="username" id="username">
             </li>
             <li class="ui-field-contain">
-              <label for="password">Password</label>
+              <label for="password">{{{i18n_password}}}</label>
               <input name="password" id="password" type="password">
             </li>
             <li>

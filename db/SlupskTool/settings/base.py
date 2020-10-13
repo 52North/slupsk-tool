@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -73,18 +74,15 @@ from wq.db.default_settings import (
 )
 TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
 
-# Add messages to context_processors
-TEMPLATES[0]['OPTIONS']['context_processors']=list(TEMPLATES[0]['OPTIONS']['context_processors'])
-TEMPLATES[0]['OPTIONS']['context_processors'].append('django.contrib.messages.context_processors.messages')
-TEMPLATES[0]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['context_processors'])
-TEMPLATES[1]['OPTIONS']['context_processors']=list(TEMPLATES[0]['OPTIONS']['context_processors'])
-TEMPLATES[1]['OPTIONS']['context_processors'].append('django.contrib.messages.context_processors.messages')
-TEMPLATES[1]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['context_processors'])
+# Add context processors
 TEMPLATES[0]['OPTIONS']['context_processors'] += (
-    'SlupskTool.context_processors.route_base_url',
+     'django.contrib.messages.context_processors.messages',
+     'SlupskTool.context_processors.route_base_url',
+     'SlupskTool.context_processors.link_visibility',
+     'SlupskTool.i18n.translation.translate',
 )
-TEMPLATES[0]['OPTIONS']['context_processors'] += (
-    'SlupskTool.context_processors.link_visibility',
+TEMPLATES[1]['OPTIONS']['context_processors'] += (
+     'django.contrib.messages.context_processors.messages',
 )
 
 # wq: Recommended settings unique to wq.db
@@ -123,7 +121,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('pl', 'Polish'),
+    ('en', 'English'),
+]
+
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'UTC'
 

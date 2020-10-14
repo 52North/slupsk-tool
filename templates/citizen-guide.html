@@ -8,7 +8,7 @@ See https://github.com/wq/wq.app/issues/63
 -->
 <html><!-- manifest="SlupskTool.appcache" -->
   <head>
-    <title>Citizen</title>
+    <title>{{{i18n_citizen_p1}}}</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     {{>head}}
@@ -17,20 +17,20 @@ See https://github.com/wq/wq.app/issues/63
     <div data-role="page" class="ui-page">
       <div data-role="header">
         {{>home}}
-        <h1>Citizen</h1>
+        <h1>{{{i18n_citizen_p1}}}</h1>
         {{>language}}
       </div>
       {{>navbar}}
       <div role="main" class="ui-content justified">
-        <h4>Podziel się jedzeniem!</h4>
+        <h4>{{{i18n_citizen_p2}}}</h4>
         <p>
-          What can you find out? What can you do? <br> <br>
+          {{{i18n_citizen_p3}}} <br> <br>
 
-          You want to share what you're cooking with others? By using the following button you can share your recipe idea and let others know where to buy the best products in the area.
-          <a href="{{rt}}/privatedishs/new" data-role="button" data-icon="plus">Add private dish</a> <br>
+          {{{i18n_citizen_p4}}}
+          <a href="{{rt}}/privatedishs/new" data-role="button" data-icon="plus">{{{i18n_add_private_dish}}}</a> <br>
 
-          Use the button to check recipes from others.
-          <a href="{{rt}}/privatedishs/" data-role="button" data-icon="bars">Show private dishes</a>
+          {{{i18n_citizen_p5}}}
+          <a href="{{rt}}/privatedishs/" data-role="button" data-icon="bars">{{{i18n_show_private_dishes}}}</a>
         </p>
       </div>
       {{>footer}}

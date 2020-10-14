@@ -80,14 +80,16 @@ dict_en['i18n_kindergarten_p7'] = 'Moreover you can find links to'
 dict_en['i18n_kindergarten_p8'] = 'add a kindergarten dish ("Add kindergarten dish", only for kindergarten teachers and project members) and'
 dict_en['i18n_kindergarten_p9'] = 'rate dishes ("Rate kindergarten dish").'
 
-dict_pl['i18n_producer_p1'] = 'Producenci'
+dict_pl['i18n_producer'] = 'Producent'
+#dict_pl['i18n_producer_p1'] = 'Producenci'
 dict_pl['i18n_producer_p2'] = 'Odkryj jedzenie blisko Ciebie!'
 dict_pl['i18n_producer_p3'] = 'Czego możesz się dowiedzieć? Co możesz zrobić?'
 dict_pl['i18n_producer_p4'] = 'Chcesz kupować lokalnie, ale nie wiesz, gdzie kupić żywność od lokalnych rolników? Znajdziesz ich na mapie na stronie głównej lub otwierając listę lokalnych producentów bezpośrednio za pomocą poniższego przycisku.'
 dict_pl['i18n_producer_p5'] = 'Możesz również pomóc w tworzeniu mapy lokalnych producentów, dodając ich do mapy samodzielnie!'
 dict_pl['i18n_producer_p6'] = 'Jeśli sam produkujesz żywność i chcesz zostawić informacje na temat swoich produktów - skontaktuj się z nami!'
 
-dict_en['i18n_producer_p1'] = 'Producer'
+dict_en['i18n_producer'] = 'Producer'
+#dict_en['i18n_producer_p1'] = 'Producer'
 dict_en['i18n_producer_p2'] = 'Discover food close to you!'
 dict_en['i18n_producer_p3'] = 'What can you find out? What can you do?'
 dict_en['i18n_producer_p4'] = 'You want to buy locally, but don`t know where to buy food from local farmers? You will find them on the map on the homepage or open a list of local producers directly with the following button.'
@@ -111,62 +113,95 @@ dict_en['i18n_citizen_p5'] = 'Use the button to check recipes from others.'
 
 dict_pl['i18n_home'] = 'Strona główna'
 dict_pl['i18n_submit'] = 'Zatwierdź'
+dict_pl['i18n_add'] = 'Dodaj'
+dict_pl['i18n_edit'] = 'Edytować'
 dict_pl['i18n_add_producer'] = 'Dodaj producenta'
 dict_pl['i18n_show_producers'] = 'Pokaż producentów'
 dict_pl['i18n_this_producer'] = 'Wybrany producent'
 dict_pl['i18n_all_producers'] = 'Wszyscy producenci'
+dict_pl['i18n_producer_list'] = 'Lista producentów'
 dict_pl['i18n_producers'] = 'Producenci'
 dict_pl['i18n_add_shop'] = 'Dodaj sklep'
 dict_pl['i18n_show_shops'] = 'Pokaż sklepy'
 dict_pl['i18n_this_shop'] = 'Wybrany sklep'
 dict_pl['i18n_all_shops'] = 'Wszystkie sklepy'
+dict_pl['i18n_shop_list'] = 'Lista sklepy'
 dict_pl['i18n_shops'] = 'Sklepy'
+dict_pl['i18n_shop'] = 'sklep'
 dict_pl['i18n_add_kindergarten'] = 'Dodaj przedszkole'
 dict_pl['i18n_this_kindergarten'] =	'Wybrane przedszkole'
 dict_pl['i18n_all_kindergartens'] = 'Wszystkie przedszkola'
 dict_pl['i18n_kindergartens'] = 'Przedszkola'
+dict_pl['i18n_kindergarten_list'] = 'Lista przedszkola'
 dict_pl['i18n_add_kindergarten_dish'] = 'Dodaj danie przedszkolne'
 dict_pl['i18n_show_kindergarten_dishes'] = 'Pokaż dania przedszkolne'
 dict_pl['i18n_kindergarten_dishes'] = 'Dania w przedszkolach'
+dict_pl['i18n_kindergarten_dish'] = 'danie przedszkolne'
+dict_pl['i18n_kindergarten_dish_list'] = 'Lista dania w przedszkolach'
 dict_pl['i18n_rate_kindergarten_dish'] = 'Oceń danie przedszkolne'
+dict_pl['i18n_add_kindergarten_dish_rating'] = 'Dodaj ocena potraw'
 dict_pl['i18n_show_dish_ratings'] = 'Pokaż oceny potraw'
 dict_pl['i18n_kindergarten_dish_ratings'] = 'Oceny potraw z przedszkola'
+dict_pl['i18n_dish_rating'] = 'ocena potraw'
+dict_pl['i18n_dish_rating_list'] = 'Lista ocen potraw'
 dict_pl['i18n_add_private_dish'] = 'Dodaj swoje danie'
-dict_pl['i18n_show_private_dishes'] = 'Pokaż swoje danie'
-dict_pl['i18n_add_product_info'] = 'Dodaj inormacje o produktach'
+dict_pl['i18n_show_private_dishes'] = 'Pokaż danie prywatnych'
+dict_pl['i18n_private_dish'] = 'swoje danie'
+dict_pl['i18n_private_dish_list'] = 'Lista danie prywatnych'
+dict_pl['i18n_add_product_info'] = 'Dodaj informacje o produktach'
 dict_pl['i18n_show_product_infos'] = 'Pokaż informacje na temat produktu'
 dict_pl['i18n_product_infos'] = 'Informacje o produktach'
-dict_pl['i18n_show_feedbacks'] = 'Pokaż wyniki'
+dict_pl['i18n_product_info'] = 'informacje o produktach'
+dict_pl['i18n_add_feedback'] = 'Dodaj komentarz'
+dict_pl['i18n_show_feedbacks'] = 'Pokaż komentarze'
+dict_pl['i18n_feedback'] = 'komentarz'
+dict_pl['i18n_feedback_list'] = 'Lista komentarze'
 
 dict_en['i18n_home'] = 'Home'
 dict_en['i18n_submit'] = 'Submit'
+dict_en['i18n_add'] = 'Add'
+dict_en['i18n_edit'] = 'Edit'
 dict_en['i18n_add_producer'] = 'Add producer'
 dict_en['i18n_show_producers'] =' Show producers'
 dict_en['i18n_this_producer'] = 'This producer'
 dict_en['i18n_all_producers'] = 'All producers'
+dict_en['i18n_producer_list'] = 'List of producers'
 dict_en['i18n_producers'] = 'Producers'
 dict_en['i18n_add_shop'] = 'Add shop'
 dict_en['i18n_show_shops'] = 'Show shops'
 dict_en['i18n_this_shop'] = 'This shop'
 dict_en['i18n_all_shops'] = 'All shops'
+dict_en['i18n_shop_list'] = 'List of shops'
 dict_en['i18n_shops'] = 'Shops'
+dict_en['i18n_shop'] = 'shop'
 dict_en['i18n_add_kindergarten'] = 'Add kindergarten'
 dict_en['i18n_this_kindergarten'] = 'This kindergarten'
 dict_en['i18n_all_kindergartens'] = 'All kindergartens'
 dict_en['i18n_kindergartens'] = 'Kindergartens'
+dict_en['i18n_kindergarten_list'] = 'List of kindergartens'
 dict_en['i18n_add_kindergarten_dish'] = 'Add kindergarten dish'
 dict_en['i18n_show_kindergarten_dishes'] = 'Show kindergarten dishes'
 dict_en['i18n_kindergarten_dishes'] = 'Kindergarten dishes'
+dict_en['i18n_kindergarten_dish'] = 'kindergarten dish'
+dict_en['i18n_kindergarten_dish_list'] = 'List of kindergarten dishes'
 dict_en['i18n_rate_kindergarten_dish'] = 'Rate kindergarten dish'
+dict_en['i18n_add_kindergarten_dish_rating'] = 'Add dish rating'
 dict_en['i18n_show_dish_ratings'] = 'Show dish ratings'
 dict_en['i18n_kindergarten_dish_ratings'] = 'Kindergarten dish ratings'
+dict_en['i18n_dish_rating'] = 'dish rating'
+dict_en['i18n_dish_rating_list'] = 'List of dish ratings'
 dict_en['i18n_add_private_dish'] = 'Add private dish'
 dict_en['i18n_show_private_dishes'] = 'Show private dishes'
+dict_en['i18n_private_dish'] = 'private dish'
+dict_en['i18n_private_dish_list'] = 'List of private dishes'
 dict_en['i18n_add_product_info'] = 'Add product info'
 dict_en['i18n_show_product_infos'] = 'Show product infos'
 dict_en['i18n_product_infos'] = 'Product infos'
+dict_en['i18n_product_info'] = 'product info'
+dict_en['i18n_add_feedback'] = 'Add feedback'
 dict_en['i18n_show_feedbacks'] = 'Show feedbacks'
-
+dict_en['i18n_feedback'] = 'feedback'
+dict_en['i18n_feedback_list'] = 'List of feedbacks'
 
 # ----------------------------------------------------------------------
 # Add kindergarten dish
@@ -216,28 +251,28 @@ dict_en['i18n_delete_ingredient'] = 'Delete ingredient'
 dict_en['i18n_required_field'] = 'required field'
 
 # ----------------------------------------------------------------------
-# Add kindergarten dish
+# Add kindergarten dish rating
 
 dict_pl['i18n_date'] = 'Data'
 dict_pl['i18n_select_date'] = 'Wybierz dzień, w którym podano danie, które chcesz skomentować'
 dict_pl['i18n_choose_dish'] = 'Wybierz datę'
 dict_pl['i18n_like_dish'] = 'Czy Twojemu dziecku smakowało to danie?'
-dict_pl['i18n_score_hint1'] = '(1="było okropne", 5 - "było pyszne")'
+dict_pl['i18n_score_hint1'] = '(1 = "było okropne", 5 = "było pyszne")'
 dict_pl['i18n_proper_dish'] = 'Czy uważasz, że to danie jest odpowiednie dla dziecka?'
-dict_pl['i18n_score_hint2'] = '(1=zdecydowanie nie, 5= zdecydowanie tak)'
+dict_pl['i18n_score_hint2'] = '(1 = "zdecydowanie nie", 5 = "zdecydowanie tak")'
 dict_pl['i18n_healthy_dish'] = 'Czy uważasz, że to danie jest zdrowe?'
-dict_pl['i18n_score_hint3'] = '(1=jest bardzo niezdrowe, 5=jest bardzo zdrowe)'
+dict_pl['i18n_score_hint3'] = '(1 = "jest bardzo niezdrowe", 5 = "jest bardzo zdrowe")'
 dict_pl['i18n_dish_comment'] = 'Jeśli masz dodatkowe uwagi, wpisz je tutaj. '
 
 dict_en['i18n_date'] = 'Date'
 dict_en['i18n_select_date'] = 'Please select the date of the dish that you wish to comment on.'
 dict_en['i18n_choose_dish'] = 'Choose a dish'
 dict_en['i18n_like_dish'] = 'Did your child like the dish?'
-dict_en['i18n_score_hint1'] = '(1 = „it was awful", 5 = „it was delicious")'
+dict_en['i18n_score_hint1'] = '(1 = "it was awful", 5 = "it was delicious")'
 dict_en['i18n_proper_dish'] = 'Do you think it is proper for a kid?'
-dict_en['i18n_score_hint2'] = '(1 = „it is not", 5 = „it is")'
+dict_en['i18n_score_hint2'] = '(1 = "it is not", 5 = "it is")'
 dict_en['i18n_healthy_dish'] = 'Do you think it is healthy?'
-dict_en['i18n_score_hint3'] = '(1 = „it is very bad for my health", 5 = „it is very healthy")'
+dict_en['i18n_score_hint3'] = '(1 = "it is very bad for my health", 5 = "it is very healthy")'
 dict_en['i18n_dish_comment'] = 'Do you have any further comments?'
 
 # ----------------------------------------------------------------------
@@ -259,6 +294,9 @@ dict_pl['i18n_location'] = 'Lokalizacja'
 dict_pl['i18n_location_hint'] = 'Lokalizacja jest pobierana automatycznie z GPS urządzenia (jeśli lokalizacja jest udostępniona). Możesz też kliknąć na mapie poniżej i oznaczyć swoją lokalizację.'
 dict_pl['i18n_location_mode'] = 'Tryb lokalizacji'
 dict_pl['i18n_location_mode_choices'] =[{'name': "gps", 'label': "Użyj GPS"}, {'name': "map", 'label': "Wybierz punkt na mapie"}]
+dict_pl['i18n_latitude'] = 'Szerokość'
+dict_pl['i18n_longitude'] = 'Długość geograficzna'
+dict_pl['i18n_gps_accuracy'] = 'Dokładność GPS'
 
 dict_en['i18n_general'] = 'General'
 dict_en['i18n_name'] = 'Name'
@@ -276,13 +314,16 @@ dict_en['i18n_location'] = 'Location'
 dict_en['i18n_location_hint'] = 'You can choose between two options for setting the location. In the first option, the location is taken from the gps of your device (if available). As second option, you can click on the map below.'
 dict_en['i18n_location_mode'] = 'Location Mode'
 dict_en['i18n_location_mode_choices'] = [{'name': "gps", 'label': "Use GPS"}, {'name': "map", 'label': "Point on map"}]
+dict_en['i18n_latitude'] = 'Latitude'
+dict_en['i18n_longitude'] = 'Longitude'
+dict_en['i18n_gps_accuracy'] = 'GPS Accuracy'
 
 # ----------------------------------------------------------------------
 # Add product info
 
-dict_pl['i18n_producer'] = 'Producent'
 dict_pl['i18n_map_hint'] = 'Skorzystaj z mapy, aby sprawdzić lokalizację producentów i oszacować odległość do sklepu (patrz pytanie poniżej).'
 dict_pl['i18n_products'] = 'Produkty'
+dict_pl['i18n_product'] = 'Produkt'
 dict_pl['i18n_products_hint'] = 'Podaj kilka informacji o swoich produktach, jeśli znajdują się na poniższej liście.'
 dict_pl['i18n_add_product'] = 'Dodaj produkt'
 dict_pl['i18n_product_deliverd'] = 'Nazwa produktu'
@@ -302,9 +343,9 @@ dict_pl['i18n_recycling_package'] = 'Czy produkt był w opakowaniu nadającym si
 dict_pl['i18n_recycling_package_choices'] = [{'name': "yes", 'label': "Tak"}, {'name': "no", 'label': "Nie"}, {'name': "undecided", 'label': "Nie wiem"}]
 dict_pl['i18n_delete_product'] = 'Usuń produkt'
 
-dict_en['i18n_producer'] = 'Producer'
 dict_en['i18n_map_hint'] = 'Use the map to check the location of producers and to estimate the distance to a shop (see question below).'
 dict_en['i18n_products'] = 'Products'
+dict_en['i18n_product'] = 'Product'
 dict_en['i18n_products_hint'] = 'Please give some information about your products if they are in the list below.'
 dict_en['i18n_add_product'] = 'Add product'
 dict_en['i18n_product_deliverd'] = 'Product delivered'
@@ -331,11 +372,13 @@ dict_pl['i18n_from_local_producer'] = 'Czy kupiłeś/kupiłaś przynajmniej jede
 dict_pl['i18n_from_local_producer_choices'] = [{'name': "yes", 'label': "Tak"}, {'name': "no", 'label': "Nie"}]
 dict_pl['i18n_local_producer_hint'] = 'Wymień jednego lub więcej lokalnych producentów, od których kupiłeś produkty do swojego dania.'
 dict_pl['i18n_delete_producer'] = 'Usuń producenta'
+dict_pl['i18n_other'] = 'Inny'
 
 dict_en['i18n_from_local_producer'] = 'Did you buy at least one ingredient from a local producer?'
 dict_en['i18n_from_local_producer_choices'] = [{'name': "yes", 'label': "Yes"}, {'name': "no", 'label': "No"}]
 dict_en['i18n_local_producer_hint'] = 'Please list one or more local producers from which you bought an ingredient.'
 dict_en['i18n_delete_producer'] = 'Delete producer'
+dict_en['i18n_other'] = 'Other'
 
 
 # ----------------------------------------------------------------------
@@ -479,6 +522,10 @@ dict_en['i18n_ingredient_list'] = [{'id': "1", 'label': "Apples"},
                                    {'id': "33",'label': "Wheat"},
                                    {'id': "34",'label': "Wheat bread"},
                                    {'id': "35",'label': "Yoghurt"}]
+
+
+
+
 
 
 # ----------------------------------------------------------------------

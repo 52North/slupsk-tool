@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} shop</title>
+    <title>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_shop}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} shop</h1>
+        <h1>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_shop}}}</h1>
         {{#id}}
         {{#page_config.can_delete}}
         <form action="{{svc}}/shops/{{id}}" method="post" data-ajax="false"
@@ -36,25 +36,25 @@
           <input type=hidden name="_method" value="PUT">
           {{/id}}
           <ul data-role="listview" data-inset="true">
-            <li data-role="list-divider">1) General</li>
+            <li data-role="list-divider">1) {{{i18n_general}}}</li>
             <li class="ui-field-contain">
-              <label for='shop-name'>Name</label>
+              <label for='shop-name'>{{{i18n_name}}}</label>
               <input id='shop-name' type='text' data-xform-type='string' name='name' value="{{name}}">
               <p class='error shop-name-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-type'>Type</label>
+              <label for='shop-type'>{{{i18n_type}}}</label>
               <input id='shop-type' type='text' data-xform-type='string' name='type' value="{{type}}">
               <p class='error shop-type-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-product'>Main product(s)</label>
+              <label for='shop-product'>{{{i18n_main_products}}}</label>
               <input id='shop-product' type='text' data-xform-type='string' name='product' value="{{product}}">
               <p class='error shop-product-errors'></p>
             </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Do kindergartens buy from here?</legend>
+                <legend>{{{i18n_buy_from_kindergarten}}}</legend>
                 {{#kindergarten_supplier_choices}}
                 <input type='radio' id='shop-kindergarten_supplier-{{name}}' name='kindergarten_supplier' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='shop-kindergarten_supplier-{{name}}'>{{{label}}}</label>
@@ -62,31 +62,31 @@
               </fieldset>
               <p class='error shop-kindergarten_supplier-errors'></p>
             </li>
-            <li data-role="list-divider">2) Contact</li>
+            <li data-role="list-divider">2) {{{i18n_contact}}}</li>
             <li class="ui-field-contain">
-              <label for='shop-address'>Address</label>
+              <label for='shop-address'>{{{i18n_address}}}</label>
               <input id='shop-address' type='text' data-xform-type='string' name='address' value="{{address}}">
               <p class='error shop-address-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-phone'>Telephone</label>
+              <label for='shop-phone'>{{{i18n_telephone}}}</label>
               <input id='shop-phone' type='text' data-xform-type='string' name='phone' value="{{phone}}">
               <p class='error shop-phone-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-email'>E-mail</label>
+              <label for='shop-email'>{{{i18n_email}}}</label>
               <input id='shop-email' type='text' data-xform-type='string' name='email' value="{{email}}">
               <p class='error shop-email-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-website'>Website</label>
+              <label for='shop-website'>{{{i18n_website}}}</label>
               <input id='shop-website' type='text' data-xform-type='string' name='website' value="{{website}}">
               <p class='error shop-website-errors'></p>
             </li>
-            <li data-role="list-divider">3) Location</li>
+            <li data-role="list-divider">3) {{{i18n_location}}}</li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Location Mode</legend>
+                <legend>{{{i18n_location_mode}}}</legend>
                 {{#toggle_choices}}
                 <input type='radio' id='shop-toggle-{{name}}' name='toggle' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='shop-toggle-{{name}}'>{{{label}}}</label>
@@ -95,23 +95,23 @@
               <p class='error shop-toggle-errors'></p>
             </li>
             <li>
-              <label for='shop-geometry'>Location</label>
+              <label for='shop-geometry'>{{{i18n_location}}}</label>
               <input type='hidden' data-xform-type='geopoint' name='geometry'>
               <div class="map edit-map" id='shop-{{id}}{{^id}}new{{/id}}-edit-map'></div>
               <p class='error shop-geometry-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-latitude'>Latitude</label>
+              <label for='shop-latitude'>{{{i18n_latitude}}}</label>
               <input id='shop-latitude' type='number' data-xform-type='decimal' name='latitude' step='0.000001' value="{{latitude}}">
               <p class='error shop-latitude-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-longitude'>Longitude</label>
+              <label for='shop-longitude'>{{{i18n_longitude}}}</label>
               <input id='shop-longitude' type='number' data-xform-type='decimal' name='longitude' step='0.000001' value="{{longitude}}">
               <p class='error shop-longitude-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='shop-accuracy'>GPS Accuracy</label>
+              <label for='shop-accuracy'>{{{i18n_gps_accuracy}}}</label>
               <input id='shop-accuracy' type='number' data-xform-type='decimal' name='accuracy' step='0.000001' value="{{accuracy}}">
               <p class='error shop-accuracy-errors'></p>
             </li>
@@ -119,17 +119,17 @@
               <div class="ui-grid-b">
                 <div class="ui-block-a">
                   <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
-                    Home
+                    {{{i18n_home}}}
                   </a>
                 </div>
                 <div class="ui-block-b">
                   <a href="{{rt}}/shops/" data-role="button" data-icon="back" data-direction="reverse">
-                    Show shops
+                    {{{i18n_show_shops}}}
                   </a>
                 </div>
                 <div class="ui-block-c">
                   <button type="submit" data-icon="check" data-theme="b">
-                    Submit
+                    {{{i18n_submit}}}
                   </button>
                 </div>
               </div>

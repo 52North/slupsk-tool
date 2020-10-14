@@ -11,7 +11,7 @@
         <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/producers/{{id}}/edit" data-icon="edit" data-transition="flip">
-          Edit
+          {{{i18n_edit}}}
         </a>
         {{/page_config.can_change}}
       </div>
@@ -22,47 +22,47 @@
           <h1>{{{label}}}</h1>
           <table>
             <tr>
-              <th>Name</th>
+              <th>{{{i18n_name}}}</th>
               <td>{{{name}}}</td>
             </tr>
             <tr>
-              <th>Short description</th>
+              <th>{{{i18n_short_description}}}</th>
               <td>{{{short_description}}}</td>
             </tr>
             <tr>
-              <th>Main product(s)</th>
+              <th>{{{i18n_main_products}}}</th>
               <td>{{{product}}}</td>
             </tr>
             <tr>
-              <th>Do kindergartens use products from here?</th>
+              <th>{{{i18n_buy_from_kindergarten}}}</th>
               <td>{{{kindergarten_supplier_label}}}</td>
             </tr>
             <tr>
-              <th>Address</th>
+              <th>{{{i18n_address}}}</th>
               <td>{{{address}}}</td>
             </tr>
             <tr>
-              <th>Telephone</th>
+              <th>{{{i18n_telephone}}}</th>
               <td>{{{phone}}}</td>
             </tr>
             <tr>
-              <th>E-mail</th>
+              <th>{{{i18n_email}}}</th>
               <td>{{{email}}}</td>
             </tr>
             <tr>
-              <th>Website</th>
+              <th>{{{i18n_website}}}</th>
               <td>{{{website}}}</td>
             </tr>
           </table>
           <div class="ui-grid-a" style="padding-top: 50px">
             <div class="ui-block-a">
               <a href="{{rt}}/producers/" data-role="button" data-icon="bars" data-direction="reverse">
-                Show all producers
+                {{{i18n_show_producers}}}
               </a>
             </div>
             <div class="ui-block-b">
               <a href="{{rt}}/producers/new" data-role="button" data-icon="plus">
-                Add producer
+                {{{i18n_add_producer}}}
               </a>
             </div>
           </div>

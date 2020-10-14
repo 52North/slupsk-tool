@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} kindergarten dish</title>
+    <title>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_kindergarten_dish}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} kindergarten dish</h1>
+        <h1>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_kindergarten_dish}}}</h1>
         {{#id}}
         {{#page_config.can_delete}}
         <form action="{{svc}}/kindergartendishs/{{id}}" method="post" data-ajax="false"
@@ -36,9 +36,9 @@
           <input type=hidden name="_method" value="PUT">
           {{/id}}
           <ul data-role="listview" data-inset="true">
-            <li data-role="list-divider">1) Kindergarten</li>
+            <li data-role="list-divider">1) {{{i18n_kindergarten}}}</li>
             <li class="ui-field-contain">
-              <label for='kindergartendish-kindergarten_id'>Kindergarten <span style="color: red;">*</span></label>
+              <label for='kindergartendish-kindergarten_id'>{{{i18n_kindergarten}}} <span style="color: red;">*</span></label>
               <select id='kindergartendish-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
                 <option value="">Select one...</option>
                 {{#kindergarten_list}}
@@ -50,19 +50,19 @@
               <p class='error kindergartendish-kindergarten_id-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='kindergartendish-date'>Choose the particular date <span style="color: red;">*</span></label>
+              <label for='kindergartendish-date'>{{{i18n_choose_date}}} <span style="color: red;">*</span></label>
               <input id='kindergartendish-date' type='date' data-xform-type='date' name='date' value="{{date}}">
               <p class='error kindergartendish-date-errors'></p>
             </li>
-            <li data-role="list-divider">2) Dish</li>
+            <li data-role="list-divider">2) {{{i18n_dish}}}</li>
             <li class="ui-field-contain">
-              <label for='kindergartendish-name'>Enter the name of the dish <span style="color: red;">*</span></label>
+              <label for='kindergartendish-name'>{{{i18n_dish_name}}} <span style="color: red;">*</span></label>
               <input id='kindergartendish-name' type='text' data-xform-type='string' name='name' value="{{name}}">
               <p class='error kindergartendish-name-errors'></p>
             </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Type of meal</legend>
+                <legend>{{{i18n_meal_type}}}</legend>
                 {{#type_choices}}
                 <input type='radio' id='kindergartendish-type-{{name}}' name='type' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='kindergartendish-type-{{name}}'>{{{label}}}</label>
@@ -72,7 +72,7 @@
             </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Food waste – how much of the dish you have to dump into the garbage?</legend>
+                <legend>{{{i18n_food_waste}}}</legend>
                 {{#waste_choices}}
                 <input type='radio' id='kindergartendish-waste-{{name}}' name='waste' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='kindergartendish-waste-{{name}}'>{{{label}}}</label>
@@ -90,7 +90,7 @@
               <img src="{{rt}}/images/empty.png"
                    id="kindergartendish-picture-preview">
               {{/picture}}
-              <label for="kindergartendish-picture">Picture of the dish</label>
+              <label for="kindergartendish-picture">{{{i18n_picture}}}</label>
               {{#native}}
               <input type="hidden" name="picture" id="kindergartendish-picture"
                      data-wq-type="file" data-wq-preview="kindergartendish-picture-preview">
@@ -116,16 +116,16 @@
             {{#picture}}
             <li class="ui-field-contain">
               <img src="{{image_url}}">
-              <label for="kindergartendish-picture">Picture of the dish</label>
+              <label for="kindergartendish-picture">{{{i18n_picture}}}</label>
               <input type="text" id="kindergartendish-picture" disabled
                   value="{{name}} ({{type}}, {{body.size}} bytes)">
               <p class="error kindergartendish-picture-errors"></p>
             </li>
             {{/picture}}
             {{/picture.name}}
-            <li data-role="list-divider">3) Composition</li>
+            <li data-role="list-divider">3) {{{i18n_composition}}}</li>
             <li data-xform-type='note'>
-              <p class="label">Please give detailed information about some of the ingredients if they are included in the choices below.</p>
+              <p class="label">{{{i18n_ingredient_note}}}</p>
             </li>
             {{#compositions}}
             {{^new_attachment}}{{#id}}
@@ -133,10 +133,10 @@
             {{/id}}{{/new_attachment}}
             <li class="ui-field-contain">
             <div data-role="collapsible" class="section-compositions" data-collapsed="false">
-              <h4>Ingredient {{@index}}</h4>
+              <h4>{{{i18n_ingredient}}} {{@index}}</h4>
               <ul data-role="listview" data-inset="true">
                 <li class="ui-field-contain">
-                  <label for='kindergartendish-compositions-{{@index}}-ingredient_id'>Choose an ingredient from the list</label>
+                  <label for='kindergartendish-compositions-{{@index}}-ingredient_id'>{{{i18n_choose_ingredient}}}</label>
                   <select id='kindergartendish-compositions-{{@index}}-ingredient_id' data-xform-type='string' name='compositions[{{@index}}][ingredient_id]'>
                     <option value="">Select one...</option>
                     {{#ingredient_list}}
@@ -148,20 +148,20 @@
                   <p class='error kindergartendish-compositions-{{@index}}-ingredient_id-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <label for='kindergartendish-compositions-{{@index}}-weight_grams'>Enter the weight of the ingredient (grams)</label>
+                  <label for='kindergartendish-compositions-{{@index}}-weight_grams'>{{{i18n_weight}}}</label>
                   <input id='kindergartendish-compositions-{{@index}}-weight_grams' type='number' data-xform-type='decimal' name='compositions[{{@index}}][weight_grams]' step='0.001' value="{{weight_grams}}">
-                  <p class="hint">Per portion.</p>
+                  <p class="hint">{{{i18n_per_portion}}}</p>
                   <p class='error kindergartendish-compositions-{{@index}}-weight_grams-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <label for='kindergartendish-compositions-{{@index}}-calories'>Enter the number of calories of the ingredient</label>
+                  <label for='kindergartendish-compositions-{{@index}}-calories'>{{{i18n_calories}}}</label>
                   <input id='kindergartendish-compositions-{{@index}}-calories' type='number' data-xform-type='decimal' name='compositions[{{@index}}][calories]' step='0.001' value="{{calories}}">
-                  <p class="hint">Per portion.</p>
+                  <p class="hint">{{{i18n_per_portion}}}</p>
                   <p class='error kindergartendish-compositions-{{@index}}-calories-errors'></p>
                 </li>
                 <li class="ui-field-contain">
                   <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                    <legend>Was the ingredient bought directly from the producer?</legend>
+                    <legend>{{{i18n_from_producer}}}</legend>
                     {{#from_producer_choices}}
                     <input type='radio' id='kindergartendish-compositions-{{@index}}-from_producer-{{name}}' name='compositions[{{@index}}][from_producer]' value='{{name}}'{{#selected}} checked{{/selected}}>
                     <label for='kindergartendish-compositions-{{@index}}-from_producer-{{name}}'>{{{label}}}</label>
@@ -171,7 +171,7 @@
                 </li>
                 <li>
                     <button type="button" data-wq-action="removeattachment" data-wq-section="compositions">
-                      Delete ingredient
+                      {{{i18n_delete_ingredient}}}
                     </button>
                 </li>
               </ul>
@@ -180,27 +180,27 @@
             {{/compositions}}
             <li>
               <button type="button" data-wq-action="addattachment" data-wq-section="compositions">
-                 Add ingredient
+                 {{{i18n_add_ingredient}}}
               </button>
             </li>
             <li>
-              <p style="color: red;">*required field</p>
+              <p style="color: red;">*{{{i18n_required_field}}}</p>
             </li>
             <li>
               <div class="ui-grid-b">
                 <div class="ui-block-a">
                   <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
-                    Home
+                    {{{i18n_home}}}
                   </a>
                 </div>
                 <div class="ui-block-b">
                   <a href="{{rt}}/kindergartendishs/" data-role="button" data-icon="back" data-direction="reverse">
-                    Show kindergarten dishes
+                    {{{i18n_show_kindergarten_dishes}}}
                   </a>
                 </div>
                 <div class="ui-block-c">
                   <button type="submit" data-icon="check" data-theme="b">
-                    Submit
+                    {{{i18n_submit}}}
                   </button>
                 </div>
               </div>

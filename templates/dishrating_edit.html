@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} rating of a dish</title>
+    <title>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_dish_rating}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} rating of a dish</h1>
+        <h1>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_dish_rating}}}</h1>
         {{#id}}
         {{#page_config.can_delete}}
         <form action="{{svc}}/dishratings/{{id}}" method="post" data-ajax="false"
@@ -37,7 +37,7 @@
           {{/id}}
           <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
-              <label for='dishrating-kindergarten_id'>Kindergarten</label>
+              <label for='dishrating-kindergarten_id'>{{{i18n_kindergarten}}}</label>
               <select id='dishrating-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
                 <option value="">Select one...</option>
                 {{#kindergarten_list}}
@@ -49,13 +49,13 @@
               <p class='error dishrating-kindergarten_id-errors'></p>
             </li>
             <li class="ui-field-contain wq-date-hide">
-              <label for='dishrating-date'>Date</label>
+              <label for='dishrating-date'>{{{i18n_date}}}</label>
               <input id='dishrating-date' type='date' data-xform-type='date' name='date' value="{{date}}">
-              <p class="hint">Please select the date of the dish that you wish to comment on.</p>
+              <p class="hint">{{{i18n_select_date}}}</p>
               <p class='error dishrating-date-errors'></p>
             </li>
             <li class="ui-field-contain wq-rate-hide">
-              <label for='dishrating-dish_id'>Choose a dish</label>
+              <label for='dishrating-dish_id'>{{{i18n_choose_dish}}}</label>
               <select id='dishrating-dish_id' data-xform-type='string' name='dish_id'>
                 <option value="">Select one...</option>
                 {{#dish_list}}
@@ -72,39 +72,39 @@
             </li>
             <li class="ui-field-contain wq-rate-hide">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Did your child like the dish?</legend>
+                <legend>{{{i18n_like_dish}}}</legend>
                 {{#children_satisfaction_choices}}
                 <input type='radio' id='dishrating-children_satisfaction-{{name}}' name='children_satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='dishrating-children_satisfaction-{{name}}'>{{{label}}}</label>
                 {{/children_satisfaction_choices}}
               </fieldset>
-              <p class='hint'>(1 = „it was awful&quot;, 5 = „it was delicious&quot;)</p>
+              <p class='hint'>{{{i18n_score_hint1}}}</p>
               <p class='error dishrating-children_satisfaction-errors'></p>
             </li>
             <li class="ui-field-contain wq-rate-hide">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Do you think it is proper for a kid?</legend>
+                <legend>{{{i18n_proper_dish}}}</legend>
                 {{#parent_satisfaction_choices}}
                 <input type='radio' id='dishrating-parent_satisfaction-{{name}}' name='parent_satisfaction' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='dishrating-parent_satisfaction-{{name}}'>{{{label}}}</label>
                 {{/parent_satisfaction_choices}}
               </fieldset>
-              <p class='hint'>(1 = „it is not&quot;, 5 = „it is&quot;)</p>
+              <p class='hint'>{{{i18n_score_hint2}}}</p>
               <p class='error dishrating-parent_satisfaction-errors'></p>
             </li>
             <li class="ui-field-contain wq-rate-hide">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Do you think it is healthy?</legend>
+                <legend>{{{i18n_healthy_dish}}}</legend>
                 {{#health_choices}}
                 <input type='radio' id='dishrating-health-{{name}}' name='health' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='dishrating-health-{{name}}'>{{{label}}}</label>
                 {{/health_choices}}
               </fieldset>
-              <p class='hint'>(1 = „it is very bad for my health&quot;, 5 = „it is very healthy&quot;)</p>
+              <p class='hint'>{{{i18n_score_hint3}}}</p>
               <p class='error dishrating-health-errors'></p>
             </li>
             <li class="ui-field-contain wq-rate-hide">
-              <label for='dishrating-comment'>Do you have any further comments?</label>
+              <label for='dishrating-comment'>{{{i18n_dish_comment}}}</label>
               <textarea id='dishrating-comment' name='comment' data-xform-type="text">{{comment}}</textarea>
               <p class='error dishrating-comment-errors'></p>
             </li>
@@ -112,17 +112,17 @@
               <div class="ui-grid-b">
                 <div class="ui-block-a">
                   <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
-                    Home
+                    {{{i18n_home}}}
                   </a>
                 </div>
                 <div class="ui-block-b">
                   <a href="{{rt}}/dishratings/" data-role="button" data-icon="back" data-direction="reverse">
-                    Show dish ratings
+                    {{{i18n_show_dish_ratings}}}
                   </a>
                 </div>
                 <div class="ui-block-c">
                   <button type="submit" data-icon="check" data-theme="b">
-                    Submit
+                    {{{i18n_submit}}}
                   </button>
                 </div>
               </div>

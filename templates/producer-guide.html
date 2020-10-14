@@ -8,7 +8,7 @@ See https://github.com/wq/wq.app/issues/63
 -->
 <html><!-- manifest="SlupskTool.appcache" -->
   <head>
-    <title>Producer</title>
+    <title>{{{i18n_producer}}}</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     {{>head}}
@@ -17,23 +17,22 @@ See https://github.com/wq/wq.app/issues/63
     <div data-role="page" class="ui-page">
       <div data-role="header">
         {{>home}}
-        <h1>Producer</h1>
+        <h1>{{{i18n_producer}}}</h1>
         {{>language}}
       </div>
       {{>navbar}}
       <div role="main" class="ui-content justified">
-        <h4>Discover food close to you!</h4>
+        <h4>{{{i18n_producer_p2}}}</h4>
         <p>
-          What can you find out? What can you do? <br> <br>
+        {{{i18n_producer_p3}}} <br> <br>
 
-          You want to buy locally, but don't know where to buy food from local farmers? You will find them on the map on the homepage or
-          open a list of local producers directly with the following button. <br>
-          <a href="{{rt}}/producers/" data-role="button" data-icon="bars">Show producers</a>  <br>
+          {{{i18n_producer_p4}}} <br>
+          <a href="{{rt}}/producers/" data-role="button" data-icon="bars">{{{i18n_show_producers}}}</a>  <br>
 
-          You can also help build a map of local producers by adding them to the map yourself!
-          <a href="{{rt}}/producers/new" data-role="button" data-icon="plus">Add producer</a> <br>
+          {{{i18n_producer_p5}}}
+          <a href="{{rt}}/producers/new" data-role="button" data-icon="plus">{{{i18n_add_producer}}}</a> <br>
 
-          If you produce food yourself and want to leave more detailed data about your products - contact us! <br>
+          {{{i18n_producer_p6}}} <br>
         </p>
       </div>
       {{>footer}}

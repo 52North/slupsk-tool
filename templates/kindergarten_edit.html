@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} kindergarten</title>
+    <title>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_kindergarten}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} kindergarten</h1>
+        <h1>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_kindergarten}}}</h1>
         {{#id}}
         {{#page_config.can_delete}}
         <form action="{{svc}}/kindergartens/{{id}}" method="post" data-ajax="false"
@@ -37,18 +37,18 @@
           {{/id}}
           <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
-              <label for='kindergarten-name'>Name <span style="color: red">*</span></label>
+              <label for='kindergarten-name'>{{{i18n_name}}} <span style="color: red">*</span></label>
               <textarea id='kindergarten-name' name='name' data-xform-type="text" required>{{name}}</textarea>
               <p class='error kindergarten-name-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='kindergarten-address'>Address</label>
+              <label for='kindergarten-address'>{{{i18n_address}}}</label>
               <textarea id='kindergarten-address' name='address' data-xform-type="text">{{address}}</textarea>
               <p class='error kindergarten-address-errors'></p>
             </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                <legend>Location Mode</legend>
+                <legend>{{{i18n_location_mode}}}</legend>
                 {{#toggle_choices}}
                 <input type='radio' id='kindergarten-toggle-{{name}}' name='toggle' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='kindergarten-toggle-{{name}}'>{{{label}}}</label>
@@ -57,23 +57,23 @@
               <p class='error kindergarten-toggle-errors'></p>
             </li>
             <li>
-              <label for='kindergarten-geometry'>Location</label>
+              <label for='kindergarten-geometry'>{{{i18n_location}}}</label>
               <input type='hidden' data-xform-type='geopoint' name='geometry'>
               <div class="map edit-map" id='kindergarten-{{id}}{{^id}}new{{/id}}-edit-map'></div>
               <p class='error kindergarten-geometry-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='kindergarten-latitude'>Latitude</label>
+              <label for='kindergarten-latitude'>{{{i18n_latitude}}}</label>
               <input id='kindergarten-latitude' type='number' data-xform-type='decimal' name='latitude' step='0.000001' value="{{latitude}}">
               <p class='error kindergarten-latitude-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='kindergarten-longitude'>Longitude</label>
+              <label for='kindergarten-longitude'>{{{i18n_longitude}}}</label>
               <input id='kindergarten-longitude' type='number' data-xform-type='decimal' name='longitude' step='0.000001' value="{{longitude}}">
               <p class='error kindergarten-longitude-errors'></p>
             </li>
             <li class="ui-field-contain">
-              <label for='kindergarten-accuracy'>GPS Accuracy</label>
+              <label for='kindergarten-accuracy'>{{{i18n_gps_accuracy}}}</label>
               <input id='kindergarten-accuracy' type='number' data-xform-type='decimal' name='accuracy' step='0.000001' value="{{accuracy}}">
               <p class='error kindergarten-accuracy-errors'></p>
             </li>
@@ -81,24 +81,24 @@
               <div class="ui-grid-b">
                 <div class="ui-block-a">
                   <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
-                    Home
+                    {{{i18n_home}}}
                   </a>
                 </div>
                 <div class="ui-block-b">
                   <a href="{{rt}}/kindergartens/" data-role="button" data-icon="back" data-direction="reverse">
-                    Show kindergartens
+                    {{{i18n_all_kindergartens}}}
                   </a>
                 </div>
                 <div class="ui-block-c">
                   <button type="submit" data-icon="check" data-theme="b">
-                    Submit
+                    {{{i18n_submit}}}
                   </button>
                 </div>
               </div>
               <p class="error kindergarten-errors"></p>
             </li>
           </ul>
-          <p style="color:red;">* required</p>
+          <p style="color:red;">* {{{i18n_required_field}}}</p>
         </form>
       </div>
       {{>footer}}

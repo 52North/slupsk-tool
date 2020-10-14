@@ -11,7 +11,7 @@
         <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/kindergartens/{{id}}/edit" data-icon="edit" data-transition="flip">
-          Edit
+          {{{i18n_edit}}}
         </a>
         {{/page_config.can_change}}
       </div>
@@ -22,17 +22,17 @@
           <h1>{{{label}}}</h1>
           <table>
             <tr>
-              <th>Name</th>
+              <th>{{{i18n_name}}}</th>
               <td>{{{name}}}</td>
             </tr>
             <tr>
-              <th>Address</th>
+              <th>{{{i18n_address}}}</th>
               <td>{{{address}}}</td>
             </tr>
           </table>
           <div style="padding-top: 50px">
             <a href="{{rt}}/kindergartens/" data-role="button" data-icon="bars" data-direction="reverse">
-              Show all kindergartens
+              {{{i18n_all_kindergartens}}}
             </a>
           </div>
         </div>

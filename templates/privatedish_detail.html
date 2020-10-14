@@ -11,7 +11,7 @@
         <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/privatedishs/{{id}}/edit" data-icon="edit" data-transition="flip">
-          Edit
+          {{{i18n_edit}}}
         </a>
         {{/page_config.can_change}}
       </div>
@@ -20,23 +20,23 @@
           <h1>{{{label}}}</h1>
           <table>
             <tr>
-              <th>Enter the name of the dish</th>
+              <th>{{{i18n_dish_name}}}</th>
               <td>{{{name}}}</td>
             </tr>
             <tr>
-              <th>Did you buy at least one ingredient from a local producer?</th>
+              <th>{{{i18n_from_local_producer}}}</th>
               <td>{{{from_producer_label}}}</td>
             </tr>
             <tr>
-              <th>Producers</th>
+              <th>{{{i18n_producers}}}</th>
               <td>
                 {{#localproducers}}
                 <table>
                   <tr>
-                    <th>Producer</th>
+                    <th>{{{i18n_producer}}}</th>
                     <td>
                       {{#producer_label}}{{{producer_label}}}{{/producer_label}}
-                      {{^producer_label}}Other{{/producer_label}}
+                      {{^producer_label}}{{{i18n_other}}}{{/producer_label}}
                     </td>
                   </tr>
                 </table>
@@ -45,17 +45,17 @@
               </td>
             </tr>
           </table>
-          <h3>Picture of the dish</h3>
+          <h3>{{{i18n_picture}}}</h3>
           <img src="{{picture}}" alt="Picture of the dish - {{label}}" style="max-width:100%">
           <div class="ui-grid-a" style="padding-top: 50px">
             <div class="ui-block-a">
               <a href="{{rt}}/privatedishs/" data-role="button" data-icon="bars" data-direction="reverse">
-                Show all private dishes
+                {{{i18n_show_private_dishes}}}
               </a>
             </div>
             <div class="ui-block-b">
               <a href="{{rt}}/privatedishs/new" data-role="button" data-icon="plus">
-                Add private dish
+                {{{i18n_add_private_dish}}}
               </a>
             </div>
           </div>

@@ -145,7 +145,7 @@ class Feedback(models.Model):
         verbose_name="What other functions should the application have?",
     )
 
-    wq_label_template = "Feedback from " + datetime.today().strftime('%Y-%m-%d')
+    wq_label_template = "Feedback from / komentarz od " + datetime.today().strftime('%Y-%m-%d')
 
     def __str__(self):
         return pystache.render(self.wq_label_template, self)

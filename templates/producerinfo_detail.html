@@ -11,7 +11,7 @@
         <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/producerinfos/{{id}}/edit" data-icon="edit" data-transition="flip">
-          Edit
+          {{{i18n_edit}}}
         </a>
         {{/page_config.can_change}}
       </div>
@@ -22,51 +22,51 @@
           <h1>{{{label}}}</h1>
           <table>
             <tr>
-              <th>Producer</th>
+              <th>{{{i18n_producer}}}</th>
               <td>{{{producer_label}}}</td>
             </tr>
             <tr>
-              <th>Products</th>
+              <th>{{{i18n_products}}}</th>
               <td>
                 {{#deliverys}}
                 <table>
                   <tr>
-                    <th>Product delivered</th>
+                    <th>{{{i18n_product_deliverd}}}</th>
                     <td>{{{product_label}}}</td>
                   </tr>
                   <tr>
-                    <th>Shop delivered</th>
+                    <th>{{{i18n_shop_supplied}}}</th>
                     <td>
                       {{#shop_label}}{{{shop_label}}}{{/shop_label}}
-                      {{^shop_label}}Other{{/shop_label}}
+                      {{^shop_label}}{{{i18n_other}}}{{/shop_label}}
                     </td>
                   </tr>
                   <tr>
-                    <th>Quantity (kg)</th>
+                    <th>{{{i18n_quantity}}}</th>
                     <td>{{{quantity}}}</td>
                   </tr>
                   <tr>
-                    <th>Frequency</th>
+                    <th>{{{i18n_frequency}}}</th>
                     <td>{{{frequency}}}</td>
                   </tr>
                   <tr>
-                    <th>Price per item/kg (PLN)</th>
+                    <th>{{{i18n_price}}}</th>
                     <td>{{{price}}}</td>
                   </tr>
                   <tr>
-                    <th>Mode of production</th>
+                    <th>{{{i18n_production_mode}}}</th>
                     <td>{{{production_mode_label}}}</td>
                   </tr>
                   <tr>
-                    <th>Distance to shop (km)</th>
+                    <th>{{{i18n_shop_distance}}}</th>
                     <td>{{{distance_to_shop}}}</td>
                   </tr>
                   <tr>
-                    <th>Was it biodegradable?</th>
+                    <th>{{{i18n_biodegradable}}}</th>
                     <td>{{{biodegradable_product_label}}}</td>
                   </tr>
                   <tr>
-                    <th>Was it in recycling packages?</th>
+                    <th>{{{i18n_recycling_package}}}</th>
                     <td>{{{recyclable_product_package_label}}}</td>
                   </tr>
                 </table>
@@ -78,7 +78,7 @@
           {{^can_add_producer_info}}
           <div style="padding-top: 50px">
             <a href="{{rt}}/producerinfos/" data-role="button" data-icon="bars" data-direction="reverse">
-              Show all producer infos
+              {{{i18n_show_product_infos}}}
             </a>
           </div>
           {{/can_add_producer_info}}
@@ -86,12 +86,12 @@
           <div class="ui-grid-a" style="padding-top: 50px">
             <div class="ui-block-a">
               <a href="{{rt}}/producerinfos/" data-role="button" data-icon="bars" data-direction="reverse">
-                Show all producer infos
+                {{{i18n_show_product_infos}}}
               </a>
             </div>
             <div class="ui-block-b">
               <a href="{{rt}}/producerinfos/new" data-role="button" data-icon="plus">
-                Add producer info
+                {{{i18n_add_product_info}}}
               </a>
             </div>
           </div>

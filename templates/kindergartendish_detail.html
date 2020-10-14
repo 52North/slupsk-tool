@@ -11,7 +11,7 @@
         <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/kindergartendishs/{{id}}/edit" data-icon="edit" data-transition="flip">
-          Edit
+          {{{i18n_edit}}}
         </a>
         {{/page_config.can_change}}
       </div>
@@ -20,44 +20,44 @@
           <h1>{{{label}}}</h1>
           <table>
             <tr>
-              <th>Kindergarten</th>
+              <th>{{{i18n_kindergarten}}}</th>
               <td>{{{kindergarten_label}}}</td>
             </tr>
             <tr>
-              <th>Choose the particular date</th>
+              <th>{{{i18n_choose_date}}}</th>
               <td>{{date}}</td>
             </tr>
             <tr>
-              <th>Enter the name of the dish</th>
+              <th>{{{i18n_dish_name}}}</th>
               <td>{{{name}}}</td>
             </tr>
             <tr>
-              <th>Type of meal</th>
+              <th>{{{i18n_meal_type}}}</th>
               <td>{{{type_label}}}</td>
             </tr>
             <tr>
-              <th>Food waste – how much of the dish you have to dump into the garbage?</th>
+              <th>{{{i18n_food_waste}}}</th>
               <td>{{{waste_label}}}</td>
             </tr>
             <tr>
-              <th>Composition</th>
+              <th>{{{i18n_composition}}}</th>
               <td>
                 {{#compositions}}
                 <table>
                   <tr>
-                    <th>Choose an ingredient from the list</th>
+                    <th>{{{i18n_choose_ingredient}}}</th>
                     <td>{{{ingredient_label}}}</td>
                   </tr>
                   <tr>
-                    <th>Enter the weight of the ingredient (grams)</th>
+                    <th>{{{i18n_weight}}}</th>
                     <td>{{weight_grams}}</td>
                   </tr>
                   <tr>
-                    <th>Enter the number of calories of the ingredient</th>
+                    <th>{{{i18n_calories}}}</th>
                     <td>{{calories}}</td>
                   </tr>
                   <tr>
-                    <th>Was the ingredient bought directly from the producer?</th>
+                    <th>{{{i18n_from_producer}}}</th>
                     <td>{{{from_producer_label}}}</td>
                   </tr>
                 </table>
@@ -66,12 +66,12 @@
               </td>
             </tr>
           </table>
-          <h3>Picture of the dish</h3>
+          <h3>{{{i18n_picture}}}</h3>
           <img src="{{picture}}" alt="Picture of the dish - {{label}}" style="max-width:100%">
           {{^can_add_kindergarten_dish}}
           <div style="padding-top: 50px">
             <a href="{{rt}}/kindergartendishs/" data-role="button" data-icon="bars" data-direction="reverse">
-              Show all kindergarten dishes
+              {{{i18n_show_kindergarten_dishes}}}
             </a>
           </div>
           {{/can_add_kindergarten_dish}}
@@ -79,12 +79,12 @@
           <div class="ui-grid-a" style="padding-top: 50px">
             <div class="ui-block-a">
               <a href="{{rt}}/kindergartendishs/" data-role="button" data-icon="bars" data-direction="reverse">
-                Show all kindergarten dishes
+                {{{i18n_show_kindergarten_dishes}}}
               </a>
             </div>
             <div class="ui-block-b">
               <a href="{{rt}}/kindergartendishs/new" data-role="button" data-icon="plus">
-                Add kindergarten dish
+                {{{i18n_add_kindergarten_dish}}}
               </a>
             </div>
           </div>

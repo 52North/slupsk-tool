@@ -8,7 +8,7 @@ See https://github.com/wq/wq.app/issues/63
 -->
 <html><!-- manifest="SlupskTool.appcache" -->
   <head>
-    <title>About</title>
+    <title>{{{i18n_about_p1}}}</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     {{>head}}
@@ -17,25 +17,22 @@ See https://github.com/wq/wq.app/issues/63
     <div data-role="page" class="ui-page">
       <div data-role="header">
         {{>home}}
-        <h1>About</h1>
+        <h1>{{{i18n_about_p1}}}</h1>
         {{>language}}
       </div>
       {{>navbar}}
       <div role="main" class="ui-content justified">
         <p>
-          The EU funded project "Creating Interfaces" has the goal to build capacity for integrated governance at the Food-Water-Energy-nexus in cities on the water. The city of Słupsk is participating as a case study site.
-          On this website, citizens in and around Słupsk can help understanding the connection between food, water and energy by submitting data about the following three topics:
+          {{{i18n_about_p2}}}
         </p>
         <ol>
-          <li>Dishes in kindergartens</li>
-          <li>Local producers</li>
-          <li>Private dishes</li>
+          <li>{{{i18n_about_p3}}}</li>
+          <li>{{{i18n_about_p4}}}</li>
+          <li>{{{i18n_about_p5}}}</li>
         </ol>
         <p>
-          Moreover, citizens can find information about these complexes which might help in their daily decisions, e.g. where to buy healthy and local food.
-          If you need assistance in using the website, please check the different topics (Kindergarten, producer, citizen) presented in the navigation at the top of the page.
-          Of course, you can also contact the project team via ... <br>
-          More complex visualizations and analyses can be found here (add link). There is also a story map (add link).
+          {{{i18n_about_p6}}} <br>
+          {{{i18n_about_p7}}}
         </p>
         <div>
           <img src="{{rt}}/images/funding.png" alt="EU" style="width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto; min-width: 300px;">

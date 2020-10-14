@@ -11,7 +11,7 @@
         <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/shops/{{id}}/edit" data-icon="edit" data-transition="flip">
-          Edit
+          {{{i18n_edit}}}
         </a>
         {{/page_config.can_change}}
       </div>
@@ -22,41 +22,41 @@
           <h1>{{{label}}}</h1>
           <table>
             <tr>
-              <th>Name</th>
+              <th>{{{i18n_name}}}</th>
               <td>{{{name}}}</td>
             </tr>
             <tr>
-              <th>Type</th>
+              <th>{{{i18n_type}}}</th>
               <td>{{{type}}}</td>
             </tr>
             <tr>
-              <th>Main product(s)</th>
+              <th>{{{i18n_main_products}}}</th>
               <td>{{{product}}}</td>
             </tr>
             <tr>
-              <th>Do kindergartens buy from here?</th>
+              <th>{{{i18n_buy_from_kindergarten}}}</th>
               <td>{{{kindergarten_supplier_label}}}</td>
             </tr>
             <tr>
-              <th>Address</th>
+              <th>{{{i18n_address}}}</th>
               <td>{{{address}}}</td>
             </tr>
             <tr>
-              <th>Telephone</th>
+              <th>{{{i18n_telephone}}}</th>
               <td>{{{phone}}}</td>
             </tr>
             <tr>
-              <th>E-mail</th>
+              <th>{{{i18n_email}}}</th>
               <td>{{{email}}}</td>
             </tr>
             <tr>
-              <th>Website</th>
+              <th>{{{i18n_website}}}</th>
               <td>{{{website}}}</td>
             </tr>
           </table>
           <div style="padding-top: 50px">
             <a href="{{rt}}/shops/" data-role="button" data-icon="bars" data-direction="reverse">
-              Show all shops
+              {{{i18n_show_shops}}}
             </a>
           </div>
         </div>

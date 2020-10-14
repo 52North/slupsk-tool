@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>List of dishes at kindergartens{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</title>
+    <title>{{{i18n_kindergarten_dish_list}}}{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page" data-wq-sync-refresh="true">
       <div data-role="header">
         {{>home}}
-        <h1>List of dishes at kindergartens{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</h1>
+        <h1>{{{i18n_kindergarten_dish_list}}}{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</h1>
         {{#page_config.can_add}}
         <a href="{{rt}}/kindergartendishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
           Add New
@@ -79,8 +79,8 @@
             {{/list}}
           </ul>
           {{#page_config.can_add}}
-            <a href="{{rt}}/kindergartendishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">Add kindergarten dish</a>
-            <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus" data-theme="b">Rate kindergarten dish</a>
+            <a href="{{rt}}/kindergartendishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_kindergarten_dish}}}</a>
+            <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus" data-theme="b">{{{i18n_rate_kindergarten_dish}}}</a>
           {{/page_config.can_add}}
       </div>
       {{>paginator}}

@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                 ('frequency', models.TextField(blank=True, help_text='If you deliver this product regularly, please insert the delivery frequency, e.g. once per week.', null=True, verbose_name='Frequency')),
                 ('price', models.FloatField(blank=True, null=True, verbose_name='Price per item/kg (PLN)')),
                 ('production_mode', models.CharField(blank=True, choices=[('organic_certificate', 'Organic with certificate'), ('organic_no_certificate', 'Organic without certificate'), ('traditional', 'Traditional'), ('industrial', 'Industrial')], max_length=22, null=True, verbose_name='Mode of production')),
-                ('distance_to_shop', models.FloatField(blank=True, help_text='To calculate the distance you can use the line tool in the map above.', null=True, verbose_name='Distance to shop')),
+                ('distance_to_shop', models.FloatField(blank=True, help_text='To calculate the distance you can use the line tool in the map above.', null=True, verbose_name='Distance to shop (km)')),
                 ('biodegradable_product', models.CharField(blank=True, choices=[('yes', 'Yes'), ('no', 'No'), ('uncertain', 'Don&#x27;t know')], max_length=9, null=True, verbose_name='Was it biodegradable?')),
                 ('recyclable_product_package', models.CharField(blank=True, choices=[('yes', 'Yes'), ('no', 'No'), ('uncertain', 'Don&#x27;t know')], max_length=9, null=True, verbose_name='Was it in recycling packages?')),
                 ('producerinfo', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='deliverys', to='producerinfo.Producerinfo')),

@@ -87,10 +87,10 @@
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>{{{i18n_from_local_producer}}}</legend>
-                {{#from_producer_choices}}
+                {{#i18n_from_local_producer_choices}}
                 <input type='radio' id='privatedish-from_producer-{{name}}' class="wq-hide" name='from_producer' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='privatedish-from_producer-{{name}}'>{{{label}}}</label>
-                {{/from_producer_choices}}
+                {{/i18n_from_local_producer_choices}}
               </fieldset>
               <p class='error privatedish-from_producer-errors'></p>
             </li>

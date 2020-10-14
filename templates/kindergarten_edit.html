@@ -49,10 +49,10 @@
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>{{{i18n_location_mode}}}</legend>
-                {{#toggle_choices}}
+                {{#i18n_location_mode_choices}}
                 <input type='radio' id='kindergarten-toggle-{{name}}' name='toggle' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='kindergarten-toggle-{{name}}'>{{{label}}}</label>
-                {{/toggle_choices}}
+                {{/i18n_location_mode_choices}}
               </fieldset>
               <p class='error kindergarten-toggle-errors'></p>
             </li>

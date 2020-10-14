@@ -110,10 +110,10 @@
                   <li class="ui-field-contain">
                     <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                       <legend>{{{i18n_production_mode}}}</legend>
-                      {{#production_mode_choices}}
+                      {{#i18n_production_mode_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-production_mode-{{name}}' name='deliverys[{{@index}}][production_mode]' value='{{name}}'{{#selected}} checked{{/selected}}>
                       <label for='producer-deliverys-{{@index}}-production_mode-{{name}}'>{{{label}}}</label>
-                      {{/production_mode_choices}}
+                      {{/i18n_production_mode_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-production_mode-errors'></p>
                   </li>
@@ -126,20 +126,20 @@
                   <li class="ui-field-contain">
                     <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                       <legend>{{{i18n_biodegradable}}}</legend>
-                      {{#biodegradable_product_choices}}
+                      {{#i18n_biodegradable_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-biodegradable_product-{{name}}' name='deliverys[{{@index}}][biodegradable_product]' value='{{name}}'{{#selected}} checked{{/selected}}>
                       <label for='producer-deliverys-{{@index}}-biodegradable_product-{{name}}'>{{{label}}}</label>
-                      {{/biodegradable_product_choices}}
+                      {{/i18n_biodegradable_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-biodegradable_product-errors'></p>
                   </li>
                   <li class="ui-field-contain">
                     <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                       <legend>{{{i18n_recycling_package}}}</legend>
-                      {{#recyclable_product_package_choices}}
+                      {{#i18n_recycling_package_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}' name='deliverys[{{@index}}][recyclable_product_package]' value='{{name}}'{{#selected}} checked{{/selected}}>
                       <label for='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}'>{{{label}}}</label>
-                      {{/recyclable_product_package_choices}}
+                      {{/i18n_recycling_package_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-recyclable_product_package-errors'></p>
                   </li>

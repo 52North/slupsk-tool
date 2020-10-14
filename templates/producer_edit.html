@@ -55,10 +55,10 @@
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>{{{i18n_buy_from_kindergarten}}}</legend>
-                {{#kindergarten_supplier_choices}}
+                {{#i18n_buy_choices}}
                 <input type='radio' id='producer-kindergarten_supplier-{{name}}' name='kindergarten_supplier' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='producer-kindergarten_supplier-{{name}}'>{{{label}}}</label>
-                {{/kindergarten_supplier_choices}}
+                {{/i18n_buy_choices}}
               </fieldset>
               <p class='error producer-kindergarten_supplier-errors'></p>
             </li>
@@ -90,10 +90,10 @@
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>{{{i18n_location_mode}}}</legend>
-                {{#toggle_choices}}
+                {{#i18n_location_mode_choices}}
                 <input type='radio' id='producer-toggle-{{name}}' name='toggle' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='producer-toggle-{{name}}'>{{{label}}}</label>
-                {{/toggle_choices}}
+                {{/i18n_location_mode_choices}}
               </fieldset>
               <p class='error producer-toggle-errors'></p>
             </li>

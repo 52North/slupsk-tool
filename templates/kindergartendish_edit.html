@@ -63,20 +63,20 @@
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>{{{i18n_meal_type}}}</legend>
-                {{#type_choices}}
+                {{#i18n_meal_type_choices}}
                 <input type='radio' id='kindergartendish-type-{{name}}' name='type' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='kindergartendish-type-{{name}}'>{{{label}}}</label>
-                {{/type_choices}}
+                {{/i18n_meal_type_choices}}
               </fieldset>
               <p class='error kindergartendish-type-errors'></p>
             </li>
             <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>{{{i18n_food_waste}}}</legend>
-                {{#waste_choices}}
+                {{#i18n_food_waste_choices}}
                 <input type='radio' id='kindergartendish-waste-{{name}}' name='waste' value='{{name}}'{{#selected}} checked{{/selected}}>
                 <label for='kindergartendish-waste-{{name}}'>{{{label}}}</label>
-                {{/waste_choices}}
+                {{/i18n_food_waste_choices}}
               </fieldset>
               <p class='error kindergartendish-waste-errors'></p>
             </li>
@@ -162,10 +162,10 @@
                 <li class="ui-field-contain">
                   <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                     <legend>{{{i18n_from_producer}}}</legend>
-                    {{#from_producer_choices}}
+                    {{#i18n_from_producer_choices}}
                     <input type='radio' id='kindergartendish-compositions-{{@index}}-from_producer-{{name}}' name='compositions[{{@index}}][from_producer]' value='{{name}}'{{#selected}} checked{{/selected}}>
                     <label for='kindergartendish-compositions-{{@index}}-from_producer-{{name}}'>{{{label}}}</label>
-                    {{/from_producer_choices}}
+                    {{/i18n_from_producer_choices}}
                   </fieldset>
                   <p class='error kindergartendish-compositions-{{@index}}-from_producer-errors'></p>
                 </li>

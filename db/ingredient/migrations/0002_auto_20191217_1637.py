@@ -31,8 +31,6 @@ def insertData(apps, schema_editor):
      ingredient.save()
      ingredient = Ingredient(name = "Cherries")
      ingredient.save()
-     ingredient = Ingredient(name = "Chicken meat")
-     ingredient.save()
      ingredient = Ingredient(name = "Cottage cheese")
      ingredient.save()
      ingredient = Ingredient(name = "Cucumber")

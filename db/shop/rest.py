@@ -11,7 +11,7 @@ rest.router.register_model(
         'autoZoom' : False,
         'layers': [{
             'type': 'geojson',
-            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src="images/shop.png">',
+            'name': '<span style="padding-right: 5px";>Sklepy</span><img style="height: 20px;" src="images/shop.png">',
             'url': 'shops.geojson',
             'popup': 'shop',
             'icon' : 'shop',
@@ -21,7 +21,7 @@ rest.router.register_model(
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': '<span style="padding-right: 5px";>Shop</span><img style="height: 20px;" src="images/shop.png">',
+            'name': '<span style="padding-right: 5px";>Sklep</span><img style="height: 20px;" src="images/shop.png">',
             'url': 'shops/{{id}}.geojson',
             'popup': 'shop',
             'flatten': True,
@@ -32,7 +32,7 @@ rest.router.register_model(
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': '<span style="padding-right: 5px";>Shop</span><img style="height: 20px;" src="images/shop.png">',
+            'name': '<span style="padding-right: 5px";>Sklep</span><img style="height: 20px;" src="images/shop.png">',
             'url': 'shops/{{id}}/edit.geojson',
             'popup': 'shop',
             'geometryField': 'geometry',

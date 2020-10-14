@@ -12,7 +12,7 @@ rest.router.register_model(
         'autoZoom' : False,
         'layers': [{
             'type': 'geojson',
-            'name': '<span style="padding-right: 5px;">Producers</span><img style="height: 20px;" src="images/producer.png">',
+            'name': '<span style="padding-right: 5px;">Producenci</span><img style="height: 20px;" src="images/producer.png">',
             'url': 'producers.geojson',
             'popup': 'producer',
             'icon' : 'producer',
@@ -22,7 +22,7 @@ rest.router.register_model(
         'autoZoom' : True,
         'layers': [{
             'type': 'geojson',
-            'name': '<span style="padding-right: 5px;">Producer</span><img style="height: 20px;" src="images/producer.png">',
+            'name': '<span style="padding-right: 5px;">Producent</span><img style="height: 20px;" src="images/producer.png">',
             'url': 'producers/{{id}}.geojson',
             'popup': 'producer',
             'flatten': True,
@@ -32,7 +32,7 @@ rest.router.register_model(
         'mode': 'edit',
         'layers': [{
             'type': 'geojson',
-            'name': 'distance_calculator',
+            'name': 'kalkulator odległości',
             'url': 'producerinfos/{{id}}/edit.geojson',
             'draw': {
                 'circle': False,
@@ -47,13 +47,13 @@ rest.router.register_model(
             },
             {
             'type': 'geojson',
-            'name': '<span style="padding-right: 5px;">Producers</span><img style="height: 20px;" src="images/producer.png">',
+            'name': '<span style="padding-right: 5px;">Producenci</span><img style="height: 20px;" src="images/producer.png">',
             'url': 'producers.geojson',
             'popup': 'producer',
             'icon' : 'producer',
             },
             {
-            'name': '<span style="padding-right: 5px";>Shops</span><img style="height: 20px;" src="images/shop.png">',
+            'name': '<span style="padding-right: 5px";>Sklepy</span><img style="height: 20px;" src="images/shop.png">',
             'type': 'geojson',
             'url': 'shops.geojson',
             'popup': 'shop',

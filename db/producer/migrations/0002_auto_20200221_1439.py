@@ -4,9 +4,9 @@ from django.db import migrations
 
 def insertData(apps, schema_editor):
     Producer = apps.get_model('producer', 'Producer')
-    producer = Producer(name = "Gospodarstwo Sadownicze Karnicki", short_description = "Winegrower", product = "Grapes", address = "Głobino 34, 76-200 Głobino", phone = "(59) 847 10 97, 606 213 641, 664 199 641, 664 948 180", email = "-", website = "-", toggle = "manual", latitude = 54.431643, longitude = 17.116031, accuracy=250)
+    producer = Producer(name = "Gospodarstwo Sadownicze Karnicki", short_description = "Właściciel winnicy", product = "Winogrona", address = "Głobino 34, 76-200 Głobino", phone = "(59) 847 10 97, 606 213 641, 664 199 641, 664 948 180", email = "-", website = "-", toggle = "manual", latitude = 54.431643, longitude = 17.116031, accuracy=250)
     producer.save()
-    producer = Producer(name = "PASIEKA Karolczak", short_description = "Beekeeper", product = "Honey", address = "Gdańska 76, 76-100 Sławno", phone = "509 198 311", email = "monikakarolczak@wp.pl", website = "-", toggle = "manual", latitude = 54.363335, longitude = 16.702279, accuracy=250)
+    producer = Producer(name = "PASIEKA Karolczak", short_description = "Pszczelarz", product = "Miód", address = "Gdańska 76, 76-100 Sławno", phone = "509 198 311", email = "monikakarolczak@wp.pl", website = "-", toggle = "manual", latitude = 54.363335, longitude = 16.702279, accuracy=250)
     producer.save()
 
 

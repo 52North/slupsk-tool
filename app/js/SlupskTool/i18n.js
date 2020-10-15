@@ -434,6 +434,8 @@ i18n.init = function (config) {
       } else {
         this.language = 'pl';                     // fall-back language, should be equal to LANGUAGE_CODE in base.py for consistency
       }
+    } else if (lang != 'en' && lang != 'pl') {
+      this.language = 'pl';
     } else {
       this.language = lang;
     }

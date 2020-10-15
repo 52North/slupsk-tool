@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('quantity_pieces', models.IntegerField(blank=True, null=True, verbose_name='Enter the quantity of the ingredient (pieces)')),
                 ('weight_grams', models.FloatField(blank=True, null=True, verbose_name='Enter the weight of the ingredient (grams)')),
                 ('calories', models.FloatField(blank=True, null=True, verbose_name='Enter the number of calories per ingredient in the dish (calories)')),
-                ('from_producer', models.CharField(blank=True, choices=[('yes', 'Yes'), ('no', 'No'), ('uncertain', 'Don&#x27;t know')], max_length=9, null=True, verbose_name='Was the ingredient bought directly from the producer?')),
+                ('from_producer', models.CharField(blank=True, choices=[('yes', 'Tak'), ('no', 'Nie'), ('uncertain', 'Nie wiem')], max_length=9, null=True, verbose_name='Was the ingredient bought directly from the producer?')),
                 ('waste', models.CharField(blank=True, choices=[('less25', 'Less than 25 %'), ('25to75', 'From 25 % to 75 %'), ('more75', 'More than 75 %')], max_length=6, null=True, verbose_name='Food waste – how many of the dish you have to dump into the garbage?')),
                 ('ingredient', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='ingredient.Ingredient', verbose_name='Choose an ingredient from the list')),
                 ('kindergartendish', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='compositions', to='kindergartendish.Kindergartendish')),

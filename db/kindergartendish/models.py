@@ -87,9 +87,9 @@ class Composition(models.Model):
     )
     from_producer = models.CharField(
         choices=(
-            ("yes", "Yes"),
-            ("no", "No"),
-            ("uncertain", "Don&#x27;t know"),
+            ("yes", "Tak"),
+            ("no", "Nie"),
+            ("uncertain", "Nie wiem"),
         ),
         max_length=9,
         null=True,

@@ -103,10 +103,10 @@
             {{/id}}{{/new_attachment}}
             <li class="ui-field-contain wq-no-hide">
               <div data-role="collapsible" class="section-localproducers" data-collapsed="false">
-                <h4>{{{i18n_producer}}} {{@index}}</h4>
+                <h4>Producent {{@index}}</h4>
                 <ul data-role="listview" data-inset="true">
                   <li class="ui-field-contain">
-                    <label for='privatedish-localproducers-{{@index}}-producer_id'>{{{i18n_producer}}}</label>
+                    <label for='privatedish-localproducers-{{@index}}-producer_id'>Producent</label>
                     <select id='privatedish-localproducers-{{@index}}-producer_id' data-xform-type='string' name='localproducers[{{@index}}][producer_id]'>
                       <option value="">Select one...</option>
                       {{#producer_list}}
@@ -119,7 +119,7 @@
                   </li>
                   <li>
                     <button type="button" data-wq-action="removeattachment" data-wq-section="localproducers">
-                      {{{i18n_delete_producer}}}
+                      Usuń producenta
                     </button>
                   </li>
                 </ul>

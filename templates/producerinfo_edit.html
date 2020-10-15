@@ -65,10 +65,10 @@
             {{/id}}{{/new_attachment}}
             <li class="ui-field-contain">
             <div data-role="collapsible" class="section-deliverys" data-collapsed="false">
-              <h4>{{{i18n_product}}} {{@index}}</h4>
+              <h4>Produkt {{@index}}</h4>
               <ul data-role="listview" data-inset="true">
                   <li class="ui-field-contain">
-                    <label for='producer-deliverys-{{@index}}-product_id'>{{{i18n_product_deliverd}}}</label>
+                    <label for='producer-deliverys-{{@index}}-product_id'>Nazwa produktu</label>
                     <select id='producer-deliverys-{{@index}}-product_id' data-xform-type='string' name='deliverys[{{@index}}][product_id]'>
                       <option value="">Select one...</option>
                       {{#product_list}}
@@ -80,7 +80,7 @@
                     <p class='error producer-deliverys-{{@index}}-product_id-errors'></p>
                   </li>
                   <li class="ui-field-contain">
-                    <label for='producer-deliverys-{{@index}}-shop_id'>{{{i18n_shop_supplied}}}</label>
+                    <label for='producer-deliverys-{{@index}}-shop_id'>Nazwa sklepu, do którego dostarczany jest produkt</label>
                     <select id='producer-deliverys-{{@index}}-shop_id' class="shop-select" data-xform-type='string' name='deliverys[{{@index}}][shop_id]'>
                       <option value="">Select one...</option>
                       {{#shop_list}}
@@ -92,60 +92,60 @@
                     <p class='error producer-deliverys-{{@index}}-shop_id-errors'></p>
                   </li>
                   <li class="ui-field-contain">
-                    <label for='producer-deliverys-{{@index}}-quantity'>{{{i18n_quantity}}}</label>
+                    <label for='producer-deliverys-{{@index}}-quantity'>Ilość (kg)</label>
                     <input id='producer-deliverys-{{@index}}-quantity' type='number' data-xform-type='decimal' name='deliverys[{{@index}}][quantity]' step='0.001' value="{{quantity}}">
                     <p class='error producer-deliverys-{{@index}}-quantity-errors'></p>
                   </li>
                   <li class="ui-field-contain">
-                    <label for='producer-deliverys-{{@index}}-frequency'>{{{i18n_frequency}}}</label>
+                    <label for='producer-deliverys-{{@index}}-frequency'>Częstotliwość dostaw</label>
                     <input id='producer-deliverys-{{@index}}-frequency' type='text' data-xform-type='string' name='deliverys[{{@index}}][frequency]' value="{{frequency}}">
-                    <p class="hint">{{{i18n_frequency_hint}}}</p>
+                    <p class="hint">Jeśli dostarczasz ten produkt regularnie, wprowadź częstotliwość dostaw, np. raz w tygodniu.</p>
                     <p class='error producer-deliverys-{{@index}}-frequency-errors'></p>
                   </li>
                   <li class="ui-field-contain">
-                    <label for='producer-deliverys-{{@index}}-price'>{{{i18n_price}}}</label>
+                    <label for='producer-deliverys-{{@index}}-price'>Cena za porcję/ kg (PLN)</label>
                     <input id='producer-deliverys-{{@index}}-price' type='number' data-xform-type='decimal' name='deliverys[{{@index}}][price]' step='0.001' value="{{price}}">
                     <p class='error producer-deliverys-{{@index}}-price-errors'></p>
                   </li>
                   <li class="ui-field-contain">
                     <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                      <legend>{{{i18n_production_mode}}}</legend>
-                      {{#i18n_production_mode_choices}}
+                      <legend>Sposób produkcji</legend>
+                      {{#production_mode_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-production_mode-{{name}}' name='deliverys[{{@index}}][production_mode]' value='{{name}}'{{#selected}} checked{{/selected}}>
                       <label for='producer-deliverys-{{@index}}-production_mode-{{name}}'>{{{label}}}</label>
-                      {{/i18n_production_mode_choices}}
+                      {{/production_mode_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-production_mode-errors'></p>
                   </li>
                   <li class="ui-field-contain">
-                    <label for='producer-deliverys-{{@index}}-distance_to_shop'>{{{i18n_shop_distance}}}</label>
+                    <label for='producer-deliverys-{{@index}}-distance_to_shop'>Odległość do sklepu (km)</label>
                     <input id='producer-deliverys-{{@index}}-distance_to_shop' type='number' data-xform-type='decimal' name='deliverys[{{@index}}][distance_to_shop]' step='0.001' value="{{distance_to_shop}}">
-                    <p class="hint">{{{i18n_linetool1}}} <br> {{{i18n_linetool2}}}</p>
+                    <p class="hint">Aby obliczyć odległość, <br> połącz linia punkty na mapie.</p>
                     <p class='error producer-deliverys-{{@index}}-distance_to_shop-errors'></p>
                   </li>
                   <li class="ui-field-contain">
                     <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                      <legend>{{{i18n_biodegradable}}}</legend>
-                      {{#i18n_biodegradable_choices}}
+                      <legend>Czy był biodegradowalny?</legend>
+                      {{#biodegradable_product_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-biodegradable_product-{{name}}' name='deliverys[{{@index}}][biodegradable_product]' value='{{name}}'{{#selected}} checked{{/selected}}>
                       <label for='producer-deliverys-{{@index}}-biodegradable_product-{{name}}'>{{{label}}}</label>
-                      {{/i18n_biodegradable_choices}}
+                      {{/biodegradable_product_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-biodegradable_product-errors'></p>
                   </li>
                   <li class="ui-field-contain">
                     <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
-                      <legend>{{{i18n_recycling_package}}}</legend>
-                      {{#i18n_recycling_package_choices}}
+                      <legend>Czy produkt był w opakowaniu nadającym się do recyklingu?</legend>
+                      {{#recyclable_product_package_choices}}
                       <input type='radio' id='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}' name='deliverys[{{@index}}][recyclable_product_package]' value='{{name}}'{{#selected}} checked{{/selected}}>
                       <label for='producer-deliverys-{{@index}}-recyclable_product_package-{{name}}'>{{{label}}}</label>
-                      {{/i18n_recycling_package_choices}}
+                      {{/recyclable_product_package_choices}}
                     </fieldset>
                     <p class='error producer-deliverys-{{@index}}-recyclable_product_package-errors'></p>
                   </li>
                   <li>
                       <button type="button" data-wq-action="removeattachment" data-wq-section="deliverys">
-                        {{{i18n_delete_product}}}
+                        Usuń produkt
                       </button>
                   </li>
               </ul>

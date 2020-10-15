@@ -65,10 +65,10 @@ class Delivery(models.Model):
     )
     production_mode = models.CharField(
         choices=(
-            ("organic_certificate", "Organic with certificate"),
-            ("organic_no_certificate", "Organic without certificate"),
-            ("traditional", "Traditional"),
-            ("industrial", "Industrial"),
+            ("organic_certificate", "Organiczna z certyfikatem"),
+            ("organic_no_certificate", "Organiczna bez certyfikatu"),
+            ("traditional", "Tradycyjna"),
+            ("industrial", "Przemysłowa"),
         ),
         max_length=22,
         null=True,
@@ -83,9 +83,9 @@ class Delivery(models.Model):
     )
     biodegradable_product = models.CharField(
         choices=(
-            ("yes", "Yes"),
-            ("no", "No"),
-            ("uncertain", "Don&#x27;t know"),
+            ("yes", "Tak"),
+            ("no", "Nie"),
+            ("uncertain", "Nie wiem"),
         ),
         max_length=9,
         null=True,
@@ -94,9 +94,9 @@ class Delivery(models.Model):
     )
     recyclable_product_package = models.CharField(
         choices=(
-            ("yes", "Yes"),
-            ("no", "No"),
-            ("uncertain", "Don&#x27;t know"),
+            ("yes", "Tak"),
+            ("no", "Nie"),
+            ("uncertain", "Nie wiem"),
         ),
         max_length=9,
         null=True,

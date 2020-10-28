@@ -5,7 +5,7 @@ from .models import Kindergarten
 def filter(qs, request):
 
     # Define participating kindergartens
-    kindergartens = ['Przedszkole Miejskie nr 12 Niezapominajka', 'Przedszkole Miejskie nr 24 Słupski Niedźwiadek Szczęścia']
+    kindergartens = ['Przedszkole Miejskie nr 12 Niezapominajka', 'Przedszkole Miejskie nr 25 im. Kubusia Puchatka']
     # Filter queryset
     qs_filtered = Kindergarten.objects.filter(name__in=kindergartens)
     return qs_filtered

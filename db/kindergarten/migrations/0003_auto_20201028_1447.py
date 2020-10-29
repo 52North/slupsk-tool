@@ -4,8 +4,8 @@ from django.db import migrations
 
 def insertData(apps, schema_editor):
      Kindergarten = apps.get_model('kindergarten', 'Kindergarten')
-     kindergarten = Kindergarten(name = "Przedszkole Miejskie nr 25 im. Kubusia Puchatka", address = "Powstańców Wielkopolskich 1, 76-200 Słupsk", toggle = "manual", latitude = 54.459513, longitude = 16.978607, accuracy=150)
-     kindergarten.save() 
+     kindergarten = Kindergarten(name = "Przedszkole Miejskie nr 25 im. Kubusia Puchatka", address = "Powstańców Wielkopolskich 1, 76-200 Słupsk", toggle = "manual", latitude = 54.458702, longitude = 16.982329, accuracy=150)
+     kindergarten.save()
 
 class Migration(migrations.Migration):
 

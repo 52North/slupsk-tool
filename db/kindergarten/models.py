@@ -10,6 +10,26 @@ class Kindergarten(models.Model):
         blank=True,
         verbose_name="Address",
     )
+    phone = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Telephone",
+    )
+    email = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="E-mail",
+    )
+    website = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Website",
+    )
+    facebook = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Facebook",
+    )
     toggle = models.CharField(
         choices=(
             ("gps", "Use GPS"),

@@ -47,6 +47,26 @@
               <p class='error kindergarten-address-errors'></p>
             </li>
             <li class="ui-field-contain">
+              <label for='kindergarten-phone'>{{{i18n_telephone}}}</label>
+              <textarea id='kindergarten-phone' name='phone' data-xform-type="text">{{phone}}</textarea>
+              <p class='error kindergarten-phone-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='kindergarten-email'>{{{i18n_email}}}</label>
+              <textarea id='kindergarten-email' name='email' data-xform-type="text">{{email}}</textarea>
+              <p class='error kindergarten-email-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='kindergarten-website'>{{{i18n_website}}}</label>
+              <textarea id='kindergarten-website' name='website' data-xform-type="text">{{website}}</textarea>
+              <p class='error kindergarten-website-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='kindergarten-facebook'>Facebook</label>
+              <textarea id='kindergarten-facebook' name='facebook' data-xform-type="text">{{facebook}}</textarea>
+              <p class='error kindergarten-facebook-errors'></p>
+            </li>
+            <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>{{{i18n_location_mode}}}</legend>
                 {{#i18n_location_mode_choices}}

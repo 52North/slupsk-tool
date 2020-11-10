@@ -78,10 +78,10 @@
             </li>
             {{/list}}
           </ul>
-          {{#page_config.can_add}}
+          {{#can_add_kindergarten_dish}}
             <a href="{{rt}}/kindergartendishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_kindergarten_dish}}}</a>
-            <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus" data-theme="b">{{{i18n_rate_kindergarten_dish}}}</a>
-          {{/page_config.can_add}}
+          {{/can_add_kindergarten_dish}}
+          <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus" data-theme="b">{{{i18n_rate_kindergarten_dish}}}</a>
       </div>
       {{>paginator}}
       {{>footer}}

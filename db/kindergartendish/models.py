@@ -80,11 +80,6 @@ class Composition(models.Model):
         blank=True,
         verbose_name="Enter the weight of the ingredient (grams)",
     )
-    calories = models.FloatField(
-        null=True,
-        blank=True,
-        verbose_name="Enter the number of calories of the ingredient",
-    )
     from_producer = models.CharField(
         choices=(
             ("yes", "Tak"),

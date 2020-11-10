@@ -20,15 +20,11 @@
           <h1>{{{label}}}</h1>
           <table>
             <tr>
-              <th>{{{i18n_dish_name}}}</th>
-              <td>{{{name}}}</td>
-            </tr>
-            <tr>
               <th>{{{i18n_from_local_producer}}}</th>
               <td>{{{from_producer_label}}}</td>
             </tr>
             <tr>
-              <th>{{{i18n_producers}}}</th>
+              <th></th>
               <td>
                 {{#localproducers}}
                 <table>
@@ -45,7 +41,6 @@
               </td>
             </tr>
           </table>
-          <h3>{{{i18n_picture}}}</h3>
           <img src="{{picture}}" alt="Picture of the dish - {{label}}" style="max-width:100%">
           <div class="ui-grid-a" style="padding-top: 50px">
             <div class="ui-block-a">

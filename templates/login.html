@@ -7,21 +7,21 @@ interesting and unique designs, styles and layouts.  The sky is the limit!
 -->
 <html>
   <head>
-    <title>Log In</title>
+    <title>{{{i18n_login}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page" class="ui-page">
       <div data-role="header">
         {{>home}}
-        <h1>Log In</h1>
+        <h1>{{{i18n_login}}}</h1>
       </div>
       {{>navbar}}
       <div role="main" class="ui-content">
         {{#is_authenticated}}
         <p>Logged in as {{user.username}}</p>
         <a href="{{rt}}/logout" data-role="button" data-icon="delete">
-          Log Out
+          {{{i18n_logout}}}
         </a>
         <a href="{{rt}}/" data-role="button" data-icon="home">
           {{{i18n_explore_tool}}}
@@ -44,12 +44,12 @@ interesting and unique designs, styles and layouts.  The sky is the limit!
               <div class="ui-grid-a">
                 <div class="ui-block-a">
                   <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
-                    Back
+                    {{{i18n_back}}}
                   </a>
                 </div>
                 <div class="ui-block-b">
                   <button type="submit" data-icon="check" data-theme="b">
-                    Submit
+                    {{{i18n_submit}}}
                   </button>
                 </div>
               </div>

@@ -154,12 +154,6 @@
                   <p class='error kindergartendish-compositions-{{@index}}-weight_grams-errors'></p>
                 </li>
                 <li class="ui-field-contain">
-                  <label for='kindergartendish-compositions-{{@index}}-calories'>Wprowadź liczbę kalorii składnika</label>
-                  <input id='kindergartendish-compositions-{{@index}}-calories' type='number' data-xform-type='decimal' name='compositions[{{@index}}][calories]' step='0.001' value="{{calories}}">
-                  <p class="hint">Na porcję.</p>
-                  <p class='error kindergartendish-compositions-{{@index}}-calories-errors'></p>
-                </li>
-                <li class="ui-field-contain">
                   <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                     <legend>Czy składnik został kupiony bezpośrednio od producenta?</legend>
                     {{#from_producer_choices}}

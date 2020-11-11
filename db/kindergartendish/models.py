@@ -33,16 +33,27 @@ class Kindergartendish(models.Model):
         blank=True,
         verbose_name="Type of meal",
     )
+    calories = models.FloatField(
+        null=True,
+        blank=True,
+        verbose_name="Calories per portion",
+    )
+    allergens = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="Allergens in the dish",
+    )
     waste = models.CharField(
         choices=(
-            ("less25", "Less than 25 %"),
-            ("25to75", "From 25 % to 75 %"),
-            ("more75", "More than 75 %"),
+            ("less5", "Less than 5 %"),
+            ("5to10", "From 5 % to 10 %"),
+            ("11to25", "From 11 % to 25 %"),
+            ("more25", "More than 25 %"),
         ),
         max_length=6,
         null=True,
         blank=True,
-        verbose_name="Food waste – how much of the dish you have to dump into the garbage?",
+        verbose_name="What percentage of food becomes waste during food preparation?",
     )
     picture = models.ImageField(
         upload_to="kindergartendishs",

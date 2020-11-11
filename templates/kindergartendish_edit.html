@@ -71,6 +71,43 @@
               <p class='error kindergartendish-type-errors'></p>
             </li>
             <li class="ui-field-contain">
+              <label for='kindergartendish-calories'>{{{i18n_calories}}}</label>
+              <input id='kindergartendish-calories' type='number' data-xform-type='decimal' name='calories' step='0.001' value="{{calories}}">
+              <p class='error kindergartendish-calories-errors'></p>
+            </li>
+            <li class="ui-field-contain">
+              <label for='kindergartendish-allergens'>{{{i18n_allergens}}}</label>
+              <textarea id='kindergartendish-allergens' name='allergens' data-xform-type="text">{{{allergens}}}</textarea>
+              <p class='error kindergartendish-allergens-errors'></p>
+            </li>
+            <li data-xform-type='note'>
+              <p class="label">{{{i18n_allergen_hint_edit}}}</p>
+            </li>
+            <li class="ui-field-contain">
+              <div data-role="collapsible" data-collapsed="true" style="white-space: normal">
+                <h4>List of allergens</h4>
+                <h4 style="white-space: normal">LISTA ALERGENÓW wg Rozporządzenia Parlamentu Europejskiego i Rady (UE) Nr 1169/2011 w odniesieniu do składników obecnych w środkach żywności.</h4>
+                <br>
+                <h5>SUBSTANCJz ZAWIERAJĄCE ALERGENY:</h5>
+                <ol>
+                  <li>Zboża zawierające gluten (tj. pszenica, żyto, jęczmień, owies, orkisz, kamut lub ich szczepy hubrydowe) i produkty pochodne</li>
+                  <li>Skorupiaki i produkty pochodne</li>
+                  <li>Jajka i produkty pochodne</li>
+                  <li>Ryby i produkty pochodne</li>
+                  <li>Orzeszki ziemne (arachidowe) i produkty pochodne</li>
+                  <li>Soja i produkty pochodne</li>
+                  <li>Mleko i produkty pochodne</li>
+                  <li>Orzechy tj. migdały (Amygdalus communis L), orzechy laskowe (Corylus avellana), orzechy włoskie (Juglans regia), nerkowce (Anacardium occidentale), orzechy pekan (Carya illinoiesis/Wangenh/K.Koch), orzechy brazylijskie (Bertholletia exelsa), pistacje (Pistacia vera), orzechy makadamie lub orzechy Queensland (Macadamia ternifolia) i produkty pochodne</li>
+                  <li>Seler zwyczajny i produkty pochodne</li>
+                  <li>Gorczyca i produkty pochodne</li>
+                  <li>Nasiona sezamu i produkty pochodne</li>
+                  <li>Dwutlenek siarki i siarczyny w stężeniach powyżej 10 mg/kg lub 10 mg/l w przeliczeniu na SO2</li>
+                  <li>Łubin i produkty pochodne</li>
+                  <li>Mięczaki i produkty pochodne</li>
+                </ol>
+              </div>
+            </li>
+            <li class="ui-field-contain">
               <fieldset data-xform-type='select one' data-role='controlgroup' data-type='vertical'>
                 <legend>{{{i18n_food_waste}}}</legend>
                 {{#i18n_food_waste_choices}}

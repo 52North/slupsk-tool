@@ -40,7 +40,7 @@
             <li class="ui-field-contain">
               <label for='kindergartendish-kindergarten_id'>{{{i18n_kindergarten}}} <span style="color: red;">*</span></label>
               <select id='kindergartendish-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
-                <option value="">Select one...</option>
+                <option value="">{{{i18n_select_one}}}</option>
                 {{#kindergarten_list}}
                 <option value="{{id}}"{{#selected}} selected{{/selected}}>
                  {{#outbox}}*{{/outbox}} {{{label}}}
@@ -175,7 +175,7 @@
                 <li class="ui-field-contain">
                   <label for='kindergartendish-compositions-{{@index}}-ingredient_id'>Wybierz składnik z listy</label>
                   <select id='kindergartendish-compositions-{{@index}}-ingredient_id' data-xform-type='string' name='compositions[{{@index}}][ingredient_id]'>
-                    <option value="">Select one...</option>
+                    <option value="">Wybierz...</option>
                     {{#ingredient_list}}
                     <option value="{{id}}"{{#selected}} selected{{/selected}}>
                      {{#outbox}}*{{/outbox}} {{{label}}}

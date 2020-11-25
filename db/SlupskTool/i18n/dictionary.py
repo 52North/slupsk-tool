@@ -132,14 +132,14 @@ dict_pl['i18n_add_kindergarten'] = 'Dodaj przedszkole'
 dict_pl['i18n_this_kindergarten'] =	'Wybrane przedszkole'
 dict_pl['i18n_all_kindergartens'] = 'Wszystkie przedszkola'
 dict_pl['i18n_kindergartens'] = 'Przedszkola'
-dict_pl['i18n_kindergarten_list'] = 'Lista przedszkola'
+dict_pl['i18n_kindergarten_list'] = 'Lista przedszkoli'
 dict_pl['i18n_add_kindergarten_dish'] = 'Dodaj danie przedszkolne'
 dict_pl['i18n_show_kindergarten_dishes'] = 'Pokaż dania przedszkolne'
 dict_pl['i18n_kindergarten_dishes'] = 'Dania w przedszkolach'
 dict_pl['i18n_kindergarten_dish'] = 'danie przedszkolne'
 dict_pl['i18n_kindergarten_dish_list'] = 'Lista dania w przedszkolach'
 dict_pl['i18n_rate_kindergarten_dish'] = 'Oceń danie przedszkolne'
-dict_pl['i18n_add_kindergarten_dish_rating'] = 'Dodaj ocena potraw'
+dict_pl['i18n_add_kindergarten_dish_rating'] = 'Oceń danie przedszkolne'
 dict_pl['i18n_show_dish_ratings'] = 'Pokaż oceny potraw'
 dict_pl['i18n_kindergarten_dish_ratings'] = 'Oceny potraw z przedszkola'
 dict_pl['i18n_dish_rating'] = 'ocena potraw'
@@ -229,7 +229,7 @@ dict_pl['i18n_dish'] = 'Danie'
 dict_pl['i18n_dish_name'] = 'Wpisz nazwę dania'
 dict_pl['i18n_meal_type'] = 'Rodzaj posiłku'
 dict_pl['i18n_meal_type_choices'] = [{'name': "breakfast", 'label': "Śniadanie"}, {'name': "lunch", 'label': "Obiad"}, {'name': "afternoon_tea", 'label': "Podwieczorek"}]
-dict_pl['i18n_food_waste'] = 'Jaki procent żywności staje się odpadem w procesie przygotowania dania?'
+dict_pl['i18n_food_waste'] = 'Jaki procent posiłku staje się odpadem w procesie przygotowania dania?'
 dict_pl['i18n_food_waste_choices'] = [{'name': "less5", 'label': "mniej niż 5 %"}, {'name': "5to10", 'label': "5 % - 10 %"}, {'name': "11to25", 'label': "11 % - 25 %"}, {'name': "more25", 'label': "więcej niż 25 %"}]
 dict_pl['i18n_picture'] = 'Zdjęcie dania'
 dict_pl['i18n_composition'] = 'Składniki'
@@ -239,9 +239,9 @@ dict_pl['i18n_ingredient'] = 'Składnik'
 dict_pl['i18n_choose_ingredient'] = 'Wybierz składnik z listy'
 dict_pl['i18n_weight'] = 'Wpisz wagę składnika (w gramach)'
 dict_pl['i18n_calories'] = 'Liczba kalorii na danie'
-dict_pl['i18n_allergens'] = 'Alergeny w naczyniu'
+dict_pl['i18n_allergens'] = 'Alergeny w posiłku'
 dict_pl['i18n_allergens_list'] = 'Lista alergenów'
-dict_pl['i18n_allergen_hint_edit'] = 'Poniżej znajduje się lista alergenów. Proszę podać listę numerów alergenów zawartych w naczyniu (np. 3, 4, 6, 11).'
+dict_pl['i18n_allergen_hint_edit'] = 'Poniżej znajduje się lista alergenów. Proszę podać listę numerów alergenów zawartych w daniu (np. 3, 4, 6, 11).'
 dict_pl['i18n_allergen_hint_detail'] = 'Zapoznaj się z poniższą listą alergenów, aby dowiedzieć się, jakie alergeny oznaczają podane liczby.'
 dict_pl['i18n_per_portion'] = 'Na porcję.'
 dict_pl['i18n_from_producer'] = 'Czy składnik został kupiony bezpośrednio od producenta?'
@@ -478,6 +478,12 @@ dict_en['i18n_data_usefulness_question'] = 'Do you think that the data collected
 dict_en['i18n_data_usefulness_choices'] = [{'name': "definitely_yes", 'label': "Definitely yes"}, {'name': "rather_yes", 'label': "Rather yes"}, {'name': "no_opinion", 'label': "I have no opinion"}, {'name': "rather_not", 'label': "Rather not"}, {'name': "definitely_not", 'label': "Definitely not"}]
 dict_en['i18n_feedback_comment'] = 'Comment'
 dict_en['i18n_additional_functions'] = 'What other functions should the application have?'
+
+# ----------------------------------------------------------------------
+
+dict_pl['i18n_select_one'] = 'Wybierz jeden...'
+
+dict_en['i18n_select_one'] = 'Select one...'
 
 # ----------------------------------------------------------------------
 # Ingredients

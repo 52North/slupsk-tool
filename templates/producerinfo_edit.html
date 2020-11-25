@@ -40,7 +40,7 @@
             <li class="ui-field-contain">
               <label for='producerinfo-producer_id'>{{{i18n_producer}}}</label>
               <select id='producerinfo-producer_id' data-xform-type='string' name='producer_id'>
-                <option value="">Select one...</option>
+                <option value="">{{{i18n_select_one}}}</option>
                 {{#producer_list}}
                 <option value="{{id}}"{{#selected}} selected{{/selected}}>
                  {{#outbox}}*{{/outbox}} {{{label}}}
@@ -70,7 +70,7 @@
                   <li class="ui-field-contain">
                     <label for='producer-deliverys-{{@index}}-product_id'>Nazwa produktu</label>
                     <select id='producer-deliverys-{{@index}}-product_id' data-xform-type='string' name='deliverys[{{@index}}][product_id]'>
-                      <option value="">Select one...</option>
+                      <option value="">Wybierz...</option>
                       {{#product_list}}
                       <option value="{{id}}"{{#selected}} selected{{/selected}}>
                         {{#outbox}}*{{/outbox}} {{{label}}}
@@ -82,7 +82,7 @@
                   <li class="ui-field-contain">
                     <label for='producer-deliverys-{{@index}}-shop_id'>Nazwa sklepu, do którego dostarczany jest produkt</label>
                     <select id='producer-deliverys-{{@index}}-shop_id' class="shop-select" data-xform-type='string' name='deliverys[{{@index}}][shop_id]'>
-                      <option value="">Select one...</option>
+                      <option value="">Wybierz...</option>
                       {{#shop_list}}
                       <option value="{{id}}"{{#selected}} selected{{/selected}}>
                         {{#outbox}}*{{/outbox}} {{{label}}}

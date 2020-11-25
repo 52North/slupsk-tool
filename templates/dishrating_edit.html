@@ -39,7 +39,7 @@
             <li class="ui-field-contain">
               <label for='dishrating-kindergarten_id'>{{{i18n_kindergarten}}}</label>
               <select id='dishrating-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
-                <option value="">Select one...</option>
+                <option value="">{{{i18n_select_one}}}</option>
                 {{#kindergarten_list}}
                 <option value="{{id}}"{{#selected}} selected{{/selected}}>
                  {{#outbox}}*{{/outbox}} {{{label}}}
@@ -57,7 +57,7 @@
             <li class="ui-field-contain wq-rate-hide">
               <label for='dishrating-dish_id'>{{{i18n_choose_dish}}}</label>
               <select id='dishrating-dish_id' data-xform-type='string' name='dish_id'>
-                <option value="">Select one...</option>
+                <option value="">{{{i18n_select_one}}}</option>
                 {{#dish_list}}
                 <option value="{{id}}"{{#selected}} selected{{/selected}}>
                  {{#outbox}}*{{/outbox}} {{{label}}}

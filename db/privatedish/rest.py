@@ -7,4 +7,5 @@ rest.router.register_model(
     Privatedish,
     serializer=PrivatedishSerializer,
     fields="__all__",
+    cache="all",
 )

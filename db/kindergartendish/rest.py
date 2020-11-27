@@ -7,4 +7,5 @@ rest.router.register_model(
     Kindergartendish,
     serializer=KindergartendishSerializer,
     fields="__all__",
+    cache="all",
 )

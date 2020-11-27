@@ -269,6 +269,14 @@ dict_en['i18n_from_producer_choices'] = [{'name': "yes", 'label': "Yes"}, {'name
 dict_en['i18n_delete_ingredient'] = 'Delete ingredient'
 dict_en['i18n_required_field'] = 'required field'
 
+dict_pl['i18n_ingredient_name'] = 'Nazwa składnika'
+dict_pl['i18n_show_ingredients'] = 'Pokaż składniki'
+dict_pl['i18n_ingredient_list'] = 'Lista składników'
+
+dict_en['i18n_ingredient_name'] = 'Name of ingredient'
+dict_en['i18n_show_ingredients'] = 'Show ingredients'
+dict_en['i18n_ingredient_list'] = 'List of ingredients'
+
 # ----------------------------------------------------------------------
 # Add kindergarten dish rating
 
@@ -666,86 +674,6 @@ dict_en['i18n_privacy_statement19'] = 'In case the processing of personal data i
 dict_en['i18n_privacy_statement20'] = 'You have the right to lodge a complaint with the supervisory authority.'
 dict_en['i18n_privacy_statement21'] = 'Your data will not be transferred to third countries or international organizations.'
 dict_en['i18n_privacy_statement22'] = 'Your data will not be processed automatically and will not be profiled.'
-
-
-# ----------------------------------------------------------------------
-# Ingredients
-
-dict_pl['i18n_ingredient_list'] = [{'id': "1", 'label': "Jabłko"},
-                                   {'id': "2",'label': "Dorsz atlantycki"},
-                                   {'id': "3",'label': "Łosoś atlantycki"},
-                                   {'id': "4",'label': "Banan"},
-                                   {'id': "5",'label': "Fasolka"},
-                                   {'id': "6",'label': "Burak"},
-                                   {'id': "7",'label': "Brokuł"},
-                                   {'id': "8",'label': "Brukselka"},
-                                   {'id': "9",'label': "Masło"},
-                                   {'id': "10",'label': "Kapusta"},
-                                   {'id': "11",'label': "Marchew"},
-                                   {'id': "12",'label': "Ser"},
-                                   {'id': "13",'label': "Wiśnie"},
-                                   {'id': "14",'label': "Twarożek"},
-                                   {'id': "15",'label': "Ogórek"},
-                                   {'id': "16",'label': "Jajka"},
-                                   {'id': "17",'label': "Winogrono"},
-                                   {'id': "18",'label': "Śledź"},
-                                   {'id': "19",'label': "Sałata"},
-                                   {'id': "20",'label': "Makrela"},
-                                   {'id': "21",'label': "Mleko"},
-                                   {'id': "22",'label': "Cebula"},
-                                   {'id': "23",'label': "Pomarańcza"},
-                                   {'id': "24",'label': "Brzoskwinia"},
-                                   {'id': "25",'label': "Groch"},
-                                   {'id': "26",'label': "Śliwka"},
-                                   {'id': "27",'label': "Wieprzowina"},
-                                   {'id': "28",'label': "Ziemniaki"},
-                                   {'id': "29",'label': "Dynia"},
-                                   {'id': "30",'label': "Szpinak"},
-                                   {'id': "31",'label': "Truskawki"},
-                                   {'id': "32",'label': "Pomidor"},
-                                   {'id': "33",'label': "Pszenica"},
-                                   {'id': "34",'label': "Chleb pszeniczny"},
-                                   {'id': "35",'label': "Jogurt"}]
-
-dict_en['i18n_ingredient_list'] = [{'id': "1", 'label': "Apples"},
-                                   {'id': "2",'label': "Atlantic cod"},
-                                   {'id': "3",'label': "Atlantic salmon"},
-                                   {'id': "4",'label': "Bananas"},
-                                   {'id': "5",'label': "Beans"},
-                                   {'id': "6",'label': "Beets"},
-                                   {'id': "7",'label': "Broccoli"},
-                                   {'id': "8",'label': "Brussels sprouts"},
-                                   {'id': "9",'label': "Butter"},
-                                   {'id': "10",'label': "Cabbage"},
-                                   {'id': "11",'label': "Carrots"},
-                                   {'id': "12",'label': "Cheese"},
-                                   {'id': "13",'label': "Cherries"},
-                                   {'id': "14",'label': "Cottage cheese"},
-                                   {'id': "15",'label': "Cucumber"},
-                                   {'id': "16",'label': "Eggs"},
-                                   {'id': "17",'label': "Grapes"},
-                                   {'id': "18",'label': "Herring"},
-                                   {'id': "19",'label': "Lettuce"},
-                                   {'id': "20",'label': "Mackerel"},
-                                   {'id': "21",'label': "Milk"},
-                                   {'id': "22",'label': "Onions"},
-                                   {'id': "23",'label': "Oranges"},
-                                   {'id': "24",'label': "Peaches"},
-                                   {'id': "25",'label': "Peas"},
-                                   {'id': "26",'label': "Plums"},
-                                   {'id': "27",'label': "Pork"},
-                                   {'id': "28",'label': "Potatoes"},
-                                   {'id': "29",'label': "Pumpkins"},
-                                   {'id': "30",'label': "Spinach"},
-                                   {'id': "31",'label': "Strawberries"},
-                                   {'id': "32",'label': "Tomatoes"},
-                                   {'id': "33",'label': "Wheat"},
-                                   {'id': "34",'label': "Wheat bread"},
-                                   {'id': "35",'label': "Yoghurt"}]
-
-
-
-
 
 
 # ----------------------------------------------------------------------

@@ -5,6 +5,7 @@ from .models import Shop
 rest.router.register_model(
     Shop,
     fields="__all__",
+    cache="all",
     locate=True,
     map=[{
         'mode': 'list',

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} ingredient</title>
+    <title>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_ingredient}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{^id}}Add{{/id}}{{#id}}Edit{{/id}} ingredient</h1>
+        <h1>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_ingredient}}}</h1>
         {{#id}}
         {{#page_config.can_delete}}
         <form action="{{svc}}/ingredients/{{id}}" method="post" data-ajax="false"
@@ -37,32 +37,32 @@
           {{/id}}
           <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
-              <label for='ingredient-name'>Name of ingredient <span style="color: red">*</span></label>
-              <textarea id='ingredient-name' name='name' data-xform-type="text" required>{{name}}</textarea>
+              <label for='ingredient-name'>{{{i18n_ingredient_name}}} <span style="color: red">*</span></label>
+              <textarea id='ingredient-name' name='name' data-xform-type="text" required>{{{name}}}</textarea>
               <p class='error ingredient-name-errors'></p>
             </li>
             <li>
               <div class="ui-grid-b">
                 <div class="ui-block-a">
                   <a href="{{rt}}/" data-role="button" data-icon="back" data-direction="reverse">
-                    Home
+                    {{{i18n_home}}}
                   </a>
                 </div>
                 <div class="ui-block-b">
                   <a href="{{rt}}/ingredients/" data-role="button" data-icon="back" data-direction="reverse">
-                    Show ingredients
+                    {{{i18n_show_ingredients}}}
                   </a>
                 </div>
                 <div class="ui-block-c">
                   <button type="submit" data-icon="check" data-theme="b">
-                    Submit
+                    {{{i18n_submit}}}
                   </button>
                 </div>
               </div>
               <p class="error ingredient-errors"></p>
             </li>
           </ul>
-          <p style="color:red;">* required</p>
+          <p style="color:red;">* {{{i18n_required_field}}}</p>
         </form>
       </div>
       {{>footer}}

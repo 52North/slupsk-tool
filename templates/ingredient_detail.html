@@ -11,7 +11,7 @@
         <h1>{{{label}}}</h1>
         {{#page_config.can_change}}
         <a href="{{rt}}/ingredients/{{id}}/edit" data-icon="edit" data-transition="flip">
-          Edit
+          {{{i18n_edit}}}
         </a>
         {{/page_config.can_change}}
       </div>
@@ -20,7 +20,7 @@
           <h1>{{{label}}}</h1>
           <table>
             <tr>
-              <th>Name of ingredient</th>
+              <th>{{{i18n_ingredient_name}}}</th>
               <td>{{{name}}}</td>
             </tr>
           </table>

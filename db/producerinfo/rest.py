@@ -7,6 +7,7 @@ rest.router.register_model(
     Producerinfo,
     serializer=ProducerinfoSerializer,
     fields="__all__",
+    cache="all",
     map=[{
         'mode': 'list',
         'autoZoom' : False,

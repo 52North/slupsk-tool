@@ -13,6 +13,7 @@ def filter(qs, request):
 rest.router.register_model(
     Kindergarten,
     fields="__all__",
+    cache="all",
     filter=filter,
     locate=True,
     map=[{

@@ -25,7 +25,7 @@ class Shop(models.Model):
             ("yes_pl", "Tak"),
             ("no_pl", "Nie"),
         ),
-        max_length=3,
+        max_length=6,
         null=True,
         blank=True,
         verbose_name="Do kindergartens buy from here?",

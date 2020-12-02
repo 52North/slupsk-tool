@@ -23,39 +23,12 @@ See https://github.com/wq/wq.app/issues/63
         <h1>Creating Interfaces - Słupsk</h1>
         {{>language}}
       </div>
-      {{^is_authenticated}}
-      <form action="{{svc}}/login" method="post" data-ajax="false"
-          data-wq-json="true" data-wq-background-sync="false">
-        {{>csrf}}
-        <ul data-role="listview">
-          <li>
-            <p>{{{i18n_auth_message}}}</p>
-          </li>
-          <li class="ui-field-contain">
-            <label for="username">{{{i18n_username}}}</label>
-            <input name="username" id="username">
-          </li>
-          <li class="ui-field-contain">
-            <label for="password">{{{i18n_password}}}</label>
-            <input name="password" id="password" type="password">
-          </li>
-          <li>
-            <button type="submit" data-icon="check" data-theme="b">
-              {{{i18n_submit}}}
-            </button>
-            <p class="error login-errors"></p>
-          </li>
-        </ul>
-      </form>
-      {{/is_authenticated}}
-      {{#is_authenticated}}
       {{>navbar}}
       <div role="main" class="ui-content">
         <div class="map detail-map" id="index-map"></div>
         {{>welcome}}
       </div>
       {{>footer}}
-      {{/is_authenticated}}
     </div>
   </body>
 </html>

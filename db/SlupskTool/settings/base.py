@@ -92,6 +92,10 @@ from wq.db.default_settings import (
 )
 
 ANONYMOUS_PERMISSIONS = [
+    'producer.add_producer',
+    'dishrating.add_dishrating',
+    'feedback.add_feedback',
+    'privatedish.privatedish',
 ]
 
 WSGI_APPLICATION = 'SlupskTool.wsgi.application'

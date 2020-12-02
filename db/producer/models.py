@@ -23,7 +23,7 @@ class Producer(models.Model):
             ("yes_en", "Yes"),
             ("no_en", "No"),
             ("yes_pl", "Tak"),
-            ("no_pl", "Nie"),            
+            ("no_pl", "Nie"),
         ),
         max_length=3,
         null=True,
@@ -52,10 +52,8 @@ class Producer(models.Model):
     )
     toggle = models.CharField(
         choices=(
-            ("gps_en", "Use GPS"),
-            ("interactive_en", "Point on Map"),
-            ("gps_pl", "Użyj GPS"),
-            ("interactive_pl", "Wybierz punkt na mapie"),
+            ("gps", "Użyj GPS / Use GPS"),
+            ("interactive", "Wybierz punkt na mapie / Point on Map"),
         ),
         max_length=11,
         null=True,

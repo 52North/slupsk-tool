@@ -23,7 +23,7 @@ class Shop(models.Model):
             ("yes_en", "Yes"),
             ("no_en", "No"),
             ("yes_pl", "Tak"),
-            ("no_pl", "Nie"),            
+            ("no_pl", "Nie"),
         ),
         max_length=3,
         null=True,
@@ -52,12 +52,9 @@ class Shop(models.Model):
     )
     toggle = models.CharField(
         choices=(
-            ("gps_en", "Use GPS"),
-            ("interactive_en", "Point on Map"),
-            ("manual_en", "Enter Manually"),
-            ("gps_pl", "Użyj GPS"),
-            ("interactive_pl", "Wybierz punkt na mapie"),
-            ("manual_pl", "Wprowadzić ręcznie"),
+            ("gps", "Użyj GPS / Use GPS"),
+            ("interactive", "Wybierz punkt na mapie / Point on Map"),
+            ("manual", "Wprowadzić ręcznie / Enter Manually"),
         ),
         max_length=11,
         null=True,

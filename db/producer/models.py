@@ -20,8 +20,10 @@ class Producer(models.Model):
     )
     kindergarten_supplier = models.CharField(
         choices=(
-            ("yes", "Yes"),
-            ("no", "No"),
+            ("yes_en", "Yes"),
+            ("no_en", "No"),
+            ("yes_pl", "Tak"),
+            ("no_pl", "Nie"),            
         ),
         max_length=3,
         null=True,
@@ -50,8 +52,10 @@ class Producer(models.Model):
     )
     toggle = models.CharField(
         choices=(
-            ("gps", "Use GPS"),
-            ("interactive", "Point on Map"),
+            ("gps_en", "Use GPS"),
+            ("interactive_en", "Point on Map"),
+            ("gps_pl", "Użyj GPS"),
+            ("interactive_pl", "Wybierz punkt na mapie"),
         ),
         max_length=11,
         null=True,

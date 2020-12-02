@@ -24,9 +24,12 @@ class Kindergartendish(models.Model):
     )
     type = models.CharField(
         choices=(
-            ("breakfast", "Breakfast"),
-            ("lunch", "Lunch"),
-            ("afternoon_tea", "Afternoon tea"),
+            ("breakfast_en", "Breakfast"),
+            ("lunch_en", "Lunch"),
+            ("afternoon_tea_en", "Afternoon tea"),
+            ("breakfast_pl", "Śniadanie"),
+            ("lunch_pl", "Obiad"),
+            ("afternoon_tea_pl", "Podwieczorek"),
         ),
         max_length=13,
         null=True,
@@ -45,10 +48,14 @@ class Kindergartendish(models.Model):
     )
     waste = models.CharField(
         choices=(
-            ("less5", "Less than 5 %"),
-            ("5to10", "From 5 % to 10 %"),
-            ("11to25", "From 11 % to 25 %"),
-            ("more25", "More than 25 %"),
+            ("less5_en", "Less than 5 %"),
+            ("5to10_en", "From 5 % to 10 %"),
+            ("11to25_en", "From 11 % to 25 %"),
+            ("more25_en", "More than 25 %"),
+            ("less5_pl", "mniej niż 5 %"),
+            ("5to10_pl", "od 5 % do 10 %"),
+            ("11to25_pl", "od 11 % do 25 %"),
+            ("more25_pl", "więcej niż 25 %"),
         ),
         max_length=6,
         null=True,

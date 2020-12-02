@@ -31,6 +31,10 @@ See https://github.com/wq/wq.app/issues/63
           <a href="{{rt}}/producers/new" data-role="button" data-icon="plus">{{{i18n_add_producer}}}</a> <br>
 
           {{{i18n_producer_p6}}} <br>
+          <a href="{{rt}}/producerinfos/" data-role="button" data-icon="bars">{{{i18n_show_product_infos}}}</a> <br>
+          {{#can_add_producer_info}}
+            <a href="{{rt}}/producerinfos/new" data-role="button" data-icon="plus">{{{i18n_add_product_info}}}</a>
+          {{/can_add_producer_info}}
         </p>
       </div>
       {{>footer}}

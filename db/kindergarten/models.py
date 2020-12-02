@@ -32,9 +32,12 @@ class Kindergarten(models.Model):
     )
     toggle = models.CharField(
         choices=(
-            ("gps", "Use GPS"),
-            ("interactive", "Point on Map"),
-            ("manual", "Enter Manually"),
+            ("gps_en", "Use GPS"),
+            ("interactive_en", "Point on Map"),
+            ("manual_en", "Enter Manually"),
+            ("gps_pl", "Użyj GPS"),
+            ("interactive_pl", "Wybierz punkt na mapie"),
+            ("manual_pl", "Wprowadzić ręcznie"),
         ),
         max_length=11,
         null=True,

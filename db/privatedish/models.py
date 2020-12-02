@@ -16,8 +16,10 @@ class Privatedish(models.Model):
     )
     from_producer = models.CharField(
         choices=(
-            ("yes", "Yes"),
-            ("no", "No"),
+            ("yes_en", "Yes"),
+            ("no_en", "No"),
+            ("yes_pl", "Tak"),
+            ("no_pl", "Nie"),            
         ),
         max_length=3,
         null=True,

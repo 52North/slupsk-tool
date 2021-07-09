@@ -59,22 +59,22 @@
           </li>
         </ul>
         {{/unsynced}}
-          <ul data-role="listview" data-filter="true" data-inset="true">
-            {{#unsynced}}
-            <li data-role="list-divider">Synced Items</li>
-            {{/unsynced}}
-            {{#list}}
-            <li>
-              <a href="{{rt}}/dishratings/{{id}}"><h4 style="white-space: normal;">{{{dish_label}}}</h4><p style="white-space: normal;">{{{kindergarten_label}}}</p><span class="ui-li-aside">{{{date}}}</span></a>
-            </li>
-            {{/list}}
-          </ul>
-          {{#page_config.can_add}}
-            <a href="{{rt}}/dishratings/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_kindergarten_dish_rating}}}</a>
-          {{/page_config.can_add}}
-        </div>
-        {{>paginator}}
-        {{>footer}}
+        {{#page_config.can_add}}
+        <a href="{{rt}}/dishratings/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_kindergarten_dish_rating}}}</a>
+        {{/page_config.can_add}}
+        <ul data-role="listview" data-filter="true" data-inset="true">
+          {{#unsynced}}
+          <li data-role="list-divider">Synced Items</li>
+          {{/unsynced}}
+          {{#list}}
+          <li>
+            <a href="{{rt}}/dishratings/{{id}}"><h4 style="white-space: normal;">{{{dish_label}}}</h4><p style="white-space: normal;">{{{kindergarten_label}}}</p><span class="ui-li-aside">{{{date}}}</span></a>
+          </li>
+          {{/list}}
+        </ul>
+      </div>
+      {{>paginator}}
+      {{>footer}}
     </div>
   </body>
 </html>

@@ -65,15 +65,15 @@
             {{#unsynced}}
             <li data-role="list-divider">Synced Items</li>
             {{/unsynced}}
+            {{#page_config.can_add}}
+            <a href="{{rt}}/producerinfos/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_product_info}}}</a>
+            {{/page_config.can_add}}
             {{#list}}
             <li>
               <a href="{{rt}}/producerinfos/{{id}}">{{{label}}}</a>
             </li>
             {{/list}}
           </ul>
-          {{#page_config.can_add}}
-            <a href="{{rt}}/producerinfos/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_product_info}}}</a>
-          {{/page_config.can_add}}
         </div>
         <div class="ui-block-b">
           <div class='map list-map' id="{{#parent_id}}{{parent_page}}-{{parent_id}}-{{/parent_id}}producerinfo-map"></div>

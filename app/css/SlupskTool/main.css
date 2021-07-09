@@ -44,7 +44,7 @@ body.ui-overlay-a {
   overflow: auto;
 }
 
-/* Enable line breaks when text is too long */
+/* Enable line breaks when text i too long */
 .ui-listview  > li > p, li > label, li > a, .ui-listview > li > a.ui-btn, .ui-btn, .ui-btn > span, .ui-select .ui-btn > span:not(.ui-li-count), .ui-controlgroup-label, p.hint {
   white-space: normal;
 }
@@ -125,9 +125,4 @@ div[role="main"] {
 /* Set style for picture preview in "Add dish rating" */
 #dishrating-preview {
   max-width: 100%;
-}
-
-/* In browser display was set to table-column (why?) which shrinked elements */
-.ui-mobile fieldset {
-    display: block;
 }

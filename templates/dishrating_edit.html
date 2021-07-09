@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_dish_rating}}}</title>
+    <title>{{^id}}{{{i18n_rate_kindergarten_dish}}}{{/id}}{{#id}}{{{i18n_edit}}} {{{i18n_dish_rating}}}{{/id}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page">
       <div data-role="header">
         {{>home}}
-        <h1>{{^id}}{{{i18n_add}}}{{/id}}{{#id}}{{{i18n_edit}}}{{/id}} {{{i18n_dish_rating}}}</h1>
+        <h1>{{^id}}{{{i18n_rate_kindergarten_dish}}}{{/id}}{{#id}}{{{i18n_edit}}} {{{i18n_dish_rating}}}{{/id}}</h1>
         {{#id}}
         {{#page_config.can_delete}}
         <form action="{{svc}}/dishratings/{{id}}" method="post" data-ajax="false"
@@ -37,7 +37,7 @@
           {{/id}}
           <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
-              <label for='dishrating-kindergarten_id'>{{{i18n_kindergarten}}}</label>
+              <label for='dishrating-kindergarten_id'>{{{i18n_choose_kindergarten}}}</label>
               <select id='dishrating-kindergarten_id' data-xform-type='string' name='kindergarten_id'>
                 <option value="">{{{i18n_select_one}}}</option>
                 {{#kindergarten_list}}

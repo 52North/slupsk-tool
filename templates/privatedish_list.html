@@ -60,15 +60,13 @@
         </ul>
         {{/unsynced}}
         <div class="ui-grid-a ui-responsive">
+          {{#page_config.can_add}}
+          <a href="{{rt}}/privatedishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_private_dish}}}</a>
+          {{/page_config.can_add}}
           <ul data-role="listview" data-filter="true" data-inset="true">
             {{#unsynced}}
             <li data-role="list-divider">Synced Items</li>
             {{/unsynced}}
-            {{#page_config.can_add}}
-            <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/privatedishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">{{{i18n_add_private_dish}}}</a>
-            </li>
-            {{/page_config.can_add}}
             {{#list}}
             <li>
               <a href="{{rt}}/privatedishs/{{id}}">

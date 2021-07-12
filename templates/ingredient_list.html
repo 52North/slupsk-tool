@@ -59,21 +59,19 @@
           </li>
         </ul>
         {{/unsynced}}
-          <ul data-role="listview" data-filter="true" data-inset="true">
-            {{#unsynced}}
-            <li data-role="list-divider">Synced Items</li>
-            {{/unsynced}}
-            {{#page_config.can_add}}
-            <li data-icon="plus" data-theme="b">
-              <a href="{{rt}}/ingredients/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}">{{{i18n_add_ingredient}}}</a>
-            </li>
-            {{/page_config.can_add}}
-            {{#list}}
-            <li>
-              <a href="{{rt}}/ingredients/{{id}}">{{{label}}}</a>
-            </li>
-            {{/list}}
-          </ul>
+        {{#page_config.can_add}}
+        <a href="{{rt}}/ingredients/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_ingredient}}}</a>
+        {{/page_config.can_add}}
+        <ul data-role="listview" data-filter="true" data-inset="true">
+          {{#unsynced}}
+          <li data-role="list-divider">Synced Items</li>
+          {{/unsynced}}
+          {{#list}}
+          <li>
+            <a href="{{rt}}/ingredients/{{id}}">{{{label}}}</a>
+          </li>
+          {{/list}}
+        </ul>
       </div>
       {{>paginator}}
       {{>footer}}

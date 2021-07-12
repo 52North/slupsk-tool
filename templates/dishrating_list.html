@@ -68,7 +68,16 @@
           {{/unsynced}}
           {{#list}}
           <li>
-            <a href="{{rt}}/dishratings/{{id}}"><h4 style="white-space: normal;">{{{dish_label}}}</h4><p style="white-space: normal;">{{{kindergarten_label}}}</p><span class="ui-li-aside">{{{date}}}</span></a>
+            <a href="{{rt}}/dishratings/{{id}}">
+              {{#dish_picture}}
+                <img src="{{dish_picture}}" alt="{{label}}">
+              {{/dish_picture}}
+              {{^dish_picture}}
+                <img src="{{rt}}/images/empty.png" alt="No Image">
+              {{/dish_picture}}
+              <h4 style="white-space: normal;">{{{dish_label}}}</h4>
+              <p style="white-space: normal;">{{{kindergarten_label}}}</p>
+              <span class="ui-li-aside">{{{date}}}</span></a>
           </li>
           {{/list}}
         </ul>

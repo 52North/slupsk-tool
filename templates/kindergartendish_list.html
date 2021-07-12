@@ -63,7 +63,7 @@
         <a href="{{rt}}/kindergartendishs/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_kindergarten_dish}}}</a>
         {{/can_add_kindergarten_dish}}
         <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus" data-theme="b">{{{i18n_rate_kindergarten_dish}}}</a>
-        <ul data-role="listview" data-filter="true" data-inset="true">
+        <ul data-role="listview" data-filter="true" data-inset="true" id="wq-kindergartendish-list">
           {{#unsynced}}
           <li data-role="list-divider">Synced Items</li>
           {{/unsynced}}

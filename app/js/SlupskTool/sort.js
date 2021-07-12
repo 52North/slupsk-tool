@@ -1,5 +1,24 @@
 define({
     "run": function($page, routeInfo) {
+
+        // Sort kindergarten dish list and dish rating list by date with most recent being at the top
+        $page.ready( function() {
+
+          /* Function takes two <li>-elements, extracts the date string from the <span>-sub-element
+             and sorts the <li>-elements by string comparison (the date format, yyyy-mm-dd, makes sure
+             that sorting by date is working correctly) */
+          function sort_by_date(a, b) {
+            return ($(a).find("span").text()) < ($(b).find("span").text()) ? 1 : -1;
+          }
+
+          /* Use id instead of class because using a common class results in appending
+             the two separate lists */
+          $('#wq-kindergartendish-list li').sort(sort_by_date).appendTo('#wq-kindergartendish-list');
+          $('#wq-dishrating-list li').sort(sort_by_date).appendTo('#wq-dishrating-list');
+
+        })
+
+        // Sort ingredient list alphabetically
         $page.on('click', 'button[data-wq-action=addattachment]', function(evt) {
 
           var $button = $(evt.target);

@@ -1,6 +1,6 @@
-define(['wq/app', './removeattachment', './filter', './preselect', './hide', './welcome', './i18n', './picture', './sortoptions', 'wq/map', 'wq/patterns', 'wq/locate', 'wq/photos',
+define(['wq/app', './removeattachment', './filter', './preselect', './hide', './welcome', './i18n', './picture', './sort', 'wq/map', 'wq/patterns', 'wq/locate', 'wq/photos',
         './config', 'leaflet.draw', 'leaflet.markercluster'],
-function(app, removeattachment, filter, preselect, hide, welcome, i18n, picture, sortoptions, map, patterns, locate, photos, config) {
+function(app, removeattachment, filter, preselect, hide, welcome, i18n, picture, sort, map, patterns, locate, photos, config) {
 
 app.use(removeattachment);
 app.use(filter);
@@ -9,7 +9,7 @@ app.use(hide);
 app.use(welcome);
 app.use(i18n);
 app.use(picture);
-app.use(sortoptions);
+app.use(sort);
 app.use(map);
 app.use(patterns);
 app.use(locate);

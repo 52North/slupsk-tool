@@ -95,7 +95,7 @@ ANONYMOUS_PERMISSIONS = [
     'producer.add_producer',
     'dishrating.add_dishrating',
     'feedback.add_feedback',
-    'privatedish.privatedish',
+    'privatedish.add_privatedish',
 ]
 
 WSGI_APPLICATION = 'SlupskTool.wsgi.application'

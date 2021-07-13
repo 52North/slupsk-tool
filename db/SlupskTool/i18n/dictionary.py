@@ -326,6 +326,8 @@ dict_pl['i18n_location_mode_choices'] = [{'name': "gps", 'label': "Użyj GPS / U
 dict_pl['i18n_latitude'] = 'Szerokość'
 dict_pl['i18n_longitude'] = 'Długość geograficzna'
 dict_pl['i18n_gps_accuracy'] = 'Dokładność GPS'
+dict_pl['i18n_google_maps'] = 'Mapy Google'
+dict_pl['i18n_navigate'] = 'Przejdź do określonej lokalizacji'
 
 dict_en['i18n_general'] = 'General'
 dict_en['i18n_name'] = 'Name'
@@ -346,6 +348,8 @@ dict_en['i18n_location_mode_choices'] = [{'name': "gps", 'label': "Użyj GPS / U
 dict_en['i18n_latitude'] = 'Latitude'
 dict_en['i18n_longitude'] = 'Longitude'
 dict_en['i18n_gps_accuracy'] = 'GPS Accuracy'
+dict_en['i18n_google_maps'] = 'Google Maps'
+dict_en['i18n_navigate'] = 'Navigate to location'
 
 # ----------------------------------------------------------------------
 # Add product info

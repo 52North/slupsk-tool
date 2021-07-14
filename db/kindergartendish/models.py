@@ -100,8 +100,10 @@ class Composition(models.Model):
     )
     from_producer = models.CharField(
         choices=(
-            ("yes", "Tak"),
-            ("no", "Nie"),
+            ("local", "Produkt lokalny (ze Słupska lub okolic w granicach 100 km)"),
+            ("regional", "Produkt regionalny (z województwa pomorskiego)"),
+            ("national", "Produkt krajowy"),
+            ("foreign", "Produkt zagraniczny"),
             ("uncertain", "Nie wiem"),
         ),
         max_length=9,

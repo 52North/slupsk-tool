@@ -239,7 +239,7 @@ dict_pl['i18n_allergen_hint_edit'] = 'Poniżej znajduje się lista alergenów. P
 dict_pl['i18n_allergen_hint_detail'] = 'Zapoznaj się z poniższą listą alergenów, aby dowiedzieć się, jakie alergeny oznaczają podane liczby.'
 dict_pl['i18n_per_portion'] = 'Na porcję.'
 dict_pl['i18n_from_producer'] = 'Czy składnik został kupiony bezpośrednio od producenta?'
-dict_pl['i18n_from_producer_choices'] = [{'name': "yes_pl", 'label': "Tak"}, {'name': "no_pl", 'label': "Nie"}, {'name': "uncertain_pl", 'label': "Nie wiem"}]
+dict_pl['i18n_from_producer_choices'] = [{'name': "local_pl", 'label': "Produkt lokalny (ze Słupska lub okolic w granicach 100 km)"}, {'name': "regional_pl", 'label': "Produkt regionalny (z województwa pomorskiego)"}, {'name': "national_pl", 'label': "Produkt krajowy"}, {'name': "foreign_pl", 'label': "Produkt zagraniczny"}, {'name': "uncertain_pl", 'label': "Nie wiem"}]
 dict_pl['i18n_delete_ingredient'] = 'Usuń składnik'
 dict_pl['i18n_required_field'] = 'Pole wymagane'
 
@@ -265,7 +265,7 @@ dict_en['i18n_allergen_hint_edit'] = 'Below you can find a list of allergens. Pl
 dict_en['i18n_allergen_hint_detail'] = 'Please check the list of allergens below to find out what allergens the numbers stand for.'
 dict_en['i18n_per_portion'] = 'Per portion.'
 dict_en['i18n_from_producer'] = 'Was the ingredient bought directly from the producer?'
-dict_en['i18n_from_producer_choices'] = [{'name': "yes_en", 'label': "Yes"}, {'name': "no_en", 'label': "No"}, {'name': "uncertain_en", 'label': "Don‘t know"}]
+dict_en['i18n_from_producer_choices'] = [{'name': "local_en", 'label': "Local product (comes from Slupsk or surroundings up to about 100 km)"}, {'name': "regional_en", 'label': "Regional product (comes from the Pomeranian Voivodship)"}, {'name': "national_en", 'label': "National product"}, {'name': "foreign_en", 'label': "Foreign product"}, {'name': "uncertain_en", 'label': "Don‘t know"}]
 dict_en['i18n_delete_ingredient'] = 'Delete ingredient'
 dict_en['i18n_required_field'] = 'required field'
 

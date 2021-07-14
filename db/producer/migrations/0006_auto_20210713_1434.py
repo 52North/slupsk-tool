@@ -7,11 +7,11 @@ from django.contrib.gis.geos import Point
 def updateData(apps, schema_editor):
     Producer = apps.get_model('producer', 'Producer')
 
-    producer = Producer.objects.get(name="Gospodarstwo Sadownicze Karnicki")
+    producer = Producer.objects.get(id=1)
     producer.geometry = Point(producer.longitude, producer.latitude)
     producer.save()
 
-    producer = Producer.objects.get(name="PASIEKA Karolczak")
+    producer = Producer.objects.get(id=2)
     producer.geometry = Point(producer.longitude, producer.latitude)
     producer.save()
 

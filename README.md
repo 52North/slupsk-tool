@@ -15,6 +15,8 @@ See [Getting Started] for general information on how to build/run a wq-based app
 ### How to develop locally
 
 * Clone the git repository: `git clone https://github.com/52North/slupsk-tool.git`.
+* Go to project root: `cd slupsk-tool`
+* Install Python libraries: `python -m pip install -r requirements.txt` (optionally activate virtual environment before this step)
 * Change the file `db/SlupskTool/settings/dev.py` to:
   ```python
   import os
@@ -67,7 +69,7 @@ https://github.com/52North/creating-interfaces
 [wq framework]: http://wq.io/
 [Getting Started]: https://wq.io/docs/setup
 [wq standard template]: https://github.com/wq/wq-django-template
-[wq pulic server]: https://wq.io/guides/setup-wq-with-apache-postgresql
+[wq public server]: https://wq.io/guides/setup-wq-with-apache-postgresql
 
 
 Funding organizations/projects

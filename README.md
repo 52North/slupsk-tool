@@ -61,7 +61,7 @@ See [Getting Started] for general information on how to build/run a wq-based app
   
 ### Deployment on a public server
 
-To deploy the tool on a public server visit wq`s official website ([wq pulic server]).
+To deploy the tool on a public server visit wq`s official website ([wq public server]).
 
 A setup using Apache HTTP Server, PostgreSQL and Docker/Docker Compose can be found here:  
 https://github.com/52North/creating-interfaces

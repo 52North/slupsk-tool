@@ -2,16 +2,57 @@
 @import "wq/jquery-mobile";
 @import "wq/swatches";
 
-@include jquery-mobile-gray-theme(
-    $theme: a
+/* Creating Interfaces swatch */
+$a-dark: #00696e;
+$a-light: #369daf;
+
+body.ui-overlay-a {
+   background-color: #f9f9f9;
+}
+
+@include jquery-mobile-theme(
+  $theme:       a,
+  $bar-bg:      $a-dark,
+  $bar-text:    #fff,
+  $bar-shadow:  false,
+
+  $page-text:   #747474,
+  $page-shadow: false,
+  $page-bg:     #fff,
+
+  $body-text:   #747474,
+
+  $up-bg:       $a-dark,
+  $up-border:   mix($a-dark, black),
+  $up-text:     #fff,
+  $up-shadow:   false,
+
+  $down-bg:     $a-light,
+  $down-border: $a-dark,
+  $down-text:   #fff,
+  $down-shadow: false,
+
+  $hover-bg:     $a-light,
+  $hover-border: #001,
+  $hover-text:   #fff,
+  $hover-shadow: false,
+
+  $active-border: $a-light,
+  $active-bg:     mix($a-light, white),
+  $active-shadow: false,
 );
 
-@include jquery-mobile-black-theme(
-    $theme: b
-);
+.ui-bar-b .ui-navbar .ui-btn {
+  font-size: 14px !important;
+  font-variant: all-small-caps;
+}
 
-$font: sans-serif;
+@include jquery-mobile-theme($theme: c);
+@include jquery-mobile-theme($theme: d);
+@include jquery-mobile-theme($theme: e);
 
+$font: "Open Sans", Arial, Helvetica, sans-serif;
 @include jquery-mobile-global(
-    $font: $font
+  $round:         1.2em,
+  $font: $font
 );

@@ -1,11 +1,24 @@
-define(['wq/app', 'wq/map', 'wq/patterns', 'wq/photos',
-        './config',
-        'leaflet.draw', 'leaflet.markercluster'],
-function(app, map, patterns, photos, config) {
+define(['wq/app', './removeattachment', './filter', './preselect', './hide', './welcome', './i18n', './picture', './sort', 'wq/map', 'wq/patterns', 'wq/locate', 'wq/photos',
+        './config', 'leaflet.draw', 'leaflet.markercluster'],
+function(app, removeattachment, filter, preselect, hide, welcome, i18n, picture, sort, map, patterns, locate, photos, config) {
 
+app.use(removeattachment);
+app.use(filter);
+app.use(preselect);
+app.use(hide);
+app.use(welcome);
+app.use(i18n);
+app.use(picture);
+app.use(sort);
 app.use(map);
 app.use(patterns);
+app.use(locate);
 app.use(photos);
+
+//  Add new map icon
+map.createIcon("producer", {'iconUrl': config.router.base_url.concat("/images/producer.png"), 'iconSize': [30, 30]});
+map.createIcon("kindergarten", {'iconUrl': config.router.base_url.concat("/images/kindergarten.png"), 'iconSize': [40, 40]});
+map.createIcon("shop", {'iconUrl': config.router.base_url.concat("/images/shop.png"), 'iconSize': [30, 30]});
 
 config.presync = presync;
 config.postsync = postsync;

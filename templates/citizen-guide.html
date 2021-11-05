@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<!--
+To make your application work offline using the old "application cache" standard,
+uncomment the manifest attribute below.  This is disabled by default because it
+isn't always needed and it makes debugging more tricky.
+See https://github.com/wq/wq.app/issues/63
+-->
+<html><!-- manifest="SlupskTool.appcache" -->
+  <head>
+    <title>{{{i18n_citizen_p1}}}</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page" class="ui-page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{i18n_citizen_p1}}}</h1>
+        {{>language}}
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content justified">
+        <h4>{{{i18n_citizen_p2}}}</h4>
+        <p>
+          {{{i18n_citizen_p4}}}
+          <a href="{{rt}}/privatedishs/new" data-role="button" data-icon="plus">{{{i18n_add_private_dish}}}</a> <br>
+
+          {{{i18n_citizen_p5}}}
+          <a href="{{rt}}/privatedishs/" data-role="button" data-icon="bars">{{{i18n_show_private_dishes}}}</a>
+        </p>
+      </div>
+      {{>footer}}
+    </div>
+  </body>
+</html>

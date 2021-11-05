@@ -7,22 +7,23 @@ interesting and unique designs, styles and layouts.  The sky is the limit!
 -->
 <html>
   <head>
-    <title>Log Out</title>
+    <title>{{{i18n_logout}}}</title>
     {{>head}}
   </head>
   <body>
     <div data-role="page" class="ui-page">
       <div data-role="header">
         {{>home}}
-        <h1>Log Out</h1>
+        <h1>{{{i18n_logout}}}</h1>
       </div>
+      {{>navbar}}
       <div role="main" class="ui-content">
         <p>Logged out.</p>
         <a href="{{rt}}/login" data-role="button">
-          Log In Again
+          {{{i18n_login}}}
         </a>
       </div>
+      {{>footer}}
     </div>
   </body>
 </html>
-

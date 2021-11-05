@@ -41,13 +41,22 @@ INSTALLED_APPS = [
     'wq.db.rest.auth',
 
     # Project apps
-    'dishes',
     'index',
+    'kindergarten',
+    'ingredient',
+    'shop',
+    'kindergartendish',
+    'dishrating',
+    'producer',
+    'privatedish',
+    'producerinfo',
+    'feedback',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -65,19 +74,29 @@ from wq.db.default_settings import (
 )
 TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
 
-# Add messages to context_processors
-TEMPLATES[0]['OPTIONS']['context_processors']=list(TEMPLATES[0]['OPTIONS']['context_processors'])
-TEMPLATES[0]['OPTIONS']['context_processors'].append('django.contrib.messages.context_processors.messages')
-TEMPLATES[0]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['context_processors'])
-TEMPLATES[1]['OPTIONS']['context_processors']=list(TEMPLATES[0]['OPTIONS']['context_processors'])
-TEMPLATES[1]['OPTIONS']['context_processors'].append('django.contrib.messages.context_processors.messages')
-TEMPLATES[1]['OPTIONS']['context_processors']=tuple(TEMPLATES[0]['OPTIONS']['context_processors'])
+# Add context processors
+TEMPLATES[0]['OPTIONS']['context_processors'] += (
+     'django.contrib.messages.context_processors.messages',
+     'SlupskTool.context_processors.route_base_url',
+     'SlupskTool.context_processors.link_visibility',
+     'SlupskTool.i18n.translation.translate',
+)
+TEMPLATES[1]['OPTIONS']['context_processors'] += (
+     'django.contrib.messages.context_processors.messages',
+)
 
 # wq: Recommended settings unique to wq.db
 from wq.db.default_settings import (
     ANONYMOUS_PERMISSIONS,
     SRID,
 )
+
+ANONYMOUS_PERMISSIONS = [
+    'producer.add_producer',
+    'dishrating.add_dishrating',
+    'feedback.add_feedback',
+    'privatedish.add_privatedish',
+]
 
 WSGI_APPLICATION = 'SlupskTool.wsgi.application'
 
@@ -106,7 +125,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('pl', 'Polish'),
+    ('en', 'English'),
+]
+
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'UTC'
 
@@ -126,4 +150,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'htdocs', 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 VERSION_TXT = os.path.join(BASE_DIR, 'version.txt')
-MEDIA_URL = '/media/'
+MEDIA_URL = '/slupsk-tool/media/'

@@ -1,0 +1,18 @@
+<h3>{{{label}}}</h3>
+<p>
+  <a href="{{rt}}/producers/{{id}}">Wybrany producent</a>
+</p>
+<p>
+  <a href="{{rt}}/producers/">Wszyscy producenci</a>
+</p>
+<p>
+  <a href="{{rt}}/producerinfos/" data-wq-action="preselect" class="producer">Informacje o produktach</a>
+</p>
+{{#can_add_producer_info}}
+<p>
+  <a href="{{rt}}/producerinfos/new" data-wq-action="preselect" class="producer">Dodaj informacje o produktach</a>
+</p>
+{{/can_add_producer_info}}
+<p>
+  <a href="https://www.google.com/maps/search/?api=1&query={{geometry.coordinates.1}},{{geometry.coordinates.0}}" target="_blank">Przejdź do określonej lokalizacji (Mapy Google)</a>
+</p>

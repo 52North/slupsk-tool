@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!--
+To make your application work offline using the old "application cache" standard,
+uncomment the manifest attribute below.  This is disabled by default because it
+isn't always needed and it makes debugging more tricky.
+See https://github.com/wq/wq.app/issues/63
+-->
+<html><!-- manifest="SlupskTool.appcache" -->
+  <head>
+    <title>{{{i18n_kindergarten_p1}}}</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page" class="ui-page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{i18n_kindergarten_p1}}}</h1>
+        {{>language}}
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content justified">
+        <h4>{{{i18n_kindergarten_p2}}}</h4>
+        <p>
+          <p>
+            <a href="{{rt}}/kindergartens/" data-role="button" data-icon="bars">{{{i18n_kindergarten_list}}}</a>
+          </p>
+          <p>
+            <a href="{{rt}}/kindergartendishs/" data-role="button" data-icon="bars">{{{i18n_show_kindergarten_dishes}}}</a>
+          </p>
+          <p>
+            <a href="{{rt}}/dishratings/" data-role="button" data-icon="bars">{{{i18n_show_dish_ratings}}}</a>
+          </p>
+          {{#can_add_kindergarten_dish}}
+          <p>
+            <a href="{{rt}}/kindergartendishs/new" data-role="button" data-icon="plus">{{{i18n_add_kindergarten_dish}}}</a>
+          </p>
+          <p>
+            <a href="{{rt}}/ingredients/new" data-role="button" data-icon="plus">{{{i18n_add_ingredient}}}</a>
+          </p>
+          {{/can_add_kindergarten_dish}}
+          <p>
+            <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus">{{{i18n_rate_kindergarten_dish}}}</a>
+          </p>
+        </p>
+      </div>
+      {{>footer}}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{{i18n_product_infos}}}{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page" data-wq-sync-refresh="true">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{i18n_product_infos}}}{{#parent_id}} for {{{parent_label}}}{{/parent_id}}</h1>
+        {{#page_config.can_add}}
+        <a href="{{rt}}/producerinfos/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-icon="plus">
+          Add New
+        </a>
+        {{/page_config.can_add}}
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content">
+        {{#parent_id}}
+        <p>
+          <a href="{{rt}}/{{parent_url}}">&lt; Back to {{{parent_label}}}</a>
+        </p>
+        {{/parent_id}}
+        {{#unsynced}}
+        <ul data-role="listview" data-inset="true">
+          <li data-role="list-divider">Outbox</li>
+          {{#unsyncedItems}}
+          <li data-icon="{{#error}}alert{{/error}}{{^error}}minus{{/error}}">
+            <a href="{{rt}}/outbox/{{id}}/edit">
+              {{#label}}{{{label}}}{{/label}}
+              {{^label}}Unsynced Item #{{id}}{{/label}}
+            </a>
+          </li>
+          {{/unsyncedItems}}
+          <li>
+            <div class="ui-grid-a ui-responsive">
+              <div class="ui-block-a">
+                {{#is_authenticated}}
+                <button class="sync" data-icon="refresh"
+                    onclick="require('wq/app').sync(true);">
+                  {{#syncing}}Syncing...{{/syncing}}
+                  {{^syncing}}Sync Now{{/syncing}}
+                </button>
+                {{/is_authenticated}}
+                {{^is_authenticated}}
+                <a href="{{rt}}/login" data-role="button" data-icon="lock">
+                  Log in to Sync
+                </a>
+                {{/is_authenticated}}
+              </div>
+              <div class="ui-block-b">
+                <button type="button" data-icon="delete"
+                  onclick="require('wq/app').emptyOutbox(true);">
+                  Discard
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        {{/unsynced}}
+        <div class="ui-grid-a ui-responsive">
+        <div class="ui-block-a">
+          {{#page_config.can_add}}
+          <a href="{{rt}}/producerinfos/new{{#parent_id}}?{{parent_page}}_id={{parent_id}}{{/parent_id}}" data-role="button" data-icon="plus" data-theme="b">{{{i18n_add_product_info}}}</a>
+          {{/page_config.can_add}}
+          <ul data-role="listview" data-filter="true" data-inset="true">
+            {{#unsynced}}
+            <li data-role="list-divider">Synced Items</li>
+            {{/unsynced}}
+            {{#list}}
+            <li>
+              <a href="{{rt}}/producerinfos/{{id}}">{{{label}}}</a>
+            </li>
+            {{/list}}
+          </ul>
+        </div>
+        <div class="ui-block-b">
+          <div class='map list-map' id="{{#parent_id}}{{parent_page}}-{{parent_id}}-{{/parent_id}}producerinfo-map"></div>
+        </div>
+        </div>
+      </div>
+      {{>paginator}}
+      {{>footer}}
+    </div>
+  </body>
+</html>

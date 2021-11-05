@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<!--
+To make your application work offline using the old "application cache" standard,
+uncomment the manifest attribute below.  This is disabled by default because it
+isn't always needed and it makes debugging more tricky.
+See https://github.com/wq/wq.app/issues/63
+-->
+<html><!-- manifest="SlupskTool.appcache" -->
+  <head>
+    <title>{{{i18n_producers}}}</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page" class="ui-page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{i18n_producers}}}</h1>
+        {{>language}}
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content justified">
+        <h4>{{{i18n_producer_p2}}}</h4>
+        <p>
+          {{{i18n_producer_p4}}} <br>
+          <a href="{{rt}}/producers/" data-role="button" data-icon="bars">{{{i18n_show_producers}}}</a>  <br>
+
+          {{{i18n_producer_p5}}}
+          <a href="{{rt}}/producers/new" data-role="button" data-icon="plus">{{{i18n_add_producer}}}</a> <br>
+
+          {{{i18n_producer_p6}}} <br>
+          <a href="{{rt}}/producerinfos/" data-role="button" data-icon="bars">{{{i18n_show_product_infos}}}</a> <br>
+          {{#can_add_producer_info}}
+            <a href="{{rt}}/producerinfos/new" data-role="button" data-icon="plus">{{{i18n_add_product_info}}}</a>
+          {{/can_add_producer_info}}
+        </p>
+      </div>
+      {{>footer}}
+    </div>
+  </body>
+</html>

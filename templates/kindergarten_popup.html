@@ -1,0 +1,21 @@
+<h3>{{{label}}}</h3>
+<p>
+  <a href="{{rt}}/kindergartens/{{id}}">Wybrane przedszkole</a>
+</p>
+<p>
+  <a href="{{rt}}/kindergartens/">Wszystkie przedszkola</a>
+</p>
+<p>
+  <a href="{{rt}}/kindergartendishs/" data-wq-action="preselect" class="kindergarten">Dania w przedszkolach</a>
+</p>
+{{#can_add_kindergarten_dish}}
+<p>
+  <a href="{{rt}}/kindergartendishs/new" data-wq-action="preselect" class="kindergarten">Dodaj danie przedszkolne</a>
+</p>
+{{/can_add_kindergarten_dish}}
+<p>
+  <a href="{{rt}}/dishratings/" data-wq-action="preselect" class="kindergarten">Oceny potraw z przedszkola</a>
+</p>
+<p>
+  <a href="{{rt}}/dishratings/new" data-wq-action="preselect" class="kindergarten">Oceń danie przedszkolne</a>
+</p>

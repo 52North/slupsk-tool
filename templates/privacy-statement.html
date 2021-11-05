@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<!--
+To make your application work offline using the old "application cache" standard,
+uncomment the manifest attribute below.  This is disabled by default because it
+isn't always needed and it makes debugging more tricky.
+See https://github.com/wq/wq.app/issues/63
+-->
+<html><!-- manifest="SlupskTool.appcache" -->
+  <head>
+    <title>{{{i18n_privacy_statement}}}</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page" class="ui-page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{i18n_privacy_statement}}}</h1>
+        {{>language}}
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content justified">
+        <h3>{{{i18n_privacy_statement1}}}</h3>
+        <p>{{{i18n_privacy_statement2}}}</p>
+        <ol>
+          <li>
+            {{{i18n_privacy_statement3}}}
+          </li>
+          <li>
+            <p>{{{i18n_privacy_statement4}}}</p>
+            <ol type="a">
+              <li>{{{i18n_privacy_statement5}}}</li>
+              <li>{{{i18n_privacy_statement6}}}</li>
+              <li>{{{i18n_privacy_statement7}}}</li>
+              <li>{{{i18n_privacy_statement8}}}</li>
+            </ol>
+          </li>
+          <li>
+            <p>{{{i18n_privacy_statement9}}}</p>
+            <ol type="a">
+              <li>{{{i18n_privacy_statement10}}}</li>
+              <li>{{{i18n_privacy_statement11}}}</li>
+            </ol>
+          </li>
+          <br>
+          <li>{{{i18n_privacy_statement12}}}</li>
+          <li>
+            <p>{{{i18n_privacy_statement13}}}</p>
+            <ol type="a">
+              <li>{{{i18n_privacy_statement14}}}</li>
+              <li>{{{i18n_privacy_statement15}}}</li>
+              <li>{{{i18n_privacy_statement16}}}</li>
+              <li>{{{i18n_privacy_statement17}}}</li>
+              <li>{{{i18n_privacy_statement18}}}</li>
+            </ol>
+          </li>
+          <br>
+          <li>{{{i18n_privacy_statement19}}}</li>
+          <br>
+          <li>{{{i18n_privacy_statement20}}}</li>
+          <br>
+          <li>{{{i18n_privacy_statement21}}}</li>
+          <br>
+          <li>{{{i18n_privacy_statement22}}}</li>
+        </ol>
+      </div>
+      {{>footer}}
+    </div>
+  </body>
+</html>

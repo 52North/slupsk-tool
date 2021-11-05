@@ -12,7 +12,7 @@ See https://github.com/wq/wq.app/issues/63
 -->
 <html><!-- manifest="SlupskTool.appcache" -->
   <head>
-    <title>SlupskTool</title>
+    <title>Słupsk Tool</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     {{>head}}
@@ -20,22 +20,15 @@ See https://github.com/wq/wq.app/issues/63
   <body>
     <div data-role="page" class="ui-page">
       <div data-role="header">
-        <h1>Creating Interfaces - Slupsk</h1>
+        <h1>Creating Interfaces - Słupsk</h1>
+        {{>language}}
       </div>
+      {{>navbar}}
       <div role="main" class="ui-content">
-        <p>Where does my food come from? Here you can find information about menus in kindergardens and propose new dishes yourself!</p>
-        <ul data-role="listview" data-inset="true">
-          <li data-icon="plus">
-            <a href="{{rt}}/dishes/new">Add dish</a>
-          </li>
-        </ul>
         <div class="map detail-map" id="index-map"></div>
+        {{>welcome}}
       </div>
-      <p class="footer">
-        SlupskTool v{{version}}
-        &bull;
-        Powered by <a href="https://wq.io/">wq</a>
-      </p>
+      {{>footer}}
     </div>
   </body>
 </html>

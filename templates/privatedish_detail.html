@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{{label}}}</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{label}}}</h1>
+        {{#page_config.can_change}}
+        <a href="{{rt}}/privatedishs/{{id}}/edit" data-icon="edit" data-transition="flip">
+          {{{i18n_edit}}}
+        </a>
+        {{/page_config.can_change}}
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content">
+          <h1>{{{label}}}</h1>
+          <table>
+            <tr>
+              <th>{{{i18n_from_local_producer}}}</th>
+              <td>{{{from_producer_label}}}</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+                {{#localproducers}}
+                <table>
+                  <tr>
+                    <th>{{{i18n_producer}}}</th>
+                    <td>
+                      {{#producer_label}}{{{producer_label}}}{{/producer_label}}
+                      {{^producer_label}}{{{i18n_other}}}{{/producer_label}}
+                    </td>
+                  </tr>
+                </table>
+                <hr>
+                {{/localproducers}}
+              </td>
+            </tr>
+          </table>
+          <img src="{{picture}}" alt="Picture of the dish - {{label}}" style="max-width:100%">
+          <div class="ui-grid-a" style="padding-top: 50px">
+            <div class="ui-block-a">
+              <a href="{{rt}}/privatedishs/" data-role="button" data-icon="bars" data-direction="reverse">
+                {{{i18n_show_private_dishes}}}
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="{{rt}}/privatedishs/new" data-role="button" data-icon="plus">
+                {{{i18n_add_private_dish}}}
+              </a>
+            </div>
+          </div>
+      </div>
+      {{>footer}}
+    </div>
+  </body>
+</html>

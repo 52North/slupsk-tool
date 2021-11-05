@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{{label}}}</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{label}}}</h1>
+        {{#page_config.can_change}}
+        <a href="{{rt}}/dishratings/{{id}}/edit" data-icon="edit" data-transition="flip">
+          Edit
+        </a>
+        {{/page_config.can_change}}
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content">
+          <h1>{{{label}}}</h1>
+          <table>
+            <tr>
+              <th>{{{i18n_kindergarten}}}</th>
+              <td>{{{kindergarten_label}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_date}}}</th>
+              <td>{{date}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_choose_dish}}}</th>
+              <td>{{{dish_label}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_like_dish}}}</th>
+              <td>{{{children_satisfaction_label}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_proper_dish}}}</th>
+              <td>{{{parent_satisfaction_label}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_healthy_dish}}}</th>
+              <td>{{{health_label}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_dish_comment}}}</th>
+              <td>{{{comment}}}</td>
+            </tr>
+          </table>
+          <h3>{{{i18n_picture}}}</h3>
+          <img src="{{dish.picture}}" alt="Picture of the dish - {{dish.label}}" style="max-width:100%">
+          <div class="ui-grid-a" style="padding-top: 50px">
+            <div class="ui-block-a">
+              <a href="{{rt}}/dishratings/" data-role="button" data-icon="bars" data-direction="reverse">
+                {{{i18n_show_dish_ratings}}}
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus">
+                {{{i18n_rate_kindergarten_dish}}}
+              </a>
+            </div>
+          </div>
+      </div>
+      {{>footer}}
+    </div>
+  </body>
+</html>

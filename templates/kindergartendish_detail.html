@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{{label}}}</title>
+    {{>head}}
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        {{>home}}
+        <h1>{{{label}}}</h1>
+        {{#page_config.can_change}}
+        <a href="{{rt}}/kindergartendishs/{{id}}/edit" data-icon="edit" data-transition="flip">
+          {{{i18n_edit}}}
+        </a>
+        {{/page_config.can_change}}
+      </div>
+      {{>navbar}}
+      <div role="main" class="ui-content">
+          <h1>{{{label}}}</h1>
+          <table>
+            <tr>
+              <th>{{{i18n_kindergarten}}}</th>
+              <td>{{{kindergarten_label}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_choose_date}}}</th>
+              <td>{{date}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_dish_name}}}</th>
+              <td>{{{name}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_meal_type}}}</th>
+              <td>{{{type_label}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_calories}}}</th>
+              <td>{{{calories}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_allergens}}}</th>
+              <td>{{{allergens}}}</td>
+            </tr>
+          </table>
+          <p>{{{i18n_allergen_hint_detail}}}</p>
+          <div data-role="collapsible" data-collapsed="true" style="white-space: normal">
+            <h4>{{{i18n_allergens_list}}}</h4>
+            <h4 style="white-space: normal">LISTA ALERGENÓW wg Rozporządzenia Parlamentu Europejskiego i Rady (UE) Nr 1169/2011 w odniesieniu do składników obecnych w środkach żywności.</h4>
+            <br>
+            <h5>SUBSTANCJz ZAWIERAJĄCE ALERGENY:</h5>
+            <ol>
+              <li>Zboża zawierające gluten (tj. pszenica, żyto, jęczmień, owies, orkisz, kamut lub ich szczepy hubrydowe) i produkty pochodne</li>
+              <li>Skorupiaki i produkty pochodne</li>
+              <li>Jajka i produkty pochodne</li>
+              <li>Ryby i produkty pochodne</li>
+              <li>Orzeszki ziemne (arachidowe) i produkty pochodne</li>
+              <li>Soja i produkty pochodne</li>
+              <li>Mleko i produkty pochodne</li>
+              <li>Orzechy tj. migdały (Amygdalus communis L), orzechy laskowe (Corylus avellana), orzechy włoskie (Juglans regia), nerkowce (Anacardium occidentale), orzechy pekan (Carya illinoiesis/Wangenh/K.Koch), orzechy brazylijskie (Bertholletia exelsa), pistacje (Pistacia vera), orzechy makadamie lub orzechy Queensland (Macadamia ternifolia) i produkty pochodne</li>
+              <li>Seler zwyczajny i produkty pochodne</li>
+              <li>Gorczyca i produkty pochodne</li>
+              <li>Nasiona sezamu i produkty pochodne</li>
+              <li>Dwutlenek siarki i siarczyny w stężeniach powyżej 10 mg/kg lub 10 mg/l w przeliczeniu na SO2</li>
+              <li>Łubin i produkty pochodne</li>
+              <li>Mięczaki i produkty pochodne</li>
+            </ol>
+          </div>
+          <table>
+            <tr>
+              <th>{{{i18n_food_waste}}}</th>
+              <td>{{{waste_label}}}</td>
+            </tr>
+            <tr>
+              <th>{{{i18n_composition}}}</th>
+              <td>
+                {{#compositions}}
+                <table>
+                  <tr>
+                    <th>{{{i18n_choose_ingredient}}}</th>
+                    <td>{{{ingredient_label}}}</td>
+                  </tr>
+                  <tr>
+                    <th>{{{i18n_weight}}}</th>
+                    <td>{{weight_grams}}</td>
+                  </tr>
+                  <tr>
+                    <th>{{{i18n_from_producer}}}</th>
+                    <td>{{{from_producer_label}}}</td>
+                  </tr>
+                </table>
+                <hr>
+                {{/compositions}}
+              </td>
+            </tr>
+          </table>
+          <h3>{{{i18n_picture}}}</h3>
+          <img src="{{picture}}" alt="Picture of the dish - {{label}}" style="max-width:100%">
+          {{^can_add_kindergarten_dish}}
+          <div class="ui-grid-a" style="padding-top: 50px">
+            <div class="ui-block-a">
+              <a href="{{rt}}/kindergartendishs/" data-role="button" data-icon="bars" data-direction="reverse">
+                {{{i18n_show_kindergarten_dishes}}}
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus" data-theme="b">
+                {{{i18n_rate_kindergarten_dish}}}
+              </a>
+            </div>
+          </div>
+          {{/can_add_kindergarten_dish}}
+          {{#can_add_kindergarten_dish}}
+          <div class="ui-grid-b" style="padding-top: 50px">
+            <div class="ui-block-a">
+              <a href="{{rt}}/kindergartendishs/" data-role="button" data-icon="bars" data-direction="reverse">
+                {{{i18n_show_kindergarten_dishes}}}
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="{{rt}}/kindergartendishs/new" data-role="button" data-icon="plus">
+                {{{i18n_add_kindergarten_dish}}}
+              </a>
+            </div>
+            <div class="ui-block-c">
+              <a href="{{rt}}/dishratings/new" data-role="button" data-icon="plus" data-theme="b">
+                {{{i18n_rate_kindergarten_dish}}}
+              </a>
+            </div>
+          </div>
+          {{/can_add_kindergarten_dish}}
+      </div>
+      {{>footer}}
+    </div>
+  </body>
+</html>

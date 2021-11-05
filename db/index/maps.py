@@ -11,10 +11,26 @@ basemaps = [
 ];
 
 index_map = [{
+    'autoZoom' : False,
     'layers': [{
-        'name': 'Locations',
+        'name': '<span style="padding-right: 5px;">Przedszkola</span><img style="height: 20px;" src="images/kindergarten.png">',
         'type': 'geojson',
-        'url': 'locations.geojson',
-        'popup': 'location'
+        'url': 'kindergartens.geojson',
+        'popup': 'kindergarten',
+        'icon': 'kindergarten',
+    },
+    {
+        'name': '<span style="padding-right: 5px";>Sklepy</span><img style="height: 20px;" src="images/shop.png">',
+        'type': 'geojson',
+        'url': 'shops.geojson',
+        'popup': 'shop',
+        'icon' : 'shop',
+    },
+    {
+        'name': '<span style="padding-right: 5px;">Producenci</span><img style="height: 20px;" src="images/producer.png">',
+        'type': 'geojson',
+        'url': 'producers.geojson',
+        'popup': 'producer',
+        'icon' : 'producer',
     }]
 }]

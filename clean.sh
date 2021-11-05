@@ -1,9 +1,9 @@
 #!/bin/bash
 
 rm -r htdocs
-rm app/js/lib
-rm app/css/lib
-rm app/scss/lib
+rm -r app/js/lib
+rm -r app/css/lib
+rm -r app/scss/lib
 #rm app/scss/lib/wq
 #rm app/scss/lib/compass
 

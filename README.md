@@ -1,33 +1,73 @@
  Creating Interfaces - Slupsk Tool
 =========================================
 
-This data collection tool is running with [wq framework]. See [Getting Started] for general information on how to build/run the application.
+This Citizen Science data collection tool was developed within the <a target="_blank" href="https://creatinginterfaces.eifer.kit.edu/">Creating Interfaces</a> project and is running with [wq framework]. 
 
-### How to locally test the tool
+The project was initialized with
+```
+wq start SlupskTool . -d slupsk-tool.demo.52north.org --with-gis
+```  
+which creates a completely new project based on the [wq standard template].  
+Note that the command has changed to `wq create` (https://wq.io/wq.create/create) in a newer version of wq.
 
-* Clone the git repository.
-* Change to the develop branch, e.g. `git checkout develop`.
-* Create the file `db/SlupskTool/settings/dev.py`.
-  You can do this for example by running  
-  `wq start SlupskTool . -d slupsk-tool.demo.52north.org --with-gis`  
-  which creates a completely new project based on the [wq standard template]. Then you can copy the mentioned file.
-* Add `.so` suffix to spatialite library in `db/SlupskTool/settings/dev.py`, i.e.  
-  `SPATIALITE_LIBRARY_PATH = 'mod_spatialite.so'`
-* Run migrations (create data base tables and prepopulate some of them -> Kindergarten/Shop) and create superuser via   
+See [Getting Started] for general information on how to build/run a wq-based application.
+
+### How to develop locally
+
+* Clone the git repository: `git clone https://github.com/52North/slupsk-tool.git`.
+* Change the file `db/SlupskTool/settings/dev.py` to:
+  ```python
+  import os
+  import sys
+  from .base import *
+  # SECURITY WARNING: keep the secret key used in production secret!
+  SECRET_KEY = <my-secret-key>
+
+  # SECURITY WARNING: don't run with debug turned on in production!
+  DEBUG = True
+
+  # wq: Determine if we are running off django's testing server
+  DEBUG_WITH_RUNSERVER = 'manage.py' in sys.argv[0]
+
+  ALLOWED_HOSTS = ["localhost"]
+
+  # Database
+  # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.contrib.gis.db.backends.spatialite',
+          'NAME': os.path.join(BASE_DIR, 'conf', 'SlupskTool.sqlite3'),
+      }
+  }
+
+  SPATIALITE_LIBRARY_PATH = 'mod_spatialite.so'
+  ```
+* Change the base url in `app/js/SlupskTool/config.js` from `'base_url': '/slupsk-tool'` to `'base_url': ''`
+* Change the base url in `db/SlupskTool/context_processors.py` from `return {'rt': '/slupsk-tool'}` to `return {'rt': ''}`
+* Change the media url in `db/SlupskTool/settings/base.py` from `MEDIA_URL = '/slupsk-tool/media/'` to `MEDIA_URL = '/media/'`
+* Run migrations (create data base tables and prepopulate some of them, e.g. kindergartens/shops) and create superuser via   
   `cd db/`   
   `./manage.py migrate`  
   `./manage.py createsuperuser`  
   `cd ..`
 * Generate htdocs folder via  
   `./deploy.sh 0.0.1`  
-  Attention: Do not update the templates as it would overwrite some changes! You do not need to build PhoneGap either.
+  Note: the part where templates are updated is commented as this would overwrite changes.
 * Run tool on localhost:8000 via  
   `./db/manage.py runserver`
+  
+### Deployment on a public server
 
+To deploy the tool on a public server visit wq`s official website ([wq pulic server]).
+
+A setup using Apache HTTP Server, PostgreSQL and Docker/Docker Compose can be found here:  
+https://github.com/52North/creating-interfaces
 
 [wq framework]: http://wq.io/
 [Getting Started]: https://wq.io/docs/setup
 [wq standard template]: https://github.com/wq/wq-django-template
+[wq pulic server]: https://wq.io/guides/setup-wq-with-apache-postgresql
 
 
 Funding organizations/projects

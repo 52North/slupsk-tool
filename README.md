@@ -61,9 +61,9 @@ See [Getting Started] for general information on how to build/run a wq-based app
   
 ### Deployment on a public server
 
-To deploy the tool on a public server visit wq`s official website ([wq public server]).
+To find out how to deploy a wq application on a public server visit wq`s official website ([wq public server]).
 
-A setup using Apache HTTP Server, PostgreSQL and Docker/Docker Compose can be found here:  
+A setup for the slupsk-tool using Apache HTTP Server, PostgreSQL and Docker/Docker Compose can be found here:  
 https://github.com/52North/creating-interfaces
 
 [wq framework]: http://wq.io/

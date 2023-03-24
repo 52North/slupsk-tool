@@ -19,11 +19,11 @@ ALLOWED_HOSTS = ["creatinginterfaces.demo.52north.org"]
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'slupsktool',
-        'USER': 'slupsktool',
+        'NAME': os.environ.get('SLUPSK_DB', 'slupsktool'),
+        'USER': os.environ.get('SLUPSK_DB_USER', 'slupsktool'),
         'PASSWORD': os.environ.get('SLUPSK_DB_PW'),
-        'HOST': 'db-slupsk',
-        'PORT': '',
+        'HOST': os.environ.get('SLUPSK_DB_HOST', 'db-slupsk'),
+        'PORT': os.environ.get('SLUPSK_DB_PORT', ''),
     }
 }
 

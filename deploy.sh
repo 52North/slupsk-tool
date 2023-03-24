@@ -15,7 +15,7 @@ db/manage.py dump_config --format amd > app/js/data/config.js
 # Build javascript with wq.app
 cd app;
 wq icons;
-wq build $1;
+wq build "$1";
 
 # Force important files through any unwanted server caching
 cd ../;

@@ -10,7 +10,7 @@ DEBUG = False
 # wq: Determine if we are running off django's testing server
 DEBUG_WITH_RUNSERVER = False
 
-ALLOWED_HOSTS = ["creatinginterfaces.demo.52north.org"]
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS', 'creatinginterfaces.demo.52north.org')]
 
 
 # Database

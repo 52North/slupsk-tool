@@ -11,14 +11,12 @@ RUN apt-get update \
 WORKDIR /var/www/slupsk-tool/
 
 COPY . /var/www/slupsk-tool/
+COPY ./docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
 
 RUN python3 -m venv venv \
  && . venv/bin/activate \
- && pip install --upgrade --requirement requirements.txt
-
-COPY ./docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
-
-RUN chown -R :www-data /var/www/slupsk-tool/media/ \
+ && pip install --upgrade --requirement requirements.txt \
+ && chown -R :www-data /var/www/slupsk-tool/media/ \
  && chmod ug+w /var/www/slupsk-tool/media/ \
  && chmod 777 /var/www/slupsk-tool/conf/ \
  && rm /etc/apache2/sites-enabled/000-default.conf \

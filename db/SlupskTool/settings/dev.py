@@ -12,7 +12,7 @@ DEBUG = True
 # wq: Determine if we are running off django's testing server
 DEBUG_WITH_RUNSERVER = 'manage.py' in sys.argv[0]
 
-ALLOWED_HOSTS = ["creatinginterfaces.demo.52north.org"]
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS', 'creatinginterfaces.demo.52north.org')]
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -24,7 +24,7 @@ DATABASES = {
         'USER': os.environ.get('SLUPSK_DB_USER', 'slupsktool'),
         'PASSWORD': os.environ.get('SLUPSK_DB_PW'),
         'HOST': os.environ.get('SLUPSK_DB_HOST', 'db-slupsk'),
-        'PORT': os.environ.get('SLUPSK_DB_PORT', ''),
+        'PORT': os.environ.get('SLUPSK_DB_PORT', '5432'),
     }
 }
 

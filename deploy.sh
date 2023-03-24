@@ -19,8 +19,8 @@ wq build "$1";
 
 # Force important files through any unwanted server caching
 cd ../;
-sed -i "s/SlupskTool.js/SlupskTool.js?v="$1"/" htdocs-build/SlupskTool.appcache
-sed -i "s/SlupskTool.css/SlupskTool.css?v="$1"/" htdocs-build/SlupskTool.appcache
+sed -i "s/SlupskTool.js/SlupskTool.js?v=$1/" htdocs-build/SlupskTool.appcache
+sed -i "s/SlupskTool.css/SlupskTool.css?v=$1/" htdocs-build/SlupskTool.appcache
 
 # Preserve Django's static files (e.g. admin)
 if [ -d htdocs/static ]; then
